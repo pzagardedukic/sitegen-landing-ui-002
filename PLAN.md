@@ -61,6 +61,21 @@ Nič drugega — brez kloniranja `ui-001`, brez namestitev, brez kode.
 
 **`src/app/theme/utils/createPreviewTheme.ts`** — razširim tako, da poleg pisav in barv preračuna tudi `brandGradient`. Vhodi, izhodi in vedenje do urejevalnika ostanejo nespremenjeni.
 
+### Urejevalnik teme — obvezna pravila
+
+Urejevalnik prek `postMessage` (`THEME_EDITOR_UPDATE`) v živo povozi natanko sedem stvari: `primary`, `secondary`, `text`, `fontHeading`, `fontBody`, `fontBanner`, `banner`. Iz tega sledi:
+
+1. **Vse izpeljanke v obeh vejah.** `createPreviewTheme()` ima zgodnji `if (!hasOverrides) return baseTheme`. Karkoli izračunam iz barv — `brandGradient`, odtenki — mora obstajati v osnovni temi **in** v veji s povozi. Sicer se prelivanje zamrzne na privzetkih in strankinim barvam ne sledi, lokalno pa izgleda pravilno.
+2. **Nobene trdo zapisane barve v komponentah.** Vse prek `theme.palette`; odtenki z `alpha`/`lighten`/`darken` ob gradnji teme, ne v `sx`.
+3. **Nobene trdo zapisane pisave.** Samo `typography` variante. `loadGoogleFont` naloži le debeline **300–700** — težje rezine se v urejevalniku tiho ne naložijo.
+4. **Varianti `slogan` in `navLink` ohranita imeni** — `createPreviewTheme` ju izrecno preslika.
+5. **`Section` še naprej kliče `useBannerImage()`** pri `useHeaderImage`, sicer zamenjava banner slike neha delovati.
+6. **Preverjanje tudi z `NEXT_PUBLIC_THEME_EDITOR_ENABLED=true`**, ne le v privzetem načinu.
+
+Podedovano iz `ui-001`, odprto:
+- `header` in `footer` paleti `createPreviewTheme` ne povozi, zato glava strankinim barvam ne sledi. Če naj v novem dizajnu sledi, dodam preslikavo — potrdi Petra.
+- `useBannerImage.editor` ob shranjenem bannerju v `sessionStorage` naredi `return` pred registracijo poslušalca, zato po osvežitvi žive posodobitve bannerja odpadejo. Popravek je sprememba vedenja glede na `ui-001` — potrdi Petra.
+
 **Prelomne točke — privzete MUI, nespremenjene** (`xs 0, sm 600, md 900, lg 1200, xl 1536`). Figmine tri širine se nanje preslikajo takole:
 
 | Figma | MUI obseg | rob vsebine |
@@ -153,6 +168,7 @@ Dvoje, kar zna ponagajati pri telefonu, in kako rešim:
 - Sproti: dev strežnik vezan na `0.0.0.0`, ti pogledaš vsako sekcijo na računalniku **in na telefonu** ter jo potrdiš
 - Ob koncu faze: `pnpm build` + `npx serve out` in posnetki v headless Edge proti produkcijskemu izvozu pri 390, 768 in 1440 — dev strežnik za posnetke ni zanesljiv
 - Logična enakovrednost: za isti `website.json` morata `ui-001` in `ui-002` ustvariti isti seznam poti (`out/**/index.html`) in ista sidra sekcij
+- Urejevalnik teme: zagon z `NEXT_PUBLIC_THEME_EDITOR_ENABLED=true` in preverba, da sprememba `primary`/`secondary` v živo premakne tudi prelivanje, ne samo gumbov
 
 ## Tveganja
 
