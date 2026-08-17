@@ -72,9 +72,24 @@ Urejevalnik prek `postMessage` (`THEME_EDITOR_UPDATE`) v živo povozi natanko se
 5. **`Section` še naprej kliče `useBannerImage()`** pri `useHeaderImage`, sicer zamenjava banner slike neha delovati.
 6. **Preverjanje tudi z `NEXT_PUBLIC_THEME_EDITOR_ENABLED=true`**, ne le v privzetem načinu.
 
-Podedovano iz `ui-001`, odprto:
-- `header` in `footer` paleti `createPreviewTheme` ne povozi, zato glava strankinim barvam ne sledi. Če naj v novem dizajnu sledi, dodam preslikavo — potrdi Petra.
-- `useBannerImage.editor` ob shranjenem bannerju v `sessionStorage` naredi `return` pred registracijo poslušalca, zato po osvežitvi žive posodobitve bannerja odpadejo. Popravek je sprememba vedenja glede na `ui-001` — potrdi Petra.
+Podedovano iz `ui-001` — **odločeno, oboje popravim v `ui-002`**:
+
+- **Glava in noga se barvata po stranki.** `createPreviewTheme` zdaj preslika tudi `header` in `footer` paleti, izpeljani iz razrešenih `primary`/`secondary`/`text` — v obeh vejah, tako kot velja za `brandGradient`. V `ui-001` sta trdo `rgba(0,0,0,0.9)` in `rgb(245,245,245)` in urejevalnik ju ne doseže. → [ui-001#3](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/3)
+- **Popravljena banner slika v urejevalniku.** `useBannerImage.editor` ob shranjenem bannerju v `sessionStorage` naredi `return` pred `addEventListener`, zato po osvežitvi predogleda žive posodobitve bannerja odpadejo. V `ui-002` se stanje prebere brez zgodnjega izhoda in poslušalec se registrira vedno. → [ui-001#2](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/2)
+
+Oboje pomeni, da se `ui-002` na teh dveh točkah **namerno obnaša drugače kot `ui-001`**. To ni odstop od pravila „logika ostane ista" — gre za popravka napak v vizualni plasti, ne za spremembo pogodbe s core paketom.
+
+### Pravilo za najdene napake v `ui-001`
+
+Kar med delom najdem v `ui-001` in bi bilo dobro popraviti, a ne sodi v `ui-002`, **odprem kot issue na `ui-001`** in ne popravljam tam. Doslej odprto:
+
+| | |
+|---|---|
+| [#1](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/1) | `Section.tsx:23` kliče `useBannerImage()` pogojno — kršitev pravil hookov |
+| [#2](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/2) | žive posodobitve banner slike odpovejo po osvežitvi predogleda |
+| [#3](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/3) | `createPreviewTheme` ne preslika `header`/`footer` palet |
+
+`#1` popravim tudi v `ui-002` (klic hooka brezpogojno, pogoj na rezultatu) — je čista napaka brez vidne spremembe vedenja.
 
 **Prelomne točke — privzete MUI, nespremenjene** (`xs 0, sm 600, md 900, lg 1200, xl 1536`). Figmine tri širine se nanje preslikajo takole:
 
