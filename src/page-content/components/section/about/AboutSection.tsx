@@ -7,7 +7,6 @@ import { getAboutTranslation } from "@/core/translations";
 import DualColumnSection from "../common/DualColumnSection";
 import EstablishedAndClients from "../common/EstablishedAndClients";
 import { Box } from "@mui/material";
-import SingleColumnSection from "../common/SingleColumnSection";
 
 export default function AboutSection() {
   const { lang } = useLanguage();
@@ -17,21 +16,13 @@ export default function AboutSection() {
   const AboutItems = getAboutItems(lang);
 
   return (
-    <Box display="flex" flexDirection="column">
-      {AboutItems.length > 0 ? (
-        <DualColumnSection
-          title={aboutTranslation.subtitle}
-          description={aboutSection.text}
-        >
-          {/* Image Carousel */}
-          <ImageCarousel items={AboutItems} maxVisible={2} interval={6000} />
-        </DualColumnSection>
-      ) : (
-        <SingleColumnSection
-          title={aboutTranslation.subtitle}
-          description={aboutSection.text}
-        />
-      )}
+    <Box display="flex" flexDirection="column" gap={{ xs: 6, md: 10 }}>
+      <DualColumnSection
+        title={aboutTranslation.subtitle}
+        description={aboutSection.text}
+      >
+        {AboutItems.length > 0 && <ImageCarousel items={AboutItems} />}
+      </DualColumnSection>
 
       {/* Year + Happy Clients - full screen width */}
       <EstablishedAndClients />

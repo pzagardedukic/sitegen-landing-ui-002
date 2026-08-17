@@ -1,11 +1,12 @@
-import { Box } from "@mui/material";
-import SectionTitle from "./SectionTitle";
-import SectionDescription from "./SectionDescription";
-import CircleTextButton from "@/components/button/CircleTextButton";
+"use client";
+
+import { Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import GradientButton from "@/components/button/GradientButton";
 
 type DualColumnSectionProps = {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   description: string;
   switchSides?: boolean;
   callToAction?: {
@@ -14,6 +15,14 @@ type DualColumnSectionProps = {
   };
 };
 
+/*
+ * The section intro from the Figma frame: a large heading on the left (640 of a 1200 grid)
+ * and the description with its call to action on the right (480, starting at 720). Content
+ * passed as children — a carousel, a grid — sits full width underneath, not beside them.
+ *
+ * ui-001 placed children in the right column and centred nothing, which left the heading
+ * competing with the media for the same half of the row.
+ */
 export default function DualColumnSection({
   title,
   children,
@@ -22,55 +31,52 @@ export default function DualColumnSection({
   callToAction,
 }: DualColumnSectionProps) {
   return (
-    <Box
-      component="section"
-      sx={{
-        py: { xs: 2, lg: 10 },
-        px: { xs: 2, lg: 6 },
-        display: "flex",
-        flexDirection: {
-          xs: switchSides ? "column-reverse" : "column",
-          md: switchSides ? "row-reverse" : "row",
-        },
-        alignItems: "center",
-        gap: { xs: 2, lg: 8 },
-      }}
-    >
-      {/* Left column */}
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
       <Box
         sx={{
-          flex: 1,
-          maxWidth: 500,
-          display: "flex",
-          flexDirection: "column",
-          gap: 1,
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "640fr 80fr 480fr" },
+          alignItems: "start",
+          gap: { xs: 3, md: 0 },
+          ...(switchSides && { direction: "rtl" }),
         }}
       >
-        {/* Title */}
-        <SectionTitle
-          title={title}
-          justify={switchSides ? "flex-end" : "flex-start"}
-        />
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{ gridColumn: { md: "1" }, direction: "ltr" }}
+        >
+          {title}
+        </Typography>
 
-        {/* Description */}
-        <SectionDescription
-          description={description}
-          textAlign={switchSides ? "right" : "left"}
-        />
+        <Box
+          sx={{
+            gridColumn: { md: "3" },
+            direction: "ltr",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: 4,
+          }}
+        >
+          {description && (
+            <Typography variant="body1" color="text.secondary">
+              {description}
+            </Typography>
+          )}
 
-        {/* Call to Action */}
-        {callToAction && (
-          <Box mt={4} alignSelf={switchSides ? "flex-end" : "flex-start"}>
-            <CircleTextButton
-              label={callToAction.label}
+          {callToAction && (
+            <GradientButton
               href={callToAction.href}
-            />
-          </Box>
-        )}
+              endIcon={<ArrowOutwardIcon />}
+            >
+              {callToAction.label}
+            </GradientButton>
+          )}
+        </Box>
       </Box>
 
-      {/* Right column */}
-      <Box sx={{ flex: 1, width: "100%" }}>{children}</Box>
+      {children}
     </Box>
   );
 }

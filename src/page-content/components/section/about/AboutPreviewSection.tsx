@@ -10,7 +10,6 @@ import {
 import DualColumnSection from "../common/DualColumnSection";
 import EstablishedAndClients from "../common/EstablishedAndClients";
 import { getPageSlugByKeyWithBasePath } from "@/core/static";
-import SingleColumnSection from "../common/SingleColumnSection";
 
 export default function AboutPreviewSection() {
   const { lang } = useLanguage();
@@ -22,28 +21,17 @@ export default function AboutPreviewSection() {
 
   return (
     <>
-      {AboutItems.length > 0 ? (
-        <DualColumnSection
-          title={aboutSection.sectionName || aboutTranslation.title}
-          description={aboutSection.text}
-          callToAction={{
-            label: buttonTranslation.learnMore,
-            href: getPageSlugByKeyWithBasePath("about"),
-          }}
-        >
-          {/* Image Carousel */}
-          <ImageCarousel items={AboutItems} maxVisible={2} interval={6000} />
-        </DualColumnSection>
-      ) : (
-        <SingleColumnSection
-          title={aboutSection.sectionName || aboutTranslation.title}
-          description={aboutSection.text}
-          callToAction={{
-            label: buttonTranslation.learnMore,
-            href: getPageSlugByKeyWithBasePath("about"),
-          }}
-        />
-      )}
+      <DualColumnSection
+        title={aboutSection.sectionName || aboutTranslation.title}
+        description={aboutSection.text}
+        callToAction={{
+          label: buttonTranslation.learnMore,
+          href: getPageSlugByKeyWithBasePath("about"),
+        }}
+      >
+        {/* Same intro with or without photographs — only the carousel is conditional. */}
+        {AboutItems.length > 0 && <ImageCarousel items={AboutItems} />}
+      </DualColumnSection>
 
       {/* Year + Happy Clients - full screen width */}
       <EstablishedAndClients />

@@ -1,10 +1,16 @@
-import React from "react";
+"use client";
+
 import { Box } from "@mui/material";
-import SlidingText from "@/components/sliding-text/SlidingText";
+import MarqueeBand from "@/components/marquee/MarqueeBand";
 import { getAboutSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { getAboutTranslation } from "@/core/translations";
 
+/*
+ * The two scrolling bands under the about section. Full-bleed by design — in the wireframes
+ * the tablet band stopped 175px short of the right edge and read as broken, so the width
+ * comes from the viewport rather than the content container.
+ */
 export default function EstablishedAndClients() {
   const { lang } = useLanguage();
   const aboutTranslation = getAboutTranslation(lang);
@@ -12,31 +18,19 @@ export default function EstablishedAndClients() {
   const aboutSection = getAboutSection(lang);
 
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        position: "relative",
-        left: "50%",
-        right: "50%",
-        marginLeft: "-50vw",
-        marginRight: "-50vw",
-        display: "flex",
-        flexDirection: "column",
-        gap: 4,
-      }}
-    >
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 1.5, md: 2 } }}>
       {aboutSection.establishedYear && (
-        <SlidingText
-          text={`${aboutTranslation.establishedIn} ${aboutSection.establishedYear}`}
-          height={50}
+        <MarqueeBand
+          items={[`${aboutTranslation.establishedIn} ${aboutSection.establishedYear}`]}
           speed={45}
+          tone="brand"
         />
       )}
 
-      <SlidingText
-        text={`100% ${aboutTranslation.satisfiedClients}`}
-        height={50}
+      <MarqueeBand
+        items={[`100% ${aboutTranslation.satisfiedClients}`]}
         speed={60}
+        tone="quiet"
       />
     </Box>
   );

@@ -1,133 +1,91 @@
 "use client";
 
-import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
-
-import RotatingItems from "@/components/common/RotatingItems";
-import SolidCircle from "@/components/shape/SolidCircle";
+import { Box, Typography } from "@mui/material";
+import Carousel from "@/components/carousel/Carousel";
 
 export type ImageCarouselItem = {
   image: string;
   text: string;
 };
 
-type Props = {
+type ImageCarouselProps = {
   items: ImageCarouselItem[];
-  interval?: number;
-  maxVisible?: number;
 };
 
-export default function ImageCarousel({
-  items,
-  interval,
-  maxVisible = 2,
-}: Props) {
-  const theme = useTheme();
+/*
+ * The about carousel from the Figma frame: slides 470 tall with the item's copy over the
+ * photograph in a bottom band. Desktop shows an unequal pair — 740 and 428 of a 1200 track
+ * — and mobile one slide with no peek of the next.
+ *
+ * The frame also draws a small label at the top of each slide, but nothing in the data
+ * feeds it (items carry only an image and a text), so it is left out rather than invented.
+ */
+export default function ImageCarousel({ items }: ImageCarouselProps) {
+  if (items.length === 0) return null;
+
+  const slides = items.map((item, index) => (
+    <Box
+      key={`${item.image}-${index}`}
+      sx={(theme) => ({
+        position: "relative",
+        height: { xs: 380, sm: 430, md: 470 },
+        borderRadius: "25px",
+        overflow: "hidden",
+        backgroundColor: theme.palette.surfaces.placeholder,
+      })}
+    >
+      <Box
+        component="img"
+        src={item.image}
+        alt=""
+        loading="lazy"
+        sx={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
+
+      {item.text && (
+        <>
+          <Box
+            aria-hidden
+            sx={(theme) => ({
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: "55%",
+              background: `linear-gradient(to top, ${theme.palette.surfaces.scrim}, transparent)`,
+            })}
+          />
+
+          <Typography
+            variant="body2"
+            sx={{
+              position: "absolute",
+              left: { xs: 20, md: 28 },
+              right: { xs: 20, md: 28 },
+              bottom: { xs: 20, md: 28 },
+              color: "common.white",
+            }}
+          >
+            {item.text}
+          </Typography>
+        </>
+      )}
+    </Box>
+  ));
 
   return (
-    <RotatingItems<ImageCarouselItem>
-      items={items}
-      interval={interval}
-      maxVisible={maxVisible}
-      sx={{
-        display: "grid",
-        gap: 4,
-        gridTemplateColumns: {
-          xs: "1fr",
-          md: `repeat(${maxVisible}, 1fr)`,
-        },
-        py: { xs: 4, lg: 8 },
-      }}
-      renderItem={(item, i) => {
-        const isFirst = i % 2 === 0;
-
-        const textBlock = (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: isFirst ? "row-reverse" : "row",
-              justifyContent: isFirst ? "flex-end" : "flex-start",
-              alignItems: "flex-start",
-              gap: 2,
-            }}
-          >
-            <Box sx={{ flexShrink: 0 }}>
-              <SolidCircle size={50} color="grey.200">
-                <SolidCircle size={20} color={theme.palette.primary.main} />
-              </SolidCircle>
-            </Box>
-
-            <Typography
-              color="text.secondary"
-              variant="body2"
-              textAlign={isFirst ? "right" : "left"}
-            >
-              {item.text}
-            </Typography>
-          </Box>
-        );
-
-        const imageBlock = (
-          <Box
-            sx={{
-              width: "100%",
-              aspectRatio: "4 / 3",
-              overflow: "hidden",
-              borderRadius: 4,
-              backgroundColor: "grey.100",
-            }}
-          >
-            <motion.img
-              src={item.image}
-              alt={`image-${i}`}
-              loading="lazy"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-          </Box>
-        );
-
-        return (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`${item.image}-${item.text}-${i}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
-              <Box
-                sx={{
-                  px: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                {isFirst ? (
-                  <>
-                    {imageBlock}
-                    {textBlock}
-                  </>
-                ) : (
-                  <>
-                    {textBlock}
-                    {imageBlock}
-                  </>
-                )}
-              </Box>
-            </motion.div>
-          </AnimatePresence>
-        );
-      }}
+    <Carousel
+      items={slides}
+      perView={{ mobile: 1, desktop: 2 }}
+      weights={[0.633, 0.367]}
+      gap={32}
+      ariaLabel="Galerija o nas"
     />
   );
 }

@@ -11,6 +11,12 @@ type CarouselProps = {
   perView?: { mobile: number; desktop: number };
   gap?: number;
   ariaLabel?: string;
+  /**
+   * Relative widths of the visible slides, cycled across the track. The about carousel is
+   * drawn as an unequal pair (740 / 428 of 1200), so it passes [0.633, 0.367]; leaving this
+   * out gives equal columns. Only used at the desktop count.
+   */
+  weights?: number[];
 };
 
 /*
@@ -26,10 +32,25 @@ export default function Carousel({
   perView = { mobile: 1, desktop: 2 },
   gap = 24,
   ariaLabel,
+  weights,
 }: CarouselProps) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const visible = isDesktop ? perView.desktop : perView.mobile;
+
+  /*
+   * grid-auto-columns takes a list and cycles it, which is what makes an unequal pair
+   * possible without tracking slide indices: each cycle still adds up to one page width,
+   * so scroll-snap paging by clientWidth keeps working unchanged.
+   */
+  const usableWeights =
+    isDesktop && weights && weights.length === visible ? weights : null;
+
+  const track = `calc(100% - ${(visible - 1) * gap}px)`;
+
+  const autoColumns = usableWeights
+    ? usableWeights.map((w) => `calc(${track} * ${w})`).join(" ")
+    : `calc(${track} / ${visible})`;
 
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(0);
@@ -74,7 +95,7 @@ export default function Carousel({
         sx={{
           display: "grid",
           gridAutoFlow: "column",
-          gridAutoColumns: `calc((100% - ${(visible - 1) * gap}px) / ${visible})`,
+          gridAutoColumns: autoColumns,
           gap: `${gap}px`,
           overflowX: "auto",
           scrollSnapType: "x mandatory",
