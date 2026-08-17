@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ChangeEvent } from "react";
-import CircleTextButton from "@/components/button/CircleTextButton";
+import GradientButton from "@/components/button/GradientButton";
 import { useLanguage } from "@/core/runtime";
 import {
   getButtonTranslation,
@@ -270,12 +270,13 @@ export default function ContactForm({ subject }: ContactFormProps) {
               opacity: isSubmitting ? 0.7 : 1,
             }}
           >
-            <CircleTextButton
-              label={buttonTranslation.sendMessage}
+            <GradientButton
               onClick={() => {
                 void handleSubmit();
               }}
-            />
+            >
+              {buttonTranslation.sendMessage}
+            </GradientButton>
 
             {isSubmitting && (
               <CircularProgress

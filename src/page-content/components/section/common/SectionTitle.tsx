@@ -1,4 +1,3 @@
-import StyledWords from "@/components/common/StyledWords";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
@@ -8,43 +7,28 @@ type SectionTitleProps = {
   justify?: "center" | "flex-start" | "flex-end";
 };
 
+/*
+ * A plain section heading.
+ *
+ * ui-001 split every title into two colours with StyledWords and appended a full stop in
+ * the secondary colour — "Kdo Smo." — which is the old theme's signature and not in this
+ * design. Here the heading is one colour and carries no punctuation of its own, so it reads
+ * as whatever the customer actually wrote.
+ */
 export default function SectionTitle({
   title,
   highContrast = false,
   justify = "center",
 }: SectionTitleProps) {
   return (
-    <Box flexDirection="row" display="flex" justifyContent={justify} >
-      {highContrast ? (
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color="primary.contrastText"
-        >
-          {title}.
-        </Typography>
-      ) : (
-        <>
-          <StyledWords
-            text={title}
-            mode="start"
-            styleA={{ color: "secondary.main" }}
-            styleB={{ color: "text.primary", textTransform: "capitalize" }}
-            variant="h2"
-            component="h2"
-            gutterBottom
-          />
-          <Typography
-            variant="h2"
-            component="h2"
-            gutterBottom
-            color="secondary.main"
-          >
-            .
-          </Typography>
-        </>
-      )}
+    <Box display="flex" justifyContent={justify} width="100%">
+      <Typography
+        variant="h3"
+        component="h2"
+        sx={{ color: highContrast ? "common.white" : "inherit" }}
+      >
+        {title}
+      </Typography>
     </Box>
   );
 }

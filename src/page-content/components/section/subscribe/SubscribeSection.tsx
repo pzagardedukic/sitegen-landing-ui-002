@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type SyntheticEvent } from "react";
 import { useBannerImage } from "@/app/theme/utils/UseBannerImage";
-import CircleTextButton from "@/components/button/CircleTextButton";
+import GradientButton from "@/components/button/GradientButton";
 import FormDisclaimer from "../common/FormDisclaimer";
 import { useLanguage } from "@/core/runtime";
 import {
@@ -246,12 +246,9 @@ export default function SubscribeSection() {
             justifyContent: "center",
           }}
         >
-          <CircleTextButton
-            label={subscriptionsTranslation.callToAction}
-            type="submit"
-            disabled={isSubmitting}
-            textColor="white"
-          />
+          <GradientButton type="submit" disabled={isSubmitting}>
+            {subscriptionsTranslation.callToAction}
+          </GradientButton>
         </Box>
       </Box>
     </Box>

@@ -59,12 +59,14 @@ const ScrollLink: React.FC<ScrollLinkProps> = ({
       >
         {label}
       </Typography>
+      {/* Figma draws this rule 56 tall, not 100. */}
       <Box
         className="line"
         sx={{
           width: "1px",
-          height: 100,
+          height: 56,
           backgroundColor: color,
+          opacity: 0.7,
         }}
       />
     </Link>

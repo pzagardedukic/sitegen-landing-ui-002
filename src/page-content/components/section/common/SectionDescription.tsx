@@ -31,10 +31,18 @@ function SectionDescription({
   return (
     <Typography
       component="div"
-      color={highContrast ? "primary.contrastText" : "text.secondary"}
       variant="body1"
       textAlign={textAlign}
-      sx={{ overflow: "hidden" }}
+      /*
+       * Inherit the colour and step it back with opacity instead of pinning a grey. Several
+       * sections render over a photograph and set white on their container; a fixed
+       * text.secondary turns unreadable there.
+       */
+      sx={{
+        overflow: "hidden",
+        color: highContrast ? "common.white" : "inherit",
+        opacity: highContrast ? 0.9 : 0.72,
+      }}
     >
       {isRichText && !maxChars ? (
         <RichText text={description} allowStyling={allowStyling} />

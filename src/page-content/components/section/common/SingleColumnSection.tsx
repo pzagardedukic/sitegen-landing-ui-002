@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SectionTitle from "./SectionTitle";
 import SectionDescription from "./SectionDescription";
-import CircleTextButton from "@/components/button/CircleTextButton";
+import GradientButton from "@/components/button/GradientButton";
 
 type SingleColumnSectionProps = {
   title?: string;
@@ -30,9 +31,7 @@ export default function SingleColumnSection({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        py: { xs: 2, lg: 10 },
-        px: { xs: 2, md: 6 },
-        gap: 2,
+        gap: { xs: 3, md: 4 },
       }}
     >
       {/* Title */}
@@ -76,7 +75,9 @@ export default function SingleColumnSection({
 
       {/* Call to Action */}
       {callToAction && (
-        <CircleTextButton label={callToAction.label} href={callToAction.href} />
+        <GradientButton href={callToAction.href} endIcon={<ArrowOutwardIcon />}>
+          {callToAction.label}
+        </GradientButton>
       )}
     </Box>
   );
