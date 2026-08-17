@@ -33,8 +33,9 @@ export default function HomePage() {
       kind: "content",
       enabled: isSectionEnabled("services"),
       sectionId: getPageSlugByKey("services"),
-      useHeaderImage: true,
-      headerHeight: "460px",
+      // No banner behind this section: the Figma frame is a plain background with the
+      // decorative shapes only. ui-001 ran the banner image across the top 460px, which
+      // cut a hard horizontal edge through the middle of the service cards.
       disableTopDivider: true,
       render: <ServicesPreviewSection />,
     },

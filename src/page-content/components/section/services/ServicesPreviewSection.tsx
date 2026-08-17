@@ -1,9 +1,12 @@
 "use client";
 
+import { Box } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { getServicesSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { getServicesTranslation } from "@/core/translations";
-import SingleColumnSection from "../common/SingleColumnSection";
+import DualColumnSection from "../common/DualColumnSection";
+import GradientButton from "@/components/button/GradientButton";
 import Services from "./Services";
 import { getPageSlugByKeyWithBasePath } from "@/core/static";
 
@@ -17,16 +20,22 @@ export default function ServicesSection() {
   }
 
   return (
-    <SingleColumnSection
+    <DualColumnSection
       title={servicesTranslation.title}
       description={servicesSection.text}
-      isHighContrast
-      callToAction={{
-        label: servicesTranslation.callToAction,
-        href: getPageSlugByKeyWithBasePath("services"),
-      }}
+      columns="560fr 80fr 560fr"
     >
       <Services maxCnt={6} />
-    </SingleColumnSection>
+
+      {/* The frame centres a single call to action under the grid. */}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <GradientButton
+          href={getPageSlugByKeyWithBasePath("services")}
+          endIcon={<ArrowOutwardIcon />}
+        >
+          {servicesTranslation.callToAction}
+        </GradientButton>
+      </Box>
+    </DualColumnSection>
   );
 }

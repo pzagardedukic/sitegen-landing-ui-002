@@ -9,6 +9,11 @@ type DualColumnSectionProps = {
   children?: React.ReactNode;
   description: string;
   switchSides?: boolean;
+  /**
+   * Grid split of the intro row. Sections are drawn with different balances — about uses
+   * 640/80/480, services 560/80/560 — so the ratio travels with the caller.
+   */
+  columns?: string;
   callToAction?: {
     label: string;
     href: string;
@@ -28,6 +33,7 @@ export default function DualColumnSection({
   children,
   description,
   switchSides = false,
+  columns = "640fr 80fr 480fr",
   callToAction,
 }: DualColumnSectionProps) {
   return (
@@ -35,7 +41,7 @@ export default function DualColumnSection({
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "640fr 80fr 480fr" },
+          gridTemplateColumns: { xs: "1fr", md: columns },
           alignItems: "start",
           gap: { xs: 3, md: 0 },
           ...(switchSides && { direction: "rtl" }),
@@ -60,7 +66,12 @@ export default function DualColumnSection({
           }}
         >
           {description && (
-            <Typography variant="body1" color="text.secondary">
+            /*
+             * Inherit the colour and step it back with opacity rather than pinning
+             * text.secondary. A section rendered over a photograph sets white on its
+             * container, and a fixed grey turns unreadable there.
+             */
+            <Typography variant="body1" sx={{ color: "inherit", opacity: 0.72 }}>
               {description}
             </Typography>
           )}
