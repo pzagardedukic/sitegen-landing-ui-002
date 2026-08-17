@@ -1,5 +1,8 @@
+"use client";
+
 import { getPortfolioItems, getPortfolioSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
+import { getButtonTranslation } from "@/core/translations";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import CategorySelector from "../common/CategorySelector";
@@ -15,6 +18,7 @@ type PortfolioProps = {
 
 export default function Portfolio({ maxCnt }: PortfolioProps) {
   const { lang } = useLanguage();
+  const buttonTranslation = getButtonTranslation(lang);
 
   const portfolioSection = getPortfolioSection(lang);
   const portfolioItems = getPortfolioItems(lang);
@@ -39,49 +43,53 @@ export default function Portfolio({ maxCnt }: PortfolioProps) {
     : paginatedItems;
 
   return (
-    <>
-      {/* Categories */}
-      <Box display="flex" justifyContent="center" mt={1}>
-        <CategorySelector
-          categories={categories}
-          selectedIndex={selectedIndex}
-          onSelectIndex={(index) => {
-            setSelectedIndex(index);
-            resetPage();
-          }}
-        />
-      </Box>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}>
+      {/* Filters sit on the left margin, not centred — see the Figma frame. */}
+      <CategorySelector
+        categories={categories}
+        selectedIndex={selectedIndex}
+        onSelectIndex={(index) => {
+          setSelectedIndex(index);
+          resetPage();
+        }}
+      />
 
-      {/* Cards */}
-      <Box display="flex" flexWrap="wrap" gap={4} px={2} py={4} mt={1}>
+      <Box
+        sx={{
+          display: "grid",
+          gap: "40px",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          },
+        }}
+      >
         {displayedItems.map((item) => (
-          <Box
+          <PortfolioPreviewCard
             key={item.id}
-            sx={{
-              flex: "1 1 300px",
-              maxWidth: "320px",
-            }}
-          >
-            <PortfolioPreviewCard
-              key={item.id}
-              title={item.title}
-              text={item.text}
-              image={item.images[0]}
-              href={withBasePath(
-                `/${getPageSlugByKey("portfolio")}/${getPortfolioSlugById(item.id)}`,
-              )}
-            />
-          </Box>
+            title={item.title}
+            text={item.text}
+            image={item.images[0]}
+            category={item.category}
+            client={item.client}
+            openLabel={buttonTranslation.learnMore}
+            href={withBasePath(
+              `/${getPageSlugByKey("portfolio")}/${getPortfolioSlugById(item.id)}`,
+            )}
+          />
         ))}
       </Box>
 
       {!maxCnt && pageCount > 1 && (
-        <PaginationControls
-          page={page}
-          pageCount={pageCount}
-          onChange={setPage}
-        />
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <PaginationControls
+            page={page}
+            pageCount={pageCount}
+            onChange={setPage}
+          />
+        </Box>
       )}
-    </>
+    </Box>
   );
 }
