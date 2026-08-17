@@ -98,7 +98,10 @@ export default function Header() {
             display: "flex",
             flexDirection: isMobile ? "row-reverse" : "row",
             alignItems: "center",
-            gap: 4,
+            // 36px margins leave ~318px on a 390 screen; a 32px gap plus a divider
+            // pushed the menu button off the edge there.
+            gap: { xs: 1, md: 3 },
+            flexShrink: 0,
           }}
         >
           <HeaderNavigation items={navItems} />
@@ -106,7 +109,11 @@ export default function Header() {
           <Divider
             orientation="vertical"
             flexItem
-            sx={{ borderWidth: 1, borderColor: "white", opacity: 0.5 }}
+            sx={{
+              display: { xs: "none", md: "block" },
+              borderColor: "currentColor",
+              opacity: 0.4,
+            }}
           />
 
           <LanguageSelector

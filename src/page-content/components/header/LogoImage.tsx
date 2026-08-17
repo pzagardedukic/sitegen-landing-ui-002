@@ -16,21 +16,26 @@ function LogoImage({ imageSrc, name }: LogoImageProps) {
       style={{
         display: "flex",
         alignItems: "center",
-        height: "100%",
       }}
     >
+      {/*
+        Sized in pixels, not as a percentage of the bar.
+        A logo is customer-supplied artwork of unknown proportions — the demo data ships
+        a 720x240 image — so a percentage height only works while some ancestor happens to
+        have a resolved height. Capping both dimensions keeps any logo inside the bar.
+      */}
       <Box
         component="img"
         src={imageSrc}
         alt={`${name} Logo`}
         sx={{
-          height: "86%",
+          height: { xs: 28, md: 40 },
+          maxWidth: { xs: 120, md: 220 },
+          width: "auto",
           objectFit: "contain",
-          py: 1.5,
-          transition: "transform 0.3s ease",
-          "&:hover": {
-            transform: "scale(1.05)",
-          },
+          objectPosition: "left center",
+          transition: "opacity 0.2s ease",
+          "&:hover": { opacity: 0.8 },
         }}
       />
     </a>
