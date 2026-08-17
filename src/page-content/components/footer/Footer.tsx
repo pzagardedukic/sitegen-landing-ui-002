@@ -8,7 +8,7 @@ import {
   getButtonTranslation,
   getFooterTranslation,
 } from "@/core/translations";
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
 export default function Footer() {
   const { lang } = useLanguage();
@@ -16,54 +16,53 @@ export default function Footer() {
   const buttonTranslation = getButtonTranslation(lang);
 
   return (
-    <Box
-      position="relative"
-      height="300px"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {/* Place ScrollLink at top center, overlapping over bottom */}
+    <Stack spacing={4} alignItems="center" textAlign="center">
+      {/*
+        Back to top sits in the flow rather than floating above the footer edge. The old
+        absolute placement depended on a fixed 300px footer height and drifted the moment
+        the content changed.
+      */}
+      <ScrollLink
+        href="#main"
+        textPosition="bottom"
+        color="footer.text.secondary"
+        label={buttonTranslation.backToTop}
+      />
+
       <Box
-        sx={{
-          position: "absolute",
-          top: "-85px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          height: "150px",
-        }}
-      >
-        <ScrollLink
-          href="#main"
-          textPosition="bottom"
-          color="grey.500"
-          label={buttonTranslation.backToTop}
-        />
-      </Box>
+        aria-hidden
+        sx={(theme) => ({
+          width: 64,
+          height: 2,
+          borderRadius: 999,
+          backgroundImage: theme.palette.brandGradient,
+        })}
+      />
 
       <FooterSocials
         color="footer.text.secondary"
-        size={32}
-        gap={1}
+        size={28}
+        gap={1.5}
         direction="row"
       />
 
-      <Typography
-        component={Link}
-        href="https://onas.si"
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="body1"
-        color="footer.text.primary"
-        mt={6}
-        underline="hover"
-      >
-        &copy; {footerTranslation.production} {BUILD_YEAR}.
-      </Typography>
-      <Typography variant="body2" color="footer.text.secondary" mt={1}>
-        {footerTranslation.slogan}
-      </Typography>
-    </Box>
+      <Stack spacing={0.5} alignItems="center">
+        <Typography
+          component={Link}
+          href="https://onas.si"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="body2"
+          color="footer.text.primary"
+          underline="hover"
+        >
+          &copy; {footerTranslation.production} {BUILD_YEAR}.
+        </Typography>
+
+        <Typography variant="caption" color="footer.text.secondary">
+          {footerTranslation.slogan}
+        </Typography>
+      </Stack>
+    </Stack>
   );
 }

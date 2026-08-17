@@ -44,28 +44,35 @@ export default function MobileNavDrawer({
       onClose={onClose}
       slotProps={{
         paper: {
-          sx: {
+          sx: (theme) => ({
             width: "100vw",
-            height: "100vh",
-            position: "relative", // important
-          },
+            // dvh, not vh: on a phone the URL bar is part of vh and the last item ends
+            // up under it.
+            height: "100dvh",
+            position: "relative",
+            backgroundColor: theme.palette.header.background,
+            backgroundImage: "none",
+            color: theme.palette.header.text,
+          }),
         },
       }}
     >
       {/* Close button */}
       <IconButton
         onClick={onClose}
+        aria-label="Zapri meni"
         sx={{
           position: "absolute",
           top: 16,
           right: 16,
           zIndex: 1,
+          color: "inherit",
         }}
       >
         <CloseIcon />
       </IconButton>
 
-      <Box sx={{ p: 3, pt: 8 }}>
+      <Box sx={{ px: "36px", pt: 10, pb: 6 }}>
         <Stack spacing={4}>
           {items.map((item) => (
             <Box key={item.label}>
@@ -74,11 +81,13 @@ export default function MobileNavDrawer({
                   component="a"
                   href={item.href}
                   onClick={(event) => handleLinkClick(event, item.href!)}
-                  variant="h4"
+                  variant="h3"
                   sx={{
                     display: "block",
                     textDecoration: "none",
-                    fontWeight: isNavActive(pathname, item.href) ? 700 : 400,
+                    color: isNavActive(pathname, item.href)
+                      ? "header.selectedText"
+                      : "inherit",
                   }}
                 >
                   {item.label}
@@ -102,20 +111,20 @@ export default function MobileNavDrawer({
                           alignItems: "center",
                           gap: 1.5,
                           textDecoration: "none",
-                          fontWeight: active ? 700 : 400,
-                          opacity: active ? 1 : 0.8,
+                          color: active ? "header.selectedText" : "inherit",
+                          opacity: active ? 1 : 0.75,
                         }}
                       >
                         <Box
                           component="span"
-                          sx={{
+                          sx={(theme) => ({
                             width: 6,
                             height: 6,
                             borderRadius: "50%",
-                            bgcolor: "primary.main",
+                            backgroundImage: theme.palette.brandGradient,
                             flexShrink: 0,
                             visibility: active ? "visible" : "hidden",
-                          }}
+                          })}
                         />
                         {sub.label}
                       </Typography>

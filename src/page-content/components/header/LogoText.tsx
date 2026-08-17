@@ -19,15 +19,13 @@ function LogoText({ name }: LogoTextProps) {
       }}
     >
       <Typography
-        variant="body1"
-        fontSize="24px"
+        variant="h4"
         sx={{
           alignSelf: "center",
           py: 1.5,
-          transition: "transform 0.3s ease",
-          "&:hover": {
-            transform: "scale(1.05)",
-          },
+          letterSpacing: "-0.2px",
+          transition: "opacity 0.2s ease",
+          "&:hover": { opacity: 0.8 },
         }}
       >
         {name}

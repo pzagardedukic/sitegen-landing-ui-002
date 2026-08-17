@@ -33,8 +33,20 @@ export default function DesktopNavigation({ items }: DesktopNavigationProps) {
     }
   };
 
+  /* Design system: navigation is the body face at bold 14 — the `navLink` variant. */
+  const linkSx = {
+    ...theme.typography.navLink,
+    color: theme.palette.header.text,
+    px: 1.5,
+    borderRadius: 999,
+    "&:hover": {
+      color: theme.palette.header.hoverText,
+      backgroundColor: "transparent",
+    },
+  };
+
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex", gap: 1 }}>
       {items.map((item) => {
         const hasSubItems = item.subItems?.length;
 
@@ -51,15 +63,7 @@ export default function DesktopNavigation({ items }: DesktopNavigationProps) {
                 <Button
                   color="inherit"
                   endIcon={<ArrowDropDownIcon />}
-                  sx={{
-                    ...theme.typography.body1,
-                    color: theme.palette.header.text,
-                    "&:hover": {
-                      color: theme.palette.header.hoverText,
-                      backgroundColor: "transparent",
-                    },
-                    fontWeight: 500,
-                  }}
+                  sx={linkSx}
                 >
                   {item.label}
                 </Button>
@@ -69,6 +73,8 @@ export default function DesktopNavigation({ items }: DesktopNavigationProps) {
             />
           );
         }
+
+        const active = isNavActive(pathname, item.href);
 
         return (
           <Button
@@ -82,15 +88,26 @@ export default function DesktopNavigation({ items }: DesktopNavigationProps) {
             }}
             color="inherit"
             sx={{
-              ...theme.typography.body1,
-              color: isNavActive(pathname, item.href)
+              ...linkSx,
+              position: "relative",
+              color: active
                 ? theme.palette.header.selectedText
                 : theme.palette.header.text,
-              "&:hover": {
-                color: theme.palette.header.hoverText,
-                backgroundColor: "transparent",
-              },
-              fontWeight: isNavActive(pathname, item.href) ? 600 : 500,
+
+              // Current page is marked with the brand gradient rather than a heavier weight,
+              // so the marker survives a customer's font choice.
+              ...(active && {
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 12,
+                  right: 12,
+                  bottom: 4,
+                  height: 2,
+                  borderRadius: 999,
+                  backgroundImage: theme.palette.brandGradient,
+                },
+              }),
             }}
           >
             {item.label}
