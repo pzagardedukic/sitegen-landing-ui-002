@@ -25,6 +25,7 @@ declare module "@mui/material/styles" {
       tint: string;
       border: string;
       scrim: string;
+      placeholder: string;
     };
   }
 
@@ -48,6 +49,7 @@ declare module "@mui/material/styles" {
       tint?: string;
       border?: string;
       scrim?: string;
+      placeholder?: string;
     };
   }
 

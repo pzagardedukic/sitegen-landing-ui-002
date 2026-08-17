@@ -89,6 +89,9 @@ export function brandSurfaces({ primary, text }: BrandColors) {
   return {
     tint: alpha(primary, 0.06),
     border: alpha(text, 0.12),
+    /** Design system: photographs carry a flat black overlay at 60 %, white copy above it. */
     scrim: alpha("#000000", 0.6),
+    /** Neutral stand-in shown where a photograph is missing. */
+    placeholder: "#A8A8B0",
   };
 }

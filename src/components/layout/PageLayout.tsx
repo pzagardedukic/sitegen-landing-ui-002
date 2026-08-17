@@ -1,10 +1,9 @@
 "use client";
 
 import { Box } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderLayout from "./HeaderLayout";
 import FooterLayout from "./FooterLayout";
-import styles from "./layout.module.scss";
 
 type PageLayoutProps = {
   header: React.ReactNode;
@@ -12,107 +11,41 @@ type PageLayoutProps = {
   children: React.ReactNode;
 };
 
+/*
+ * The page scrolls the document, not an inner container.
+ *
+ * ui-001 put everything inside a `height: 100vh; overflow: hidden` shell with its own
+ * scrolling div, a hidden scrollbar and hand-written arrow/page-key handling. On a phone
+ * that is the shape that misbehaves: 100vh counts the browser's URL bar, so the bottom of
+ * every page sits under it and the bar never collapses. Document scrolling also gives
+ * anchors, scroll-margin-top, scroll restoration and keyboard paging back for free — the
+ * ~70 lines of key handling were reimplementing the browser.
+ */
 export default function PageLayout({
   header,
   footer,
   children,
 }: PageLayoutProps) {
   const [scrolled, setScrolled] = useState(false);
-  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const node = scrollRef.current;
-    if (!node) return;
+    const handleScroll = () => setScrolled(window.scrollY > 8);
 
-    const handleScroll = () => {
-      setScrolled(node.scrollTop > 0);
-    };
-
-    node.addEventListener("scroll", handleScroll);
     handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => node.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const node = scrollRef.current;
-      if (!node) return;
-
-      // Ignore when typing
-      const target = e.target as HTMLElement | null;
-      if (
-        target &&
-        (target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
-          target.isContentEditable)
-      ) {
-        return;
-      }
-
-      const lineStep = 80;
-      const pageStep = node.clientHeight * 0.9;
-
-      switch (e.key) {
-        case "ArrowDown":
-          e.preventDefault();
-          node.scrollBy({ top: lineStep, behavior: "smooth" });
-          break;
-
-        case "ArrowUp":
-          e.preventDefault();
-          node.scrollBy({ top: -lineStep, behavior: "smooth" });
-          break;
-
-        case "ArrowRight":
-          e.preventDefault();
-          node.scrollBy({ left: lineStep, behavior: "smooth" });
-          break;
-
-        case "ArrowLeft":
-          e.preventDefault();
-          node.scrollBy({ left: -lineStep, behavior: "smooth" });
-          break;
-
-        case "PageDown":
-          e.preventDefault();
-          node.scrollBy({ top: pageStep, behavior: "smooth" });
-          break;
-
-        case "PageUp":
-          e.preventDefault();
-          node.scrollBy({ top: -pageStep, behavior: "smooth" });
-          break;
-
-        case "Home":
-          e.preventDefault();
-          node.scrollTo({ top: 0, behavior: "smooth" });
-          break;
-
-        case "End":
-          e.preventDefault();
-          node.scrollTo({
-            top: node.scrollHeight,
-            behavior: "smooth",
-          });
-          break;
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <Box className={styles.pageLayout}>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
       <HeaderLayout scrolled={scrolled}>{header}</HeaderLayout>
 
-      <Box className={styles.mainScrollArea} ref={scrollRef}>
-        <Box id="main" component="main" className={styles.main}>
-          {children}
-        </Box>
-        <FooterLayout>{footer}</FooterLayout>
+      <Box id="main" component="main" sx={{ flex: 1 }}>
+        {children}
       </Box>
+
+      <FooterLayout>{footer}</FooterLayout>
     </Box>
   );
 }
