@@ -82,7 +82,7 @@ Robovi so uveljavljeni na enem mestu v `Section.tsx`, ne po komponentah. Ker pre
 
 **Glava in noga** — `page-content/components/header/Header.tsx`, `footer/Footer.tsx`, `components/navigation/*`, `language-selector/*`. Vključno z vstavljeno kartico hero z belim izrezom in dvema konkavnima zaokrožitvama iz Figme.
 
-Ob koncu faze 2 se mora projekt zgraditi in vse strani odpreti — sekcije so lahko še v vizualu `ui-001`. Zaženem dev strežnik, javim naslov za računalnik in za telefon in **počakam, da potrdiš temo, glavo in nogo**, preden se lotim sekcij.
+Ob koncu faze 2 se mora projekt zgraditi in vse strani odpreti — sekcije so lahko še v vizualu `ui-001`. Vprašam te za zeleno luč za zagon strežnika, javim naslov za računalnik in za telefon in **počakam, da potrdiš temo, glavo in nogo**, preden se lotim sekcij.
 
 ## Faza 3 — sekcije
 
@@ -122,12 +122,13 @@ Za vsako sekcijo se izdela **light** v treh širinah: desktop 1440, tablet 768, 
 
 Po **vsaki** dokončani sekciji:
 
-1. `pnpm dev -H 0.0.0.0` teče v ozadju (zaženem enkrat, ostane gor; Next osveži sam ob spremembi). Vezava na vse vmesnike, da je strežnik dosegljiv tudi s telefona v istem omrežju.
-2. Javim ti **dva naslova** s sidrom sekcije:
+1. **Preden zaženem strežnik, te vprašam za potrditev** — da preveriš, da na vratih 3000 ne teče že kaj drugega. Strežnika ne zaženem sam od sebe.
+2. Po tvoji potrditvi `pnpm dev -H 0.0.0.0` v ozadju (zaženem enkrat, ostane gor; Next osveži sam ob spremembi). Vezava na vse vmesnike, da je strežnik dosegljiv tudi s telefona v istem omrežju.
+3. Javim ti **dva naslova** s sidrom sekcije:
    - računalnik: `http://localhost:3000/#o-nas`
    - telefon: `http://<IP-računalnika-v-LAN>:3000/#o-nas` (IP preberem ob zagonu in ga napišem)
-3. **Počakam na tvojo potrditev.** Naslednje sekcije ne začnem, dokler ne rečeš, da je v redu.
-4. Če imaš pripombe, jih popravim na tej sekciji in ti spet javim oba naslova.
+4. **Počakam na tvojo potrditev.** Naslednje sekcije ne začnem, dokler ne rečeš, da je v redu.
+5. Če imaš pripombe, jih popravim na tej sekciji in ti spet javim oba naslova.
 
 Šele po potrditvi commit te sekcije. Če se dev strežnik sesuje ali so vrata zasedena, javim in ne nadaljujem tiho.
 
