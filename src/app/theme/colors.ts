@@ -1,32 +1,35 @@
+import { footerPalette, headerPalette, type BrandColors } from "./brand";
+
+/*
+ * Defaults only — the site's theme settings override primary, secondary and text.
+ * Everything else on the palette is derived from those three in ./brand.ts, so a
+ * customer's colors reach the whole page and not just the buttons.
+ *
+ * The three defaults are the Figma design-system values.
+ */
+export const brandDefaults: BrandColors = {
+  primary: "#8258C8",
+  secondary: "#2C84C8",
+  text: "#111111",
+};
+
 export const colorConfig = {
   primary: {
-    main: "#807567",
+    main: brandDefaults.primary,
     contrastText: "#ffffff",
   },
   secondary: {
-    main: "#4f4538",
+    main: brandDefaults.secondary,
     contrastText: "#ffffff",
   },
   background: {
     default: "#ffffff",
-    paper: "#fcfcfcff",
+    paper: "#ffffff",
   },
   text: {
-    primary: "rgba(0, 0, 0, 0.82)",
-    secondary: "rgb(119, 119, 119)",
+    primary: brandDefaults.text,
+    secondary: "#5A5A66",
   },
-  header: {
-    background: "rgba(0, 0, 0, 0.9)",
-    text: "#dddddd",
-    hoverText: "white",
-    selectedText: "white",
-    hoverBg: "rgb(119, 119, 119)",
-  },
-  footer: {
-    background: "rgb(245, 245, 245)",
-    text: {
-      primary: "rgb(51, 51, 51)",
-      secondary: "rgb(119, 119, 119)",
-    },
-  },
+  header: headerPalette(brandDefaults),
+  footer: footerPalette(brandDefaults),
 };

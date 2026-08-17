@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Container } from "@mui/material";
 import { useBannerImage } from "@/app/theme/utils/UseBannerImage";
 
@@ -20,7 +22,13 @@ export default function Section({
   headerHeight = "100%",
   children,
 }: SectionProps) {
-  const resolvedHeaderImage = useHeaderImage ? useBannerImage() : undefined;
+  /*
+   * Called unconditionally. ui-001 had `useHeaderImage ? useBannerImage() : undefined`,
+   * which breaks the rules of hooks the moment the flag differs between renders of the
+   * same Section — in editor mode this is a real hook with state and an effect. See ui-001#1.
+   */
+  const bannerImage = useBannerImage();
+  const resolvedHeaderImage = useHeaderImage ? bannerImage : undefined;
 
   const shouldRenderHeaderBackground =
     (headerColor || resolvedHeaderImage) && headerHeight;
@@ -30,19 +38,22 @@ export default function Section({
       id={id}
       component="section"
       className={className}
-      sx={{
-        scrollMarginTop: "100px",
-        py: { xs: 2, lg: 10 },
-        minHeight: "300px",
+      sx={(theme) => ({
+        scrollMarginTop: "96px",
+        py: { xs: 8, sm: 11, md: 15 },
         backgroundColor: resolvedHeaderImage
           ? "transparent"
           : (color ?? "transparent"),
         position: "relative",
-      }}
+        color: shouldRenderHeaderBackground
+          ? theme.palette.common.white
+          : undefined,
+      })}
     >
       {shouldRenderHeaderBackground && (
         <Box
-          sx={{
+          aria-hidden
+          sx={(theme) => ({
             position: "absolute",
             inset: 0,
             height: headerHeight ?? 0,
@@ -51,44 +62,25 @@ export default function Section({
             backgroundColor: resolvedHeaderImage ? undefined : headerColor,
 
             ...(resolvedHeaderImage && {
+              backgroundImage: `url('${resolvedHeaderImage}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+
+              // Design system: photographs sit under a flat black scrim at 60 %,
+              // with white copy over them. No gradient, no filters.
               "&::after": {
                 content: '""',
                 position: "absolute",
                 inset: 0,
-                backgroundImage: `url('${resolvedHeaderImage}')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
-                opacity: 0.55,
-                filter: "contrast(1.1) brightness(0.9) saturate(0.9)",
-                zIndex: 0,
-              },
-
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                inset: 0,
-                background: `
-                  linear-gradient(
-                    180deg,
-                    rgba(0,0,0,0.65) 0%,
-                    rgba(0,0,0,0.55) 45%,
-                    rgba(0,0,0,0.85) 100%
-                  )
-                `,
-                zIndex: 1,
+                backgroundColor: theme.palette.surfaces.scrim,
               },
             }),
-          }}
+          })}
         />
       )}
-      <Container
-        maxWidth="lg"
-        sx={{ color: shouldRenderHeaderBackground ? "white" : undefined }}
-      >
-        {children}
-      </Container>
+
+      <Container maxWidth="lg">{children}</Container>
     </Box>
   );
 }

@@ -9,6 +9,14 @@ export function useBannerImage() {
   const [banner, setBanner] = useState(() => getBannerFromTheme());
 
   useEffect(() => {
+    /*
+     * Hydrate from storage without returning early.
+     *
+     * ui-001 returned here when a banner was already stored, which skipped the
+     * addEventListener below — so after the preview reloaded, every further banner
+     * update from the editor was ignored while colors and fonts kept updating live.
+     * See ui-001#2.
+     */
     const saved = sessionStorage.getItem(STORAGE_KEY);
 
     if (saved) {
@@ -17,7 +25,6 @@ export function useBannerImage() {
 
         if (payload?.banner) {
           setBanner(payload.banner);
-          return;
         }
       } catch {
         sessionStorage.removeItem(STORAGE_KEY);

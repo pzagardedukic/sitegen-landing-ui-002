@@ -1,21 +1,9 @@
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
 import AppProviders from "./AppProviders";
 import { getHomeMeta } from "@/core/static";
+import { manrope, sora } from "@/app/theme/fonts";
 
 const homeMeta = getHomeMeta();
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  preload: false,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  preload: false,
-});
 
 export default function RootLayout({
   children,
@@ -24,7 +12,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang={homeMeta.primaryLanguage}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      {/*
+        Not preloaded in editor mode: the fonts that matter there arrive at runtime
+        through loadGoogleFont, driven by whatever the editor sends. These stay only
+        as the fallback the page starts from.
+      */}
+      <body className={`${sora.variable} ${manrope.variable}`}>
         <AppProviders>{children}</AppProviders>
       </body>
     </html>

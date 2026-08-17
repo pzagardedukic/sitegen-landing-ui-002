@@ -1,6 +1,13 @@
 import { createTheme, Theme } from "@mui/material/styles";
 import baseTheme from "@/theme";
 import { ThemeSettings } from "@/core/types";
+import {
+  brandGradient,
+  brandSurfaces,
+  footerPalette,
+  headerPalette,
+  type BrandColors,
+} from "@/app/theme/brand";
 
 type PreviewThemeOptions = {
   primary?: string | null;
@@ -45,9 +52,23 @@ export function createPreviewTheme(input: CreatePreviewThemeInput): Theme {
   const hasOverrides =
     primary || secondary || text || fontHeading || fontBody || fontBanner;
 
+  // No overrides: baseTheme already carries the derived header, footer, gradient and
+  // surfaces built from the defaults, so it is complete as it stands.
   if (!hasOverrides) {
     return baseTheme;
   }
+
+  /*
+   * Derive from the *resolved* trio, not from the overrides alone. A customer who sets
+   * only `primary` still needs a header, footer and gradient that agree with the
+   * secondary and text the base theme supplies — otherwise half the chrome follows the
+   * brand and half does not.
+   */
+  const brand: BrandColors = {
+    primary: primary || baseTheme.palette.primary.main,
+    secondary: secondary || baseTheme.palette.secondary.main,
+    text: text || baseTheme.palette.text.primary,
+  };
 
   const resolvedBody = fontFamily(fontBody, baseTheme.typography.fontFamily);
 
@@ -83,6 +104,12 @@ export function createPreviewTheme(input: CreatePreviewThemeInput): Theme {
           primary: text,
         },
       }),
+
+      // Kept in step with src/theme.ts — see the note at the top of app/theme/brand.ts.
+      header: headerPalette(brand),
+      footer: footerPalette(brand),
+      brandGradient: brandGradient(brand.primary, brand.secondary),
+      surfaces: brandSurfaces(brand),
     },
 
     typography: {
