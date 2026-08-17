@@ -1,0 +1,124 @@
+{
+  "general": {
+    "primaryLanguage": "SL",
+    "supportedLanguages": [
+      "EN"
+    ]
+  },
+  "home": {
+    "websiteName": {
+      "SL": "NORD Atelier",
+      "EN": "NORD Atelier"
+    },
+    "slogan": {
+      "SL": "Premišljeno pohištvo in svetila za prostore, v katerih je prijetno živeti. Oblikujemo v Ljubljani, izdelujemo v majhnih evropskih delavnicah in dostavljamo po vsej EU.",
+      "EN": "Thoughtful furniture and lighting for spaces that feel good to live in. Designed in Ljubljana, made by small European workshops, and delivered across the EU."
+    },
+    "companyLogo": {
+      "text": "NORD ATELIER",
+      "file": "https://placehold.co/720x240/171714/F4EFE6?text=NORD+ATELIER"
+    }
+  },
+  "contactInfo": {
+    "company": {
+      "name": "NORD Atelier demo d.o.o.",
+      "country": "Slovenia",
+      "address": "Trubarjeva cesta 42",
+      "postalCode": "1000",
+      "postalOffice": "Ljubljana"
+    },
+    "contact": [
+      {
+        "type": "PHONE",
+        "value": "+386 1 555 01 24"
+      },
+      {
+        "type": "EMAIL",
+        "value": "hello@nord-atelier.example"
+      },
+      {
+        "type": "WEBSITE",
+        "value": "https://example.com"
+      },
+      {
+        "type": "INSTAGRAM",
+        "value": "https://www.instagram.com/example"
+      },
+      {
+        "type": "LINKEDIN",
+        "value": "https://www.linkedin.com/company/example"
+      },
+      {
+        "type": "FACEBOOK",
+        "value": "https://www.facebook.com/example"
+      }
+    ]
+  },
+  "optionalSections": {
+    "team": true,
+    "experience": true,
+    "reviews": true,
+    "portfolio": true,
+    "gallery": true,
+    "clients": true,
+    "services": true,
+    "blog": true,
+    "videos": true,
+    "catalogues": true,
+    "pricing": true,
+    "careers": true,
+    "subscribe": true,
+    "faq": true,
+    "schedule": true,
+    "events": true
+  },
+  "blog": {
+    "slugs": [
+      "1-kako-izbrati-jedilno-mizo-za-vsakodnevno-uporabo",
+      "2-tri-plasti-svetlobe-za-prijetnejsi-dom",
+      "3-masiven-les-furnir-ali-laminat-kaj-izbrati",
+      "4-kaj-se-zgodi-med-narocilom-in-dostavo-pohistva",
+      "5-majhen-prostor-brez-majhnih-ambicij"
+    ]
+  },
+  "portfolio": {
+    "slugs": [
+      "1-stanovanje-ob-ljubljanici",
+      "2-hisa-pod-storzicem",
+      "3-salon-hotela-mura",
+      "4-pekarna-kora",
+      "5-kolekcija-axis",
+      "6-svetlobna-instalacija-lightwell"
+    ]
+  },
+  "pricing": {
+    "slugs": [
+      "1-naslanjac-arc",
+      "2-jedilni-stol-fold",
+      "3-kavc-mira-220",
+      "4-jedilna-miza-drift-180",
+      "5-stranska-mizica-slate",
+      "6-modularna-polica-axis",
+      "7-visece-svetilo-halo",
+      "8-talna-svetilka-line",
+      "9-keramicna-vaza-terra",
+      "10-volnena-odeja-loom"
+    ]
+  },
+  "careers": {
+    "slugs": [
+      "1-produktni-oblikovalec-oziroma-oblikovalka",
+      "2-vodja-e-trgovine-in-vsebin",
+      "3-montazer-oziroma-tehnicni-koordinator"
+    ]
+  },
+  "events": {
+    "slugs": [
+      "1-od-vzorca-lesa-do-pravilne-koncne-obdelave",
+      "2-predstavitev-kolekcije-soft-geometry",
+      "3-svetloba-za-zimske-mesece",
+      "4-popravilo-in-ponovna-uporaba-pohistva",
+      "5-odprti-studio-prototipi-in-proces"
+    ]
+  }
+}

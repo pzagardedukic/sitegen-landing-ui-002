@@ -1,0 +1,1453 @@
+{
+  "general": {
+    "websiteType": "SHOP",
+    "businessSector": "HOME_AND_LIVING",
+    "primaryLanguage": "SL",
+    "supportedLanguages": [
+      "EN"
+    ]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#F45A2A",
+      "secondary": "#171714",
+      "text": "#1C1C19"
+    },
+    "fonts": {
+      "heading": "Space Grotesk",
+      "body": "Inter",
+      "banner": "Playfair Display"
+    },
+    "images": {
+      "banner": {
+        "id": "theme-banner",
+        "file": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&h=1250&q=85"
+      }
+    }
+  },
+  "home": {
+    "websiteName": "NORD Atelier",
+    "slogan": "Premišljeno pohištvo in svetila za prostore, v katerih je prijetno živeti. Oblikujemo v Ljubljani, izdelujemo v majhnih evropskih delavnicah in dostavljamo po vsej EU.",
+    "companyLogo": {
+      "text": "NORD ATELIER",
+      "image": {
+        "id": "company-logo",
+        "file": "https://placehold.co/720x240/171714/F4EFE6?text=NORD+ATELIER"
+      }
+    }
+  },
+  "contactInfo": {
+    "company": {
+      "name": "NORD Atelier demo d.o.o.",
+      "country": "Slovenia",
+      "address": "Trubarjeva cesta 42",
+      "postalCode": "1000",
+      "postalOffice": "Ljubljana"
+    },
+    "map": {
+      "enabled": true,
+      "url": "https://www.google.com/maps/search/?api=1&query=46.056946,14.505751",
+      "lat": "46.056946",
+      "lng": "14.505751"
+    },
+    "contact": [
+      {
+        "type": "PHONE",
+        "value": "+386 1 555 01 24"
+      },
+      {
+        "type": "EMAIL",
+        "value": "hello@nord-atelier.example"
+      },
+      {
+        "type": "WEBSITE",
+        "value": "https://example.com"
+      },
+      {
+        "type": "INSTAGRAM",
+        "value": "https://www.instagram.com/example"
+      },
+      {
+        "type": "LINKEDIN",
+        "value": "https://www.linkedin.com/company/example"
+      },
+      {
+        "type": "FACEBOOK",
+        "value": "https://www.facebook.com/example"
+      }
+    ],
+    "workingHours": {
+      "enabled": true,
+      "items": [
+        {
+          "tag": "MONDAY",
+          "open": true,
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "tag": "TUESDAY",
+          "open": true,
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "tag": "WEDNESDAY",
+          "open": true,
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "tag": "THURSDAY",
+          "open": true,
+          "from": "09:00",
+          "to": "19:00"
+        },
+        {
+          "tag": "FRIDAY",
+          "open": true,
+          "from": "09:00",
+          "to": "17:00"
+        },
+        {
+          "tag": "SATURDAY",
+          "open": true,
+          "from": "10:00",
+          "to": "14:00"
+        },
+        {
+          "tag": "SUNDAY",
+          "open": false,
+          "from": "10:00",
+          "to": "14:00"
+        }
+      ],
+      "note": "Za osebno svetovanje, ogled materialov ali prevzem večjih naročil priporočamo predhodno rezervacijo termina. Ob praznikih in med kolektivnim dopustom je razstavni salon lahko zaprt."
+    }
+  },
+  "about": {
+    "aboutType": "ABOUT_COMPANY",
+    "sectionName": "O ateljeju",
+    "text": "NORD Atelier je neodvisen oblikovalski studio in spletna trgovina za pohištvo, svetila ter premišljene dodatke za dom. Združujemo mirno severnjaško estetiko, lokalno obrtniško znanje in materiale, izbrane za dolgo življenjsko dobo. Vsak izdelek razvijamo tako, da je prijeten za uporabo, enostaven za vzdrževanje in dovolj značilen, da prostoru doda identiteto.",
+    "establishedYear": 2017,
+    "items": [
+      {
+        "text": "Materiale izbiramo na podlagi izvora, občutka na dotik in možnosti popravil. Najpogosteje uporabljamo certificiran masiven les, prašno barvano kovino, naravna olja, volno ter reciklirano steklo. Dobavitelje obiskujemo osebno in z njimi razvijamo rešitve, ki zmanjšujejo odpad pri proizvodnji.",
+        "image": {
+          "id": "about-materials",
+          "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "text": "Kolekcije nastajajo kot prilagodljivi sistemi, ne kot kratkotrajni trendi. Mize, police in sedežno pohištvo so zasnovani tako, da jih je mogoče nadgraditi, ponovno oblaziniti ali prilagoditi novemu prostoru. Tako izdelek ostane uporaben tudi takrat, ko se življenjske potrebe spremenijo.",
+        "image": {
+          "id": "about-systems",
+          "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "text": "Poleg spletnega nakupa nudimo svetovanje pri izbiri dimenzij, barv in kombinacij materialov. Pri večjih naročilih pripravimo postavitev, vzorce ter načrt dostave in montaže, da je pot od prve ideje do dokončanega prostora jasna in usklajena.",
+        "image": {
+          "id": "about-service",
+          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      }
+    ]
+  },
+  "legal": {
+    "privacyPolicy": {
+      "id": "privacy-sl",
+      "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    },
+    "termsOfService": {
+      "id": "terms-sl",
+      "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    }
+  },
+  "team": {
+    "text": "Majhna interdisciplinarna ekipa skrbi, da se oblikovalska ideja dosledno prenese v prototip, proizvodnjo, spletno izkušnjo in končno postavitev pri naročniku. Pri vsakem projektu sodelujemo neposredno, zato so odločitve hitre, komunikacija pregledna, rezultat pa usklajen od prve skice do zadnjega detajla.",
+    "items": [
+      {
+        "name": "Ana Kovač",
+        "text": "Ustanoviteljica in kreativna direktorica vodi razvoj kolekcij ter notranje projekte. Posebej jo zanimajo razmerja med svetlobo, naravnimi materiali in vsakodnevnimi navadami uporabnikov.",
+        "contact": [
+          {
+            "type": "EMAIL",
+            "value": "ana@nord-atelier.example"
+          },
+          {
+            "type": "LINKEDIN",
+            "value": "https://www.linkedin.com/in/example"
+          },
+          {
+            "type": "INSTAGRAM",
+            "value": "https://www.instagram.com/example"
+          }
+        ],
+        "image": {
+          "id": "team-ana",
+          "file": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "name": "Luka Zupan",
+        "text": "Produktni oblikovalec, odgovoren za konstrukcijske rešitve, prototipe in sodelovanje z izdelovalci. Pri razvoju išče ravnotežje med preprosto montažo, učinkovito porabo materiala in udobjem.",
+        "contact": [
+          {
+            "type": "EMAIL",
+            "value": "luka@nord-atelier.example"
+          },
+          {
+            "type": "LINKEDIN",
+            "value": "https://www.linkedin.com/in/example"
+          }
+        ],
+        "image": {
+          "id": "team-luka",
+          "file": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "name": "Maja Vidmar",
+        "text": "Arhitektka in vodja projektov usklajuje izmere, načrte, vzorce, roke ter izvedbo na lokaciji. Naročnikom pomaga prevesti široke želje v jasen nabor odločitev in izvedljiv proračun.",
+        "contact": [
+          {
+            "type": "EMAIL",
+            "value": "maja@nord-atelier.example"
+          },
+          {
+            "type": "PHONE",
+            "value": "+386 1 555 01 25"
+          }
+        ],
+        "image": {
+          "id": "team-maja",
+          "file": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "name": "Nejc Potočnik",
+        "text": "Vodja spletne trgovine in podpore skrbi za produktne podatke, naročila, dostavo ter poprodajno pomoč. Njegov cilj je, da so tudi zahtevnejši spletni nakupi razumljivi in brez neprijetnih presenečenj.",
+        "contact": [
+          {
+            "type": "EMAIL",
+            "value": "support@nord-atelier.example"
+          },
+          {
+            "type": "PHONE",
+            "value": "+386 1 555 01 26"
+          }
+        ],
+        "image": {
+          "id": "team-nejc",
+          "file": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      }
+    ]
+  },
+  "experience": {
+    "text": "V zadnjih letih smo opremili zasebne domove, manjše hotele, restavracije, pisarne in trgovine po Sloveniji ter sosednjih državah. Izkušnje iz projektnega dela neposredno prenašamo v razvoj izdelkov, zato so kolekcije preverjene v resničnih prostorih in pri intenzivni vsakodnevni uporabi.",
+    "clientCount": 86,
+    "projectCount": 142,
+    "items": [
+      {
+        "url": "https://example.com/certificates/responsible-wood",
+        "image": {
+          "id": "certificate-wood",
+          "file": "https://placehold.co/720x360/FFFFFF/171714?text=RESPONSIBLE+WOOD"
+        }
+      },
+      {
+        "url": "https://example.com/certificates/european-craft",
+        "image": {
+          "id": "certificate-craft",
+          "file": "https://placehold.co/720x360/FFFFFF/171714?text=EUROPEAN+CRAFT"
+        }
+      },
+      {
+        "url": "https://example.com/certificates/design-award",
+        "image": {
+          "id": "certificate-design",
+          "file": "https://placehold.co/720x360/FFFFFF/171714?text=DESIGN+AWARD+2025"
+        }
+      }
+    ]
+  },
+  "reviews": {
+    "text": "Naročniki nas najpogosteje priporočijo zaradi jasnega procesa, mirne komunikacije in rešitev, ki so vizualno močne, vendar ostanejo praktične. Spodnja mnenja prikazujejo različne vrste sodelovanja: od posameznega spletnega nakupa do popolne opreme prostora.",
+    "items": [
+      {
+        "title": "Premišljeno od prve skice do montaže",
+        "text": "Ekipa je naš nejasen seznam želja pretvorila v topel, funkcionalen dom. Predlogi materialov so bili dobro obrazloženi, roki realni, montaža pa izjemno organizirana. Po dveh letih je pohištvo še vedno videti odlično in ga uporabljamo brez kompromisov.",
+        "url": "https://example.com/reviews/1",
+        "image": {
+          "id": "review-1",
+          "file": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "title": "Spletni nakup z osebnim pristopom",
+        "text": "Pred naročilom jedilnih stolov smo prejeli vzorce tkanin in natančno razlago razlik med izvedbami. Dostava je bila napovedana vnaprej, embalaža premišljena, navodila pa jasna. Takšna podpora močno olajša večji nakup na daljavo.",
+        "url": "https://example.com/reviews/2",
+        "image": {
+          "id": "review-2",
+          "file": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "title": "Butični hotel je dobil prepoznaven značaj",
+        "text": "NORD je povezal recepcijo, zajtrkovalnico in sobe v enotno zgodbo, ne da bi prostori delovali enako. Posebej cenimo trpežne materiale, zamenljive dele ter dokumentacijo, ki naši ekipi omogoča enostavno vzdrževanje.",
+        "url": "https://example.com/reviews/3",
+        "image": {
+          "id": "review-3",
+          "file": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      },
+      {
+        "title": "Zanesljiv partner za zahtevno odprtje trgovine",
+        "text": "Kljub kratkemu roku so bili načrti, vzorci in dobave ves čas pregledni. Ekipa je hitro reševala spremembe na lokaciji in predlagala podrobnosti, ki izboljšujejo tok obiskovalcev. Prostor je bil pripravljen pravočasno in brez zniževanja kakovosti.",
+        "url": "https://example.com/reviews/4",
+        "image": {
+          "id": "review-4",
+          "file": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1100&q=85"
+        }
+      }
+    ]
+  },
+  "portfolio": {
+    "sectionName": "Izbrani projekti",
+    "text": "Projektno delo nam omogoča raziskovanje merila, materialov in navad uporabnikov v zelo različnih okoljih. Izbor vključuje zasebne interierje, gostinske prostore, trgovine in produktne kolekcije ter prikazuje, kako se enaka oblikovalska načela prilagodijo različnim naročnikom in proračunom.",
+    "categories": [
+      {
+        "id": "portfolio-residential",
+        "name": "Bivalni prostori"
+      },
+      {
+        "id": "portfolio-hospitality",
+        "name": "Gostinstvo"
+      },
+      {
+        "id": "portfolio-retail",
+        "name": "Trgovski prostori"
+      },
+      {
+        "id": "portfolio-product",
+        "name": "Produktno oblikovanje"
+      }
+    ],
+    "items": [
+      {
+        "title": "Stanovanje ob Ljubljanici",
+        "text": "Prenova mestnega stanovanja je odprla osrednji bivalni prostor in ustvarila dolgo pohištveno linijo, ki povezuje kuhinjo, knjižnico ter delovni kotiček. Hrast, lan in brušeno jeklo tvorijo mirno osnovo, premična svetila in barvni dodatki pa omogočajo, da se prostor spreminja skozi dan.",
+        "client": "Zasebni naročnik, Ljubljana",
+        "date": "2026-04-18",
+        "categoryId": "portfolio-residential",
+        "images": [
+          {
+            "id": "project-river-1",
+            "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-river-2",
+            "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-river-3",
+            "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      },
+      {
+        "title": "Hiša pod Storžičem",
+        "text": "Za družinsko hišo smo razvili trpežen interier, ki prenese mokro pohodniško opremo, otroke in pogosta druženja. Vgradne omare skrivajo vsakodnevni nered, osrednja miza pa ostaja odprto zbirališče. Lokalni macesen sčasoma pridobiva značaj in povezuje notranjost z okoliško pokrajino.",
+        "client": "Družina R., Preddvor",
+        "date": "2025-11-07",
+        "categoryId": "portfolio-residential",
+        "images": [
+          {
+            "id": "project-house-1",
+            "file": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-house-2",
+            "file": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-house-3",
+            "file": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      },
+      {
+        "title": "Salon hotela Mura",
+        "text": "Javni del butičnega hotela smo zasnovali kot zaporedje manjših, udobnih območij za zajtrk, delo in večerni pogovor. Po meri izdelane klopi zmanjšujejo hrup, večnivojska svetloba pa ustvarja prijetno atmosfero od zgodnjega jutra do poznega večera.",
+        "client": "Hotel Mura, Radenci",
+        "date": "2025-05-23",
+        "categoryId": "portfolio-hospitality",
+        "images": [
+          {
+            "id": "project-hotel-1",
+            "file": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-hotel-2",
+            "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-hotel-3",
+            "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      },
+      {
+        "title": "Pekarna Kora",
+        "text": "Majhen lokal smo organizirali okoli jasne poti od vhoda do vitrine in prevzema. Topel les ter teksturirane ploščice poudarjajo ročno izdelavo, modularne police pa omogočajo hitro spreminjanje ponudbe. Vsi najbolj obremenjeni elementi so zamenljivi brez večjih gradbenih posegov.",
+        "client": "Kora pekarna, Maribor",
+        "date": "2024-10-12",
+        "categoryId": "portfolio-retail",
+        "images": [
+          {
+            "id": "project-bakery-1",
+            "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-bakery-2",
+            "file": "https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-bakery-3",
+            "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      },
+      {
+        "title": "Kolekcija Axis",
+        "text": "Axis je družina miz, klopi in polic, zgrajena okoli enega aluminijastega spoja. Sistem omogoča različne dolžine in višine, zato deluje v majhnem stanovanju, pisarni ali gostinskem prostoru. Posamezne dele je mogoče naročiti ločeno in preprosto zamenjati.",
+        "client": "Lastna kolekcija",
+        "date": "2026-02-14",
+        "categoryId": "portfolio-product",
+        "images": [
+          {
+            "id": "project-axis-1",
+            "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-axis-2",
+            "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-axis-3",
+            "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      },
+      {
+        "title": "Svetlobna instalacija Lightwell",
+        "text": "Za vhodno avlo poslovne stavbe smo razvili kompozicijo ročno pihanih steklenih svetil, ki se odziva na višino prostora in pogled z ulice. Topla svetloba poudari teksturo stekla, krmiljenje pa prilagaja intenzivnost dnevni svetlobi ter večernim dogodkom.",
+        "client": "Vektor Center, Celje",
+        "date": "2024-06-28",
+        "categoryId": "portfolio-product",
+        "images": [
+          {
+            "id": "project-lightwell-1",
+            "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-lightwell-2",
+            "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "project-lightwell-3",
+            "file": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "items": [
+      {
+        "id": "gallery-01",
+        "file": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&h=1250&q=85"
+      },
+      {
+        "id": "gallery-02",
+        "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-03",
+        "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-04",
+        "file": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-05",
+        "file": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-06",
+        "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-07",
+        "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-08",
+        "file": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-09",
+        "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-10",
+        "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-11",
+        "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+      },
+      {
+        "id": "gallery-12",
+        "file": "https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=1600&h=1000&q=85"
+      }
+    ]
+  },
+  "clients": {
+    "items": [
+      {
+        "image": {
+          "id": "client-mura",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=HOTEL+MURA"
+        },
+        "url": "https://example.com/clients/hotel-mura"
+      },
+      {
+        "image": {
+          "id": "client-kora",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=KORA+BAKERY"
+        },
+        "url": "https://example.com/clients/kora"
+      },
+      {
+        "image": {
+          "id": "client-vektor",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=VEKTOR+CENTER"
+        },
+        "url": "https://example.com/clients/vektor"
+      },
+      {
+        "image": {
+          "id": "client-lumen",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=LUMEN+HOUSE"
+        },
+        "url": "https://example.com/clients/lumen"
+      },
+      {
+        "image": {
+          "id": "client-orbit",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=ORBIT+STUDIO"
+        },
+        "url": "https://example.com/clients/orbit"
+      },
+      {
+        "image": {
+          "id": "client-riva",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=RIVA+HOMES"
+        },
+        "url": "https://example.com/clients/riva"
+      },
+      {
+        "image": {
+          "id": "client-grove",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=GROVE+OFFICE"
+        },
+        "url": "https://example.com/clients/grove"
+      },
+      {
+        "image": {
+          "id": "client-forma",
+          "file": "https://placehold.co/640x320/F4EFE6/171714?text=FORMA+MARKET"
+        },
+        "url": "https://example.com/clients/forma"
+      }
+    ]
+  },
+  "services": {
+    "text": "Storitve so oblikovane modularno: izberete lahko samostojno svetovanje, razvoj posameznega kosa ali celovit proces od koncepta do montaže. Obseg, roki in rezultati so opredeljeni na začetku, zato je jasno, katere odločitve sprejemamo skupaj in kaj prejmete v posamezni fazi.",
+    "items": [
+      {
+        "title": "Koncept interierja in razporeditev prostora",
+        "text": "Za stanovanja, gostinske lokale in manjše poslovne prostore pripravimo funkcionalno zasnovo, materialno zgodbo ter izbor ključnih kosov. Proces vključuje analizo navad uporabnikov, več možnosti postavitve in dovolj natančne prikaze, da so odločitve razumljive še pred naročilom.",
+        "features": [
+          "Uvodni intervju in analiza potreb",
+          "Dve do tri možnosti tlorisne postavitve",
+          "Barvna, materialna in svetlobna usmeritev",
+          "Okvirni popis opreme in investicijska ocena"
+        ],
+        "image": {
+          "id": "service-interior",
+          "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Razvoj pohištva po meri",
+        "text": "Ko standardne dimenzije ali funkcije ne zadoščajo, razvijemo pohištvo po meri prostora in načina uporabe. Pripravimo konstrukcijske detajle, vzorce ter prototip kritičnih delov, nato uskladimo izdelavo z izbrano delavnico in spremljamo kakovost do montaže.",
+        "features": [
+          "Izmere in preverjanje obstoječega prostora",
+          "Tehnične risbe ter izbor okovja",
+          "Vzorec materiala ali delni prototip",
+          "Koordinacija izdelave, dostave in montaže"
+        ],
+        "image": {
+          "id": "service-custom",
+          "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Izbor svetil, tekstila in materialov",
+        "text": "Obstoječ prostor lahko bistveno izboljšamo brez gradbenih posegov. S kombinacijo splošne, delovne in ambientalne svetlobe ter premišljenim izborom tekstila ustvarimo boljše udobje, akustiko in razpoloženje. Predlagane izdelke je mogoče naročiti neposredno prek ateljeja.",
+        "features": [
+          "Pregled obstoječe osvetlitve in potreb",
+          "Načrt svetlobnih plasti in temperatur",
+          "Izbor zaves, preprog in oblazinjenja",
+          "Vzorci ter primerjava več cenovnih razredov"
+        ],
+        "image": {
+          "id": "service-lighting",
+          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Dostava, montaža in končno stiliranje",
+        "text": "Za večja naročila pripravimo enoten logistični načrt, preverimo dostop in zaščito površin ter uskladimo prihod različnih izdelovalcev. Po montaži opravimo pregled, uredimo embalažo in postavimo manjše elemente, da je prostor pripravljen za takojšnjo uporabo.",
+        "features": [
+          "Načrt dostopa, terminov in odgovornosti",
+          "Strokovna montaža ter zaščita prostora",
+          "Končni pregled in zapis morebitnih popravkov",
+          "Odvoz embalaže ter navodila za vzdrževanje"
+        ],
+        "image": {
+          "id": "service-installation",
+          "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      }
+    ]
+  },
+  "blog": {
+    "text": "V zapiskih delimo praktične nasvete iz projektov, razlage materialov in vpogled v razvoj izdelkov. Prispevki so namenjeni vsem, ki želijo sprejemati bolj premišljene odločitve o prostoru, kakovosti in dolgoročni uporabi pohištva.",
+    "items": [
+      {
+        "title": "Kako izbrati jedilno mizo za vsakodnevno uporabo",
+        "description": "Dobra jedilna miza mora upoštevati več kot število stolov. Pojasnjujemo priporočene odmike, razlike med oblikami, vpliv podnožja na udobje in materiale, ki prenesejo delo od doma, otroške projekte ter dolge večerje.",
+        "author": "Ana Kovač",
+        "date": "2026-07-22",
+        "image": {
+          "id": "blog-table",
+          "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Tri plasti svetlobe za prijetnejši dom",
+        "description": "Eno stropno svetilo redko zadostuje za vse dejavnosti. Na konkretnem primeru pokažemo, kako združiti splošno, delovno in ambientalno svetlobo, izbrati primerno barvno temperaturo ter zmanjšati bleščanje v večernih urah.",
+        "author": "Maja Vidmar",
+        "date": "2026-06-11",
+        "image": {
+          "id": "blog-light",
+          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Masiven les, furnir ali laminat: kaj izbrati",
+        "description": "Vsak material ima smiselno področje uporabe. Primerjamo občutek, ceno, odpornost, možnosti popravil in tipične napake pri vzdrževanju, da lahko izberete rešitev glede na prostor in način uporabe, ne samo glede na videz.",
+        "author": "Luka Zupan",
+        "date": "2026-04-30",
+        "image": {
+          "id": "blog-material",
+          "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Kaj se zgodi med naročilom in dostavo pohištva",
+        "description": "Izdelava kakovostnega kosa vključuje nabavo materiala, pripravo delavniških risb, proizvodnjo, površinsko obdelavo in kontrolo kakovosti. Predstavljamo tipičen potek ter pojasnjujemo, zakaj se dobavni roki razlikujejo med standardnimi in prilagojenimi izdelki.",
+        "author": "Nejc Potočnik",
+        "date": "2026-03-19",
+        "image": {
+          "id": "blog-process",
+          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Majhen prostor brez majhnih ambicij",
+        "description": "Pri majhnem stanovanju največ pridobimo z jasnimi prioritetami in pohištvom, ki opravlja več nalog. Zbrali smo pet preverjenih pristopov za shranjevanje, prehode, zložljive elemente in vizualno umirjenost brez občutka praznine.",
+        "author": "Ana Kovač",
+        "date": "2026-02-05",
+        "image": {
+          "id": "blog-small-space",
+          "file": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      }
+    ]
+  },
+  "videos": {
+    "items": [
+      "https://www.youtube.com/watch?v=M7lc1UVf-VE",
+      "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+    ]
+  },
+  "catalogues": {
+    "items": [
+      {
+        "displayName": "NORD Atelier — Collection 2026 (SL/EN)",
+        "size": 2480000,
+        "file": {
+          "id": "catalogue-collection-2026",
+          "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        }
+      },
+      {
+        "displayName": "Materials and finishes guide (SL/EN)",
+        "size": 1860000,
+        "file": {
+          "id": "catalogue-materials",
+          "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        }
+      },
+      {
+        "displayName": "Trade and hospitality specification sheet",
+        "size": 940000,
+        "file": {
+          "id": "catalogue-trade",
+          "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        }
+      }
+    ]
+  },
+  "pricing": {
+    "type": "PRICING_STORE",
+    "sectionName": "Trgovina",
+    "text": "Kolekcija združuje pohištvo, svetila in dodatke, ki jih je mogoče naročiti v standardnih izvedbah ali prilagoditi z izbranimi materiali. Pri vsakem izdelku so navedeni bistveni podatki za primerjavo; pred večjim naročilom lahko zahtevate vzorec, svetovanje ali ponudbo za dostavo in montažo.",
+    "categories": [
+      {
+        "id": "price-seating",
+        "name": "Sedežno pohištvo"
+      },
+      {
+        "id": "price-tables",
+        "name": "Mize in police"
+      },
+      {
+        "id": "price-lighting",
+        "name": "Svetila"
+      },
+      {
+        "id": "price-accessories",
+        "name": "Dodatki"
+      }
+    ],
+    "items": [
+      {
+        "title": "Naslanjač Arc",
+        "text": "Globok, vendar vizualno lahek naslanjač za branje in sproščen pogovor. Ogrodje iz masivnega jesena je ročno oljeno, snemljiva prevleka pa omogoča lažje čiščenje in kasnejšo zamenjavo tkanine. Na voljo je v šestih standardnih barvah.",
+        "categoryId": "price-seating",
+        "price": {
+          "onAgreement": false,
+          "value": "890.00",
+          "discountedValue": "790.00",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-arc-1",
+            "file": "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-arc-2",
+            "file": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Material ogrodja",
+            "value": "Masiven jesen z naravnim oljnim premazom"
+          },
+          {
+            "label": "Oblazinjenje",
+            "value": "Snemljiva volnena tkanina, 45.000 Martindale"
+          },
+          {
+            "label": "Mere",
+            "value": "78 × 82 × 74 cm; višina sedišča 42 cm"
+          }
+        ],
+        "recommended": true,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Jedilni stol Fold",
+        "text": "Kompakten jedilni stol z rahlo ukrivljenim naslonom in širokim sedežem. Konstrukcija je primerna za vsakodnevno uporabo, zaradi zložljive geometrije pa se stoli enostavno shranijo. Izbirate lahko med lesenim ali oblazinjenim sedežem.",
+        "categoryId": "price-seating",
+        "price": {
+          "onAgreement": false,
+          "value": "340.00",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-fold-1",
+            "file": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-fold-2",
+            "file": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Material",
+            "value": "Bukov vezan les in masiven bukov okvir"
+          },
+          {
+            "label": "Možnost zlaganja",
+            "value": "Do štirje stoli v enem stabilnem stolpu"
+          },
+          {
+            "label": "Mere",
+            "value": "49 × 54 × 79 cm; višina sedišča 46 cm"
+          }
+        ],
+        "recommended": false,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Kavč Mira 220",
+        "text": "Trisedežni kavč z mehko, a dobro podprto geometrijo za dnevno sobo ali hotelski salon. Prevleke vseh glavnih elementov so snemljive, sedežne blazine pa je mogoče po letih uporabe zamenjati brez menjave ogrodja.",
+        "categoryId": "price-seating",
+        "price": {
+          "onAgreement": false,
+          "value": "2190.00",
+          "discountedValue": "1990.00",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-mira-1",
+            "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-mira-2",
+            "file": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Širina",
+            "value": "220 cm; na voljo tudi izvedbi 180 in 260 cm"
+          },
+          {
+            "label": "Polnilo",
+            "value": "Večplastna pena in reciklirana poliestrska vlakna"
+          },
+          {
+            "label": "Dobavni rok",
+            "value": "Približno 8 do 10 tednov"
+          }
+        ],
+        "recommended": true,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Jedilna miza Drift 180",
+        "text": "Miza z mehko zaobljenimi robovi in zamaknjeno konstrukcijo podnožja, ki pušča dovolj prostora za noge. Standardna dolžina udobno sprejme šest oseb, z dodatnim podaljškom pa je primerna tudi za večja druženja.",
+        "categoryId": "price-tables",
+        "price": {
+          "onAgreement": false,
+          "value": "1480.00",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-drift-1",
+            "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-drift-2",
+            "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Plošča",
+            "value": "Furniran hrast z masivnim robom debeline 28 mm"
+          },
+          {
+            "label": "Mere",
+            "value": "180 × 90 × 75 cm; podaljšek 50 cm"
+          },
+          {
+            "label": "Zaključek",
+            "value": "Naravno olje ali mat lak po izboru"
+          }
+        ],
+        "recommended": false,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Stranska mizica Slate",
+        "text": "Majhna mizica za ob kavč ali posteljo združuje tanko kovinsko ogrodje in kamnito ploščo z naravno strukturo. Vsak kos je nekoliko drugačen, površina pa je zaščitena za vsakodnevno uporabo in enostavno čiščenje.",
+        "categoryId": "price-tables",
+        "price": {
+          "onAgreement": false,
+          "value": "560.00",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-slate-1",
+            "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-slate-2",
+            "file": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Plošča",
+            "value": "Naravni apnenec z zaščitnim premazom"
+          },
+          {
+            "label": "Ogrodje",
+            "value": "Prašno barvano jeklo v črni ali peščeni barvi"
+          },
+          {
+            "label": "Mere",
+            "value": "42 × 38 × 52 cm"
+          }
+        ],
+        "recommended": false,
+        "status": "UNAVAILABLE"
+      },
+      {
+        "title": "Modularna polica Axis",
+        "text": "Odprt sistem polic za knjige, predmete in manjšo elektroniko. Začetni modul lahko kasneje razširite po širini ali višini, police pa prestavljate brez posebnega orodja. Sistem je primeren tudi za lahke prostorske pregrade.",
+        "categoryId": "price-tables",
+        "price": {
+          "onAgreement": true,
+          "value": "",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-axis-shelf-1",
+            "file": "https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-axis-shelf-2",
+            "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Osnovni modul",
+            "value": "Širina 120 cm, višina 190 cm, štiri police"
+          },
+          {
+            "label": "Prilagoditve",
+            "value": "Dodatni moduli, zaprti elementi in kabelske odprtine"
+          },
+          {
+            "label": "Ponudba",
+            "value": "Cena se pripravi glede na sestavo in zaključke"
+          }
+        ],
+        "recommended": false,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Viseče svetilo Halo",
+        "text": "Krožno viseče svetilo oddaja mehko, enakomerno svetlobo nad jedilno mizo ali delovno površino. Zatemnljiv LED-modul je mogoče servisirati, tekstilni kabel pa naročiti v barvi, ki se ujema z interierjem.",
+        "categoryId": "price-lighting",
+        "price": {
+          "onAgreement": false,
+          "value": "420.00",
+          "discountedValue": "385.00",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-halo-1",
+            "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-halo-2",
+            "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Svetlobni vir",
+            "value": "Zamenljiv LED 24 W, 2700 K, CRI 90+"
+          },
+          {
+            "label": "Premer",
+            "value": "60 cm; stropna rozeta je vključena"
+          },
+          {
+            "label": "Zatemnjevanje",
+            "value": "Združljivo s sistemom DALI in faznim zatemnilnikom"
+          }
+        ],
+        "recommended": true,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Talna svetilka Line",
+        "text": "Vitka talna svetilka za branje združuje usmerjeno svetlobo in diskretno ambientalno osvetlitev. Glava se zavrti brez vidnih vijakov, stikalo pa omogoča ločeno zatemnjevanje obeh svetlobnih virov.",
+        "categoryId": "price-lighting",
+        "price": {
+          "onAgreement": false,
+          "value": "690.00",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-line-1",
+            "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-line-2",
+            "file": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Višina",
+            "value": "148 cm z vrtljivo glavo"
+          },
+          {
+            "label": "Barve",
+            "value": "Grafitna, peščena in opečnato rdeča"
+          },
+          {
+            "label": "Razpoložljivost",
+            "value": "Prva serija bo na voljo oktobra 2026"
+          }
+        ],
+        "recommended": false,
+        "status": "COMING_SOON"
+      },
+      {
+        "title": "Keramična vaza Terra",
+        "text": "Ročno oblikovana vaza z mat površino in rahlo nepravilnim robom. Deluje kot samostojen predmet ali posoda za suhe in sveže aranžmaje. Zaradi ročnega postopka se odtenek in tekstura med posameznimi kosi naravno razlikujeta.",
+        "categoryId": "price-accessories",
+        "price": {
+          "onAgreement": false,
+          "value": "95.00",
+          "discountedValue": "",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-terra-1",
+            "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-terra-2",
+            "file": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Izdelava",
+            "value": "Ročno izdelano v majhni seriji v Sloveniji"
+          },
+          {
+            "label": "Višina",
+            "value": "28 cm; odprtina premera 8 cm"
+          },
+          {
+            "label": "Nega",
+            "value": "Ročno pranje z blagim detergentom"
+          }
+        ],
+        "recommended": false,
+        "status": "AVAILABLE"
+      },
+      {
+        "title": "Volnena odeja Loom",
+        "text": "Mehka odeja iz sledljive evropske volne je tkana v dveh barvnih slojih, zato ima vsaka stran nekoliko drugačen značaj. Primerna je za kavč, posteljo ali hladnejše večere na pokriti terasi.",
+        "categoryId": "price-accessories",
+        "price": {
+          "onAgreement": false,
+          "value": "140.00",
+          "discountedValue": "119.00",
+          "currency": "EUR",
+          "unit": "ITEM",
+          "tax": 22
+        },
+        "images": [
+          {
+            "id": "product-loom-1",
+            "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+          },
+          {
+            "id": "product-loom-2",
+            "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+          }
+        ],
+        "features": [
+          {
+            "label": "Sestava",
+            "value": "100 % evropska volna brez sintetičnih dodatkov"
+          },
+          {
+            "label": "Mere",
+            "value": "140 × 200 cm z ročno zaključenimi robovi"
+          },
+          {
+            "label": "Nega",
+            "value": "Zračenje in občasno kemično čiščenje"
+          }
+        ],
+        "recommended": false,
+        "status": "DISABLED"
+      }
+    ],
+    "showTax": true,
+    "note": "Vse cene vključujejo 22 % DDV. Standardna dostava v Sloveniji se izračuna ob zaključku naročila; za mednarodno dostavo, montažo ali izdelke po meri pripravimo ločeno ponudbo. Prikazane fotografije lahko zaradi nastavitev zaslona nekoliko odstopajo od dejanskih materialov."
+  },
+  "careers": {
+    "text": "Iščemo radovedne, zanesljive sodelavce, ki razumejo, da dober izdelek nastane skozi veliko natančnih odločitev. Delamo v majhnih projektnih ekipah, odprto delimo znanje in cenimo sposobnost jasnega komuniciranja z oblikovalci, izdelovalci, dobavitelji ter naročniki.",
+    "items": [
+      {
+        "title": "Produktni oblikovalec oziroma oblikovalka",
+        "text": "V razvojno ekipo vabimo oblikovalca z izkušnjami pri pohištvu ali sorodnih fizičnih izdelkih. Sodelovali boste pri raziskavi, 3D-modeliranju, tehničnih detajlih, prototipih in pripravi izdelkov za serijsko proizvodnjo.",
+        "requirements": [
+          "Najmanj tri leta izkušenj pri razvoju fizičnih izdelkov.",
+          "Samostojno delo v CAD-programu in priprava jasnih tehničnih risb.",
+          "Razumevanje lesa, kovine, oblazinjenja ali sorodnih proizvodnih postopkov.",
+          "Tekoče sporazumevanje v slovenščini in angleščini."
+        ],
+        "note": "Zaposlitev za polni delovni čas v Ljubljani z možnostjo dveh dni dela na daljavo. Prijavi priložite portfelj, kratek opis svoje vloge pri predstavljenih projektih in okvirni datum razpoložljivosti."
+      },
+      {
+        "title": "Vodja e-trgovine in vsebin",
+        "text": "Iščemo osebo, ki bo skrbela za kakovost produktnih podatkov, vsebinski koledar, spletne kampanje in izboljšave nakupne poti. Vloga povezuje analitiko, pisanje, koordinacijo fotografije ter vsakodnevno sodelovanje s podporo strankam.",
+        "requirements": [
+          "Izkušnje z upravljanjem spletne trgovine ali digitalnega produkta.",
+          "Odlično pisno izražanje ter občutek za strukturo informacij.",
+          "Osnovno razumevanje analitike, SEO in testiranja uporabniške izkušnje.",
+          "Organiziranost pri delu z več izdelki, jeziki in roki hkrati."
+        ],
+        "note": "Vloga je lahko zaposlitev za polni delovni čas ali sodelovanje štiri dni na teden. Prosimo, pošljite primer vsebine ali trgovine, pri kateri ste bili odgovorni za merljiv rezultat."
+      },
+      {
+        "title": "Montažer oziroma tehnični koordinator",
+        "text": "Za dostave in montaže po Sloveniji iščemo tehnično spretno osebo, ki zna mirno reševati nepredvidene situacije na lokaciji. Delo vključuje pripravo opreme, koordinacijo dostopa, sestavo pohištva in dokumentiranje končnega pregleda.",
+        "requirements": [
+          "Izkušnje z montažo pohištva, stavbnim pohištvom ali podobnim delom.",
+          "Natančnost, urejen odnos do prostora naročnika in fizična pripravljenost.",
+          "Vozniški izpit kategorije B; kategorija C1 je prednost.",
+          "Pripravljenost na občasne zgodnje odhode in večdnevne montaže."
+        ],
+        "note": "Ponujamo redno zaposlitev, kakovostno orodje, urejene potne stroške in dodatno usposabljanje pri zahtevnejših sistemih. Začetek dela je po dogovoru."
+      }
+    ]
+  },
+  "faq": {
+    "text": "Spodaj so zbrani odgovori na najpogostejša vprašanja o naročanju, materialih, dostavi in prilagoditvah. Pri izdelku ali projektu, ki zahteva dodatno preverjanje, nam pošljite mere, fotografije prostora in želeni časovni okvir, da lahko pripravimo natančnejši odgovor.",
+    "items": [
+      {
+        "question": "Ali lahko pred naročilom prejmem vzorce materialov?",
+        "answer": "Da. Za večino tkanin, lesnih zaključkov in kovinskih barv lahko naročite manjši komplet vzorcev. Strošek kompleta se pri večjem naročilu odšteje od končnega zneska. Pri naravnem lesu in kamnu upoštevajte, da posamezen vzorec prikazuje le del običajne variacije."
+      },
+      {
+        "question": "Kako dolgo traja izdelava in dostava?",
+        "answer": "Izdelki na zalogi so običajno odpremljeni v treh do petih delovnih dneh. Standardni izdelki po naročilu potrebujejo približno šest do deset tednov, prilagojene izvedbe pa praviloma deset do štirinajst tednov. Natančen rok potrdimo po pregledu naročila in razpoložljivosti materiala."
+      },
+      {
+        "question": "Ali dostavljate zunaj Slovenije?",
+        "answer": "Da, dostavljamo v večino držav Evropske unije. Manjše izdelke pošiljamo s paketno službo, za pohištvo pa pripravimo individualno ponudbo glede na naslov, dostop in potrebo po montaži. Morebitne omejitve ali dodatne stroške vedno potrdimo pred plačilom."
+      },
+      {
+        "question": "Katere izdelke je mogoče prilagoditi?",
+        "answer": "Pri večini miz, polic, sedežnega pohištva in svetil lahko izbirate med več dimenzijami, barvami ali materiali. Konstrukcijske spremembe preverimo posebej, saj lahko vplivajo na stabilnost, ceno in dobavni rok. Pred potrditvijo prejmete specifikacijo ter po potrebi risbo."
+      },
+      {
+        "question": "Kako poteka vračilo standardnega izdelka?",
+        "answer": "Neuporabljen standardni izdelek lahko vrnete v zakonsko določenem roku, če je v originalnem stanju in primerno zaščiten za transport. Izdelkov po meri, že sestavljenih kosov z vidnimi sledmi uporabe in odprtih vzorcev praviloma ni mogoče vrniti. Pred pošiljanjem vedno kontaktirajte podporo."
+      },
+      {
+        "question": "Ali nudite montažo in odvoz embalaže?",
+        "answer": "V Sloveniji lahko pri večini večjih izdelkov naročite dostavo v prostor, montažo in odvoz embalaže. Storitev se obračuna glede na lokacijo, dostop, nadstropje in zahtevnost izdelka. Pred prihodom preverimo dimenzije poti ter morebitno potrebo po zaščiti tal ali dvigalu."
+      },
+      {
+        "question": "Kako pravilno vzdržujem lesene in oblazinjene izdelke?",
+        "answer": "Za les priporočamo mehko vlažno krpo, takojšnje brisanje tekočin in izogibanje močnim čistilom. Oblazinjene izdelke redno sesajte z mehkim nastavkom ter madeže obravnavajte po navodilih za izbrano tkanino. Ob dostavi prejmete podrobna navodila za konkretno izvedbo."
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Urnik salona in dogodkov",
+    "text": "Razstavni salon je odprt za samostojne oglede in rezervirana svetovanja. Spodnji urniki prikazujejo redne termine za svetovanje, materialne delavnice ter dostave. Posebni dogodki in spremembe zaradi praznikov so objavljeni v razdelku Dogodki.",
+    "categories": [
+      {
+        "id": "schedule-showroom",
+        "name": "Razstavni salon"
+      },
+      {
+        "id": "schedule-workshops",
+        "name": "Delavnice"
+      },
+      {
+        "id": "schedule-delivery",
+        "name": "Dostava in prevzem"
+      }
+    ],
+    "items": [
+      {
+        "title": "Svetovanje v razstavnem salonu",
+        "text": "Za pogovor o večjem naročilu rezervirajte 45- ali 90-minutni termin. Tako lahko vnaprej pripravimo ustrezne vzorce, preverimo dimenzije in povabimo člana ekipe z znanjem, ki ga vaš projekt potrebuje.",
+        "categoryId": "schedule-showroom",
+        "rows": [
+          {
+            "cells": [
+              "Dan",
+              "Termin",
+              "Vrsta obiska",
+              "Rezervacija"
+            ]
+          },
+          {
+            "cells": [
+              "Ponedeljek",
+              "09:00–17:00",
+              "Samostojni ogled in krajše svetovanje",
+              "Priporočena"
+            ]
+          },
+          {
+            "cells": [
+              "Četrtek",
+              "09:00–19:00",
+              "Daljši projektni termini in ogled vzorcev",
+              "Obvezna po 17:00"
+            ]
+          },
+          {
+            "cells": [
+              "Sobota",
+              "10:00–14:00",
+              "Svetovanje za zasebne naročnike",
+              "Priporočena"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Materialne in vzdrževalne delavnice",
+        "text": "Kratke praktične delavnice so namenjene primerjavi materialov, pravilni negi in boljšemu razumevanju izdelave. Število mest je omejeno, saj vsak udeleženec dela z vzorci in lahko prinese fotografijo ali manjši kos za individualno vprašanje.",
+        "categoryId": "schedule-workshops",
+        "rows": [
+          {
+            "cells": [
+              "Pogostost",
+              "Dan in ura",
+              "Tema",
+              "Trajanje"
+            ]
+          },
+          {
+            "cells": [
+              "Prvi četrtek v mesecu",
+              "18:00",
+              "Leseni zaključki, madeži in manjša popravila",
+              "75 minut"
+            ]
+          },
+          {
+            "cells": [
+              "Tretja sobota v mesecu",
+              "11:00",
+              "Tkanine, obraba in odstranjevanje madežev",
+              "60 minut"
+            ]
+          },
+          {
+            "cells": [
+              "Po dogovoru",
+              "Za skupine od 6 oseb",
+              "Svetloba, barvna temperatura in postavitev svetil",
+              "90 minut"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dostava, montaža in osebni prevzem",
+        "text": "Večje dostave načrtujemo v dopoldanskih časovnih oknih, da ostane dovolj časa za montažo in pregled. Osebni prevzem je mogoč šele po prejemu potrditve, saj je del zaloge shranjen v ločenem logističnem prostoru.",
+        "categoryId": "schedule-delivery",
+        "rows": [
+          {
+            "cells": [
+              "Storitev",
+              "Redni termini",
+              "Obvestilo",
+              "Opomba"
+            ]
+          },
+          {
+            "cells": [
+              "Dostava in montaža v Sloveniji",
+              "Torek–petek, 08:00–14:00",
+              "48 ur vnaprej",
+              "Natančnejše okno potrdimo dan pred dostavo"
+            ]
+          },
+          {
+            "cells": [
+              "Osebni prevzem manjših izdelkov",
+              "Ponedeljek–petek, 10:00–16:00",
+              "Po e-poštni potrditvi",
+              "S seboj prinesite številko naročila"
+            ]
+          },
+          {
+            "cells": [
+              "Mednarodna dostava",
+              "Po individualnem načrtu",
+              "Najmanj 5 delovnih dni vnaprej",
+              "Termin je odvisen od prevoznika in carinskih postopkov"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "text": "V ateljeju redno pripravljamo predstavitve novih izdelkov, pogovore z oblikovalci in manjše praktične delavnice. Dogodki so zasnovani za omejeno skupino, zato ostane dovolj časa za vprašanja, ogled prototipov in pogovor o konkretnih izzivih udeležencev.",
+    "categories": [
+      {
+        "id": "events-workshop",
+        "name": "Delavnica"
+      },
+      {
+        "id": "events-launch",
+        "name": "Predstavitev kolekcije"
+      },
+      {
+        "id": "events-talk",
+        "name": "Pogovor in predavanje"
+      }
+    ],
+    "showApplyButton": true,
+    "items": [
+      {
+        "title": "Od vzorca lesa do pravilne končne obdelave",
+        "text": "<p>Na praktični delavnici bomo primerjali oljene, lakirane in miljene površine ter pokazali, kako se odzivajo na vodo, maščobo in vsakodnevno čiščenje.</p><p>Udeleženci bodo pripravili svoj vzorec, prejeli navodila za vzdrževanje in lahko prinesejo fotografijo obstoječega kosa za kratko individualno priporočilo.</p>",
+        "date": "2026-09-12T10:30:00+02:00",
+        "location": "NORD Atelier, Ljubljana",
+        "categoryId": "events-workshop",
+        "isCancelled": false,
+        "image": {
+          "id": "event-timber",
+          "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Predstavitev kolekcije Soft Geometry",
+        "text": "<p>Predstavili bomo novo serijo sedežnega pohištva, ki raziskuje mehke prehode med nosilno konstrukcijo in oblazinjenjem. Na ogled bodo končni izdelki, zgodnji prototipi ter vzorci tkanin.</p><p>Večer vključuje kratek pogovor z oblikovalsko in proizvodno ekipo ter čas za neformalni ogled kolekcije.</p>",
+        "date": "2026-10-08T18:00:00+02:00",
+        "location": "NORD Atelier, Ljubljana",
+        "categoryId": "events-launch",
+        "isCancelled": false,
+        "image": {
+          "id": "event-soft-geometry",
+          "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Svetloba za zimske mesece",
+        "text": "<p>Arhitektka Maja Vidmar bo na primerih stanovanj prikazala, kako razporediti svetlobne vire, zmanjšati bleščanje in izboljšati večerno počutje brez večjih posegov.</p><p>Po predavanju sledi prikaz različnih barvnih temperatur in možnost kratkega posveta o lastnem prostoru.</p>",
+        "date": "2026-11-19T18:30:00+01:00",
+        "location": "Mestni muzej Ljubljana, projekcijska dvorana",
+        "categoryId": "events-talk",
+        "isCancelled": false,
+        "image": {
+          "id": "event-lighting",
+          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Popravilo in ponovna uporaba pohištva",
+        "text": "<p>Dogodek je namenjen osnovni diagnostiki majavih spojev, površinskih poškodb in obrabljenega oblazinjenja. Pokazali bomo varne posege, ki jih lahko opravite doma, ter primere, ko je smiseln obisk strokovnjaka.</p><p>Zaradi bolezni izvajalca je termin odpovedan; prijavljeni bodo prejeli prednost pri novem datumu.</p>",
+        "date": "2026-09-26T10:00:00+02:00",
+        "location": "NORD Atelier, Ljubljana",
+        "categoryId": "events-workshop",
+        "isCancelled": true,
+        "image": {
+          "id": "event-repair",
+          "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      },
+      {
+        "title": "Odprti studio: prototipi in proces",
+        "text": "<p>Enkrat na leto odpremo delovni studio in pokažemo razvojne modele, neuspele poskuse ter odločitve, ki običajno ostanejo skrite za končnim izdelkom.</p><p>Obisk je neformalen in primeren za študente, naročnike ter vse, ki jih zanima, kako ideja postane uporaben predmet.</p>",
+        "date": "2027-01-23T11:00:00+01:00",
+        "location": "Razvojni studio NORD, Šiška",
+        "categoryId": null,
+        "isCancelled": false,
+        "image": {
+          "id": "event-open-studio",
+          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+        }
+      }
+    ]
+  },
+  "optionalSections": {
+    "team": true,
+    "experience": true,
+    "reviews": true,
+    "portfolio": true,
+    "gallery": true,
+    "clients": true,
+    "services": true,
+    "blog": true,
+    "videos": true,
+    "catalogues": true,
+    "pricing": true,
+    "careers": true,
+    "subscribe": true,
+    "faq": true,
+    "schedule": true,
+    "events": true
+  }
+}

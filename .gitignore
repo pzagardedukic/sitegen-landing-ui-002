@@ -1,0 +1,7 @@
+node_modules/
+.next/
+out/
+*.tgz
+.env*.local
+.DS_Store
+tsconfig.tsbuildinfo
