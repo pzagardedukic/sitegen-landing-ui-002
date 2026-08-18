@@ -1,22 +1,21 @@
 "use client";
 
 import { Box } from "@mui/material";
-import {
-  getClients,
-  getExperienceItems,
-  getExperienceSection,
-} from "@/core/runtime";
+import { getExperienceItems, getExperienceSection } from "@/core/runtime";
 import StatBox from "./StatBox";
 import { useLanguage } from "@/core/runtime";
 import { getWhyUsTranslation } from "@/core/translations";
 import DualColumnSection from "../common/DualColumnSection";
 import ExperienceItems from "./ExperienceItems";
 
+/*
+ * Figma frame 1440x899: the 560/80/560 intro, then the two figures side by side on the same
+ * split, then the certification tiles across the full width.
+ */
 export default function WhyUsSection() {
   const { lang } = useLanguage();
   const whyUsTranslation = getWhyUsTranslation(lang);
 
-  const clients = getClients();
   const experience = getExperienceSection(lang);
   const experienceItemsCount = getExperienceItems().length;
 
@@ -32,35 +31,30 @@ export default function WhyUsSection() {
   ].filter(Boolean);
 
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      <DualColumnSection
-        title={whyUsTranslation.title}
-        description={experience?.text ?? ""}
-      >
-        {/* Stats */}
-        {stats.length > 0 && (
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            gap={8}
-            flexWrap="wrap"
-            py={4}
-          >
-            {stats.map((stat, i) =>
-              stat ? (
-                <StatBox key={i} value={stat.value} label={stat.label} />
-              ) : null
-            )}
-          </Box>
-        )}
-      </DualColumnSection>
-
-      {experienceItemsCount > 0 && (
-        <Box width="80%" alignSelf="center">
-          <ExperienceItems />
+    <DualColumnSection
+      title={whyUsTranslation.title}
+      description={experience?.text ?? ""}
+      columns="560fr 80fr 560fr"
+    >
+      {stats.length > 0 && (
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "560fr 80fr 560fr" },
+            gap: { xs: 4, sm: 0 },
+          }}
+        >
+          {stats.map((stat, i) =>
+            stat ? (
+              <Box key={i} sx={{ gridColumn: { sm: i === 0 ? "1" : "3" } }}>
+                <StatBox value={stat.value} label={stat.label} />
+              </Box>
+            ) : null,
+          )}
         </Box>
       )}
-    </Box>
+
+      {experienceItemsCount > 0 && <ExperienceItems />}
+    </DualColumnSection>
   );
 }

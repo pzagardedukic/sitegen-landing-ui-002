@@ -20,7 +20,7 @@ export default function ClientsSection() {
       }}
     >
       {/* Clients - full screen width */}
-      <ClientLogoSlider clients={clients} height={60} speed={30} />
+      <ClientLogoSlider clients={clients} speed={30} />
     </Box>
   );
 }

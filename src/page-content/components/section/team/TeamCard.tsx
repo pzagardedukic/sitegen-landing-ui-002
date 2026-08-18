@@ -1,4 +1,6 @@
-import { Box, Typography, IconButton } from "@mui/material";
+"use client";
+
+import { Box, IconButton, Typography } from "@mui/material";
 import {
   LinkedIn,
   Instagram,
@@ -34,95 +36,90 @@ const iconMap: Record<ContactType, JSX.Element> = {
   TIKTOK: <Language fontSize="small" />,
 };
 
-const linkBuilder = (type: ContactType, value: string) => {
-  switch (type) {
-    case "EMAIL":
-      return `mailto:${value}`;
-    case "PHONE":
-      return `tel:${value}`;
-    default:
-      return value; // direct URL
-  }
+const hrefFor = (item: ContactItem) => {
+  if (item.type === "EMAIL") return `mailto:${item.value}`;
+  if (item.type === "PHONE") return `tel:${item.value.replace(/\s+/g, "")}`;
+  return item.value;
 };
 
-export default function TeamCard({
-  name,
-  text,
-  image,
-  contact = [],
-}: TeamCardProps) {
+/*
+ * A team member from the Figma frame (277x479): the portrait on top at 277x300, the contact
+ * icons sitting on the picture itself in the lower-left corner, then the name and one line
+ * about the person underneath.
+ */
+export default function TeamCard({ name, text, image, contact = [] }: TeamCardProps) {
   return (
-    <Box sx={{ textAlign: "center", position: "relative" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Box
-        sx={{
+        sx={(theme) => ({
           position: "relative",
+          height: { xs: 320, md: 300 },
+          borderRadius: "25px",
           overflow: "hidden",
-          borderRadius: 2,
-          boxShadow: 3,
-          mb: 2,
-        }}
+          backgroundColor: theme.palette.surfaces.placeholder,
+        })}
       >
         <Box
           component="img"
           src={image}
-          alt={name}
-          sx={{ width: "100%", display: "block" }}
+          alt=""
           loading="lazy"
-        />
-
-        {/* Hover Overlay */}
-        <Box
-          className="overlay"
           sx={{
             position: "absolute",
             inset: 0,
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            flexDirection: "column",
-            paddingBottom: 1.5,
-            pointerEvents: "none",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
-        >
-          {/* Bottom Icons Row */}
+        />
+
+        {contact.length > 0 && (
           <Box
             sx={{
+              position: "absolute",
+              left: 18,
+              bottom: 18,
               display: "flex",
+              flexDirection: "column",
               gap: 1,
-              padding: "6px 10px",
-              borderRadius: 50,
-              pointerEvents: "auto",
             }}
           >
-            {contact.map((c, index) => (
+            {contact.map((item) => (
               <IconButton
-                key={index}
-                href={linkBuilder(c.type, c.value)}
-                target="_blank"
+                key={`${item.type}-${item.value}`}
+                component="a"
+                href={hrefFor(item)}
+                target={item.type === "EMAIL" || item.type === "PHONE" ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                sx={{
-                  width: 36,
-                  height: 36,
-                  bgcolor: "#fff",
-                  color: "grey.700",
-                  boxShadow: 3,
-                  "&:hover": { bgcolor: "grey.100" },
-                }}
+                aria-label={item.type}
+                size="small"
+                sx={(theme) => ({
+                  width: 34,
+                  height: 34,
+                  backgroundColor: "rgba(255,255,255,0.92)",
+                  color: theme.palette.text.primary,
+                  "&:hover": {
+                    backgroundImage: theme.palette.brandGradient,
+                    color: theme.palette.primary.contrastText,
+                  },
+                })}
               >
-                {iconMap[c.type]}
+                {iconMap[item.type]}
               </IconButton>
             ))}
           </Box>
-        </Box>
+        )}
       </Box>
 
-      <Typography variant="subtitle1" fontWeight="bold">
-        {name}
-      </Typography>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.75, px: 0.5 }}>
+        <Typography variant="h4" component="h3">
+          {name}
+        </Typography>
 
-      <Typography variant="body2" color="text.secondary">
-        {text}
-      </Typography>
+        <Typography variant="body2" sx={{ color: "inherit", opacity: 0.72 }}>
+          {text}
+        </Typography>
+      </Box>
     </Box>
   );
 }
