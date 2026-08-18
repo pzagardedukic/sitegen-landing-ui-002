@@ -135,21 +135,21 @@
         "text": "Vsak član začne z uvodno analizo: pregledamo držo, gibljivost kolkov in ramen ter dihanje. Iz tega nastane načrt, ki ga po šestih tednih ponovno preverimo in prilagodimo.",
         "image": {
           "id": "about-materials",
-          "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/onas-analiza.webp"
         }
       },
       {
         "text": "Oprema je od Balanced Body in Merrithew, servisirana dvakrat letno. Vzmeti menjamo po urah uporabe in ne po videzu, ker se odpor izgublja precej prej, kot se to opazi.",
         "image": {
           "id": "about-systems",
-          "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/onas-oprema.webp"
         }
       },
       {
         "text": "Skupine so majhne namenoma. Osem reformerjev pomeni osem ljudi, tudi kadar bi jih lahko sprejeli več — pri pilatesu je popravek pomembnejši od števila ponovitev.",
         "image": {
           "id": "about-service",
-          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/onas-skupina.webp"
         }
       }
     ]
@@ -180,7 +180,7 @@
         ],
         "image": {
           "id": "team-ana",
-          "file": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/ekipa-ana.webp"
         }
       },
       {
@@ -198,7 +198,7 @@
         ],
         "image": {
           "id": "team-luka",
-          "file": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/ekipa-luka.webp"
         }
       },
       {
@@ -216,7 +216,7 @@
         ],
         "image": {
           "id": "team-maja",
-          "file": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/ekipa-maja.webp"
         }
       },
       {
@@ -234,7 +234,7 @@
         ],
         "image": {
           "id": "team-nejc",
-          "file": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/ekipa-nejc.webp"
         }
       }
     ]
@@ -276,7 +276,7 @@
         "url": "https://example.com/reviews/1",
         "image": {
           "id": "review-1",
-          "file": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/mnenje-01.webp"
         }
       },
       {
@@ -285,7 +285,7 @@
         "url": "https://example.com/reviews/2",
         "image": {
           "id": "review-2",
-          "file": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/mnenje-02.webp"
         }
       },
       {
@@ -294,7 +294,7 @@
         "url": "https://example.com/reviews/3",
         "image": {
           "id": "review-3",
-          "file": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/mnenje-03.webp"
         }
       },
       {
@@ -303,7 +303,7 @@
         "url": "https://example.com/reviews/4",
         "image": {
           "id": "review-4",
-          "file": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1100&q=85"
+          "file": "/images/mnenje-04.webp"
         }
       }
     ]
@@ -339,7 +339,7 @@
         "images": [
           {
             "id": "project-river-1",
-            "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-reformer-zacetni.webp"
           },
           {
             "id": "project-river-2",
@@ -360,7 +360,7 @@
         "images": [
           {
             "id": "project-house-1",
-            "file": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-reformer-nadaljevalni.webp"
           },
           {
             "id": "project-house-2",
@@ -381,7 +381,7 @@
         "images": [
           {
             "id": "project-hotel-1",
-            "file": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-matt.webp"
           },
           {
             "id": "project-hotel-2",
@@ -402,7 +402,7 @@
         "images": [
           {
             "id": "project-bakery-1",
-            "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-pisarnisko-telo.webp"
           },
           {
             "id": "project-bakery-2",
@@ -423,7 +423,7 @@
         "images": [
           {
             "id": "project-axis-1",
-            "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-rehabilitacija.webp"
           },
           {
             "id": "project-axis-2",
@@ -444,7 +444,7 @@
         "images": [
           {
             "id": "project-lightwell-1",
-            "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+            "file": "/images/program-nosecniski.webp"
           },
           {
             "id": "project-lightwell-2",
@@ -462,51 +462,51 @@
     "items": [
       {
         "id": "gallery-01",
-        "file": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&h=1250&q=85"
+        "file": "/images/galerija-01.webp"
       },
       {
         "id": "gallery-02",
-        "file": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-02.webp"
       },
       {
         "id": "gallery-03",
-        "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-03.webp"
       },
       {
         "id": "gallery-04",
-        "file": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-04.webp"
       },
       {
         "id": "gallery-05",
-        "file": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-05.webp"
       },
       {
         "id": "gallery-06",
-        "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-06.webp"
       },
       {
         "id": "gallery-07",
-        "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-07.webp"
       },
       {
         "id": "gallery-08",
-        "file": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-08.webp"
       },
       {
         "id": "gallery-09",
-        "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-09.webp"
       },
       {
         "id": "gallery-10",
-        "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-10.webp"
       },
       {
         "id": "gallery-11",
-        "file": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-11.webp"
       },
       {
         "id": "gallery-12",
-        "file": "https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=1600&h=1000&q=85"
+        "file": "/images/galerija-12.webp"
       }
     ]
   },
@@ -584,7 +584,7 @@
         ],
         "image": {
           "id": "service-interior",
-          "file": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/storitev-analiza.webp"
         }
       },
       {
@@ -598,7 +598,7 @@
         ],
         "image": {
           "id": "service-custom",
-          "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/storitev-skupinske.webp"
         }
       },
       {
@@ -612,7 +612,7 @@
         ],
         "image": {
           "id": "service-lighting",
-          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/storitev-individualno.webp"
         }
       },
       {
@@ -626,7 +626,7 @@
         ],
         "image": {
           "id": "service-installation",
-          "file": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/storitev-podjetja.webp"
         }
       }
     ]
@@ -641,7 +641,7 @@
         "date": "2026-07-22",
         "image": {
           "id": "blog-table",
-          "file": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/blog-bolecina.webp"
         }
       },
       {
@@ -651,7 +651,7 @@
         "date": "2026-06-11",
         "image": {
           "id": "blog-light",
-          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/blog-medenica.webp"
         }
       },
       {
@@ -661,7 +661,7 @@
         "date": "2026-04-30",
         "image": {
           "id": "blog-material",
-          "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/blog-vzmeti.webp"
         }
       },
       {
@@ -671,7 +671,7 @@
         "date": "2026-03-19",
         "image": {
           "id": "blog-process",
-          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/blog-pogostost.webp"
         }
       },
       {
@@ -681,7 +681,7 @@
         "date": "2026-02-05",
         "image": {
           "id": "blog-small-space",
-          "file": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/blog-poporodni.webp"
         }
       }
     ]
@@ -1365,7 +1365,7 @@
         "isCancelled": false,
         "image": {
           "id": "event-timber",
-          "file": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/dogodek-dihanje.webp"
         }
       },
       {
@@ -1377,7 +1377,7 @@
         "isCancelled": false,
         "image": {
           "id": "event-soft-geometry",
-          "file": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/dogodek-tekaci.webp"
         }
       },
       {
@@ -1389,7 +1389,7 @@
         "isCancelled": false,
         "image": {
           "id": "event-lighting",
-          "file": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/dogodek-poporodni.webp"
         }
       },
       {
@@ -1401,7 +1401,7 @@
         "isCancelled": true,
         "image": {
           "id": "event-repair",
-          "file": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/dogodek-odprti-dan.webp"
         }
       },
       {
@@ -1413,7 +1413,7 @@
         "isCancelled": false,
         "image": {
           "id": "event-open-studio",
-          "file": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&h=1000&q=85"
+          "file": "/images/dogodek-ergonomija.webp"
         }
       }
     ]

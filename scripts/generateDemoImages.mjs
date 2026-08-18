@@ -74,6 +74,7 @@ if (!PROVIDER) {
 
 /* --- providers ----------------------------------------------------------- */
 async function callOpenRouter(prompt) {
+  // OpenRouter image models take the ratio from the prompt, not a size parameter.
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -98,11 +99,27 @@ async function callOpenRouter(prompt) {
   return Buffer.from(url.split(",")[1], "base64");
 }
 
-async function callOpenAI(prompt) {
+/*
+ * Ask for the orientation the slot needs. Cropping a square down to 0.67 throws away a
+ * third of the picture and usually takes the subject's head with it.
+ */
+function sizeFor(ratio) {
+  if (ratio < 0.9) return "1024x1536";
+  if (ratio > 1.2) return "1536x1024";
+  return "1024x1024";
+}
+
+async function callOpenAI(prompt, ratio) {
   const res = await fetch("https://api.openai.com/v1/images/generations", {
     method: "POST",
     headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ model: MODEL, prompt, size: "1024x1024", n: 1 }),
+    body: JSON.stringify({
+      model: MODEL,
+      prompt,
+      size: sizeFor(ratio),
+      quality: process.env.IMAGE_QUALITY || "medium",
+      n: 1,
+    }),
   });
 
   if (!res.ok) throw new Error(`${res.status} ${(await res.text()).slice(0, 300)}`);
@@ -135,7 +152,7 @@ for (const item of todo) {
   }
 
   try {
-    const raw = await generate(item.prompt);
+    const raw = await generate(item.prompt, item.target);
     const meta = await sharp(raw).metadata();
 
     // Crop to the slot's ratio from the centre, then size to the slot's width.
