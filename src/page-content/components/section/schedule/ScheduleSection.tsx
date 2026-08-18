@@ -1,14 +1,15 @@
 "use client";
 
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState } from "react";
 
 import { getScheduleSection, getScheduleTables } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import CategorySelector from "../common/CategorySelector";
-import SingleColumnSection from "../common/SingleColumnSection";
+import DualColumnSection from "../common/DualColumnSection";
 import ScheduleTableView from "./ScheduleTableView";
 
+/* Figma frame 1440x1494: the 600/80/520 intro, the category chips, then the tables. */
 export default function ScheduleSection() {
   const { lang } = useLanguage();
   const scheduleSection = getScheduleSection(lang);
@@ -33,36 +34,29 @@ export default function ScheduleSection() {
     : scheduleTables;
 
   return (
-    <SingleColumnSection description={scheduleSection.text}>
-      <Box
-        width="100%"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        gap={5}
-        mt={4}
-      >
-        {categoryLabels.length > 0 && (
-          <Box display="flex" justifyContent="center" width="100%">
-            <CategorySelector
-              categories={categoryLabels}
-              selectedIndex={selectedIndex}
-              onSelectIndex={setSelectedIndex}
-            />
-          </Box>
-        )}
+    <DualColumnSection
+      title={scheduleSection.title}
+      description={scheduleSection.text}
+      columns="600fr 80fr 520fr"
+    >
+      {categoryLabels.length > 0 && (
+        <CategorySelector
+          categories={categoryLabels}
+          selectedIndex={selectedIndex}
+          onSelectIndex={setSelectedIndex}
+        />
+      )}
 
-        <Stack spacing={6} width="100%" alignItems="center">
-          {filteredTables.map((scheduleTable) => (
-            <ScheduleTableView
-              key={scheduleTable.id}
-              title={scheduleTable.title}
-              text={scheduleTable.text}
-              rows={scheduleTable.rows}
-            />
-          ))}
-        </Stack>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}>
+        {filteredTables.map((scheduleTable, index) => (
+          <ScheduleTableView
+            key={index}
+            title={scheduleTable.title}
+            text={scheduleTable.text}
+            rows={scheduleTable.rows}
+          />
+        ))}
       </Box>
-    </SingleColumnSection>
+    </DualColumnSection>
   );
 }

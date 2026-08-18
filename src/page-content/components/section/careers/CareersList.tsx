@@ -33,10 +33,10 @@ const CareersList = ({
     <Box
       sx={{
         width,
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(290px, 1fr))",
-        gap: 4,
-        mt: 1,
+        // Vacancies are full-width rows in the design, not a card grid.
+        display: "flex",
+        flexDirection: "column",
+        gap: "18px",
       }}
     >
       {careers.map((career) => (

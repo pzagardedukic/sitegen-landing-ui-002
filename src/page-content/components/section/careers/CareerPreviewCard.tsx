@@ -1,12 +1,8 @@
-import {
-  Box,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-  Typography,
-} from "@mui/material";
+"use client";
+
+import { Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import GradientButton from "@/components/button/GradientButton";
 
 import { stripRichText, truncateWordSafe } from "@/core/utils";
 
@@ -20,6 +16,10 @@ type CareerPreviewCardProps = {
   onApply: () => void;
 };
 
+/*
+ * A vacancy from the Figma frame (1200x241): the role, a line about it and the note on the
+ * left at 600 wide, the requirements and the apply button on the right at 488.
+ */
 export default function CareerPreviewCard({
   href,
   title,
@@ -33,91 +33,84 @@ export default function CareerPreviewCard({
   const previewRequirements = requirements.slice(0, 3);
 
   return (
-    <Paper
-      elevation={2}
-      sx={{
-        borderRadius: 2,
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        transition: "box-shadow 0.2s ease, transform 0.2s ease",
-        "&:hover": {
-          boxShadow: 6,
-          transform: "translateY(-2px)",
-        },
-      }}
+    <Box
+      sx={(theme) => ({
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "600fr 80fr 488fr" },
+        gap: { xs: 3, md: 0 },
+        p: { xs: "24px", md: "30px 32px" },
+        borderRadius: "25px",
+        border: `1px solid ${theme.palette.surfaces.border}`,
+        transition: theme.transitions.create("border-color"),
+        "&:hover": { borderColor: theme.palette.primary.main },
+      })}
     >
       <Box
-        component="a"
-        href={href}
-        aria-label={title}
         sx={{
+          gridColumn: { md: "1" },
           display: "flex",
           flexDirection: "column",
-          flexGrow: 1,
-          color: "inherit",
-          textDecoration: "none",
-          px: 3,
-          py: 3,
-          "&:focus-visible": {
-            outline: "2px solid",
-            outlineColor: "primary.main",
-            outlineOffset: -2,
-          },
+          gap: 1.5,
         }}
       >
-        <Typography variant="h5" fontWeight={700} color="text.primary">
+        <Typography
+          component="a"
+          href={href}
+          variant="h4"
+          sx={{ textDecoration: "none", color: "inherit", "&:hover": { opacity: 0.75 } }}
+        >
           {title}
         </Typography>
 
-        {truncatedText && (
-          <Typography variant="body2" color="text.secondary" mt={1.5}>
-            {truncatedText}
-          </Typography>
-        )}
-
-        {previewRequirements.length > 0 && (
-          <Box mt={3}>
-            <Typography variant="subtitle2" fontWeight={600}>
-              {requirementsLabel}
-            </Typography>
-
-            <List dense disablePadding sx={{ mt: 0.5 }}>
-              {previewRequirements.map((requirement, index) => (
-                <ListItem key={index} disableGutters sx={{ py: 0.25 }}>
-                  <ListItemText
-                    primary={`• ${requirement}`}
-                    primaryTypographyProps={{
-                      variant: "body2",
-                      color: "text.secondary",
-                    }}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        )}
+        <Typography variant="body2" sx={{ opacity: 0.72 }}>
+          {truncatedText}
+        </Typography>
       </Box>
 
       <Box
-        display="flex"
-        justifyContent="center"
-        px={3}
-        py={2.5}
-        borderTop="1px solid"
-        borderColor="divider"
-        mt="auto"
+        sx={{
+          gridColumn: { md: "3" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: 2,
+        }}
       >
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={onApply}
-          sx={{ fontSize: "14px" }}
-        >
+        {previewRequirements.length > 0 && (
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Typography variant="caption" sx={{ opacity: 0.6 }}>
+              {requirementsLabel}
+            </Typography>
+
+            <Box component="ul" sx={{ listStyle: "none", display: "grid", gap: 0.75 }}>
+              {previewRequirements.map((requirement, index) => (
+                <Box
+                  key={index}
+                  component="li"
+                  sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}
+                >
+                  <Box
+                    aria-hidden
+                    sx={(theme) => ({
+                      mt: "9px",
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      flexShrink: 0,
+                      backgroundImage: theme.palette.brandGradient,
+                    })}
+                  />
+                  <Typography variant="body2">{requirement}</Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        )}
+
+        <GradientButton onClick={onApply} endIcon={<ArrowOutwardIcon />}>
           {applyLabel}
-        </Button>
+        </GradientButton>
       </Box>
-    </Paper>
+    </Box>
   );
 }

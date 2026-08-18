@@ -1,16 +1,6 @@
-import {
-  Box,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
+"use client";
 
-import SectionDescription from "../common/SectionDescription";
+import { Box, Typography } from "@mui/material";
 
 type ScheduleTableViewProps = {
   title: string;
@@ -18,108 +8,100 @@ type ScheduleTableViewProps = {
   rows: string[][];
 };
 
+/*
+ * A timetable from the Figma frame: the table title and a line about it, then the rows —
+ * the first one being the header, set apart by weight and a rule rather than by a filled bar.
+ *
+ * Built as a grid rather than a <table> so a row can reflow to two lines on a phone instead
+ * of forcing a horizontal scroll.
+ */
 export default function ScheduleTableView({
   title,
   text,
   rows,
 }: ScheduleTableViewProps) {
-  const columnCount = rows.reduce(
-    (count, row) => Math.max(count, row.length),
-    0,
-  );
+  const columnCount = rows.reduce((count, row) => Math.max(count, row.length), 0);
   const headerCells = rows[0] ?? [];
   const bodyRows = rows.slice(1);
 
+  if (columnCount === 0) return null;
+
   return (
-    <Box width="100%" maxWidth={1100}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       {title && (
-        <Typography
-          variant="h3"
-          component="h2"
-          color="text.primary"
-          textAlign="center"
-          gutterBottom
-        >
+        <Typography variant="h4" component="h3">
           {title}
         </Typography>
       )}
 
       {text && (
-        <Box maxWidth={800} mx="auto" mb={3}>
-          <SectionDescription description={text} textAlign="center" />
-        </Box>
+        <Typography variant="body2" sx={{ opacity: 0.72, maxWidth: 900 }}>
+          {text}
+        </Typography>
       )}
 
-      {columnCount > 0 && (
-        <TableContainer
-          component={Paper}
-          variant="outlined"
-          sx={{
-            width: "100%",
-            overflowX: "auto",
-            borderRadius: 2,
-          }}
+      <Box
+        role="table"
+        sx={(theme) => ({
+          mt: 1,
+          borderRadius: "25px",
+          border: `1px solid ${theme.palette.surfaces.border}`,
+          overflow: "hidden",
+        })}
+      >
+        <Box
+          role="row"
+          sx={(theme) => ({
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr 1fr",
+              md: `repeat(${columnCount}, 1fr)`,
+            },
+            gap: 2,
+            px: "24px",
+            py: 2,
+            backgroundColor: theme.palette.surfaces.tint,
+            borderBottom: `1px solid ${theme.palette.surfaces.border}`,
+          })}
         >
-          <Table
-            aria-label={title || undefined}
-            sx={{
-              minWidth: Math.max(600, columnCount * 160),
-              tableLayout: "fixed",
-            }}
-          >
-            <TableHead>
-              <TableRow sx={{ backgroundColor: "action.hover" }}>
-                {Array.from({ length: columnCount }).map((_, cellIndex) => (
-                  <TableCell
-                    key={cellIndex}
-                    component="th"
-                    scope="col"
-                    sx={{
-                      minWidth: 160,
-                      fontWeight: 600,
-                      verticalAlign: "top",
-                      whiteSpace: "pre-line",
-                      wordBreak: "break-word",
-                    }}
-                  >
-                    {headerCells[cellIndex] ?? ""}
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
+          {headerCells.map((cell, index) => (
+            <Typography
+              key={index}
+              role="columnheader"
+              variant="caption"
+              sx={{ opacity: 0.6, letterSpacing: "0.4px" }}
+            >
+              {cell}
+            </Typography>
+          ))}
+        </Box>
 
-            <TableBody>
-              {bodyRows.map((row, rowIndex) => (
-                <TableRow
-                  key={rowIndex}
-                  sx={{
-                    "&:nth-of-type(even)": {
-                      backgroundColor: "action.hover",
-                    },
-                    "&:last-child td": {
-                      borderBottom: 0,
-                    },
-                  }}
-                >
-                  {Array.from({ length: columnCount }).map((_, cellIndex) => (
-                    <TableCell
-                      key={cellIndex}
-                      sx={{
-                        minWidth: 160,
-                        verticalAlign: "top",
-                        whiteSpace: "pre-line",
-                        wordBreak: "break-word",
-                      }}
-                    >
-                      {row[cellIndex] ?? ""}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      )}
+        {bodyRows.map((row, rowIndex) => (
+          <Box
+            key={rowIndex}
+            role="row"
+            sx={(theme) => ({
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr 1fr",
+                md: `repeat(${columnCount}, 1fr)`,
+              },
+              gap: 2,
+              px: "24px",
+              py: 2,
+              ...(rowIndex < bodyRows.length - 1 && {
+                borderBottom: `1px solid ${theme.palette.surfaces.border}`,
+              }),
+            })}
+          >
+            {row.map((cell, cellIndex) => (
+              <Typography key={cellIndex} role="cell" variant="body2">
+                {cell}
+              </Typography>
+            ))}
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 }

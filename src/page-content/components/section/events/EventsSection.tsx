@@ -3,7 +3,6 @@
 import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
-  Divider,
   InputAdornment,
   MenuItem,
   TextField,
@@ -18,14 +17,14 @@ import { getEventSlugById, getPageSlugByKey } from "@/core/static";
 import { useListFilters } from "@/core/react";
 import { useLanguage } from "@/core/runtime";
 import {
-  getButtonTranslation,
   getEventsTranslation,
 } from "@/core/translations";
 import { formatEventDate, getEventDateTimestamp } from "@/core/utils";
 import { stripRichText } from "@/core/utils";
 import { normalizeSearchValue, paginate } from "@/core/utils";
 import { withBasePath } from "@/core/static";
-import SingleColumnSection from "../common/SingleColumnSection";
+import DualColumnSection from "../common/DualColumnSection";
+import CategorySelector from "../common/CategorySelector";
 import EventPreviewCard from "./EventPreviewCard";
 
 const PER_PAGE = 6;
@@ -37,7 +36,6 @@ function EventsSectionInner() {
   const eventsSection = getEventsSection(lang);
   const eventItems = getEventItems(lang);
   const eventsTranslation = getEventsTranslation(lang);
-  const allLabel = getButtonTranslation(lang).all;
 
   const {
     searchInput,
@@ -120,7 +118,11 @@ function EventsSectionInner() {
   };
 
   return (
-    <SingleColumnSection description={eventsSection.text}>
+    <DualColumnSection
+      title={eventsTranslation.title}
+      description={eventsSection.text}
+      columns="600fr 80fr 520fr"
+    >
       <Box width="100%" mt={4}>
         <Box
           sx={{
@@ -148,25 +150,8 @@ function EventsSectionInner() {
                 ),
               },
             }}
-            sx={{ flex: 1, maxWidth: { md: 520 } }}
+            sx={{ flex: 1 }}
           />
-
-          <TextField
-            select
-            fullWidth
-            size="small"
-            label={eventsTranslation.category}
-            value={selectedCategoryId}
-            onChange={(event) => setSelectedCategoryId(event.target.value)}
-            sx={{ width: { xs: "100%", md: 260 }, flexShrink: 0 }}
-          >
-            <MenuItem value="">{allLabel}</MenuItem>
-            {categories.map((category) => (
-              <MenuItem key={category.id} value={category.id}>
-                {category.name}
-              </MenuItem>
-            ))}
-          </TextField>
 
           <TextField
             select
@@ -188,7 +173,21 @@ function EventsSectionInner() {
           </TextField>
         </Box>
 
-        <Divider sx={{ mt: 5, mb: 6 }} />
+        <Box sx={{ mt: 3 }}>
+          <CategorySelector
+            categories={categories.map((category) => category.name)}
+            selectedIndex={
+              selectedCategoryId
+                ? categories.findIndex((c) => c.id === selectedCategoryId) + 1
+                : 0
+            }
+            onSelectIndex={(index) =>
+              setSelectedCategoryId(index === 0 ? "" : categories[index - 1].id)
+            }
+          />
+        </Box>
+
+        <Box sx={{ height: { xs: 32, md: 48 } }} />
 
         <Box mb={6} mt={3}>
           {pageItems.length > 0 ? (
@@ -237,7 +236,7 @@ function EventsSectionInner() {
           />
         )}
       </Box>
-    </SingleColumnSection>
+    </DualColumnSection>
   );
 }
 
