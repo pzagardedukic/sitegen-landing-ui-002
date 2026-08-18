@@ -17,8 +17,8 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
  * other name.
  */
 const localAddresses = Object.values(networkInterfaces())
-  .flat()
-  .filter((iface) => iface && iface.family === "IPv4" && !iface.internal)
+  .flatMap((interfaces) => interfaces ?? [])
+  .filter((iface) => iface.family === "IPv4" && !iface.internal)
   .map((iface) => iface.address);
 
 const DEV_ORIGINS = [
