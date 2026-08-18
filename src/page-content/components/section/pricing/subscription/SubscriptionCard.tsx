@@ -1,21 +1,33 @@
-import { Box, Typography, Paper, Button, Chip } from "@mui/material";
+"use client";
+
+import { Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import PriceValue from "../common/PriceValue";
-import DiscountBadge from "../common/DiscountBadge";
+import Tag from "@/components/common/Tag";
+import StatusBadge from "../common/StatusBadge";
+import GradientButton from "@/components/button/GradientButton";
 import { stripRichText } from "@/core/utils";
-import { PriceUnitType } from "@/core/types";
+import { PriceUnitType, PricingItemStatus } from "@/core/types";
 import { getPricingTranslation_packagesNoImages } from "@/core/translations";
 import { useLanguage } from "@/core/runtime";
+
+export type SubscriptionFeature = {
+  label: string;
+  value: string;
+};
 
 export type SubscriptionPlan = {
   id: string;
   name: string;
   subtitle?: string;
+  category?: string;
+  status?: PricingItemStatus;
   price: string;
   currency: string;
   unit?: PriceUnitType;
   onAgreement: boolean;
   discountedValue: string;
-  features: string[];
+  features: SubscriptionFeature[];
   highlight?: boolean;
 };
 
@@ -24,10 +36,20 @@ type Props = {
   onSelect: (title: string) => void;
 };
 
+/*
+ * A package from the Figma frame (373x579): status badge, title, a line of text, the
+ * category, then the price, then the feature rows with the label on the left and its value
+ * on the right, and the button at the bottom.
+ *
+ * The recommended package is marked with a gradient outline rather than a heavier shadow —
+ * the design has no raised cards anywhere.
+ */
 export default function SubscriptionCard({ plan, onSelect }: Props) {
   const {
     name,
     subtitle,
+    category,
+    status,
     price,
     currency,
     unit,
@@ -43,75 +65,56 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
   const cleanSubtitle = subtitle ? stripRichText(subtitle) : "";
 
   return (
-    <Paper
-      elevation={highlight ? 6 : 2}
-      sx={{
+    <Box
+      sx={(theme) => ({
         position: "relative",
-        borderRadius: 2,
-        overflow: "hidden",
+        height: "100%",
+        borderRadius: "25px",
+        p: "30px",
         display: "flex",
         flexDirection: "column",
-        height: "100%",
-        textAlign: "center",
-        borderTop: highlight
-          ? (theme) => `4px solid ${theme.palette.primary.main}`
-          : "none",
-      }}
+        gap: 2,
+        border: `1px solid ${highlight ? "transparent" : theme.palette.surfaces.border}`,
+        backgroundColor: highlight ? theme.palette.surfaces.tint : "transparent",
+        ...(highlight && {
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: -1,
+            borderRadius: "26px",
+            padding: "1px",
+            backgroundImage: theme.palette.brandGradient,
+            WebkitMask:
+              "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+            WebkitMaskComposite: "xor",
+            maskComposite: "exclude",
+            pointerEvents: "none",
+          },
+        }),
+      })}
     >
-      {/* Discount badge */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 12,
-          right: 12,
-          zIndex: 2,
-        }}
-      >
-        <DiscountBadge price={price} discountedValue={discountedValue} />
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", minHeight: 29 }}>
+        {highlight && <Tag label={t.items.recommended} tone="brand" />}
+        <StatusBadge status={status} />
       </Box>
 
-      {/* Recommended */}
-      {highlight && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: 15.5,
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: 2,
-          }}
-        >
-          <Chip label={t.items.recommended} color="primary" size="small" />
-        </Box>
+      <Typography variant="h4" component="h3">
+        {name}
+      </Typography>
+
+      {cleanSubtitle && (
+        <Typography variant="body2" sx={{ opacity: 0.72 }}>
+          {cleanSubtitle}
+        </Typography>
       )}
 
-      {/* Header (SAFE ZONE for badge) */}
-      <Box px={3} pt={8} pb={2} minHeight={90}>
-        <Typography variant="h6" fontWeight={600}>
-          {name}
+      {category && (
+        <Typography variant="caption" sx={{ opacity: 0.55 }}>
+          {category}
         </Typography>
+      )}
 
-        {cleanSubtitle && (
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ mt: 0.5, wordBreak: "break-word" }}
-          >
-            {cleanSubtitle}
-          </Typography>
-        )}
-      </Box>
-
-      {/* Price */}
-      <Box
-        px={3}
-        py={2}
-        sx={{
-          borderTop: "1px solid",
-          borderBottom: "1px solid",
-          borderColor: "divider",
-        }}
-      >
+      <Box sx={{ mt: 1 }}>
         <PriceValue
           value={price}
           currency={currency}
@@ -121,31 +124,43 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
         />
       </Box>
 
-      {/* Features */}
-      <Box px={3} py={2} flexGrow={1}>
-        {features.map((feature, i) => (
-          <Typography
-            key={i}
-            variant="body2"
-            color="text.secondary"
-            sx={{ py: 0.5, wordBreak: "break-word" }}
-          >
-            {feature}
-          </Typography>
-        ))}
-      </Box>
+      {features.length > 0 && (
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 1 }}>
+          {features.map((feature, index) => (
+            <Box
+              key={index}
+              sx={(theme) => ({
+                display: "flex",
+                justifyContent: "space-between",
+                gap: 2,
+                py: 0.75,
+                borderBottom:
+                  index < features.length - 1
+                    ? `1px solid ${theme.palette.surfaces.border}`
+                    : "none",
+              })}
+            >
+              <Typography variant="body2" sx={{ opacity: 0.72 }}>
+                {feature.label}
+              </Typography>
 
-      {/* CTA */}
-      <Box p={3} pt={1}>
-        <Button
+              <Typography variant="subtitle2" sx={{ textAlign: "right" }}>
+                {feature.value}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      )}
+
+      <Box sx={{ mt: "auto", pt: 2 }}>
+        <GradientButton
           fullWidth
-          variant={highlight ? "contained" : "outlined"}
-          sx={{ fontWeight: 600 }}
-          onClick={() => onSelect(plan.name)}
+          onClick={() => onSelect(name)}
+          endIcon={<ArrowOutwardIcon />}
         >
           {t.items.callToAction}
-        </Button>
+        </GradientButton>
       </Box>
-    </Paper>
+    </Box>
   );
 }

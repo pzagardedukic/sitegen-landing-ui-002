@@ -5,9 +5,13 @@ import { useLanguage } from "@/core/runtime";
 import CustomStore from "./store/CustomStore";
 import PriceList from "./price-list/PriceList";
 import SubscriptionSection from "./subscription/SubscriptionSection";
-import SingleColumnSection from "../common/SingleColumnSection";
+import DualColumnSection from "../common/DualColumnSection";
 import { Box, Typography } from "@mui/material";
 
+/*
+ * Figma frame 1440x1251: the 560/80/560 intro with the note under the description, then the
+ * layout the site's pricing type asks for.
+ */
 export default function PricingSection() {
   const { lang } = useLanguage();
   const pricingSection = getPricingSection(lang);
@@ -30,19 +34,18 @@ export default function PricingSection() {
   };
 
   return (
-    <SingleColumnSection description={pricingSection.text}>
-      <Box width="100%" display="flex" flexDirection="column" gap={4} mt={6}>
-        {renderContent()}
+    <DualColumnSection
+      title={pricingSection.sectionName}
+      description={pricingSection.text}
+      columns="560fr 80fr 560fr"
+    >
+      {renderContent()}
 
-        {/* Note */}
-        <Typography
-          color="text.secondary"
-          variant="body2"
-          sx={{ maxWidth: 600, mx: "auto", fontStyle: "italic" }}
-        >
+      {pricingSection.note && (
+        <Typography variant="body2" sx={{ opacity: 0.6 }}>
           {pricingSection.note}
         </Typography>
-      </Box>
-    </SingleColumnSection>
+      )}
+    </DualColumnSection>
   );
 }

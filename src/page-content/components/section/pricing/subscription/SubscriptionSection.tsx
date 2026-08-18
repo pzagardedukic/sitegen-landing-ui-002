@@ -25,7 +25,13 @@ export default function SubscriptionSection() {
       unit: item.price.unit,
       onAgreement: item.price.onAgreement,
       discountedValue: item.price.discountedValue ?? "",
-      features: item.features.map((feature) => feature.value).filter(Boolean),
+      category: item.category,
+      status: item.status,
+      // Keep both halves: the card shows the label on the left and the value on the right.
+      features: item.features.map((feature) => ({
+        label: feature.label,
+        value: feature.value,
+      })),
       highlight: item.recommended,
     }));
   }, [pricingItems]);
@@ -39,10 +45,21 @@ export default function SubscriptionSection() {
   };
 
   return (
-    <Box mb={6} mt={3}>
-      <Box display="flex" flexWrap="wrap" gap={4} mt={2}>
+    <Box>
+      <Box
+        sx={{
+          display: "grid",
+          gap: "40px",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          },
+          alignItems: "stretch",
+        }}
+      >
         {plans.map((plan) => (
-          <Box key={plan.id} flex="1 1 300px" maxWidth="340px">
+          <Box key={plan.id}>
             <SubscriptionCard plan={plan} onSelect={handleSelect} />
           </Box>
         ))}
