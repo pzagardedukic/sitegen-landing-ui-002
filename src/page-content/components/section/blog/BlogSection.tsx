@@ -4,7 +4,6 @@ import { Box } from "@mui/material";
 import { getBlogItems } from "@/core/runtime";
 import BlogPreviewCard from "./BlogPreviewCard";
 import { useLanguage } from "@/core/runtime";
-import SingleColumnSection from "../common/SingleColumnSection";
 import { usePagination } from "@/core/react";
 import PaginationControls from "@/components/button/PaginationControls";
 import { getBlogSlugById } from "@/core/static";
@@ -20,18 +19,8 @@ export default function BlogSection() {
   );
 
   return (
-    <SingleColumnSection>
-      {/* Cards */}
-      <Box
-        sx={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(270px, 1fr))",
-          gap: 4,
-          px: 2,
-          py: 4,
-        }}
-      >
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         {paginatedItems.map((item) => (
           <BlogPreviewCard
             key={item.id}
@@ -46,12 +35,14 @@ export default function BlogSection() {
       </Box>
 
       {pageCount > 1 && (
-        <PaginationControls
-          page={page}
-          pageCount={pageCount}
-          onChange={setPage}
-        />
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <PaginationControls
+            page={page}
+            pageCount={pageCount}
+            onChange={setPage}
+          />
+        </Box>
       )}
-    </SingleColumnSection>
+    </Box>
   );
 }

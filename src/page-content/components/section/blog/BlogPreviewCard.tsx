@@ -1,7 +1,6 @@
-import { Box, Typography, Paper } from "@mui/material";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import PersonIcon from "@mui/icons-material/Person";
-import HoverZoomImage from "@/components/image/HoverZoomImage";
+"use client";
+
+import { Box, Typography } from "@mui/material";
 import { stripRichText, truncateWordSafe } from "@/core/utils";
 
 type BlogPreviewCardProps = {
@@ -13,6 +12,13 @@ type BlogPreviewCardProps = {
   date: string;
 };
 
+/*
+ * A post is a wide row in the Figma frame (1200x256), not a card: the picture 320x220 inset
+ * 18 on the left, then the date and author, the title, and one line of the piece.
+ *
+ * ui-001 stacked them as three tall cards a row. Rows give the title room to be read at a
+ * glance, which is what a list of articles is for.
+ */
 export default function BlogPreviewCard({
   href,
   image,
@@ -21,71 +27,65 @@ export default function BlogPreviewCard({
   author,
   date,
 }: BlogPreviewCardProps) {
-  const truncatedText = stripRichText(truncateWordSafe(text, 150));
+  const truncatedText = stripRichText(truncateWordSafe(text, 180));
 
   return (
-    <a href={href} style={{ textDecoration: "none" }}>
-      <Paper
-        className="zoom-image-parent"
-        elevation={2}
-        sx={{
-          borderRadius: 2,
+    <Box
+      component="a"
+      href={href}
+      sx={(theme) => ({
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", sm: "320px 1fr" },
+        gap: { xs: 2, sm: "40px" },
+        alignItems: "center",
+        p: "18px",
+        borderRadius: "25px",
+        border: `1px solid ${theme.palette.surfaces.border}`,
+        textDecoration: "none",
+        color: "inherit",
+        transition: theme.transitions.create(["border-color", "background-color"]),
+        "&:hover": {
+          borderColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.surfaces.tint,
+        },
+        "&:hover img": { transform: "scale(1.04)" },
+      })}
+    >
+      <Box
+        sx={(theme) => ({
+          height: { xs: 200, sm: 220 },
+          borderRadius: "18px",
           overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
-          height: "100%",
-        }}
+          backgroundColor: theme.palette.surfaces.placeholder,
+        })}
       >
-        {/* Image */}
-        <HoverZoomImage
-          src={image}
-          alt={title}
-          loading="lazy"
-          className="preview-img"
-          zoomOnParentHover
-          sx={{
-            width: "100%",
-            height: 200,
-            objectFit: "cover",
-            transition: "transform 0.3s ease",
-          }}
-        />
-
-        {/* Content */}
-        <Box px={2} py={2} flexGrow={1}>
-          <Typography variant="h6" textAlign="center">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" mt={0.5}>
-            {truncatedText}
-          </Typography>
-        </Box>
-
-        {/* Footer */}
         <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          px={3}
-          py={2}
-          borderTop="1px solid #f0f0f0"
-          mt="auto"
-        >
-          <Box display="flex" alignItems="center" gap={1}>
-            <PersonIcon sx={{ fontSize: 18, color: "text.secondary" }} />
-            <Typography variant="caption" color="text.secondary">
-              {author}
-            </Typography>
-          </Box>
+          component="img"
+          src={image}
+          alt=""
+          loading="lazy"
+          sx={(theme) => ({
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            transition: theme.transitions.create("transform"),
+          })}
+        />
+      </Box>
 
-          <Box display="flex" alignItems="center" gap={1}>
-            <CalendarMonthIcon sx={{ fontSize: 18, color: "text.secondary" }} />
-            <Typography variant="caption" color="text.secondary">
-              {date}
-            </Typography>
-          </Box>
-        </Box>
-      </Paper>
-    </a>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, py: 1 }}>
+        <Typography variant="caption" sx={{ opacity: 0.6 }}>
+          {date} · {author}
+        </Typography>
+
+        <Typography variant="h4" component="h3">
+          {title}
+        </Typography>
+
+        <Typography variant="body2" sx={{ opacity: 0.72 }}>
+          {truncatedText}
+        </Typography>
+      </Box>
+    </Box>
   );
 }

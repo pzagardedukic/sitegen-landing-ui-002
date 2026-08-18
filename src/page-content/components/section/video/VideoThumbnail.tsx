@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, Box } from "@mui/material";
-import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
+import { Box } from "@mui/material";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { getVideoThumbnail } from "@/core/utils";
-import HoverZoomImage from "@/components/image/HoverZoomImage";
 
+/*
+ * A video tile from the Figma frame (580x326): the still under a black overlay with a round
+ * play button, 74px across, in the middle.
+ */
 export default function VideoThumbnail({ videoUrl }: { videoUrl: string }) {
   const [thumb, setThumb] = useState<string | null>(null);
 
@@ -23,64 +26,67 @@ export default function VideoThumbnail({ videoUrl }: { videoUrl: string }) {
   }, [videoUrl]);
 
   return (
-    <Card
-      onClick={() => window.open(videoUrl, "_blank")}
-      className="zoom-image-parent"
-      sx={{
+    <Box
+      component="a"
+      href={videoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={(theme) => ({
         position: "relative",
-        height: 250,
-        borderRadius: 2,
+        display: "block",
+        height: { xs: 220, sm: 280, md: 326 },
+        borderRadius: "25px",
         overflow: "hidden",
-        cursor: "pointer",
-        backgroundColor: "#222",
-        "&:hover .playIcon": {
-          opacity: 1,
-        },
-        "&:hover .thumb": {
-          opacity: 0.6,
-        },
-        "&:hover .hover-zoom-image img": {
-          opacity: 0.6,
-        },
-      }}
+        backgroundColor: theme.palette.surfaces.placeholder,
+        "&:hover .play": { transform: "translate(-50%, -50%) scale(1.08)" },
+        "&:hover img": { transform: "scale(1.04)" },
+      })}
     >
-      {thumb ? (
-        <HoverZoomImage
+      {thumb && (
+        <Box
+          component="img"
           src={thumb}
-          alt="Video preview"
-          sx={{
+          alt=""
+          loading="lazy"
+          sx={(theme) => ({
+            position: "absolute",
+            inset: 0,
             width: "100%",
             height: "100%",
             objectFit: "cover",
-          }}
-          zoomOnParentHover
-        />
-      ) : (
-        // Fallback thumbnail (gray gradient)
-        <Box
-          className="thumb"
-          sx={{
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(135deg, #555, #222)",
-            transition: "opacity 0.3s ease",
-          }}
+            transition: theme.transitions.create("transform"),
+          })}
         />
       )}
 
-      <PlayCircleFilledWhiteIcon
-        className="playIcon"
-        sx={{
+      <Box
+        aria-hidden
+        sx={(theme) => ({
+          position: "absolute",
+          inset: 0,
+          backgroundColor: theme.palette.surfaces.scrim,
+        })}
+      />
+
+      <Box
+        className="play"
+        sx={(theme) => ({
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          fontSize: 70,
-          color: "#fff",
-          opacity: 0.7,
-          transition: "all 0.3s ease",
-        }}
-      />
-    </Card>
+          width: 74,
+          height: 74,
+          borderRadius: "50%",
+          backgroundImage: theme.palette.brandGradient,
+          color: theme.palette.primary.contrastText,
+          display: "grid",
+          placeItems: "center",
+          transition: theme.transitions.create("transform"),
+        })}
+      >
+        <PlayArrowIcon sx={{ fontSize: 34 }} />
+      </Box>
+    </Box>
   );
 }
