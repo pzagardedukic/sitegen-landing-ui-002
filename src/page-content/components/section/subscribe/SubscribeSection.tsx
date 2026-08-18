@@ -3,6 +3,7 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 import { useBannerImage } from "@/app/theme/utils/UseBannerImage";
 import GradientButton from "@/components/button/GradientButton";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FormDisclaimer from "../common/FormDisclaimer";
 import { useLanguage } from "@/core/runtime";
 import {
@@ -18,6 +19,15 @@ type SubmitStatus = "success" | "error" | null;
 const isValidEmail = (value: string) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
+/*
+ * Newsletter band from the Figma frame (1440x520): the photograph in a card inset 20px with
+ * a 25 radius, and the whole block centred inside it — title, then the field and button on
+ * one row, then the disclaimer.
+ *
+ * ui-001 ran this full-bleed with a three-stop gradient and background-attachment: fixed.
+ * The fixed attachment is the reason this band juddered while scrolling on iOS; the design
+ * asks for a flat 60 % overlay, which also costs nothing to paint.
+ */
 export default function SubscribeSection() {
   const resolvedHeaderImage = useBannerImage();
 
@@ -75,180 +85,140 @@ export default function SubscribeSection() {
   }, [submitStatus]);
 
   return (
-    <Box
-      component="section"
-      sx={{
-        position: "relative",
-        color: "white",
-        py: { xs: 6, lg: 10 },
-        px: 4,
-
-        "&::after": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
+    <Box component="section" sx={{ p: { xs: "12px", sm: "24px", md: "20px" } }}>
+      <Box
+        sx={(theme) => ({
+          position: "relative",
+          overflow: "hidden",
+          borderRadius: "25px",
+          minHeight: { xs: 340, md: 480 },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: theme.palette.surfaces.placeholder,
           backgroundImage: `url("${resolvedHeaderImage}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          opacity: 0.55,
-          filter: "contrast(1.1) brightness(0.9) saturate(0.9)",
-          zIndex: 0,
-        },
-
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          background: `
-            linear-gradient(
-              180deg,
-              rgba(0,0,0,0.65) 0%,
-              rgba(0,0,0,0.55) 45%,
-              rgba(0,0,0,0.85) 100%
-            )
-          `,
-          zIndex: 1,
-        },
-      }}
-    >
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        noValidate
-        sx={{
-          position: "relative",
-          zIndex: 2,
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 6,
-        }}
+        })}
       >
         <Box
+          aria-hidden
+          sx={(theme) => ({
+            position: "absolute",
+            inset: 0,
+            backgroundColor: theme.palette.surfaces.scrim,
+          })}
+        />
+
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          noValidate
           sx={{
             position: "relative",
-            flex: "1 1 420px",
-            minWidth: 0,
-            maxWidth: 600,
+            width: "100%",
+            maxWidth: 1000,
+            px: { xs: "24px", sm: "40px", md: 0 },
+            py: { xs: 6, md: 0 },
             display: "flex",
             flexDirection: "column",
-            gap: 2,
+            alignItems: "center",
+            gap: { xs: 3, md: 4 },
+            color: "common.white",
+            textAlign: "center",
           }}
         >
-          <Typography color="white" variant="h3">
+          <Typography variant="h3" component="h2">
             {subscriptionsTranslation.title}
           </Typography>
 
-          <TextField
-            variant="standard"
-            type="email"
-            value={email}
-            placeholder={formTranslations.email.placeholder}
-            error={Boolean(emailError)}
-            helperText={emailError ?? " "}
-            disabled={isSubmitting}
-            onChange={(event) => {
-              setEmail(event.target.value);
-              setEmailError(null);
-              setSubmitStatus(null);
-            }}
-            slotProps={{
-              htmlInput: {
-                "aria-label": formTranslations.email.placeholder,
-              },
-            }}
+          <Box
             sx={{
-              input: {
-                color: "white",
-                fontSize: { xs: "22px", md: "32px" },
-                pb: 0,
-
-                "&::placeholder": {
-                  opacity: 1,
-                },
-
-                "&:-webkit-autofill": {
-                  backgroundColor: "transparent !important",
-                  WebkitTextFillColor: "white",
-                  transition: "background-color 9999s ease-in-out 0s",
-                  fontSize: { xs: "22px", md: "32px" },
-                },
-
-                "&:-webkit-autofill::first-line": {
-                  color: "white",
-                },
-              },
-
-              "& .MuiInput-underline:before": {
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-              },
-
-              "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-              },
-
-              "& .MuiInput-underline:after": {
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-              },
-
-              "& .MuiInput-underline.Mui-error:after": {
-                borderBottomColor: "error.main",
-              },
-
-              "& .MuiFormHelperText-root": {
-                mx: 0,
-                minHeight: 20,
-                color: "white",
-              },
-
-              "& .MuiFormHelperText-root.Mui-error": {
-                color: "white",
-              },
+              position: "relative",
+              width: "100%",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: { xs: "stretch", sm: "flex-start" },
+              gap: 1.75,
             }}
-          />
-
-          <FormDisclaimer isHighContrast />
-
-          {submitStatus && (
-            <Alert
-              severity={submitStatus}
-              sx={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                mt: 1,
-                py: 0.25,
-                width: "100%",
-                "& .MuiAlert-message": {
-                  py: 0.75,
+          >
+            <TextField
+              fullWidth
+              type="email"
+              value={email}
+              placeholder={formTranslations.email.placeholder}
+              error={Boolean(emailError)}
+              helperText={emailError ?? " "}
+              disabled={isSubmitting}
+              onChange={(event) => {
+                setEmail(event.target.value);
+                setEmailError(null);
+                setSubmitStatus(null);
+              }}
+              slotProps={{
+                htmlInput: {
+                  "aria-label": formTranslations.email.placeholder,
                 },
               }}
-            >
-              {submitStatus === "success"
-                ? subscriptionsTranslation.successMessage
-                : subscriptionsTranslation.errorMessage}
-            </Alert>
-          )}
-        </Box>
+              sx={(theme) => ({
+                flex: { sm: "1 1 560px" },
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: 999,
+                  backgroundColor: "rgba(255,255,255,0.08)",
+                  color: theme.palette.common.white,
+                  "& fieldset": { borderColor: "rgba(255,255,255,0.5)" },
+                  "&:hover fieldset": { borderColor: "rgba(255,255,255,0.8)" },
+                  "&.Mui-focused fieldset": {
+                    borderColor: theme.palette.common.white,
+                  },
+                },
+                "& .MuiOutlinedInput-input": {
+                  px: 3,
+                  py: 2,
+                  "&::placeholder": { color: "rgba(255,255,255,0.75)", opacity: 1 },
+                },
+                "& .MuiFormHelperText-root": {
+                  mx: 3,
+                  minHeight: 20,
+                  color: theme.palette.common.white,
+                },
+                "& .MuiFormHelperText-root.Mui-error": {
+                  color: theme.palette.common.white,
+                },
+              })}
+            />
 
-        <Box
-          sx={{
-            position: "relative",
-            flex: "0 1 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <GradientButton type="submit" disabled={isSubmitting}>
-            {subscriptionsTranslation.callToAction}
-          </GradientButton>
+            <GradientButton
+              type="submit"
+              disabled={isSubmitting}
+              endIcon={<ArrowOutwardIcon />}
+              sx={{ flexShrink: 0, height: 58 }}
+            >
+              {subscriptionsTranslation.callToAction}
+            </GradientButton>
+
+            {submitStatus && (
+              <Alert
+                severity={submitStatus}
+                sx={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  right: 0,
+                  mt: 1,
+                  py: 0.25,
+                  textAlign: "left",
+                  "& .MuiAlert-message": { py: 0.75 },
+                }}
+              >
+                {submitStatus === "success"
+                  ? subscriptionsTranslation.successMessage
+                  : subscriptionsTranslation.errorMessage}
+              </Alert>
+            )}
+          </Box>
+
+          <FormDisclaimer isHighContrast />
         </Box>
       </Box>
     </Box>
