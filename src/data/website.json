@@ -7,23 +7,23 @@
   },
   "home": {
     "websiteName": {
-      "SL": "NORD Atelier",
-      "EN": "NORD Atelier"
+      "SL": "Reforma Pilates",
+      "EN": "Reforma Pilates"
     },
     "slogan": {
-      "SL": "Premišljeno pohištvo in svetila za prostore, v katerih je prijetno živeti. Oblikujemo v Ljubljani, izdelujemo v majhnih evropskih delavnicah in dostavljamo po vsej EU.",
-      "EN": "Thoughtful furniture and lighting for spaces that feel good to live in. Designed in Ljubljana, made by small European workshops, and delivered across the EU."
+      "SL": "Studio za reformer in matt pilates v Ljubljani. Majhne skupine, vadba po meri telesa in inštruktorji, ki popravljajo vsak gib.",
+      "EN": "A reformer and mat Pilates studio in Ljubljana. Small groups, training shaped to your body, and instructors who correct every movement."
     },
     "companyLogo": {
-      "text": "NORD ATELIER",
-      "file": "https://placehold.co/720x240/171714/F4EFE6?text=NORD+ATELIER"
+      "text": "REFORMA",
+      "file": "https://placehold.co/720x240/8258C8/FFFFFF?text=REFORMA"
     }
   },
   "contactInfo": {
     "company": {
-      "name": "NORD Atelier demo d.o.o.",
+      "name": "Reforma Pilates demo d.o.o.",
       "country": "Slovenia",
-      "address": "Trubarjeva cesta 42",
+      "address": "Poljanski nasip 24",
       "postalCode": "1000",
       "postalOffice": "Ljubljana"
     },
@@ -34,15 +34,15 @@
       },
       {
         "type": "EMAIL",
-        "value": "hello@nord-atelier.example"
+        "value": "pozdravljeni@reforma-pilates.example"
       },
       {
         "type": "WEBSITE",
-        "value": "https://example.com"
+        "value": "https://reforma-pilates.example"
       },
       {
         "type": "INSTAGRAM",
-        "value": "https://www.instagram.com/example"
+        "value": "https://instagram.com/reforma.pilates.example"
       },
       {
         "type": "LINKEDIN",
@@ -50,7 +50,7 @@
       },
       {
         "type": "FACEBOOK",
-        "value": "https://www.facebook.com/example"
+        "value": "https://facebook.com/reforma.pilates.example"
       }
     ]
   },
@@ -74,51 +74,51 @@
   },
   "blog": {
     "slugs": [
-      "1-kako-izbrati-jedilno-mizo-za-vsakodnevno-uporabo",
-      "2-tri-plasti-svetlobe-za-prijetnejsi-dom",
-      "3-masiven-les-furnir-ali-laminat-kaj-izbrati",
-      "4-kaj-se-zgodi-med-narocilom-in-dostavo-pohistva",
-      "5-majhen-prostor-brez-majhnih-ambicij"
+      "1-zakaj-vas-po-prvi-uri-boli-tam-kjer-niste-pricakovali",
+      "2-nevtralna-medenica-najbolj-ponavljano-navodilo-v-dvorani",
+      "3-koliko-vzmeti-je-prav-in-zakaj-vec-ni-tezje",
+      "4-dvakrat-tedensko-je-meja-pod-katero-se-ne-pozna",
+      "5-vrnitev-k-vadbi-po-porodu-prvih-sest-tednov"
     ]
   },
   "portfolio": {
     "slugs": [
-      "1-stanovanje-ob-ljubljanici",
-      "2-hisa-pod-storzicem",
-      "3-salon-hotela-mura",
-      "4-pekarna-kora",
-      "5-kolekcija-axis",
-      "6-svetlobna-instalacija-lightwell"
+      "1-reformer-za-zacetnike",
+      "2-reformer-nadaljevalni",
+      "3-jutranji-matt-pilates",
+      "4-pilates-za-pisarnisko-telo",
+      "5-pilates-po-poskodbi",
+      "6-nosecniski-in-poporodni-pilates"
     ]
   },
   "pricing": {
     "slugs": [
-      "1-naslanjac-arc",
-      "2-jedilni-stol-fold",
-      "3-kavc-mira-220",
-      "4-jedilna-miza-drift-180",
-      "5-stranska-mizica-slate",
-      "6-modularna-polica-axis",
-      "7-visece-svetilo-halo",
-      "8-talna-svetilka-line",
-      "9-keramicna-vaza-terra",
-      "10-volnena-odeja-loom"
+      "1-clanstvo-4-mesecno",
+      "2-clanstvo-8-mesecno",
+      "3-neomejeno-clanstvo",
+      "4-jutranje-clanstvo",
+      "5-paket-10-ur",
+      "6-paket-20-ur",
+      "7-posamezna-ura",
+      "8-individualna-ura",
+      "9-individualno-v-paru",
+      "10-program-za-podjetja"
     ]
   },
   "careers": {
     "slugs": [
-      "1-produktni-oblikovalec-oziroma-oblikovalka",
-      "2-vodja-e-trgovine-in-vsebin",
-      "3-montazer-oziroma-tehnicni-koordinator"
+      "1-instruktor-oziroma-instruktorica-reformer-pilatesa",
+      "2-instruktor-za-rehabilitacijski-program",
+      "3-vodja-recepcije-in-clanstev"
     ]
   },
   "events": {
     "slugs": [
-      "1-od-vzorca-lesa-do-pravilne-koncne-obdelave",
-      "2-predstavitev-kolekcije-soft-geometry",
-      "3-svetloba-za-zimske-mesece",
-      "4-popravilo-in-ponovna-uporaba-pohistva",
-      "5-odprti-studio-prototipi-in-proces"
+      "1-dihanje-in-globoke-trebusne-misice",
+      "2-pilates-za-tekace-kolki-in-stopala",
+      "3-kaj-se-zgodi-s-telesom-po-porodu",
+      "4-odprti-dan-reformer-brez-rezervacije",
+      "5-ergonomija-pisarne-in-vaje-med-delom"
     ]
   }
 }

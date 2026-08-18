@@ -1,7 +1,7 @@
 {
   "general": {
-    "websiteType": "SHOP",
-    "businessSector": "HOME_AND_LIVING",
+    "websiteType": "BOOKING",
+    "businessSector": "SPORT_AND_RECREATION",
     "primaryLanguage": "SL",
     "supportedLanguages": [
       "EN"
@@ -9,14 +9,14 @@
   },
   "theme": {
     "colors": {
-      "primary": "#F45A2A",
-      "secondary": "#171714",
-      "text": "#1C1C19"
+      "primary": "#8258C8",
+      "secondary": "#2C84C8",
+      "text": "#111111"
     },
     "fonts": {
-      "heading": "Space Grotesk",
-      "body": "Inter",
-      "banner": "Playfair Display"
+      "heading": "Sora",
+      "body": "Manrope",
+      "banner": "Sora"
     },
     "images": {
       "banner": {
@@ -27,26 +27,26 @@
   },
   "home": {
     "websiteName": {
-      "SL": "NORD Atelier",
-      "EN": "NORD Atelier"
+      "SL": "Reforma Pilates",
+      "EN": "Reforma Pilates"
     },
     "slogan": {
-      "SL": "Premišljeno pohištvo in svetila za prostore, v katerih je prijetno živeti. Oblikujemo v Ljubljani, izdelujemo v majhnih evropskih delavnicah in dostavljamo po vsej EU.",
-      "EN": "Thoughtful furniture and lighting for spaces that feel good to live in. Designed in Ljubljana, made by small European workshops, and delivered across the EU."
+      "SL": "Studio za reformer in matt pilates v Ljubljani. Majhne skupine, vadba po meri telesa in inštruktorji, ki popravljajo vsak gib.",
+      "EN": "A reformer and mat Pilates studio in Ljubljana. Small groups, training shaped to your body, and instructors who correct every movement."
     },
     "companyLogo": {
-      "text": "NORD ATELIER",
+      "text": "REFORMA",
       "image": {
         "id": "company-logo",
-        "file": "https://placehold.co/720x240/171714/F4EFE6?text=NORD+ATELIER"
+        "file": "https://placehold.co/720x240/8258C8/FFFFFF?text=REFORMA"
       }
     }
   },
   "contactInfo": {
     "company": {
-      "name": "NORD Atelier demo d.o.o.",
+      "name": "Reforma Pilates demo d.o.o.",
       "country": "Slovenia",
-      "address": "Trubarjeva cesta 42",
+      "address": "Poljanski nasip 24",
       "postalCode": "1000",
       "postalOffice": "Ljubljana"
     },
@@ -63,15 +63,15 @@
       },
       {
         "type": "EMAIL",
-        "value": "hello@nord-atelier.example"
+        "value": "pozdravljeni@reforma-pilates.example"
       },
       {
         "type": "WEBSITE",
-        "value": "https://example.com"
+        "value": "https://reforma-pilates.example"
       },
       {
         "type": "INSTAGRAM",
-        "value": "https://www.instagram.com/example"
+        "value": "https://instagram.com/reforma.pilates.example"
       },
       {
         "type": "LINKEDIN",
@@ -79,7 +79,7 @@
       },
       {
         "type": "FACEBOOK",
-        "value": "https://www.facebook.com/example"
+        "value": "https://facebook.com/reforma.pilates.example"
       }
     ],
     "workingHours": {
@@ -88,68 +88,68 @@
         {
           "tag": "MONDAY",
           "open": true,
-          "from": "09:00",
-          "to": "17:00"
+          "from": "06:45",
+          "to": "20:30"
         },
         {
           "tag": "TUESDAY",
           "open": true,
-          "from": "09:00",
-          "to": "17:00"
+          "from": "06:45",
+          "to": "20:30"
         },
         {
           "tag": "WEDNESDAY",
           "open": true,
-          "from": "09:00",
-          "to": "17:00"
+          "from": "06:45",
+          "to": "20:30"
         },
         {
           "tag": "THURSDAY",
           "open": true,
-          "from": "09:00",
-          "to": "19:00"
+          "from": "06:45",
+          "to": "20:30"
         },
         {
           "tag": "FRIDAY",
           "open": true,
-          "from": "09:00",
-          "to": "17:00"
+          "from": "06:45",
+          "to": "19:00"
         },
         {
           "tag": "SATURDAY",
           "open": true,
-          "from": "10:00",
-          "to": "14:00"
+          "from": "08:30",
+          "to": "13:00"
         },
         {
           "tag": "SUNDAY",
-          "open": false,
-          "from": "10:00",
-          "to": "14:00"
+          "open": true,
+          "from": "09:00",
+          "to": "12:00"
         }
       ],
       "note": {
-        "SL": "Za osebno svetovanje, ogled materialov ali prevzem večjih naročil priporočamo predhodno rezervacijo termina. Ob praznikih in med kolektivnim dopustom je razstavni salon lahko zaprt.",
-        "EN": "For personal consultations, material reviews, or collection of larger orders, we recommend booking an appointment in advance. The showroom may be closed on public holidays and during our annual studio break."
+        "SL": "Zadnji termin se začne uro pred zaprtjem. Ob praznikih vadimo po nedeljskem urniku, spremembe objavimo teden vnaprej.",
+        "EN": "The last session starts an hour before closing. On public holidays we run the Sunday timetable; changes are posted a week ahead."
       }
     }
   },
   "about": {
     "aboutType": "ABOUT_COMPANY",
     "sectionName": {
-      "SL": "O ateljeju",
-      "EN": "About the atelier"
+      "SL": "O studiu",
+      "EN": "About the studio"
     },
     "text": {
-      "SL": "NORD Atelier je neodvisen oblikovalski studio in spletna trgovina za pohištvo, svetila ter premišljene dodatke za dom. Združujemo mirno severnjaško estetiko, lokalno obrtniško znanje in materiale, izbrane za dolgo življenjsko dobo. Vsak izdelek razvijamo tako, da je prijeten za uporabo, enostaven za vzdrževanje in dovolj značilen, da prostoru doda identiteto.",
-      "EN": "NORD Atelier is an independent design studio and online shop for furniture, lighting, and considered home objects. We combine a calm northern aesthetic with local craft knowledge and materials selected for a long service life. Every piece is developed to be comfortable to use, easy to maintain, and distinctive enough to give a room its own identity."
+      "SL": "Reforma je pilates studio z osmimi reformerji in prostorom za matt vadbo. Delamo v skupinah do osem ljudi, ker le tako inštruktor vidi vsakega in lahko vajo sproti prilagodi. Vsak nov član začne z uvodno analizo drže in gibanja.",
+      "EN": "Reforma is a Pilates studio with eight reformers and a dedicated mat space. We work in groups of up to eight, because that is the only way an instructor can see everyone and adjust an exercise as it happens. Every new member starts with a posture and movement assessment."
     },
     "establishedYear": 2017,
     "items": [
       {
         "text": {
-          "SL": "Materiale izbiramo na podlagi izvora, občutka na dotik in možnosti popravil. Najpogosteje uporabljamo certificiran masiven les, prašno barvano kovino, naravna olja, volno ter reciklirano steklo. Dobavitelje obiskujemo osebno in z njimi razvijamo rešitve, ki zmanjšujejo odpad pri proizvodnji.",
-          "EN": "We select materials according to origin, tactile quality, and repairability. Our core palette includes certified solid wood, powder-coated metal, natural oils, wool, and recycled glass. We visit suppliers in person and develop production details with them to reduce waste at every stage."
+          "SL": "Vsak član začne z uvodno analizo: pregledamo držo, gibljivost kolkov in ramen ter dihanje. Iz tega nastane načrt, ki ga po šestih tednih ponovno preverimo in prilagodimo.",
+          "EN": "Every member starts with an assessment: posture, hip and shoulder mobility, and breathing. That produces a plan we review and adjust after six weeks."
         },
         "image": {
           "id": "about-materials",
@@ -158,8 +158,8 @@
       },
       {
         "text": {
-          "SL": "Kolekcije nastajajo kot prilagodljivi sistemi, ne kot kratkotrajni trendi. Mize, police in sedežno pohištvo so zasnovani tako, da jih je mogoče nadgraditi, ponovno oblaziniti ali prilagoditi novemu prostoru. Tako izdelek ostane uporaben tudi takrat, ko se življenjske potrebe spremenijo.",
-          "EN": "Our collections are conceived as adaptable systems rather than short-lived trends. Tables, shelving, and seating can be extended, reupholstered, or adjusted for a new room. This allows each piece to remain useful as homes, teams, and everyday needs evolve."
+          "SL": "Oprema je od Balanced Body in Merrithew, servisirana dvakrat letno. Vzmeti menjamo po urah uporabe in ne po videzu, ker se odpor izgublja precej prej, kot se to opazi.",
+          "EN": "Our equipment is Balanced Body and Merrithew, serviced twice a year. Springs are replaced by hours of use rather than by looks, because resistance fades well before it shows."
         },
         "image": {
           "id": "about-systems",
@@ -168,8 +168,8 @@
       },
       {
         "text": {
-          "SL": "Poleg spletnega nakupa nudimo svetovanje pri izbiri dimenzij, barv in kombinacij materialov. Pri večjih naročilih pripravimo postavitev, vzorce ter načrt dostave in montaže, da je pot od prve ideje do dokončanega prostora jasna in usklajena.",
-          "EN": "Alongside online purchasing, we offer guidance on dimensions, colours, and material combinations. For larger orders we prepare layouts, samples, and a coordinated delivery and installation plan, making the path from first idea to finished room clear and predictable."
+          "SL": "Skupine so majhne namenoma. Osem reformerjev pomeni osem ljudi, tudi kadar bi jih lahko sprejeli več — pri pilatesu je popravek pomembnejši od števila ponovitev.",
+          "EN": "Groups are small on purpose. Eight reformers means eight people, even when we could take more — in Pilates a correction matters more than a repetition."
         },
         "image": {
           "id": "about-service",
@@ -180,30 +180,18 @@
   },
   "legal": {
     "privacyPolicy": {
-      "SL": {
-        "id": "privacy-sl",
-        "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      },
-      "EN": {
-        "id": "privacy-en",
-        "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      }
+      "SL": "<p>Reforma Pilates demo d.o.o. obdeluje osebne podatke, ki jih posredujete ob včlanitvi, rezervaciji termina ali prijavi na e-novice. Podatke uporabljamo za vodenje članstva, obveščanje o spremembah urnika in izdajo računov.</p><p>Zdravstveni vprašalnik, ki ga izpolnite pred prvim obiskom, hranimo ločeno in je dostopen samo inštruktorjem, ki vodijo vaše ure. Podatkov ne posredujemo tretjim osebam, razen izvajalcu računovodskih storitev in ponudniku rezervacijskega sistema.</p><p>Kadar koli lahko zahtevate izpis, popravek ali izbris svojih podatkov na naslovu, navedenem v nogi strani. To je vzorčna vsebina za predstavitev teme.</p>",
+      "EN": "<p>Reforma Pilates demo d.o.o. processes the personal data you provide when joining, booking a session, or subscribing to the newsletter. We use it to manage memberships, notify you of timetable changes, and issue invoices.</p><p>The health questionnaire completed before your first visit is stored separately and is accessible only to the instructors who lead your sessions. We do not pass data to third parties other than our accountant and the booking system provider.</p><p>You may request a copy, a correction, or deletion of your data at any time at the address in the footer. This is sample content for a theme demonstration.</p>"
     },
     "termsOfService": {
-      "SL": {
-        "id": "terms-sl",
-        "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      },
-      "EN": {
-        "id": "terms-en",
-        "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      }
+      "SL": "<p>Rezervacija skupinske ure je obvezna in se odpre sedem dni vnaprej. Odpoved je brezplačna do dvanajst ur pred začetkom; pri kasnejši odpovedi se ura odšteje od članstva ali paketa.</p><p>Mesečna članstva se obnavljajo samodejno in jih lahko prekinete do zadnjega dne v mesecu. Paketi ur veljajo šest mesecev od nakupa in so prenosljivi na drugo osebo.</p><p>Pred prvim obiskom je treba izpolniti zdravstveni vprašalnik. Če ste v zdravniški ali fizioterapevtski obravnavi, se udeležba dogovori z vašim izvajalcem. To je vzorčna vsebina za predstavitev teme.</p>",
+      "EN": "<p>Booking is required for group sessions and opens seven days ahead. Cancellation is free up to twelve hours before the start; later cancellations are deducted from your membership or pack.</p><p>Monthly memberships renew automatically and can be stopped up to the last day of the month. Class packs are valid for six months from purchase and are transferable.</p><p>A health questionnaire must be completed before the first visit. If you are under medical or physiotherapy care, attendance is agreed with your practitioner. This is sample content for a theme demonstration.</p>"
     }
   },
   "team": {
     "text": {
-      "SL": "Majhna interdisciplinarna ekipa skrbi, da se oblikovalska ideja dosledno prenese v prototip, proizvodnjo, spletno izkušnjo in končno postavitev pri naročniku. Pri vsakem projektu sodelujemo neposredno, zato so odločitve hitre, komunikacija pregledna, rezultat pa usklajen od prve skice do zadnjega detajla.",
-      "EN": "Our small interdisciplinary team carries each design idea through prototyping, production, the online experience, and final installation. We stay directly involved in every project, keeping decisions fast, communication transparent, and the outcome consistent from the first sketch to the final detail."
+      "SL": "Vsi inštruktorji imajo mednarodno certifikacijo in redno supervizijo. Pri nas ne vadite po posnetku, ampak z nekom, ki vas gleda.",
+      "EN": "Every instructor holds an international certification and works under regular supervision. You do not train to a recording here — you train with someone watching you."
     },
     "items": [
       {
@@ -212,8 +200,8 @@
           "EN": "Ana Kovač"
         },
         "text": {
-          "SL": "Ustanoviteljica in kreativna direktorica vodi razvoj kolekcij ter notranje projekte. Posebej jo zanimajo razmerja med svetlobo, naravnimi materiali in vsakodnevnimi navadami uporabnikov.",
-          "EN": "Founder and creative director leading collection development and interior projects. Her work focuses on the relationship between light, natural materials, and the everyday habits of the people using a space."
+          "SL": "Ustanoviteljica studia in vodja izobraževanj. Certifikat BASI Pilates, deset let dela z rehabilitacijskimi skupinami po poškodbah hrbtenice.",
+          "EN": "Founder of the studio and head of training. BASI Pilates certified, with ten years of rehabilitation work following spinal injuries."
         },
         "contact": [
           {
@@ -240,8 +228,8 @@
           "EN": "Luka Zupan"
         },
         "text": {
-          "SL": "Produktni oblikovalec, odgovoren za konstrukcijske rešitve, prototipe in sodelovanje z izdelovalci. Pri razvoju išče ravnotežje med preprosto montažo, učinkovito porabo materiala in udobjem.",
-          "EN": "Product designer responsible for construction details, prototypes, and collaboration with makers. He looks for a balance between simple assembly, efficient material use, and long-term comfort."
+          "SL": "Reformer in skakalna deska. Prej atletski trener, zato veliko dela s športniki v predsezonski pripravi in po operacijah kolena.",
+          "EN": "Reformer and jumpboard. A former track coach, so much of his work is with athletes in pre-season and after knee surgery."
         },
         "contact": [
           {
@@ -264,8 +252,8 @@
           "EN": "Maja Vidmar"
         },
         "text": {
-          "SL": "Arhitektka in vodja projektov usklajuje izmere, načrte, vzorce, roke ter izvedbo na lokaciji. Naročnikom pomaga prevesti široke želje v jasen nabor odločitev in izvedljiv proračun.",
-          "EN": "Architect and project lead coordinating surveys, drawings, samples, schedules, and on-site delivery. She helps clients turn broad ambitions into a clear set of decisions and a workable budget."
+          "SL": "Prenatalni in poporodni pilates. Vodi tudi jutranje matt skupine in individualne ure za začetnice, ki se vadbe lotevajo prvič.",
+          "EN": "Prenatal and postnatal Pilates. She also runs the morning mat groups and one-to-one sessions for complete beginners."
         },
         "contact": [
           {
@@ -288,8 +276,8 @@
           "EN": "Nejc Potočnik"
         },
         "text": {
-          "SL": "Vodja spletne trgovine in podpore skrbi za produktne podatke, naročila, dostavo ter poprodajno pomoč. Njegov cilj je, da so tudi zahtevnejši spletni nakupi razumljivi in brez neprijetnih presenečenj.",
-          "EN": "E-commerce and support lead responsible for product data, orders, delivery, and aftercare. His goal is to make even complex online purchases clear, informed, and free from unpleasant surprises."
+          "SL": "Individualne ure in analiza gibanja. Skrbi za program za pisarniške bolečine v vratu in ramenih ter za korporativne skupine.",
+          "EN": "One-to-one sessions and movement analysis. He runs the programme for desk-related neck and shoulder pain, and the corporate groups."
         },
         "contact": [
           {
@@ -310,49 +298,49 @@
   },
   "experience": {
     "text": {
-      "SL": "V zadnjih letih smo opremili zasebne domove, manjše hotele, restavracije, pisarne in trgovine po Sloveniji ter sosednjih državah. Izkušnje iz projektnega dela neposredno prenašamo v razvoj izdelkov, zato so kolekcije preverjene v resničnih prostorih in pri intenzivni vsakodnevni uporabi.",
-      "EN": "Over the past years we have furnished private homes, boutique hotels, restaurants, offices, and shops across Slovenia and neighbouring countries. Lessons from project work feed directly into product development, so our collections are tested in real spaces and under demanding everyday use."
+      "SL": "V osmih letih smo iz ene dvorane zrasli v studio z osmimi reformerji in stalnim urnikom sedmih dni v tednu.",
+      "EN": "In eight years we have grown from a single room into a studio with eight reformers and a timetable that runs seven days a week."
     },
-    "clientCount": 86,
-    "projectCount": 142,
+    "clientCount": 640,
+    "projectCount": 24,
     "items": [
       {
-        "url": "https://example.com/certificates/responsible-wood",
+        "url": "https://example.com/certifications/basi-pilates",
         "image": {
           "id": "certificate-wood",
-          "file": "https://placehold.co/720x360/FFFFFF/171714?text=RESPONSIBLE+WOOD"
+          "file": "https://placehold.co/720x360/FFFFFF/111111?text=BASI%20PILATES"
         }
       },
       {
-        "url": "https://example.com/certificates/european-craft",
+        "url": "https://example.com/certifications/polestar",
         "image": {
           "id": "certificate-craft",
-          "file": "https://placehold.co/720x360/FFFFFF/171714?text=EUROPEAN+CRAFT"
+          "file": "https://placehold.co/720x360/FFFFFF/111111?text=POLESTAR"
         }
       },
       {
-        "url": "https://example.com/certificates/design-award",
+        "url": "https://example.com/certifications/merrithew",
         "image": {
           "id": "certificate-design",
-          "file": "https://placehold.co/720x360/FFFFFF/171714?text=DESIGN+AWARD+2025"
+          "file": "https://placehold.co/720x360/FFFFFF/111111?text=MERRITHEW"
         }
       }
     ]
   },
   "reviews": {
     "text": {
-      "SL": "Naročniki nas najpogosteje priporočijo zaradi jasnega procesa, mirne komunikacije in rešitev, ki so vizualno močne, vendar ostanejo praktične. Spodnja mnenja prikazujejo različne vrste sodelovanja: od posameznega spletnega nakupa do popolne opreme prostora.",
-      "EN": "Clients most often recommend us for a clear process, calm communication, and solutions that are visually distinctive without sacrificing practicality. The comments below reflect different kinds of collaboration, from a single online purchase to a complete interior fit-out."
+      "SL": "Člani najpogosteje omenjajo dvoje: da jih inštruktor med uro dejansko popravi in da bolečine v križu popustijo prej, kot so pričakovali.",
+      "EN": "Members mention two things most often: that the instructor actually corrects them during the session, and that lower-back pain eases sooner than they expected."
     },
     "items": [
       {
         "title": {
-          "SL": "Premišljeno od prve skice do montaže",
-          "EN": "Thoughtful from first sketch to installation"
+          "SL": "Križ me ne boli več po pisarniškem dnevu",
+          "EN": "My back no longer aches after a desk day"
         },
         "text": {
-          "SL": "Ekipa je naš nejasen seznam želja pretvorila v topel, funkcionalen dom. Predlogi materialov so bili dobro obrazloženi, roki realni, montaža pa izjemno organizirana. Po dveh letih je pohištvo še vedno videti odlično in ga uporabljamo brez kompromisov.",
-          "EN": "The team turned our loose list of wishes into a warm, functional home. Material choices were clearly explained, the schedule was realistic, and installation was exceptionally organised. Two years later, the furniture still looks excellent and works without compromise."
+          "SL": "Po dveh mesecih dvakrat tedensko sem prvič presedela cel delovni dan brez bolečine. Uvodna analiza je pokazala, da so težava zakrčeni upogibalci kolka in ne hrbet, česar mi prej ni povedal nihče.",
+          "EN": "After two months of twice-weekly sessions I sat through a full working day pain-free for the first time. The assessment showed the problem was tight hip flexors rather than my back — something nobody had told me before."
         },
         "url": "https://example.com/reviews/1",
         "image": {
@@ -362,12 +350,12 @@
       },
       {
         "title": {
-          "SL": "Spletni nakup z osebnim pristopom",
-          "EN": "An online purchase with a personal touch"
+          "SL": "Vrnitev po operaciji kolena brez strahu",
+          "EN": "Back after knee surgery without the fear"
         },
         "text": {
-          "SL": "Pred naročilom jedilnih stolov smo prejeli vzorce tkanin in natančno razlago razlik med izvedbami. Dostava je bila napovedana vnaprej, embalaža premišljena, navodila pa jasna. Takšna podpora močno olajša večji nakup na daljavo.",
-          "EN": "Before ordering our dining chairs, we received fabric samples and a precise explanation of the available versions. Delivery was announced in advance, packaging was considered, and instructions were clear. That level of support makes a substantial remote purchase much easier."
+          "SL": "Fizioterapevt me je poslal sem in bilo je pravo nadaljevanje. Luka je vsak teden dodal odpor po dogovoru s terapevtom, nikoli na hitro. Po štirih mesecih spet tečem.",
+          "EN": "My physiotherapist sent me here and it was the right continuation. Luka added resistance each week in agreement with the therapist, never in a hurry. Four months on, I am running again."
         },
         "url": "https://example.com/reviews/2",
         "image": {
@@ -377,12 +365,12 @@
       },
       {
         "title": {
-          "SL": "Butični hotel je dobil prepoznaven značaj",
-          "EN": "A distinctive identity for our boutique hotel"
+          "SL": "Prenatalna skupina, kjer se počutiš varno",
+          "EN": "A prenatal group where you feel safe"
         },
         "text": {
-          "SL": "NORD je povezal recepcijo, zajtrkovalnico in sobe v enotno zgodbo, ne da bi prostori delovali enako. Posebej cenimo trpežne materiale, zamenljive dele ter dokumentacijo, ki naši ekipi omogoča enostavno vzdrževanje.",
-          "EN": "NORD connected the reception, breakfast room, and guest rooms into one coherent story without making them feel identical. We especially value the durable materials, replaceable parts, and documentation that helps our staff maintain everything properly."
+          "SL": "Vadila sem do 38. tedna. Maja je vsako vajo prilagodila trimesečju in znala razložiti, zakaj nekaterih stvari ne delamo. Po porodu sem se vrnila v poporodno skupino.",
+          "EN": "I trained until week 38. Maja adapted every exercise to the trimester and could explain why we avoided certain things. After the birth I came back to the postnatal group."
         },
         "url": "https://example.com/reviews/3",
         "image": {
@@ -392,12 +380,12 @@
       },
       {
         "title": {
-          "SL": "Zanesljiv partner za zahtevno odprtje trgovine",
-          "EN": "A reliable partner for a demanding store opening"
+          "SL": "Majhne skupine so razlika, ki se pozna",
+          "EN": "Small groups are the difference that shows"
         },
         "text": {
-          "SL": "Kljub kratkemu roku so bili načrti, vzorci in dobave ves čas pregledni. Ekipa je hitro reševala spremembe na lokaciji in predlagala podrobnosti, ki izboljšujejo tok obiskovalcev. Prostor je bil pripravljen pravočasno in brez zniževanja kakovosti.",
-          "EN": "Despite a tight deadline, drawings, samples, and deliveries remained transparent throughout. The team resolved on-site changes quickly and suggested details that improved visitor flow. The space opened on time without lowering the quality of the final result."
+          "SL": "Prej sem hodila v studio s petnajstimi ljudmi in nihče ni opazil, da vajo delam narobe. Tu me popravijo v prvi minuti. Cena na uro je višja, napredek pa hitrejši.",
+          "EN": "I used to attend a studio with fifteen people where nobody noticed I was doing the exercise wrong. Here I am corrected within the first minute. The hourly price is higher and the progress is faster."
         },
         "url": "https://example.com/reviews/4",
         "image": {
@@ -409,59 +397,59 @@
   },
   "portfolio": {
     "sectionName": {
-      "SL": "Izbrani projekti",
-      "EN": "Selected projects"
+      "SL": "Programi",
+      "EN": "Programmes"
     },
     "text": {
-      "SL": "Projektno delo nam omogoča raziskovanje merila, materialov in navad uporabnikov v zelo različnih okoljih. Izbor vključuje zasebne interierje, gostinske prostore, trgovine in produktne kolekcije ter prikazuje, kako se enaka oblikovalska načela prilagodijo različnim naročnikom in proračunom.",
-      "EN": "Project work allows us to explore scale, materials, and user habits across very different settings. This selection includes private interiors, hospitality spaces, retail environments, and product collections, showing how the same design principles adapt to different clients and budgets."
+      "SL": "Vsak program ima svoj namen, svoje trajanje in svojo skupino. Spodaj je pregled tistih, ki tečejo celo leto, s tem, komu so namenjeni in kaj se v njih dela.",
+      "EN": "Each programme has its own purpose, length, and group. Below are the ones that run all year, with who they are for and what they involve."
     },
     "categories": [
       {
-        "id": "portfolio-residential",
+        "id": "programme-reformer",
         "name": {
-          "SL": "Bivalni prostori",
-          "EN": "Residential"
+          "SL": "Reformer",
+          "EN": "Reformer"
         }
       },
       {
-        "id": "portfolio-hospitality",
+        "id": "programme-mat",
         "name": {
-          "SL": "Gostinstvo",
-          "EN": "Hospitality"
+          "SL": "Matt",
+          "EN": "Mat"
         }
       },
       {
-        "id": "portfolio-retail",
+        "id": "programme-rehab",
         "name": {
-          "SL": "Trgovski prostori",
-          "EN": "Retail"
+          "SL": "Rehabilitacija",
+          "EN": "Rehabilitation"
         }
       },
       {
-        "id": "portfolio-product",
+        "id": "programme-prenatal",
         "name": {
-          "SL": "Produktno oblikovanje",
-          "EN": "Product design"
+          "SL": "Nosečnost",
+          "EN": "Pregnancy"
         }
       }
     ],
     "items": [
       {
         "title": {
-          "SL": "Stanovanje ob Ljubljanici",
-          "EN": "Apartment by the Ljubljanica"
+          "SL": "Reformer za začetnike",
+          "EN": "Reformer for beginners"
         },
         "text": {
-          "SL": "Prenova mestnega stanovanja je odprla osrednji bivalni prostor in ustvarila dolgo pohištveno linijo, ki povezuje kuhinjo, knjižnico ter delovni kotiček. Hrast, lan in brušeno jeklo tvorijo mirno osnovo, premična svetila in barvni dodatki pa omogočajo, da se prostor spreminja skozi dan.",
-          "EN": "This city apartment renovation opened the central living area and introduced a continuous furniture line connecting the kitchen, library, and workspace. Oak, linen, and brushed steel form a calm foundation, while movable lighting and coloured accents let the room adapt throughout the day."
+          "SL": "Osem tednov v zaprti skupini, kjer se od prve ure naprej učimo dihanja, nevtralne medenice in dela z vzmetmi. Skupina ostane ista do konca, zato inštruktor natančno ve, kje je kdo.",
+          "EN": "Eight weeks in a closed group, learning breathing, neutral pelvis, and spring work from the first session. The group stays the same throughout, so the instructor knows exactly where each person is."
         },
         "client": {
-          "SL": "Zasebni naročnik, Ljubljana",
-          "EN": "Private client, Ljubljana"
+          "SL": "Zaprta skupina, 8 mest",
+          "EN": "Closed group, 8 places"
         },
         "date": "2026-04-18",
-        "categoryId": "portfolio-residential",
+        "categoryId": "programme-reformer",
         "images": [
           {
             "id": "project-river-1",
@@ -479,19 +467,19 @@
       },
       {
         "title": {
-          "SL": "Hiša pod Storžičem",
-          "EN": "House beneath Storžič"
+          "SL": "Reformer nadaljevalni",
+          "EN": "Reformer intermediate"
         },
         "text": {
-          "SL": "Za družinsko hišo smo razvili trpežen interier, ki prenese mokro pohodniško opremo, otroke in pogosta druženja. Vgradne omare skrivajo vsakodnevni nered, osrednja miza pa ostaja odprto zbirališče. Lokalni macesen sčasoma pridobiva značaj in povezuje notranjost z okoliško pokrajino.",
-          "EN": "For this family house we developed a durable interior able to handle wet hiking gear, children, and frequent gatherings. Built-in storage contains everyday clutter while the central table remains an open meeting point. Local larch gains character over time and connects the rooms with the surrounding landscape."
+          "SL": "Za tiste, ki obvladajo osnove in želijo večji obseg gibanja, delo s skakalno desko ter zahtevnejše prehode. Tempo je hitrejši, popravki pa bolj podrobni.",
+          "EN": "For those who have the basics and want greater range, jumpboard work, and harder transitions. The pace is quicker and the corrections finer."
         },
         "client": {
-          "SL": "Družina R., Preddvor",
-          "EN": "R. family, Preddvor"
+          "SL": "Odprta skupina, 8 mest",
+          "EN": "Open group, 8 places"
         },
         "date": "2025-11-07",
-        "categoryId": "portfolio-residential",
+        "categoryId": "programme-reformer",
         "images": [
           {
             "id": "project-house-1",
@@ -509,19 +497,19 @@
       },
       {
         "title": {
-          "SL": "Salon hotela Mura",
-          "EN": "Hotel Mura lounge"
+          "SL": "Jutranji matt pilates",
+          "EN": "Morning mat Pilates"
         },
         "text": {
-          "SL": "Javni del butičnega hotela smo zasnovali kot zaporedje manjših, udobnih območij za zajtrk, delo in večerni pogovor. Po meri izdelane klopi zmanjšujejo hrup, večnivojska svetloba pa ustvarja prijetno atmosfero od zgodnjega jutra do poznega večera.",
-          "EN": "The public area of this boutique hotel was planned as a sequence of smaller, comfortable zones for breakfast, work, and evening conversation. Custom banquettes reduce noise, while layered lighting creates an inviting atmosphere from early morning until late at night."
+          "SL": "Petinštirideset minut ob sedmih zjutraj, brez naprav, z malimi rekviziti. Program je zasnovan tako, da se lahko vsaka vaja ponovi doma brez opreme.",
+          "EN": "Forty-five minutes at seven in the morning, no machines, small props only. The programme is built so every exercise can be repeated at home without equipment."
         },
         "client": {
-          "SL": "Hotel Mura, Radenci",
-          "EN": "Hotel Mura, Radenci"
+          "SL": "Odprta skupina, 12 mest",
+          "EN": "Open group, 12 places"
         },
         "date": "2025-05-23",
-        "categoryId": "portfolio-hospitality",
+        "categoryId": "programme-mat",
         "images": [
           {
             "id": "project-hotel-1",
@@ -539,19 +527,19 @@
       },
       {
         "title": {
-          "SL": "Pekarna Kora",
-          "EN": "Kora bakery"
+          "SL": "Pilates za pisarniško telo",
+          "EN": "Pilates for the desk-bound"
         },
         "text": {
-          "SL": "Majhen lokal smo organizirali okoli jasne poti od vhoda do vitrine in prevzema. Topel les ter teksturirane ploščice poudarjajo ročno izdelavo, modularne police pa omogočajo hitro spreminjanje ponudbe. Vsi najbolj obremenjeni elementi so zamenljivi brez večjih gradbenih posegov.",
-          "EN": "This compact bakery is organised around a clear route from entrance to display and collection. Warm timber and textured tiles reinforce the handmade character, while modular shelving supports frequent changes in the offer. High-wear components can be replaced without major construction work."
+          "SL": "Program za vrat, ramena in zgornji del hrbta, namenjen tistim, ki presedijo večino dneva. Vsaka ura se konča z dvema vajama, ki ju je mogoče narediti med delom.",
+          "EN": "A programme for the neck, shoulders, and upper back, aimed at people who sit most of the day. Every session ends with two exercises that can be done at a desk."
         },
         "client": {
-          "SL": "Kora pekarna, Maribor",
-          "EN": "Kora bakery, Maribor"
+          "SL": "Odprta skupina, 10 mest",
+          "EN": "Open group, 10 places"
         },
         "date": "2024-10-12",
-        "categoryId": "portfolio-retail",
+        "categoryId": "programme-mat",
         "images": [
           {
             "id": "project-bakery-1",
@@ -569,19 +557,19 @@
       },
       {
         "title": {
-          "SL": "Kolekcija Axis",
-          "EN": "Axis collection"
+          "SL": "Pilates po poškodbi",
+          "EN": "Pilates after injury"
         },
         "text": {
-          "SL": "Axis je družina miz, klopi in polic, zgrajena okoli enega aluminijastega spoja. Sistem omogoča različne dolžine in višine, zato deluje v majhnem stanovanju, pisarni ali gostinskem prostoru. Posamezne dele je mogoče naročiti ločeno in preprosto zamenjati.",
-          "EN": "Axis is a family of tables, benches, and shelves built around a single aluminium joint. The system supports multiple lengths and heights, allowing it to work in a small apartment, office, or hospitality setting. Individual components can be ordered separately and replaced with simple tools."
+          "SL": "Individualne ure ali pari, vedno v dogovoru s fizioterapevtom ali zdravnikom. Obremenitev raste po vnaprej dogovorjenem načrtu, napredek pa se beleži ob vsakem obisku.",
+          "EN": "One-to-one or in pairs, always in agreement with a physiotherapist or doctor. Load increases along an agreed plan, and progress is recorded at every visit."
         },
         "client": {
-          "SL": "Lastna kolekcija",
-          "EN": "In-house collection"
+          "SL": "Individualno ali v paru",
+          "EN": "One-to-one or in pairs"
         },
         "date": "2026-02-14",
-        "categoryId": "portfolio-product",
+        "categoryId": "programme-rehab",
         "images": [
           {
             "id": "project-axis-1",
@@ -599,19 +587,19 @@
       },
       {
         "title": {
-          "SL": "Svetlobna instalacija Lightwell",
-          "EN": "Lightwell installation"
+          "SL": "Nosečniški in poporodni pilates",
+          "EN": "Prenatal and postnatal Pilates"
         },
         "text": {
-          "SL": "Za vhodno avlo poslovne stavbe smo razvili kompozicijo ročno pihanih steklenih svetil, ki se odziva na višino prostora in pogled z ulice. Topla svetloba poudari teksturo stekla, krmiljenje pa prilagaja intenzivnost dnevni svetlobi ter večernim dogodkom.",
-          "EN": "For the entrance lobby of an office building, we developed a composition of hand-blown glass lights responding to the height of the space and the view from the street. Warm light reveals the glass texture, while controls adapt intensity to daylight and evening events."
+          "SL": "Ločeni skupini za nosečnost in obdobje po porodu. V nosečnosti se program prilagaja trimesečju, po porodu pa se začne s trebušno steno in medeničnim dnom.",
+          "EN": "Separate groups for pregnancy and the period after birth. During pregnancy the programme follows the trimester; afterwards it starts with the abdominal wall and pelvic floor."
         },
         "client": {
-          "SL": "Vektor Center, Celje",
-          "EN": "Vektor Center, Celje"
+          "SL": "Zaprta skupina, 6 mest",
+          "EN": "Closed group, 6 places"
         },
         "date": "2024-06-28",
-        "categoryId": "portfolio-product",
+        "categoryId": "programme-prenatal",
         "images": [
           {
             "id": "project-lightwell-1",
@@ -686,92 +674,92 @@
       {
         "image": {
           "id": "client-mura",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=HOTEL+MURA"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=NLB"
         },
-        "url": "https://example.com/clients/hotel-mura"
+        "url": "https://example.com/partners/nlb"
       },
       {
         "image": {
           "id": "client-kora",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=KORA+BAKERY"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=OUTFIT7"
         },
-        "url": "https://example.com/clients/kora"
+        "url": "https://example.com/partners/outfit7"
       },
       {
         "image": {
           "id": "client-vektor",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=VEKTOR+CENTER"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=BOLNISNICA%20POSTOJNA"
         },
-        "url": "https://example.com/clients/vektor"
+        "url": "https://example.com/partners/bolnisnica-postojna"
       },
       {
         "image": {
           "id": "client-lumen",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=LUMEN+HOUSE"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=FIZIO%20CENTER"
         },
-        "url": "https://example.com/clients/lumen"
+        "url": "https://example.com/partners/fizio-center"
       },
       {
         "image": {
           "id": "client-orbit",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=ORBIT+STUDIO"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=SPAR%20SLOVENIJA"
         },
-        "url": "https://example.com/clients/orbit"
+        "url": "https://example.com/partners/spar-slovenija"
       },
       {
         "image": {
           "id": "client-riva",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=RIVA+HOMES"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=MEDIS"
         },
-        "url": "https://example.com/clients/riva"
+        "url": "https://example.com/partners/medis"
       },
       {
         "image": {
           "id": "client-grove",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=GROVE+OFFICE"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=TELEKOM"
         },
-        "url": "https://example.com/clients/grove"
+        "url": "https://example.com/partners/telekom"
       },
       {
         "image": {
           "id": "client-forma",
-          "file": "https://placehold.co/640x320/F4EFE6/171714?text=FORMA+MARKET"
+          "file": "https://placehold.co/640x320/F4F1FA/111111?text=UNIVERZA%20V%20LJUBLJANI"
         },
-        "url": "https://example.com/clients/forma"
+        "url": "https://example.com/partners/univerza-v-ljubljani"
       }
     ]
   },
   "services": {
     "text": {
-      "SL": "Storitve so oblikovane modularno: izberete lahko samostojno svetovanje, razvoj posameznega kosa ali celovit proces od koncepta do montaže. Obseg, roki in rezultati so opredeljeni na začetku, zato je jasno, katere odločitve sprejemamo skupaj in kaj prejmete v posamezni fazi.",
-      "EN": "Our services are modular: you can choose a focused consultation, development of a single custom piece, or a complete process from concept to installation. Scope, timing, and deliverables are defined at the start, making shared decisions and responsibilities clear at every stage."
+      "SL": "Štiri vrste obiska, od enkratne individualne ure do celoletnega programa za podjetja. Obseg, trajanje in ceno povemo vnaprej.",
+      "EN": "Four kinds of visit, from a single one-to-one session to a year-round corporate programme. Scope, length, and price are agreed up front."
     },
     "items": [
       {
         "title": {
-          "SL": "Koncept interierja in razporeditev prostora",
-          "EN": "Interior concept and space planning"
+          "SL": "Uvodna analiza gibanja",
+          "EN": "Movement assessment"
         },
         "text": {
-          "SL": "Za stanovanja, gostinske lokale in manjše poslovne prostore pripravimo funkcionalno zasnovo, materialno zgodbo ter izbor ključnih kosov. Proces vključuje analizo navad uporabnikov, več možnosti postavitve in dovolj natančne prikaze, da so odločitve razumljive še pred naročilom.",
-          "EN": "For homes, hospitality venues, and smaller workplaces, we prepare a functional layout, material direction, and selection of key pieces. The process includes an analysis of user habits, several planning options, and clear visual material so decisions can be made confidently before ordering."
+          "SL": "Šestdesetminutni pregled drže, gibljivosti in dihanja, iz katerega nastane pisni načrt vadbe.",
+          "EN": "A sixty-minute review of posture, mobility, and breathing that produces a written training plan."
         },
         "features": [
           {
-            "SL": "Uvodni intervju in analiza potreb",
-            "EN": "Discovery interview and needs analysis"
+            "SL": "Pregled drže in gibljivosti",
+            "EN": "Posture and mobility review"
           },
           {
-            "SL": "Dve do tri možnosti tlorisne postavitve",
-            "EN": "Two to three layout options"
+            "SL": "Test dihalnega vzorca",
+            "EN": "Breathing pattern test"
           },
           {
-            "SL": "Barvna, materialna in svetlobna usmeritev",
-            "EN": "Colour, material, and lighting direction"
+            "SL": "Pisni načrt za prvih šest tednov",
+            "EN": "Written plan for the first six weeks"
           },
           {
-            "SL": "Okvirni popis opreme in investicijska ocena",
-            "EN": "Preliminary specification and budget estimate"
+            "SL": "Priporočilo skupine ali individualnih ur",
+            "EN": "Group or one-to-one recommendation"
           }
         ],
         "image": {
@@ -781,29 +769,29 @@
       },
       {
         "title": {
-          "SL": "Razvoj pohištva po meri",
-          "EN": "Custom furniture development"
+          "SL": "Skupinske ure na reformerju",
+          "EN": "Group reformer sessions"
         },
         "text": {
-          "SL": "Ko standardne dimenzije ali funkcije ne zadoščajo, razvijemo pohištvo po meri prostora in načina uporabe. Pripravimo konstrukcijske detajle, vzorce ter prototip kritičnih delov, nato uskladimo izdelavo z izbrano delavnico in spremljamo kakovost do montaže.",
-          "EN": "When standard dimensions or functions are not enough, we develop furniture around the room and the way it will be used. We prepare construction details, samples, and prototypes of critical parts, then coordinate manufacturing with the selected workshop and monitor quality through installation."
+          "SL": "Petinpetdeset minut v skupini do osmih ljudi, na treh ravneh zahtevnosti, sedem dni v tednu.",
+          "EN": "Fifty-five minutes in a group of up to eight, at three levels of difficulty, seven days a week."
         },
         "features": [
           {
-            "SL": "Izmere in preverjanje obstoječega prostora",
-            "EN": "Site survey and verification of existing conditions"
+            "SL": "Največ osem ljudi na uro",
+            "EN": "Eight people per session at most"
           },
           {
-            "SL": "Tehnične risbe ter izbor okovja",
-            "EN": "Technical drawings and hardware selection"
+            "SL": "Tri ravni zahtevnosti",
+            "EN": "Three difficulty levels"
           },
           {
-            "SL": "Vzorec materiala ali delni prototip",
-            "EN": "Material sample or partial prototype"
+            "SL": "Rezervacija do dve uri prej",
+            "EN": "Booking up to two hours before"
           },
           {
-            "SL": "Koordinacija izdelave, dostave in montaže",
-            "EN": "Coordination of production, delivery, and installation"
+            "SL": "Brezplačna odpoved 12 ur prej",
+            "EN": "Free cancellation 12 hours ahead"
           }
         ],
         "image": {
@@ -813,29 +801,29 @@
       },
       {
         "title": {
-          "SL": "Izbor svetil, tekstila in materialov",
-          "EN": "Lighting, textile, and material curation"
+          "SL": "Individualne ure",
+          "EN": "One-to-one sessions"
         },
         "text": {
-          "SL": "Obstoječ prostor lahko bistveno izboljšamo brez gradbenih posegov. S kombinacijo splošne, delovne in ambientalne svetlobe ter premišljenim izborom tekstila ustvarimo boljše udobje, akustiko in razpoloženje. Predlagane izdelke je mogoče naročiti neposredno prek ateljeja.",
-          "EN": "An existing room can improve dramatically without construction work. By combining general, task, and ambient lighting with carefully selected textiles, we create better comfort, acoustics, and atmosphere. Recommended products can be ordered directly through the atelier."
+          "SL": "Ura, prilagojena enemu telesu — za rehabilitacijo, pripravo na sezono ali začetek brez skupine.",
+          "EN": "A session built around one body — for rehabilitation, pre-season preparation, or starting without a group."
         },
         "features": [
           {
-            "SL": "Pregled obstoječe osvetlitve in potreb",
-            "EN": "Review of existing lighting and practical needs"
+            "SL": "Program po meri",
+            "EN": "A programme made to measure"
           },
           {
-            "SL": "Načrt svetlobnih plasti in temperatur",
-            "EN": "Plan for lighting layers and colour temperatures"
+            "SL": "Sodelovanje s fizioterapevtom",
+            "EN": "Coordination with your physiotherapist"
           },
           {
-            "SL": "Izbor zaves, preprog in oblazinjenja",
-            "EN": "Selection of curtains, rugs, and upholstery"
+            "SL": "Beleženje napredka ob vsakem obisku",
+            "EN": "Progress recorded at every visit"
           },
           {
-            "SL": "Vzorci ter primerjava več cenovnih razredov",
-            "EN": "Samples and comparison across price levels"
+            "SL": "Možnost vadbe v paru",
+            "EN": "Option to train in pairs"
           }
         ],
         "image": {
@@ -845,29 +833,29 @@
       },
       {
         "title": {
-          "SL": "Dostava, montaža in končno stiliranje",
-          "EN": "Delivery, installation, and final styling"
+          "SL": "Pilates za podjetja",
+          "EN": "Corporate Pilates"
         },
         "text": {
-          "SL": "Za večja naročila pripravimo enoten logistični načrt, preverimo dostop in zaščito površin ter uskladimo prihod različnih izdelovalcev. Po montaži opravimo pregled, uredimo embalažo in postavimo manjše elemente, da je prostor pripravljen za takojšnjo uporabo.",
-          "EN": "For larger orders we prepare a single logistics plan, verify access and surface protection, and coordinate the arrival of different makers. After installation we complete a quality check, remove packaging, and position smaller elements so the space is ready for immediate use."
+          "SL": "Redni termini za zaposlene, pri nas ali na lokaciji podjetja, z mesečnim poročilom o udeležbi.",
+          "EN": "Regular sessions for employees, at the studio or on your premises, with a monthly attendance report."
         },
         "features": [
           {
-            "SL": "Načrt dostopa, terminov in odgovornosti",
-            "EN": "Access, scheduling, and responsibility plan"
+            "SL": "Termini pri nas ali pri vas",
+            "EN": "Sessions here or at your offices"
           },
           {
-            "SL": "Strokovna montaža ter zaščita prostora",
-            "EN": "Professional installation and site protection"
+            "SL": "Predavanje o ergonomiji delovnega mesta",
+            "EN": "A talk on workplace ergonomics"
           },
           {
-            "SL": "Končni pregled in zapis morebitnih popravkov",
-            "EN": "Final inspection and snagging record"
+            "SL": "Mesečno poročilo o udeležbi",
+            "EN": "Monthly attendance report"
           },
           {
-            "SL": "Odvoz embalaže ter navodila za vzdrževanje",
-            "EN": "Packaging removal and care instructions"
+            "SL": "Račun na podjetje",
+            "EN": "Invoiced to the company"
           }
         ],
         "image": {
@@ -879,18 +867,18 @@
   },
   "blog": {
     "text": {
-      "SL": "V zapiskih delimo praktične nasvete iz projektov, razlage materialov in vpogled v razvoj izdelkov. Prispevki so namenjeni vsem, ki želijo sprejemati bolj premišljene odločitve o prostoru, kakovosti in dolgoročni uporabi pohištva.",
-      "EN": "Our journal shares practical lessons from projects, material explainers, and a look into product development. The articles are written for anyone who wants to make more considered decisions about space, quality, and the long-term use of furniture."
+      "SL": "Kratki zapisi o tem, kaj se pri vadbi dejansko dogaja — brez obljub o hitrih rezultatih in brez izrazov, ki jih nihče ne razume.",
+      "EN": "Short pieces on what actually happens during training — without promises of quick results and without words nobody understands."
     },
     "items": [
       {
         "title": {
-          "SL": "Kako izbrati jedilno mizo za vsakodnevno uporabo",
-          "EN": "How to choose a dining table for everyday life"
+          "SL": "Zakaj vas po prvi uri boli tam, kjer niste pričakovali",
+          "EN": "Why you ache in unexpected places after the first session"
         },
         "description": {
-          "SL": "Dobra jedilna miza mora upoštevati več kot število stolov. Pojasnjujemo priporočene odmike, razlike med oblikami, vpliv podnožja na udobje in materiale, ki prenesejo delo od doma, otroške projekte ter dolge večerje.",
-          "EN": "A good dining table needs to account for more than the number of chairs. We explain useful clearances, the differences between shapes, how bases affect comfort, and which materials can handle remote work, children’s projects, and long dinners."
+          "SL": "Pilates aktivira mišice, ki jih v vsakdanjem gibanju zaobidemo. Razlaga, katere so te, zakaj se oglasijo šele naslednji dan in kdaj bolečina ni več normalna.",
+          "EN": "Pilates recruits muscles that everyday movement works around. Which ones they are, why they speak up the next day, and when the ache stops being normal."
         },
         "author": "Ana Kovač",
         "date": "2026-07-22",
@@ -901,12 +889,12 @@
       },
       {
         "title": {
-          "SL": "Tri plasti svetlobe za prijetnejši dom",
-          "EN": "Three layers of light for a more comfortable home"
+          "SL": "Nevtralna medenica: najbolj ponavljano navodilo v dvorani",
+          "EN": "Neutral pelvis: the most repeated cue in the room"
         },
         "description": {
-          "SL": "Eno stropno svetilo redko zadostuje za vse dejavnosti. Na konkretnem primeru pokažemo, kako združiti splošno, delovno in ambientalno svetlobo, izbrati primerno barvno temperaturo ter zmanjšati bleščanje v večernih urah.",
-          "EN": "A single ceiling light rarely supports every activity. Using a practical example, we show how to combine general, task, and ambient lighting, choose an appropriate colour temperature, and reduce glare during the evening."
+          "SL": "Kaj pomeni nevtralen položaj medenice, kako ga najdete sami in zakaj se skoraj vsaka vaja začne prav pri njem.",
+          "EN": "What a neutral pelvis actually means, how to find it yourself, and why nearly every exercise starts there."
         },
         "author": "Maja Vidmar",
         "date": "2026-06-11",
@@ -917,12 +905,12 @@
       },
       {
         "title": {
-          "SL": "Masiven les, furnir ali laminat: kaj izbrati",
-          "EN": "Solid wood, veneer, or laminate: what should you choose"
+          "SL": "Koliko vzmeti je prav in zakaj več ni težje",
+          "EN": "How many springs is right, and why more is not harder"
         },
         "description": {
-          "SL": "Vsak material ima smiselno področje uporabe. Primerjamo občutek, ceno, odpornost, možnosti popravil in tipične napake pri vzdrževanju, da lahko izberete rešitev glede na prostor in način uporabe, ne samo glede na videz.",
-          "EN": "Each material has a sensible place. We compare feel, cost, durability, repair options, and common maintenance mistakes so you can choose according to the room and level of use rather than appearance alone."
+          "SL": "Na reformerju odpor ni vedno sorazmeren s težavnostjo. Pri nekaterih vajah več vzmeti pomeni lažje, pri drugih ravno obratno.",
+          "EN": "On a reformer, resistance and difficulty are not the same thing. On some exercises more springs make it easier, on others the opposite."
         },
         "author": "Luka Zupan",
         "date": "2026-04-30",
@@ -933,14 +921,14 @@
       },
       {
         "title": {
-          "SL": "Kaj se zgodi med naročilom in dostavo pohištva",
-          "EN": "What happens between ordering and furniture delivery"
+          "SL": "Dvakrat tedensko je meja, pod katero se ne pozna",
+          "EN": "Twice a week is the line below which nothing shows"
         },
         "description": {
-          "SL": "Izdelava kakovostnega kosa vključuje nabavo materiala, pripravo delavniških risb, proizvodnjo, površinsko obdelavo in kontrolo kakovosti. Predstavljamo tipičen potek ter pojasnjujemo, zakaj se dobavni roki razlikujejo med standardnimi in prilagojenimi izdelki.",
-          "EN": "Making a quality piece involves material procurement, workshop drawings, production, finishing, and quality control. We outline a typical process and explain why lead times differ between standard and customised products."
+          "SL": "Kaj kažejo izkušnje s članov, ki hodijo enkrat, dvakrat ali trikrat tedensko, in kako dolgo traja, da se sprememba drže sploh vidi.",
+          "EN": "What we see in members who come once, twice, or three times a week, and how long it takes before a change in posture is visible at all."
         },
-        "author": "Nejc Potočnik",
+        "author": "Ana Kovač",
         "date": "2026-03-19",
         "image": {
           "id": "blog-process",
@@ -949,14 +937,14 @@
       },
       {
         "title": {
-          "SL": "Majhen prostor brez majhnih ambicij",
-          "EN": "A small space without small ambitions"
+          "SL": "Vrnitev k vadbi po porodu: prvih šest tednov",
+          "EN": "Returning to training after birth: the first six weeks"
         },
         "description": {
-          "SL": "Pri majhnem stanovanju največ pridobimo z jasnimi prioritetami in pohištvom, ki opravlja več nalog. Zbrali smo pet preverjenih pristopov za shranjevanje, prehode, zložljive elemente in vizualno umirjenost brez občutka praznine.",
-          "EN": "Small apartments benefit most from clear priorities and furniture that performs more than one task. We share five tested approaches to storage, circulation, folding elements, and visual calm without making the room feel empty."
+          "SL": "Zakaj se poporodni program ne začne s trebušnjaki, kako preveriti diastazo in kdaj je smiselno počakati še teden ali dva.",
+          "EN": "Why a postnatal programme does not start with sit-ups, how to check for diastasis, and when it makes sense to wait another week or two."
         },
-        "author": "Ana Kovač",
+        "author": "Maja Vidmar",
         "date": "2026-02-05",
         "image": {
           "id": "blog-small-space",
@@ -975,7 +963,7 @@
   "catalogues": {
     "items": [
       {
-        "displayName": "NORD Atelier — Collection 2026 (SL/EN)",
+        "displayName": "Reforma Pilates — cenik in programi 2026 (SL/EN)",
         "size": 2480000,
         "file": {
           "id": "catalogue-collection-2026",
@@ -983,7 +971,7 @@
         }
       },
       {
-        "displayName": "Materials and finishes guide (SL/EN)",
+        "displayName": "Vodnik za začetnike: prvih osem tednov (SL)",
         "size": 1860000,
         "file": {
           "id": "catalogue-materials",
@@ -991,7 +979,7 @@
         }
       },
       {
-        "displayName": "Trade and hospitality specification sheet",
+        "displayName": "Pilates za podjetja — predstavitev programa (SL/EN)",
         "size": 940000,
         "file": {
           "id": "catalogue-trade",
@@ -1001,62 +989,61 @@
     ]
   },
   "pricing": {
-    "type": "PRICING_STORE",
+    "type": "PRICING_PACKAGES",
     "sectionName": {
-      "SL": "Trgovina",
-      "EN": "Shop"
+      "SL": "Članstva in paketi",
+      "EN": "Memberships and packs"
     },
     "text": {
-      "SL": "Kolekcija združuje pohištvo, svetila in dodatke, ki jih je mogoče naročiti v standardnih izvedbah ali prilagoditi z izbranimi materiali. Pri vsakem izdelku so navedeni bistveni podatki za primerjavo; pred večjim naročilom lahko zahtevate vzorec, svetovanje ali ponudbo za dostavo in montažo.",
-      "EN": "The collection brings together furniture, lighting, and accessories available in standard versions or customised with selected materials. Each product includes the essential details needed for comparison; before a larger order you can request a sample, consultation, or a quote for delivery and installation."
+      "SL": "Mesečna članstva se obnavljajo samodejno in jih lahko kadar koli prekinete do konca meseca. Paketi ur veljajo šest mesecev in niso vezani na osebo.",
+      "EN": "Monthly memberships renew automatically and can be stopped at any time until the end of the month. Class packs are valid for six months and are not tied to one person."
     },
     "categories": [
       {
-        "id": "price-seating",
+        "id": "price-membership",
         "name": {
-          "SL": "Sedežno pohištvo",
-          "EN": "Seating"
+          "SL": "Mesečna članstva",
+          "EN": "Monthly memberships"
         }
       },
       {
-        "id": "price-tables",
+        "id": "price-packs",
         "name": {
-          "SL": "Mize in police",
-          "EN": "Tables and shelving"
+          "SL": "Paketi ur",
+          "EN": "Class packs"
         }
       },
       {
-        "id": "price-lighting",
+        "id": "price-private",
         "name": {
-          "SL": "Svetila",
-          "EN": "Lighting"
+          "SL": "Individualno",
+          "EN": "One-to-one"
         }
       },
       {
-        "id": "price-accessories",
+        "id": "price-corporate",
         "name": {
-          "SL": "Dodatki",
-          "EN": "Accessories"
+          "SL": "Podjetja",
+          "EN": "Companies"
         }
       }
     ],
     "items": [
       {
         "title": {
-          "SL": "Naslanjač Arc",
-          "EN": "Arc lounge chair"
+          "SL": "Članstvo 4× mesečno",
+          "EN": "Membership, 4 a month"
         },
         "text": {
-          "SL": "Globok, vendar vizualno lahek naslanjač za branje in sproščen pogovor. Ogrodje iz masivnega jesena je ročno oljeno, snemljiva prevleka pa omogoča lažje čiščenje in kasnejšo zamenjavo tkanine. Na voljo je v šestih standardnih barvah.",
-          "EN": "A deep yet visually light lounge chair for reading and relaxed conversation. The solid ash frame is hand-oiled, while the removable cover makes cleaning and future reupholstery easier. It is available in six standard fabric colours."
+          "SL": "Ena vadba tedensko v kateri koli skupini.",
+          "EN": "One session a week in any group."
         },
-        "categoryId": "price-seating",
+        "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
-          "value": "890.00",
-          "discountedValue": "790.00",
+          "value": "76.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "MONTH",
           "tax": 22
         },
         "images": [
@@ -1072,54 +1059,54 @@
         "features": [
           {
             "label": {
-              "SL": "Material ogrodja",
-              "EN": "Frame material"
+              "SL": "Skupinske ure",
+              "EN": "Group sessions"
             },
             "value": {
-              "SL": "Masiven jesen z naravnim oljnim premazom",
-              "EN": "Solid ash with a natural oil finish"
+              "SL": "4 na mesec",
+              "EN": "4 a month"
             }
           },
           {
             "label": {
-              "SL": "Oblazinjenje",
-              "EN": "Upholstery"
+              "SL": "Rezervacija",
+              "EN": "Booking"
             },
             "value": {
-              "SL": "Snemljiva volnena tkanina, 45.000 Martindale",
-              "EN": "Removable wool fabric, 45,000 Martindale"
+              "SL": "14 dni vnaprej",
+              "EN": "14 days ahead"
             }
           },
           {
             "label": {
-              "SL": "Mere",
-              "EN": "Dimensions"
+              "SL": "Prenos ur",
+              "EN": "Carry-over"
             },
             "value": {
-              "SL": "78 × 82 × 74 cm; višina sedišča 42 cm",
-              "EN": "78 × 82 × 74 cm; seat height 42 cm"
+              "SL": "2 uri",
+              "EN": "2 sessions"
             }
           }
         ],
-        "recommended": true,
+        "recommended": false,
         "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Jedilni stol Fold",
-          "EN": "Fold dining chair"
+          "SL": "Članstvo 8× mesečno",
+          "EN": "Membership, 8 a month"
         },
         "text": {
-          "SL": "Kompakten jedilni stol z rahlo ukrivljenim naslonom in širokim sedežem. Konstrukcija je primerna za vsakodnevno uporabo, zaradi zložljive geometrije pa se stoli enostavno shranijo. Izbirate lahko med lesenim ali oblazinjenim sedežem.",
-          "EN": "A compact dining chair with a gently curved back and generous seat. The construction is designed for everyday use, while its stackable geometry makes storage simple. Choose between a timber seat or an upholstered version."
+          "SL": "Dvakrat tedensko — najpogostejša izbira.",
+          "EN": "Twice a week — the most common choice."
         },
-        "categoryId": "price-seating",
+        "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
-          "value": "340.00",
-          "discountedValue": "",
+          "value": "138.00",
+          "discountedValue": "124.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "MONTH",
           "tax": 22
         },
         "images": [
@@ -1135,54 +1122,53 @@
         "features": [
           {
             "label": {
-              "SL": "Material",
-              "EN": "Material"
+              "SL": "Skupinske ure",
+              "EN": "Group sessions"
             },
             "value": {
-              "SL": "Bukov vezan les in masiven bukov okvir",
-              "EN": "Beech plywood with a solid beech frame"
+              "SL": "8 na mesec",
+              "EN": "8 a month"
             }
           },
           {
             "label": {
-              "SL": "Možnost zlaganja",
-              "EN": "Stacking"
+              "SL": "Rezervacija",
+              "EN": "Booking"
             },
             "value": {
-              "SL": "Do štirje stoli v enem stabilnem stolpu",
-              "EN": "Up to four chairs in one stable stack"
+              "SL": "21 dni vnaprej",
+              "EN": "21 days ahead"
             }
           },
           {
             "label": {
-              "SL": "Mere",
-              "EN": "Dimensions"
+              "SL": "Individualna ura",
+              "EN": "Private session"
             },
             "value": {
-              "SL": "49 × 54 × 79 cm; višina sedišča 46 cm",
-              "EN": "49 × 54 × 79 cm; seat height 46 cm"
+              "SL": "1 na mesec",
+              "EN": "1 a month"
             }
           }
         ],
-        "recommended": false,
+        "recommended": true,
         "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Kavč Mira 220",
-          "EN": "Mira 220 sofa"
+          "SL": "Neomejeno članstvo",
+          "EN": "Unlimited membership"
         },
         "text": {
-          "SL": "Trisedežni kavč z mehko, a dobro podprto geometrijo za dnevno sobo ali hotelski salon. Prevleke vseh glavnih elementov so snemljive, sedežne blazine pa je mogoče po letih uporabe zamenjati brez menjave ogrodja.",
-          "EN": "A three-seat sofa with a soft but well-supported geometry for living rooms or hotel lounges. Covers on all main elements are removable, and seat cushions can be replaced after years of use without replacing the frame."
+          "SL": "Vse skupine, brez omejitve števila obiskov.",
+          "EN": "Every group, with no cap on visits."
         },
-        "categoryId": "price-seating",
+        "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
-          "value": "2190.00",
-          "discountedValue": "1990.00",
+          "value": "189.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "MONTH",
           "tax": 22
         },
         "images": [
@@ -1198,54 +1184,53 @@
         "features": [
           {
             "label": {
-              "SL": "Širina",
-              "EN": "Width"
+              "SL": "Skupinske ure",
+              "EN": "Group sessions"
             },
             "value": {
-              "SL": "220 cm; na voljo tudi izvedbi 180 in 260 cm",
-              "EN": "220 cm; also available in 180 and 260 cm versions"
+              "SL": "Neomejeno",
+              "EN": "Unlimited"
             }
           },
           {
             "label": {
-              "SL": "Polnilo",
-              "EN": "Cushion fill"
+              "SL": "Rezervacija",
+              "EN": "Booking"
             },
             "value": {
-              "SL": "Večplastna pena in reciklirana poliestrska vlakna",
-              "EN": "Multi-density foam and recycled polyester fibre"
+              "SL": "Prednostna",
+              "EN": "Priority"
             }
           },
           {
             "label": {
-              "SL": "Dobavni rok",
-              "EN": "Lead time"
+              "SL": "Individualne ure",
+              "EN": "Private sessions"
             },
             "value": {
-              "SL": "Približno 8 do 10 tednov",
-              "EN": "Approximately 8 to 10 weeks"
+              "SL": "2 na mesec",
+              "EN": "2 a month"
             }
           }
         ],
-        "recommended": true,
+        "recommended": false,
         "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Jedilna miza Drift 180",
-          "EN": "Drift 180 dining table"
+          "SL": "Jutranje članstvo",
+          "EN": "Morning membership"
         },
         "text": {
-          "SL": "Miza z mehko zaobljenimi robovi in zamaknjeno konstrukcijo podnožja, ki pušča dovolj prostora za noge. Standardna dolžina udobno sprejme šest oseb, z dodatnim podaljškom pa je primerna tudi za večja druženja.",
-          "EN": "A dining table with softly rounded edges and an offset base that leaves generous legroom. The standard length seats six comfortably, while an optional extension makes it suitable for larger gatherings."
+          "SL": "Termini do desetih dopoldne, vse dni v tednu.",
+          "EN": "Sessions before ten in the morning, any day."
         },
-        "categoryId": "price-tables",
+        "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
-          "value": "1480.00",
-          "discountedValue": "",
+          "value": "98.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "MONTH",
           "tax": 22
         },
         "images": [
@@ -1261,32 +1246,32 @@
         "features": [
           {
             "label": {
-              "SL": "Plošča",
-              "EN": "Top"
+              "SL": "Termini",
+              "EN": "Slots"
             },
             "value": {
-              "SL": "Furniran hrast z masivnim robom debeline 28 mm",
-              "EN": "Oak veneer with a 28 mm solid timber edge"
+              "SL": "Do 10:00",
+              "EN": "Before 10:00"
             }
           },
           {
             "label": {
-              "SL": "Mere",
-              "EN": "Dimensions"
+              "SL": "Dnevi",
+              "EN": "Days"
             },
             "value": {
-              "SL": "180 × 90 × 75 cm; podaljšek 50 cm",
-              "EN": "180 × 90 × 75 cm; 50 cm extension"
+              "SL": "Vsi, tudi vikend",
+              "EN": "All, weekends too"
             }
           },
           {
             "label": {
-              "SL": "Zaključek",
-              "EN": "Finish"
+              "SL": "Prehod",
+              "EN": "Upgrade"
             },
             "value": {
-              "SL": "Naravno olje ali mat lak po izboru",
-              "EN": "Natural oil or selected matt lacquer"
+              "SL": "Kadar koli",
+              "EN": "Any time"
             }
           }
         ],
@@ -1295,18 +1280,17 @@
       },
       {
         "title": {
-          "SL": "Stranska mizica Slate",
-          "EN": "Slate side table"
+          "SL": "Paket 10 ur",
+          "EN": "Pack of 10"
         },
         "text": {
-          "SL": "Majhna mizica za ob kavč ali posteljo združuje tanko kovinsko ogrodje in kamnito ploščo z naravno strukturo. Vsak kos je nekoliko drugačen, površina pa je zaščitena za vsakodnevno uporabo in enostavno čiščenje.",
-          "EN": "This compact table for a sofa or bedside combines a slim metal frame with a stone top featuring natural variation. Every piece is slightly different, while the sealed surface is prepared for everyday use and simple cleaning."
+          "SL": "Deset skupinskih ur z veljavnostjo šest mesecev.",
+          "EN": "Ten group sessions, valid for six months."
         },
-        "categoryId": "price-tables",
+        "categoryId": "price-packs",
         "price": {
           "onAgreement": false,
-          "value": "560.00",
-          "discountedValue": "",
+          "value": "195.00",
           "currency": "EUR",
           "unit": "ITEM",
           "tax": 22
@@ -1324,52 +1308,52 @@
         "features": [
           {
             "label": {
-              "SL": "Plošča",
-              "EN": "Top"
+              "SL": "Število ur",
+              "EN": "Sessions"
             },
             "value": {
-              "SL": "Naravni apnenec z zaščitnim premazom",
-              "EN": "Natural limestone with a protective seal"
+              "SL": "10",
+              "EN": "10"
             }
           },
           {
             "label": {
-              "SL": "Ogrodje",
-              "EN": "Frame"
+              "SL": "Veljavnost",
+              "EN": "Valid for"
             },
             "value": {
-              "SL": "Prašno barvano jeklo v črni ali peščeni barvi",
-              "EN": "Powder-coated steel in black or sand"
+              "SL": "6 mesecev",
+              "EN": "6 months"
             }
           },
           {
             "label": {
-              "SL": "Mere",
-              "EN": "Dimensions"
+              "SL": "Prenosljivost",
+              "EN": "Transferable"
             },
             "value": {
-              "SL": "42 × 38 × 52 cm",
-              "EN": "42 × 38 × 52 cm"
+              "SL": "Da",
+              "EN": "Yes"
             }
           }
         ],
         "recommended": false,
-        "status": "UNAVAILABLE"
+        "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Modularna polica Axis",
-          "EN": "Axis modular shelf"
+          "SL": "Paket 20 ur",
+          "EN": "Pack of 20"
         },
         "text": {
-          "SL": "Odprt sistem polic za knjige, predmete in manjšo elektroniko. Začetni modul lahko kasneje razširite po širini ali višini, police pa prestavljate brez posebnega orodja. Sistem je primeren tudi za lahke prostorske pregrade.",
-          "EN": "An open shelving system for books, objects, and smaller electronics. The starter module can later expand in width or height, and shelves can be repositioned without specialist tools. The system also works as a light room divider."
+          "SL": "Dvajset skupinskih ur po ugodnejši ceni na uro.",
+          "EN": "Twenty group sessions at a lower price per session."
         },
-        "categoryId": "price-tables",
+        "categoryId": "price-packs",
         "price": {
-          "onAgreement": true,
-          "value": "",
-          "discountedValue": "",
+          "onAgreement": false,
+          "value": "360.00",
+          "discountedValue": "330.00",
           "currency": "EUR",
           "unit": "ITEM",
           "tax": 22
@@ -1387,32 +1371,32 @@
         "features": [
           {
             "label": {
-              "SL": "Osnovni modul",
-              "EN": "Starter module"
+              "SL": "Število ur",
+              "EN": "Sessions"
             },
             "value": {
-              "SL": "Širina 120 cm, višina 190 cm, štiri police",
-              "EN": "120 cm wide, 190 cm high, four shelves"
+              "SL": "20",
+              "EN": "20"
             }
           },
           {
             "label": {
-              "SL": "Prilagoditve",
-              "EN": "Customisation"
+              "SL": "Veljavnost",
+              "EN": "Valid for"
             },
             "value": {
-              "SL": "Dodatni moduli, zaprti elementi in kabelske odprtine",
-              "EN": "Additional modules, closed cabinets, and cable openings"
+              "SL": "6 mesecev",
+              "EN": "6 months"
             }
           },
           {
             "label": {
-              "SL": "Ponudba",
-              "EN": "Quotation"
+              "SL": "Vključeno",
+              "EN": "Included"
             },
             "value": {
-              "SL": "Cena se pripravi glede na sestavo in zaključke",
-              "EN": "Price is prepared according to configuration and finishes"
+              "SL": "1 individualna ura",
+              "EN": "1 private session"
             }
           }
         ],
@@ -1421,18 +1405,17 @@
       },
       {
         "title": {
-          "SL": "Viseče svetilo Halo",
-          "EN": "Halo pendant light"
+          "SL": "Posamezna ura",
+          "EN": "Single session"
         },
         "text": {
-          "SL": "Krožno viseče svetilo oddaja mehko, enakomerno svetlobo nad jedilno mizo ali delovno površino. Zatemnljiv LED-modul je mogoče servisirati, tekstilni kabel pa naročiti v barvi, ki se ujema z interierjem.",
-          "EN": "A circular pendant casting soft, even light above a dining table or work surface. The dimmable LED module is serviceable, and the textile cable can be ordered in a colour coordinated with the interior."
+          "SL": "Enkraten obisk skupinske vadbe brez članstva.",
+          "EN": "A single group visit without a membership."
         },
-        "categoryId": "price-lighting",
+        "categoryId": "price-packs",
         "price": {
           "onAgreement": false,
-          "value": "420.00",
-          "discountedValue": "385.00",
+          "value": "24.00",
           "currency": "EUR",
           "unit": "ITEM",
           "tax": 22
@@ -1450,54 +1433,53 @@
         "features": [
           {
             "label": {
-              "SL": "Svetlobni vir",
-              "EN": "Light source"
+              "SL": "Trajanje",
+              "EN": "Length"
             },
             "value": {
-              "SL": "Zamenljiv LED 24 W, 2700 K, CRI 90+",
-              "EN": "Replaceable 24 W LED, 2700 K, CRI 90+"
+              "SL": "55 minut",
+              "EN": "55 minutes"
             }
           },
           {
             "label": {
-              "SL": "Premer",
-              "EN": "Diameter"
+              "SL": "Rezervacija",
+              "EN": "Booking"
             },
             "value": {
-              "SL": "60 cm; stropna rozeta je vključena",
-              "EN": "60 cm; ceiling rose included"
+              "SL": "2 uri prej",
+              "EN": "2 hours before"
             }
           },
           {
             "label": {
-              "SL": "Zatemnjevanje",
-              "EN": "Dimming"
+              "SL": "Obveznost",
+              "EN": "Commitment"
             },
             "value": {
-              "SL": "Združljivo s sistemom DALI in faznim zatemnilnikom",
-              "EN": "Compatible with DALI and phase-cut dimmers"
+              "SL": "Brez",
+              "EN": "None"
             }
           }
         ],
-        "recommended": true,
+        "recommended": false,
         "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Talna svetilka Line",
-          "EN": "Line floor lamp"
+          "SL": "Individualna ura",
+          "EN": "Private session"
         },
         "text": {
-          "SL": "Vitka talna svetilka za branje združuje usmerjeno svetlobo in diskretno ambientalno osvetlitev. Glava se zavrti brez vidnih vijakov, stikalo pa omogoča ločeno zatemnjevanje obeh svetlobnih virov.",
-          "EN": "A slim reading lamp combining focused task light with subtle ambient illumination. The head rotates without visible screws, while the switch allows independent dimming of both light sources."
+          "SL": "Šestdeset minut samo za vas, z izbranim inštruktorjem.",
+          "EN": "Sixty minutes for you alone, with the instructor you choose."
         },
-        "categoryId": "price-lighting",
+        "categoryId": "price-private",
         "price": {
           "onAgreement": false,
-          "value": "690.00",
-          "discountedValue": "",
+          "value": "62.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "HOUR",
           "tax": 22
         },
         "images": [
@@ -1513,54 +1495,53 @@
         "features": [
           {
             "label": {
-              "SL": "Višina",
-              "EN": "Height"
+              "SL": "Trajanje",
+              "EN": "Length"
             },
             "value": {
-              "SL": "148 cm z vrtljivo glavo",
-              "EN": "148 cm with rotating head"
+              "SL": "60 minut",
+              "EN": "60 minutes"
             }
           },
           {
             "label": {
-              "SL": "Barve",
-              "EN": "Colours"
+              "SL": "Program",
+              "EN": "Programme"
             },
             "value": {
-              "SL": "Grafitna, peščena in opečnato rdeča",
-              "EN": "Graphite, sand, and brick red"
+              "SL": "Po meri",
+              "EN": "Made to measure"
             }
           },
           {
             "label": {
-              "SL": "Razpoložljivost",
-              "EN": "Availability"
+              "SL": "Termin",
+              "EN": "Slot"
             },
             "value": {
-              "SL": "Prva serija bo na voljo oktobra 2026",
-              "EN": "The first production run will be available in October 2026"
+              "SL": "Tudi izven urnika",
+              "EN": "Outside the timetable too"
             }
           }
         ],
         "recommended": false,
-        "status": "COMING_SOON"
+        "status": "AVAILABLE"
       },
       {
         "title": {
-          "SL": "Keramična vaza Terra",
-          "EN": "Terra ceramic vase"
+          "SL": "Individualno v paru",
+          "EN": "Private, in a pair"
         },
         "text": {
-          "SL": "Ročno oblikovana vaza z mat površino in rahlo nepravilnim robom. Deluje kot samostojen predmet ali posoda za suhe in sveže aranžmaje. Zaradi ročnega postopka se odtenek in tekstura med posameznimi kosi naravno razlikujeta.",
-          "EN": "A hand-shaped vase with a matt surface and subtly irregular rim. It works as an object on its own or as a vessel for dry and fresh arrangements. The handmade process creates natural differences in colour and texture between pieces."
+          "SL": "Ista ura za dva, cena na osebo.",
+          "EN": "The same session for two, priced per person."
         },
-        "categoryId": "price-accessories",
+        "categoryId": "price-private",
         "price": {
           "onAgreement": false,
-          "value": "95.00",
-          "discountedValue": "",
+          "value": "38.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "PERSON",
           "tax": 22
         },
         "images": [
@@ -1576,32 +1557,32 @@
         "features": [
           {
             "label": {
-              "SL": "Izdelava",
-              "EN": "Production"
+              "SL": "Udeleženca",
+              "EN": "Participants"
             },
             "value": {
-              "SL": "Ročno izdelano v majhni seriji v Sloveniji",
-              "EN": "Handmade in a small series in Slovenia"
+              "SL": "2",
+              "EN": "2"
             }
           },
           {
             "label": {
-              "SL": "Višina",
-              "EN": "Height"
+              "SL": "Cena",
+              "EN": "Price"
             },
             "value": {
-              "SL": "28 cm; odprtina premera 8 cm",
-              "EN": "28 cm; opening diameter 8 cm"
+              "SL": "Na osebo",
+              "EN": "Per person"
             }
           },
           {
             "label": {
-              "SL": "Nega",
-              "EN": "Care"
+              "SL": "Program",
+              "EN": "Programme"
             },
             "value": {
-              "SL": "Ročno pranje z blagim detergentom",
-              "EN": "Hand wash with a mild detergent"
+              "SL": "Enak kot individualno",
+              "EN": "Same as one-to-one"
             }
           }
         ],
@@ -1610,20 +1591,19 @@
       },
       {
         "title": {
-          "SL": "Volnena odeja Loom",
-          "EN": "Loom wool throw"
+          "SL": "Program za podjetja",
+          "EN": "Corporate programme"
         },
         "text": {
-          "SL": "Mehka odeja iz sledljive evropske volne je tkana v dveh barvnih slojih, zato ima vsaka stran nekoliko drugačen značaj. Primerna je za kavč, posteljo ali hladnejše večere na pokriti terasi.",
-          "EN": "A soft throw made from traceable European wool, woven in two colour layers so each side has a slightly different character. It is suitable for a sofa, bed, or cooler evenings on a covered terrace."
+          "SL": "Redni tedenski termini za skupino zaposlenih.",
+          "EN": "A regular weekly slot for a group of employees."
         },
-        "categoryId": "price-accessories",
+        "categoryId": "price-corporate",
         "price": {
-          "onAgreement": false,
-          "value": "140.00",
-          "discountedValue": "119.00",
+          "onAgreement": true,
+          "value": "0.00",
           "currency": "EUR",
-          "unit": "ITEM",
+          "unit": "MONTH",
           "tax": 22
         },
         "images": [
@@ -1639,270 +1619,270 @@
         "features": [
           {
             "label": {
-              "SL": "Sestava",
-              "EN": "Composition"
+              "SL": "Lokacija",
+              "EN": "Location"
             },
             "value": {
-              "SL": "100 % evropska volna brez sintetičnih dodatkov",
-              "EN": "100% European wool without synthetic fibres"
+              "SL": "Pri nas ali pri vas",
+              "EN": "Here or at your offices"
             }
           },
           {
             "label": {
-              "SL": "Mere",
-              "EN": "Dimensions"
+              "SL": "Poročilo",
+              "EN": "Reporting"
             },
             "value": {
-              "SL": "140 × 200 cm z ročno zaključenimi robovi",
-              "EN": "140 × 200 cm with hand-finished edges"
+              "SL": "Mesečno",
+              "EN": "Monthly"
             }
           },
           {
             "label": {
-              "SL": "Nega",
-              "EN": "Care"
+              "SL": "Račun",
+              "EN": "Invoice"
             },
             "value": {
-              "SL": "Zračenje in občasno kemično čiščenje",
-              "EN": "Air regularly and dry clean when required"
+              "SL": "Na podjetje",
+              "EN": "To the company"
             }
           }
         ],
         "recommended": false,
-        "status": "DISABLED"
+        "status": "COMING_SOON"
       }
     ],
     "showTax": true,
     "note": {
-      "SL": "Vse cene vključujejo 22 % DDV. Standardna dostava v Sloveniji se izračuna ob zaključku naročila; za mednarodno dostavo, montažo ali izdelke po meri pripravimo ločeno ponudbo. Prikazane fotografije lahko zaradi nastavitev zaslona nekoliko odstopajo od dejanskih materialov.",
-      "EN": "All prices include 22% VAT. Standard delivery within Slovenia is calculated at checkout; international delivery, installation, and customised products are quoted separately. Product photographs may differ slightly from the actual materials due to screen settings."
+      "SL": "Cene vključujejo DDV. Prvi obisk vključuje uvodno analizo gibanja, ki je pogoj za vstop v skupine.",
+      "EN": "Prices include VAT. The first visit includes the movement assessment, which is required before joining a group."
     }
   },
   "careers": {
     "text": {
-      "SL": "Iščemo radovedne, zanesljive sodelavce, ki razumejo, da dober izdelek nastane skozi veliko natančnih odločitev. Delamo v majhnih projektnih ekipah, odprto delimo znanje in cenimo sposobnost jasnega komuniciranja z oblikovalci, izdelovalci, dobavitelji ter naročniki.",
-      "EN": "We look for curious, reliable colleagues who understand that a good product is built through many precise decisions. We work in small project teams, share knowledge openly, and value the ability to communicate clearly with designers, makers, suppliers, and clients."
+      "SL": "Iščemo inštruktorje, ki znajo pogledati telo pred sabo in vajo prilagoditi, ne pa odvrteti program po urniku.",
+      "EN": "We are looking for instructors who can read the body in front of them and adapt an exercise, rather than run a programme off a schedule."
     },
     "items": [
       {
         "title": {
-          "SL": "Produktni oblikovalec oziroma oblikovalka",
-          "EN": "Product designer"
+          "SL": "Inštruktor oziroma inštruktorica reformer pilatesa",
+          "EN": "Reformer Pilates instructor"
         },
         "text": {
-          "SL": "V razvojno ekipo vabimo oblikovalca z izkušnjami pri pohištvu ali sorodnih fizičnih izdelkih. Sodelovali boste pri raziskavi, 3D-modeliranju, tehničnih detajlih, prototipih in pripravi izdelkov za serijsko proizvodnjo.",
-          "EN": "We are looking for a designer with experience in furniture or related physical products. You will contribute to research, 3D modelling, technical details, prototypes, and the preparation of products for repeatable production."
+          "SL": "Vodenje skupinskih ur na reformerju in individualnih ur. Delo v ekipi, kjer se program pripravlja skupaj, popravki pa se preverjajo na mesečnih supervizijah.",
+          "EN": "Leading group reformer sessions and one-to-one work. You would join a team that plans programmes together and reviews corrections at monthly supervisions."
         },
         "requirements": [
           {
-            "SL": "Najmanj tri leta izkušenj pri razvoju fizičnih izdelkov.",
-            "EN": "At least three years of experience developing physical products."
+            "SL": "Mednarodni certifikat (BASI, Polestar, Merrithew ali enakovreden)",
+            "EN": "An international certification (BASI, Polestar, Merrithew, or equivalent)"
           },
           {
-            "SL": "Samostojno delo v CAD-programu in priprava jasnih tehničnih risb.",
-            "EN": "Independent CAD work and the ability to prepare clear technical drawings."
+            "SL": "Najmanj dve leti vodenja skupin",
+            "EN": "At least two years of leading groups"
           },
           {
-            "SL": "Razumevanje lesa, kovine, oblazinjenja ali sorodnih proizvodnih postopkov.",
-            "EN": "Understanding of timber, metal, upholstery, or related production processes."
+            "SL": "Slovenščina in angleščina",
+            "EN": "Slovenian and English"
           },
           {
-            "SL": "Tekoče sporazumevanje v slovenščini in angleščini.",
-            "EN": "Fluent communication in Slovenian and English."
+            "SL": "Pripravljenost na jutranje in večerne termine",
+            "EN": "Willingness to work morning and evening slots"
           }
         ],
         "note": {
-          "SL": "Zaposlitev za polni delovni čas v Ljubljani z možnostjo dveh dni dela na daljavo. Prijavi priložite portfelj, kratek opis svoje vloge pri predstavljenih projektih in okvirni datum razpoložljivosti.",
-          "EN": "Full-time role based in Ljubljana with up to two remote days per week. Please include a portfolio, a short explanation of your role in the projects shown, and your approximate availability date."
+          "SL": "Polni ali polovični delovni čas, po dogovoru.",
+          "EN": "Full or part time, by agreement."
         }
       },
       {
         "title": {
-          "SL": "Vodja e-trgovine in vsebin",
-          "EN": "E-commerce and content manager"
+          "SL": "Inštruktor za rehabilitacijski program",
+          "EN": "Rehabilitation programme instructor"
         },
         "text": {
-          "SL": "Iščemo osebo, ki bo skrbela za kakovost produktnih podatkov, vsebinski koledar, spletne kampanje in izboljšave nakupne poti. Vloga povezuje analitiko, pisanje, koordinacijo fotografije ter vsakodnevno sodelovanje s podporo strankam.",
-          "EN": "We are looking for someone to own product data quality, the content calendar, online campaigns, and improvements to the purchase journey. The role combines analytics, writing, photography coordination, and daily collaboration with customer support."
+          "SL": "Delo s člani po poškodbah in operacijah, v tesnem sodelovanju s fizioterapevti. Večinoma individualne ure in pari.",
+          "EN": "Working with members after injury and surgery, in close cooperation with physiotherapists. Mostly one-to-one and pairs."
         },
         "requirements": [
           {
-            "SL": "Izkušnje z upravljanjem spletne trgovine ali digitalnega produkta.",
-            "EN": "Experience managing an online shop or digital product."
+            "SL": "Izobrazba s področja kineziologije ali fizioterapije",
+            "EN": "A degree in kinesiology or physiotherapy"
           },
           {
-            "SL": "Odlično pisno izražanje ter občutek za strukturo informacij.",
-            "EN": "Excellent writing skills and a strong sense of information structure."
+            "SL": "Certifikat rehabilitacijskega pilatesa",
+            "EN": "A rehabilitation Pilates certification"
           },
           {
-            "SL": "Osnovno razumevanje analitike, SEO in testiranja uporabniške izkušnje.",
-            "EN": "Basic understanding of analytics, SEO, and user-experience testing."
+            "SL": "Izkušnje z delom po operacijah kolena in hrbtenice",
+            "EN": "Experience after knee and spinal surgery"
           },
           {
-            "SL": "Organiziranost pri delu z več izdelki, jeziki in roki hkrati.",
-            "EN": "Ability to organise multiple products, languages, and deadlines at once."
+            "SL": "Natančno vodenje zapisov o napredku",
+            "EN": "Careful record-keeping of progress"
           }
         ],
         "note": {
-          "SL": "Vloga je lahko zaposlitev za polni delovni čas ali sodelovanje štiri dni na teden. Prosimo, pošljite primer vsebine ali trgovine, pri kateri ste bili odgovorni za merljiv rezultat.",
-          "EN": "The role can be full-time or structured as a four-day week. Please send an example of content or a shop where you were responsible for a measurable result."
+          "SL": "Polovični delovni čas z možnostjo razširitve.",
+          "EN": "Part time, with room to grow."
         }
       },
       {
         "title": {
-          "SL": "Montažer oziroma tehnični koordinator",
-          "EN": "Installer and technical coordinator"
+          "SL": "Vodja recepcije in članstev",
+          "EN": "Front desk and membership lead"
         },
         "text": {
-          "SL": "Za dostave in montaže po Sloveniji iščemo tehnično spretno osebo, ki zna mirno reševati nepredvidene situacije na lokaciji. Delo vključuje pripravo opreme, koordinacijo dostopa, sestavo pohištva in dokumentiranje končnega pregleda.",
-          "EN": "For deliveries and installations across Slovenia, we are looking for a technically skilled person who can calmly resolve unexpected site conditions. The work includes equipment preparation, access coordination, furniture assembly, and documenting the final inspection."
+          "SL": "Prvi stik s člani, urejanje rezervacij in članstev ter skrb za to, da je urnik ves čas točen.",
+          "EN": "The first point of contact for members, handling bookings and memberships, and keeping the timetable accurate."
         },
         "requirements": [
           {
-            "SL": "Izkušnje z montažo pohištva, stavbnim pohištvom ali podobnim delom.",
-            "EN": "Experience with furniture installation, joinery, or comparable work."
+            "SL": "Izkušnje z delom s strankami",
+            "EN": "Experience working with customers"
           },
           {
-            "SL": "Natančnost, urejen odnos do prostora naročnika in fizična pripravljenost.",
-            "EN": "Precision, respect for client spaces, and appropriate physical fitness."
+            "SL": "Urejenost pri delu s podatki",
+            "EN": "Care when working with data"
           },
           {
-            "SL": "Vozniški izpit kategorije B; kategorija C1 je prednost.",
-            "EN": "Category B driving licence; C1 is an advantage."
+            "SL": "Slovenščina in angleščina",
+            "EN": "Slovenian and English"
           },
           {
-            "SL": "Pripravljenost na občasne zgodnje odhode in večdnevne montaže.",
-            "EN": "Willingness to accommodate occasional early starts and multi-day installations."
+            "SL": "Delo v izmenah, vključno s soboto",
+            "EN": "Shift work, including Saturdays"
           }
         ],
         "note": {
-          "SL": "Ponujamo redno zaposlitev, kakovostno orodje, urejene potne stroške in dodatno usposabljanje pri zahtevnejših sistemih. Začetek dela je po dogovoru.",
-          "EN": "We offer permanent employment, quality tools, fully covered travel expenses, and additional training for more complex systems. The start date is flexible by agreement."
+          "SL": "Polni delovni čas.",
+          "EN": "Full time."
         }
       }
     ]
   },
   "faq": {
     "text": {
-      "SL": "Spodaj so zbrani odgovori na najpogostejša vprašanja o naročanju, materialih, dostavi in prilagoditvah. Pri izdelku ali projektu, ki zahteva dodatno preverjanje, nam pošljite mere, fotografije prostora in želeni časovni okvir, da lahko pripravimo natančnejši odgovor.",
-      "EN": "Below you will find answers to common questions about ordering, materials, delivery, and customisation. For a product or project requiring additional checks, send us dimensions, photographs of the room, and your preferred timing so we can provide a more precise answer."
+      "SL": "Najpogostejša vprašanja pred prvim obiskom. Če vašega ni med njimi, nam pišite — odgovorimo isti dan.",
+      "EN": "The questions we hear most before a first visit. If yours is not here, write to us — we answer the same day."
     },
     "items": [
       {
         "question": {
-          "SL": "Ali lahko pred naročilom prejmem vzorce materialov?",
-          "EN": "Can I receive material samples before ordering?"
+          "SL": "Ali moram imeti izkušnje s pilatesom?",
+          "EN": "Do I need previous Pilates experience?"
         },
         "answer": {
-          "SL": "Da. Za večino tkanin, lesnih zaključkov in kovinskih barv lahko naročite manjši komplet vzorcev. Strošek kompleta se pri večjem naročilu odšteje od končnega zneska. Pri naravnem lesu in kamnu upoštevajte, da posamezen vzorec prikazuje le del običajne variacije.",
-          "EN": "Yes. Small sample sets are available for most fabrics, timber finishes, and metal colours. The sample cost is deducted from a larger order. With natural timber and stone, remember that a single sample represents only part of the normal variation."
+          "SL": "Ne. Vsak nov član začne z uvodno analizo gibanja, na podlagi katere ga usmerimo v ustrezno skupino. Začetniške skupine so zaprte in tečejo osem tednov.",
+          "EN": "No. Every new member starts with a movement assessment, and we place you in the right group based on it. Beginner groups are closed and run for eight weeks."
         }
       },
       {
         "question": {
-          "SL": "Kako dolgo traja izdelava in dostava?",
-          "EN": "How long do production and delivery take?"
+          "SL": "Kako pogosto naj vadim?",
+          "EN": "How often should I train?"
         },
         "answer": {
-          "SL": "Izdelki na zalogi so običajno odpremljeni v treh do petih delovnih dneh. Standardni izdelki po naročilu potrebujejo približno šest do deset tednov, prilagojene izvedbe pa praviloma deset do štirinajst tednov. Natančen rok potrdimo po pregledu naročila in razpoložljivosti materiala.",
-          "EN": "In-stock products normally ship within three to five working days. Standard made-to-order pieces take approximately six to ten weeks, while customised versions generally require ten to fourteen weeks. We confirm the exact schedule after reviewing the order and material availability."
+          "SL": "Dvakrat tedensko je meja, pod katero se sprememba drže težko pokaže. Enkrat tedensko vzdržuje, trikrat pospeši, več od tega pa pri večini ne prinese dosti.",
+          "EN": "Twice a week is the line below which a change in posture rarely shows. Once a week maintains, three times speeds things up, and more than that adds little for most people."
         }
       },
       {
         "question": {
-          "SL": "Ali dostavljate zunaj Slovenije?",
-          "EN": "Do you deliver outside Slovenia?"
+          "SL": "Kaj potrebujem za prvi obisk?",
+          "EN": "What do I need for my first visit?"
         },
         "answer": {
-          "SL": "Da, dostavljamo v večino držav Evropske unije. Manjše izdelke pošiljamo s paketno službo, za pohištvo pa pripravimo individualno ponudbo glede na naslov, dostop in potrebo po montaži. Morebitne omejitve ali dodatne stroške vedno potrdimo pred plačilom.",
-          "EN": "Yes, we deliver to most European Union countries. Smaller items are shipped by parcel service, while furniture receives an individual quote based on the address, access, and installation requirements. Any limitations or additional costs are confirmed before payment."
+          "SL": "Udobna oblačila in nogavice z oprijemom, ki jih lahko kupite tudi pri nas. Vse drugo je v studiu. Pridite deset minut prej, da izpolnite zdravstveni vprašalnik.",
+          "EN": "Comfortable clothes and grip socks, which you can also buy here. Everything else is in the studio. Come ten minutes early to fill in the health questionnaire."
         }
       },
       {
         "question": {
-          "SL": "Katere izdelke je mogoče prilagoditi?",
-          "EN": "Which products can be customised?"
+          "SL": "Ali lahko vadim v nosečnosti?",
+          "EN": "Can I train during pregnancy?"
         },
         "answer": {
-          "SL": "Pri večini miz, polic, sedežnega pohištva in svetil lahko izbirate med več dimenzijami, barvami ali materiali. Konstrukcijske spremembe preverimo posebej, saj lahko vplivajo na stabilnost, ceno in dobavni rok. Pred potrditvijo prejmete specifikacijo ter po potrebi risbo.",
-          "EN": "Most tables, shelving, seating, and lighting are available in several dimensions, colours, or materials. Structural changes are reviewed separately because they can affect stability, price, and lead time. Before confirmation you receive a specification and, where necessary, a drawing."
+          "SL": "Da, v namenski nosečniški skupini in po posvetu z ginekologom. Program se prilagaja trimesečju; v prvem trimesečju začetnic praviloma ne vpisujemo.",
+          "EN": "Yes, in the dedicated prenatal group and after speaking with your gynaecologist. The programme follows the trimester; we do not usually enrol complete beginners in the first trimester."
         }
       },
       {
         "question": {
-          "SL": "Kako poteka vračilo standardnega izdelka?",
-          "EN": "How do returns of standard products work?"
+          "SL": "Kako odpovem rezervirano uro?",
+          "EN": "How do I cancel a booked session?"
         },
         "answer": {
-          "SL": "Neuporabljen standardni izdelek lahko vrnete v zakonsko določenem roku, če je v originalnem stanju in primerno zaščiten za transport. Izdelkov po meri, že sestavljenih kosov z vidnimi sledmi uporabe in odprtih vzorcev praviloma ni mogoče vrniti. Pred pošiljanjem vedno kontaktirajte podporo.",
-          "EN": "An unused standard product can be returned within the statutory period when it remains in original condition and is properly protected for transport. Customised items, assembled pieces showing use, and opened samples are generally non-returnable. Always contact support before sending anything back."
+          "SL": "Prek spletnega koledarja do dvanajst ur pred začetkom, brez stroška. Pri kasnejši odpovedi se ura odšteje od članstva ali paketa.",
+          "EN": "Through the online calendar up to twelve hours before the start, at no cost. Cancel later and the session is deducted from your membership or pack."
         }
       },
       {
         "question": {
-          "SL": "Ali nudite montažo in odvoz embalaže?",
-          "EN": "Do you provide installation and packaging removal?"
+          "SL": "Ali članstvo lahko zamrznem?",
+          "EN": "Can I freeze my membership?"
         },
         "answer": {
-          "SL": "V Sloveniji lahko pri večini večjih izdelkov naročite dostavo v prostor, montažo in odvoz embalaže. Storitev se obračuna glede na lokacijo, dostop, nadstropje in zahtevnost izdelka. Pred prihodom preverimo dimenzije poti ter morebitno potrebo po zaščiti tal ali dvigalu.",
-          "EN": "Within Slovenia, most larger products can be delivered into the room, installed, and cleared of packaging. The service is priced according to location, access, floor level, and product complexity. Before arrival we verify the route dimensions and any need for floor protection or lifting equipment."
+          "SL": "Enkrat letno za največ dva meseca, ob bolezni ali daljši odsotnosti. Zamrznitev sporočite pred koncem meseca, ker se članstvo sicer obnovi.",
+          "EN": "Once a year, for up to two months, in case of illness or a longer absence. Tell us before the end of the month, otherwise the membership renews."
         }
       },
       {
         "question": {
-          "SL": "Kako pravilno vzdržujem lesene in oblazinjene izdelke?",
-          "EN": "How should I care for timber and upholstered products?"
+          "SL": "Ali sodelujete s fizioterapevti?",
+          "EN": "Do you work with physiotherapists?"
         },
         "answer": {
-          "SL": "Za les priporočamo mehko vlažno krpo, takojšnje brisanje tekočin in izogibanje močnim čistilom. Oblazinjene izdelke redno sesajte z mehkim nastavkom ter madeže obravnavajte po navodilih za izbrano tkanino. Ob dostavi prejmete podrobna navodila za konkretno izvedbo.",
-          "EN": "For timber, use a soft damp cloth, wipe spills promptly, and avoid aggressive cleaners. Vacuum upholstery regularly with a soft attachment and treat stains according to the selected fabric instructions. Detailed care guidance for your exact finish is supplied with delivery."
+          "SL": "Da. Če ste v obravnavi, se z vašim terapevtom dogovorimo o obremenitvi in mu po potrebi pošljemo zapis o napredku. Brez njegovega mnenja programa po operaciji ne začnemo.",
+          "EN": "Yes. If you are under treatment we agree the load with your therapist and send progress notes when needed. We do not start a post-operative programme without their view."
         }
       }
     ]
   },
   "schedule": {
     "title": {
-      "SL": "Urnik salona in dogodkov",
-      "EN": "Showroom and event schedule"
+      "SL": "Urnik",
+      "EN": "Timetable"
     },
     "text": {
-      "SL": "Razstavni salon je odprt za samostojne oglede in rezervirana svetovanja. Spodnji urniki prikazujejo redne termine za svetovanje, materialne delavnice ter dostave. Posebni dogodki in spremembe zaradi praznikov so objavljeni v razdelku Dogodki.",
-      "EN": "The showroom is open for independent visits and booked consultations. The schedules below show regular times for consultations, material workshops, and deliveries. Special events and holiday changes are published in the Events section."
+      "SL": "Stalni tedenski urnik. Rezervacija je obvezna za vse skupinske ure in se odpre sedem dni vnaprej.",
+      "EN": "A fixed weekly timetable. Booking is required for every group session and opens seven days ahead."
     },
     "categories": [
       {
-        "id": "schedule-showroom",
+        "id": "schedule-reformer",
         "name": {
-          "SL": "Razstavni salon",
-          "EN": "Showroom"
+          "SL": "Reformer",
+          "EN": "Reformer"
         }
       },
       {
-        "id": "schedule-workshops",
+        "id": "schedule-mat",
         "name": {
-          "SL": "Delavnice",
-          "EN": "Workshops"
+          "SL": "Matt in nosečniški",
+          "EN": "Mat and prenatal"
         }
       },
       {
-        "id": "schedule-delivery",
+        "id": "schedule-private",
         "name": {
-          "SL": "Dostava in prevzem",
-          "EN": "Delivery and collection"
+          "SL": "Individualno",
+          "EN": "One-to-one"
         }
       }
     ],
     "items": [
       {
         "title": {
-          "SL": "Svetovanje v razstavnem salonu",
-          "EN": "Showroom consultations"
+          "SL": "Reformer skupine",
+          "EN": "Reformer groups"
         },
         "text": {
-          "SL": "Za pogovor o večjem naročilu rezervirajte 45- ali 90-minutni termin. Tako lahko vnaprej pripravimo ustrezne vzorce, preverimo dimenzije in povabimo člana ekipe z znanjem, ki ga vaš projekt potrebuje.",
-          "EN": "For a larger purchase, book a 45- or 90-minute appointment. This allows us to prepare relevant samples, check dimensions in advance, and involve the team member whose expertise best matches your project."
+          "SL": "Osem mest na uro, tri ravni zahtevnosti. Začetniške skupine tečejo v zaprtih osemtedenskih ciklih, nadaljevalne pa so odprte skozi vse leto.",
+          "EN": "Eight places per session across three levels. Beginner groups run in closed eight-week cycles; intermediate groups are open all year."
         },
-        "categoryId": "schedule-showroom",
+        "categoryId": "schedule-reformer",
         "rows": [
           {
             "cells": [
@@ -1915,12 +1895,12 @@
                 "EN": "Time"
               },
               {
-                "SL": "Vrsta obiska",
-                "EN": "Visit type"
+                "SL": "Raven",
+                "EN": "Level"
               },
               {
-                "SL": "Rezervacija",
-                "EN": "Booking"
+                "SL": "Inštruktor",
+                "EN": "Instructor"
               }
             ]
           },
@@ -1931,16 +1911,109 @@
                 "EN": "Monday"
               },
               {
-                "SL": "09:00–17:00",
-                "EN": "09:00–17:00"
+                "SL": "07:00 / 18:00 / 19:15",
+                "EN": "07:00 / 18:00 / 19:15"
               },
               {
-                "SL": "Samostojni ogled in krajše svetovanje",
-                "EN": "Independent visit and short consultation"
+                "SL": "Začetna in nadaljevalna",
+                "EN": "Beginner and intermediate"
               },
               {
-                "SL": "Priporočena",
-                "EN": "Recommended"
+                "SL": "Ana, Luka",
+                "EN": "Ana, Luka"
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "SL": "Sreda",
+                "EN": "Wednesday"
+              },
+              {
+                "SL": "07:00 / 17:00 / 18:15",
+                "EN": "07:00 / 17:00 / 18:15"
+              },
+              {
+                "SL": "Nadaljevalna",
+                "EN": "Intermediate"
+              },
+              {
+                "SL": "Luka",
+                "EN": "Luka"
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "SL": "Petek",
+                "EN": "Friday"
+              },
+              {
+                "SL": "08:00 / 17:00",
+                "EN": "08:00 / 17:00"
+              },
+              {
+                "SL": "Vse ravni",
+                "EN": "All levels"
+              },
+              {
+                "SL": "Ana, Nejc",
+                "EN": "Ana, Nejc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": {
+          "SL": "Matt in nosečniške skupine",
+          "EN": "Mat and prenatal groups"
+        },
+        "text": {
+          "SL": "Vadba brez naprav z malimi rekviziti, do dvanajst mest. Nosečniška skupina je ločena in zaprta, s šestimi mesti.",
+          "EN": "Training without machines, using small props, with up to twelve places. The prenatal group is separate and closed, with six places."
+        },
+        "categoryId": "schedule-mat",
+        "rows": [
+          {
+            "cells": [
+              {
+                "SL": "Dan",
+                "EN": "Day"
+              },
+              {
+                "SL": "Termin",
+                "EN": "Time"
+              },
+              {
+                "SL": "Skupina",
+                "EN": "Group"
+              },
+              {
+                "SL": "Mesta",
+                "EN": "Places"
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "SL": "Torek",
+                "EN": "Tuesday"
+              },
+              {
+                "SL": "07:00 / 19:00",
+                "EN": "07:00 / 19:00"
+              },
+              {
+                "SL": "Jutranji matt",
+                "EN": "Morning mat"
+              },
+              {
+                "SL": "12",
+                "EN": "12"
               }
             ]
           },
@@ -1951,16 +2024,16 @@
                 "EN": "Thursday"
               },
               {
-                "SL": "09:00–19:00",
-                "EN": "09:00–19:00"
+                "SL": "10:00",
+                "EN": "10:00"
               },
               {
-                "SL": "Daljši projektni termini in ogled vzorcev",
-                "EN": "Longer project sessions and sample review"
+                "SL": "Nosečniški pilates",
+                "EN": "Prenatal Pilates"
               },
               {
-                "SL": "Obvezna po 17:00",
-                "EN": "Required after 17:00"
+                "SL": "6",
+                "EN": "6"
               }
             ]
           },
@@ -1971,16 +2044,16 @@
                 "EN": "Saturday"
               },
               {
-                "SL": "10:00–14:00",
-                "EN": "10:00–14:00"
+                "SL": "09:00 / 10:15",
+                "EN": "09:00 / 10:15"
               },
               {
-                "SL": "Svetovanje za zasebne naročnike",
-                "EN": "Consultations for private clients"
+                "SL": "Matt, vse ravni",
+                "EN": "Mat, all levels"
               },
               {
-                "SL": "Priporočena",
-                "EN": "Recommended"
+                "SL": "12",
+                "EN": "12"
               }
             ]
           }
@@ -1988,185 +2061,92 @@
       },
       {
         "title": {
-          "SL": "Materialne in vzdrževalne delavnice",
-          "EN": "Material and care workshops"
+          "SL": "Individualni termini",
+          "EN": "One-to-one slots"
         },
         "text": {
-          "SL": "Kratke praktične delavnice so namenjene primerjavi materialov, pravilni negi in boljšemu razumevanju izdelave. Število mest je omejeno, saj vsak udeleženec dela z vzorci in lahko prinese fotografijo ali manjši kos za individualno vprašanje.",
-          "EN": "These short practical workshops compare materials, demonstrate correct care, and explain production methods. Places are limited because every participant works with samples and may bring a photograph or small item for an individual question."
+          "SL": "Individualne ure in pari se dogovorijo neposredno z inštruktorjem. Spodaj so okna, ki so praviloma prosta.",
+          "EN": "Private sessions and pairs are arranged directly with the instructor. Below are the windows that are usually free."
         },
-        "categoryId": "schedule-workshops",
+        "categoryId": "schedule-private",
         "rows": [
           {
             "cells": [
               {
-                "SL": "Pogostost",
-                "EN": "Frequency"
+                "SL": "Dan",
+                "EN": "Day"
               },
               {
-                "SL": "Dan in ura",
-                "EN": "Day and time"
+                "SL": "Okno",
+                "EN": "Window"
               },
               {
-                "SL": "Tema",
-                "EN": "Topic"
+                "SL": "Inštruktor",
+                "EN": "Instructor"
               },
               {
-                "SL": "Trajanje",
-                "EN": "Duration"
+                "SL": "Namen",
+                "EN": "Focus"
               }
             ]
           },
           {
             "cells": [
               {
-                "SL": "Prvi četrtek v mesecu",
-                "EN": "First Thursday each month"
+                "SL": "Ponedeljek – petek",
+                "EN": "Monday – Friday"
               },
               {
-                "SL": "18:00",
-                "EN": "18:00"
+                "SL": "09:00 – 15:00",
+                "EN": "09:00 – 15:00"
               },
-              {
-                "SL": "Leseni zaključki, madeži in manjša popravila",
-                "EN": "Timber finishes, stains, and minor repairs"
-              },
-              {
-                "SL": "75 minut",
-                "EN": "75 minutes"
-              }
-            ]
-          },
-          {
-            "cells": [
-              {
-                "SL": "Tretja sobota v mesecu",
-                "EN": "Third Saturday each month"
-              },
-              {
-                "SL": "11:00",
-                "EN": "11:00"
-              },
-              {
-                "SL": "Tkanine, obraba in odstranjevanje madežev",
-                "EN": "Fabrics, wear, and stain removal"
-              },
-              {
-                "SL": "60 minut",
-                "EN": "60 minutes"
-              }
-            ]
-          },
-          {
-            "cells": [
               {
                 "SL": "Po dogovoru",
                 "EN": "By arrangement"
               },
               {
-                "SL": "Za skupine od 6 oseb",
-                "EN": "For groups of 6 or more"
-              },
-              {
-                "SL": "Svetloba, barvna temperatura in postavitev svetil",
-                "EN": "Lighting, colour temperature, and fixture placement"
-              },
-              {
-                "SL": "90 minut",
-                "EN": "90 minutes"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": {
-          "SL": "Dostava, montaža in osebni prevzem",
-          "EN": "Delivery, installation, and collection"
-        },
-        "text": {
-          "SL": "Večje dostave načrtujemo v dopoldanskih časovnih oknih, da ostane dovolj časa za montažo in pregled. Osebni prevzem je mogoč šele po prejemu potrditve, saj je del zaloge shranjen v ločenem logističnem prostoru.",
-          "EN": "Larger deliveries are scheduled in morning windows to leave enough time for installation and inspection. Personal collection is available only after confirmation because part of the stock is held at a separate logistics facility."
-        },
-        "categoryId": "schedule-delivery",
-        "rows": [
-          {
-            "cells": [
-              {
-                "SL": "Storitev",
-                "EN": "Service"
-              },
-              {
-                "SL": "Redni termini",
-                "EN": "Regular slots"
-              },
-              {
-                "SL": "Obvestilo",
-                "EN": "Notice"
-              },
-              {
-                "SL": "Opomba",
-                "EN": "Note"
+                "SL": "Rehabilitacija in analiza",
+                "EN": "Rehabilitation and assessment"
               }
             ]
           },
           {
             "cells": [
               {
-                "SL": "Dostava in montaža v Sloveniji",
-                "EN": "Delivery and installation in Slovenia"
+                "SL": "Torek in četrtek",
+                "EN": "Tuesday and Thursday"
               },
               {
-                "SL": "Torek–petek, 08:00–14:00",
-                "EN": "Tuesday–Friday, 08:00–14:00"
+                "SL": "20:00 – 21:00",
+                "EN": "20:00 – 21:00"
               },
               {
-                "SL": "48 ur vnaprej",
-                "EN": "48 hours in advance"
+                "SL": "Luka",
+                "EN": "Luka"
               },
               {
-                "SL": "Natančnejše okno potrdimo dan pred dostavo",
-                "EN": "A narrower window is confirmed the day before delivery"
+                "SL": "Športna priprava",
+                "EN": "Athletic preparation"
               }
             ]
           },
           {
             "cells": [
               {
-                "SL": "Osebni prevzem manjših izdelkov",
-                "EN": "Collection of smaller items"
+                "SL": "Nedelja",
+                "EN": "Sunday"
               },
               {
-                "SL": "Ponedeljek–petek, 10:00–16:00",
-                "EN": "Monday–Friday, 10:00–16:00"
+                "SL": "09:00 – 12:00",
+                "EN": "09:00 – 12:00"
               },
               {
-                "SL": "Po e-poštni potrditvi",
-                "EN": "After email confirmation"
+                "SL": "Nejc",
+                "EN": "Nejc"
               },
               {
-                "SL": "S seboj prinesite številko naročila",
-                "EN": "Bring your order number"
-              }
-            ]
-          },
-          {
-            "cells": [
-              {
-                "SL": "Mednarodna dostava",
-                "EN": "International delivery"
-              },
-              {
-                "SL": "Po individualnem načrtu",
-                "EN": "According to an individual plan"
-              },
-              {
-                "SL": "Najmanj 5 delovnih dni vnaprej",
-                "EN": "At least 5 working days in advance"
-              },
-              {
-                "SL": "Termin je odvisen od prevoznika in carinskih postopkov",
-                "EN": "Timing depends on the carrier and customs procedures"
+                "SL": "Prvi obisk in analiza",
+                "EN": "First visit and assessment"
               }
             ]
           }
@@ -2176,8 +2156,8 @@
   },
   "events": {
     "text": {
-      "SL": "V ateljeju redno pripravljamo predstavitve novih izdelkov, pogovore z oblikovalci in manjše praktične delavnice. Dogodki so zasnovani za omejeno skupino, zato ostane dovolj časa za vprašanja, ogled prototipov in pogovor o konkretnih izzivih udeležencev.",
-      "EN": "The atelier regularly hosts product launches, conversations with designers, and small practical workshops. Events are designed for limited groups, leaving enough time for questions, prototype viewing, and discussion of participants’ specific challenges."
+      "SL": "Delavnice in predavanja ob koncih tedna. Namenjene so tako članom kot tistim, ki pri nas še niso vadili.",
+      "EN": "Weekend workshops and talks. They are open to members and to people who have never trained here."
     },
     "categories": [
       {
@@ -2188,17 +2168,17 @@
         }
       },
       {
-        "id": "events-launch",
+        "id": "events-talk",
         "name": {
-          "SL": "Predstavitev kolekcije",
-          "EN": "Collection launch"
+          "SL": "Predavanje",
+          "EN": "Talk"
         }
       },
       {
-        "id": "events-talk",
+        "id": "events-open",
         "name": {
-          "SL": "Pogovor in predavanje",
-          "EN": "Talk and lecture"
+          "SL": "Odprti dan",
+          "EN": "Open day"
         }
       }
     ],
@@ -2206,17 +2186,17 @@
     "items": [
       {
         "title": {
-          "SL": "Od vzorca lesa do pravilne končne obdelave",
-          "EN": "From timber sample to the right finish"
+          "SL": "Dihanje in globoke trebušne mišice",
+          "EN": "Breathing and the deep abdominals"
         },
         "text": {
-          "SL": "<p>Na praktični delavnici bomo primerjali oljene, lakirane in miljene površine ter pokazali, kako se odzivajo na vodo, maščobo in vsakodnevno čiščenje.</p><p>Udeleženci bodo pripravili svoj vzorec, prejeli navodila za vzdrževanje in lahko prinesejo fotografijo obstoječega kosa za kratko individualno priporočilo.</p>",
-          "EN": "<p>This practical workshop compares oiled, lacquered, and soap-finished surfaces and shows how they respond to water, grease, and everyday cleaning.</p><p>Participants will prepare their own sample, receive care instructions, and may bring a photograph of an existing piece for a short individual recommendation.</p>"
+          "SL": "<p>Trije praktični deli, v katerih se naučimo ločiti rebrno dihanje od trebušnega in prepoznati, kdaj se prečna trebušna mišica dejansko vključi.</p><p>Delavnica je primerna za začetnike in za tiste, ki pri vadbi ne čutijo sredine telesa. Vsak udeleženec dobi zapis vaj za doma.</p>",
+          "EN": "<p>Three practical parts in which we separate rib breathing from belly breathing and learn to recognise when the transverse abdominis genuinely engages.</p><p>Suitable for beginners and for anyone who cannot feel their centre during training. Everyone leaves with a written set of exercises for home.</p>"
         },
         "date": "2026-09-12T10:30:00+02:00",
         "location": {
-          "SL": "NORD Atelier, Ljubljana",
-          "EN": "NORD Atelier, Ljubljana"
+          "SL": "Reforma Pilates, Ljubljana",
+          "EN": "Reforma Pilates, Ljubljana"
         },
         "categoryId": "events-workshop",
         "isCancelled": false,
@@ -2227,19 +2207,19 @@
       },
       {
         "title": {
-          "SL": "Predstavitev kolekcije Soft Geometry",
-          "EN": "Soft Geometry collection launch"
+          "SL": "Pilates za tekače: kolki in stopala",
+          "EN": "Pilates for runners: hips and feet"
         },
         "text": {
-          "SL": "<p>Predstavili bomo novo serijo sedežnega pohištva, ki raziskuje mehke prehode med nosilno konstrukcijo in oblazinjenjem. Na ogled bodo končni izdelki, zgodnji prototipi ter vzorci tkanin.</p><p>Večer vključuje kratek pogovor z oblikovalsko in proizvodno ekipo ter čas za neformalni ogled kolekcije.</p>",
-          "EN": "<p>We will introduce a new seating series exploring soft transitions between supporting structure and upholstery. Finished pieces, early prototypes, and fabric samples will be on display.</p><p>The evening includes a short conversation with the design and production team followed by time for an informal viewing of the collection.</p>"
+          "SL": "<p>Delavnica za tekače, ki jih po daljših tednih zaboli ahilova tetiva ali zunanja stran kolena. Pregledamo gibljivost kolkov, stabilnost stopala in prehod med koraki.</p><p>Prinesite tekaške copate, ki jih trenutno uporabljate — obrabo podplata bomo pogledali skupaj.</p>",
+          "EN": "<p>A workshop for runners whose Achilles or outer knee complains after heavier weeks. We look at hip mobility, foot stability, and the transition between strides.</p><p>Bring the running shoes you currently use — we will look at the wear on the sole together.</p>"
         },
         "date": "2026-10-08T18:00:00+02:00",
         "location": {
-          "SL": "NORD Atelier, Ljubljana",
-          "EN": "NORD Atelier, Ljubljana"
+          "SL": "Reforma Pilates, Ljubljana",
+          "EN": "Reforma Pilates, Ljubljana"
         },
-        "categoryId": "events-launch",
+        "categoryId": "events-workshop",
         "isCancelled": false,
         "image": {
           "id": "event-soft-geometry",
@@ -2248,17 +2228,17 @@
       },
       {
         "title": {
-          "SL": "Svetloba za zimske mesece",
-          "EN": "Lighting for the winter months"
+          "SL": "Kaj se zgodi s telesom po porodu",
+          "EN": "What happens to the body after birth"
         },
         "text": {
-          "SL": "<p>Arhitektka Maja Vidmar bo na primerih stanovanj prikazala, kako razporediti svetlobne vire, zmanjšati bleščanje in izboljšati večerno počutje brez večjih posegov.</p><p>Po predavanju sledi prikaz različnih barvnih temperatur in možnost kratkega posveta o lastnem prostoru.</p>",
-          "EN": "<p>Architect Maja Vidmar will use residential examples to show how to position light sources, reduce glare, and improve evening comfort without major alterations.</p><p>The talk is followed by a demonstration of different colour temperatures and an opportunity for a short consultation about your own room.</p>"
+          "SL": "<p>Predavanje o trebušni steni, medeničnem dnu in tem, kaj je v prvih mesecih smiselno in kaj lahko počaka.</p><p>Predava Maja Vidmar, sledi pol ure vprašanj. Dojenčki so dobrodošli.</p>",
+          "EN": "<p>A talk on the abdominal wall, the pelvic floor, and what makes sense in the first months versus what can wait.</p><p>Given by Maja Vidmar, followed by half an hour of questions. Babies welcome.</p>"
         },
         "date": "2026-11-19T18:30:00+01:00",
         "location": {
-          "SL": "Mestni muzej Ljubljana, projekcijska dvorana",
-          "EN": "City Museum of Ljubljana, projection room"
+          "SL": "Reforma Pilates, Ljubljana",
+          "EN": "Reforma Pilates, Ljubljana"
         },
         "categoryId": "events-talk",
         "isCancelled": false,
@@ -2269,19 +2249,19 @@
       },
       {
         "title": {
-          "SL": "Popravilo in ponovna uporaba pohištva",
-          "EN": "Furniture repair and reuse clinic"
+          "SL": "Odprti dan: reformer brez rezervacije",
+          "EN": "Open day: reformer without booking"
         },
         "text": {
-          "SL": "<p>Dogodek je namenjen osnovni diagnostiki majavih spojev, površinskih poškodb in obrabljenega oblazinjenja. Pokazali bomo varne posege, ki jih lahko opravite doma, ter primere, ko je smiseln obisk strokovnjaka.</p><p>Zaradi bolezni izvajalca je termin odpovedan; prijavljeni bodo prejeli prednost pri novem datumu.</p>",
-          "EN": "<p>This clinic covers basic diagnosis of loose joints, surface damage, and worn upholstery. We will demonstrate safe repairs suitable for home and explain when professional help is the better option.</p><p>The session has been cancelled due to the instructor’s illness; registered participants will receive priority when a new date is announced.</p>"
+          "SL": "<p>Cel dan odprtih vrat s petnajstminutnimi predstavitvami na reformerju, brez prijave in brez plačila.</p><p>Namenjeno vsem, ki bi radi napravo enkrat videli od blizu, preden se odločijo za osemtedenski začetniški cikel.</p>",
+          "EN": "<p>A full open day with fifteen-minute reformer introductions, no booking and no charge.</p><p>For anyone who wants to see the machine up close before committing to the eight-week beginner cycle.</p>"
         },
         "date": "2026-09-26T10:00:00+02:00",
         "location": {
-          "SL": "NORD Atelier, Ljubljana",
-          "EN": "NORD Atelier, Ljubljana"
+          "SL": "Reforma Pilates, Ljubljana",
+          "EN": "Reforma Pilates, Ljubljana"
         },
-        "categoryId": "events-workshop",
+        "categoryId": "events-open",
         "isCancelled": true,
         "image": {
           "id": "event-repair",
@@ -2290,19 +2270,19 @@
       },
       {
         "title": {
-          "SL": "Odprti studio: prototipi in proces",
-          "EN": "Open studio: prototypes and process"
+          "SL": "Ergonomija pisarne in vaje med delom",
+          "EN": "Desk ergonomics and exercises at work"
         },
         "text": {
-          "SL": "<p>Enkrat na leto odpremo delovni studio in pokažemo razvojne modele, neuspele poskuse ter odločitve, ki običajno ostanejo skrite za končnim izdelkom.</p><p>Obisk je neformalen in primeren za študente, naročnike ter vse, ki jih zanima, kako ideja postane uporaben predmet.</p>",
-          "EN": "<p>Once a year we open the working studio and share development models, failed experiments, and decisions that normally remain hidden behind the finished product.</p><p>The visit is informal and suitable for students, clients, and anyone interested in how an idea becomes a useful object.</p>"
+          "SL": "<p>Predavanje za podjetja in posameznike o postavitvi mize, zaslona in stola ter o tem, katere tri vaje res pomagajo, če presedite osem ur.</p><p>Prinesite fotografijo svojega delovnega mesta; nekaj jih bomo pregledali skupaj.</p>",
+          "EN": "<p>A talk for companies and individuals on desk, screen, and chair setup, and on which three exercises actually help if you sit for eight hours.</p><p>Bring a photograph of your workstation; we will review some of them together.</p>"
         },
         "date": "2027-01-23T11:00:00+01:00",
         "location": {
-          "SL": "Razvojni studio NORD, Šiška",
-          "EN": "NORD development studio, Šiška"
+          "SL": "Reforma Pilates, Ljubljana",
+          "EN": "Reforma Pilates, Ljubljana"
         },
-        "categoryId": null,
+        "categoryId": "events-talk",
         "isCancelled": false,
         "image": {
           "id": "event-open-studio",
