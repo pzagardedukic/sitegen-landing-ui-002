@@ -1,18 +1,11 @@
 "use client";
 
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 import { getLegalSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { getLegalTranslation } from "@/core/translations";
-import FileIcon from "../catalogue/FileIcon";
-import SingleColumnSection from "../common/SingleColumnSection";
 
 type LegalDocument = {
   key: "termsOfService" | "privacyPolicy";
@@ -20,6 +13,11 @@ type LegalDocument = {
   file: string;
 };
 
+/*
+ * Legal documents as rows in the Figma frame (1200x93): the document name on the left, the
+ * open link on the right. ui-001 drew each as a 270x300 card with a large file-type icon,
+ * which gave two links the weight of a product grid.
+ */
 export default function LegalSection() {
   const { lang } = useLanguage();
   const legalSection = getLegalSection(lang);
@@ -48,73 +46,55 @@ export default function LegalSection() {
   }
 
   return (
-    <SingleColumnSection>
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: 4,
-        }}
-      >
-        {documents.map((legalDocument) => (
-          <Card
-            key={legalDocument.key}
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+      {documents.map((legalDocument) => (
+        <Box
+          key={legalDocument.key}
+          component="a"
+          href={legalDocument.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${legalDocument.title}: ${legalTranslation.openDocument}`}
+          sx={(theme) => ({
+            minHeight: 93,
+            px: "30px",
+            py: 2,
+            borderRadius: "25px",
+            border: `1px solid ${theme.palette.surfaces.border}`,
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: { xs: "flex-start", sm: "center" },
+            justifyContent: "space-between",
+            gap: 2,
+            textDecoration: "none",
+            color: "inherit",
+            transition: theme.transitions.create(["border-color", "background-color"]),
+            "&:hover": {
+              borderColor: theme.palette.primary.main,
+              backgroundColor: theme.palette.surfaces.tint,
+            },
+          })}
+        >
+          <Typography variant="h5" component="h3">
+            {legalDocument.title}
+          </Typography>
+
+          <Box
             sx={{
-              width: 270,
-              height: 300,
-              borderRadius: 2,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 0.75,
+              color: "primary.main",
+              flexShrink: 0,
             }}
           >
-            <CardActionArea
-              component="a"
-              href={legalDocument.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${legalDocument.title}: ${legalTranslation.openDocument}`}
-              sx={{
-                width: "100%",
-                height: "100%",
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 1.5,
-                "&:hover .legal-file-icon": {
-                  transform: "scale(1.05)",
-                },
-                "&:hover .legal-file-title": {
-                  opacity: 0.8,
-                },
-              }}
-            >
-              <Box
-                className="legal-file-icon"
-                sx={{ transition: "transform 0.3s ease" }}
-              >
-                <FileIcon file={legalDocument.file} size={60} />
-              </Box>
-
-              <CardContent sx={{ textAlign: "center" }}>
-                <Typography
-                  className="legal-file-title"
-                  variant="subtitle1"
-                  color="text.secondary"
-                  fontWeight={600}
-                  sx={{ transition: "opacity 0.3s ease" }}
-                >
-                  {legalDocument.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" mt={1}>
-                  {legalTranslation.openDocument}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        ))}
-      </Box>
-    </SingleColumnSection>
+            <Typography variant="subtitle2" component="span">
+              {legalTranslation.openDocument}
+            </Typography>
+            <ArrowOutwardIcon sx={{ fontSize: 16 }} />
+          </Box>
+        </Box>
+      ))}
+    </Box>
   );
 }
