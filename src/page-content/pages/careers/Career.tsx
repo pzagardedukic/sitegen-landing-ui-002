@@ -21,9 +21,7 @@ export default function CareerPage({ slug }: { slug: string }) {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="career" useHeaderImage>
-        <HeaderSection title={career.title} />
-      </Section>
+      <HeaderSection title={career.title} />
 
       <Section id="career-details">
         <CareerItemSection id={career.id} />

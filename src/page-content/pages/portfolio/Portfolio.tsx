@@ -20,11 +20,9 @@ export default function PortfolioPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="portfolio" useHeaderImage>
-        <HeaderSection
-          title={portfolioSection.name || portfolioTranslation.title}
-        />
-      </Section>
+      <HeaderSection
+        title={portfolioSection.name || portfolioTranslation.title}
+      />
 
       <Section id="portfolio">
         <PortfolioSection />

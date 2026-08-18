@@ -15,9 +15,7 @@ export default function FaqPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="faq" useHeaderImage>
-        <HeaderSection title={faqTranslation.title} />
-      </Section>
+      <HeaderSection title={faqTranslation.title} />
 
       <Section id="faq">
         <FaqSection />

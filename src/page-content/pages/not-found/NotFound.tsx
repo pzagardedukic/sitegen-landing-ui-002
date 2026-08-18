@@ -15,9 +15,7 @@ export default function NotFoundPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="404" useHeaderImage>
-        <HeaderSection title={translation.title} />
-      </Section>
+      <HeaderSection title={translation.title} />
 
       <Section id="404">
         <NotFoundSection />

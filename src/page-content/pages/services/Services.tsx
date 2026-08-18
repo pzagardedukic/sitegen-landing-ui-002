@@ -15,11 +15,9 @@ export default function ServicesPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="services" useHeaderImage>
-        <HeaderSection
-          title={servicesTranslation.title}
-        />
-      </Section>
+      <HeaderSection
+        title={servicesTranslation.title}
+      />
 
       <Section id="services">
         <ServicesSection />

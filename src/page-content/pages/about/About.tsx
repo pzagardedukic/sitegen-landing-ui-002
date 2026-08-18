@@ -22,11 +22,9 @@ export default function AboutPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="about" useHeaderImage>
-        <HeaderSection
-          title={aboutSection.sectionName || aboutTranslation.title}
-        />
-      </Section>
+      <HeaderSection
+        title={aboutSection.sectionName || aboutTranslation.title}
+      />
 
       <Section id="about">
         <AboutSection />

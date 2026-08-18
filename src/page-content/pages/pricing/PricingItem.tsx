@@ -23,9 +23,7 @@ export default function PricingItemPage({ slug }: { slug: string }) {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="pricing-item" useHeaderImage>
-        <HeaderSection title={pricingItem.title} />
-      </Section>
+      <HeaderSection title={pricingItem.title} />
 
       <Section id="pricing-item">
         <PricingItemSection id={pricingItem.id} />

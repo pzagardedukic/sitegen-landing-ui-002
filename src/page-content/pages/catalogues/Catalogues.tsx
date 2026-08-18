@@ -15,9 +15,7 @@ export default function CataloguesPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="catalogues" useHeaderImage>
-        <HeaderSection title={cataloguesTranslation.title} />
-      </Section>
+      <HeaderSection title={cataloguesTranslation.title} />
 
       <Section id="catalogues">
         <CatalogueSection />

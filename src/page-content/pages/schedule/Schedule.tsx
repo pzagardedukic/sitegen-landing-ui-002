@@ -21,11 +21,9 @@ export default function SchedulePage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="schedule" useHeaderImage>
-        <HeaderSection
-          title={scheduleSection.title.trim() || scheduleTranslation.title}
-        />
-      </Section>
+      <HeaderSection
+        title={scheduleSection.title.trim() || scheduleTranslation.title}
+      />
 
       <Section id="schedule-tables">
         <ScheduleSection />

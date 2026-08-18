@@ -21,9 +21,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="blog-post" useHeaderImage>
-        <HeaderSection title={blog.title} />
-      </Section>
+      <HeaderSection title={blog.title} />
 
       <Section id="blog-post">
         <BlogPostSection id={blogId} />

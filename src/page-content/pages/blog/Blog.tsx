@@ -15,9 +15,7 @@ export default function BlogPage() {
   
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="blog" useHeaderImage>
-        <HeaderSection title={blogTranslation.title} />
-      </Section>
+      <HeaderSection title={blogTranslation.title} />
 
       <Section id="blog">
         <BlogSection />

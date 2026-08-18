@@ -47,9 +47,7 @@ export default function PricingPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="pricing" useHeaderImage>
-        <HeaderSection title={title} />
-      </Section>
+      <HeaderSection title={title} />
 
       <Section id="pricing">
         <PricingSection />

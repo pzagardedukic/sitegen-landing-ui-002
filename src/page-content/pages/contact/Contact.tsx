@@ -15,9 +15,7 @@ export default function ContactPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="contact" useHeaderImage>
-        <HeaderSection title={contactTranslation.title} />
-      </Section>
+      <HeaderSection title={contactTranslation.title} />
 
       <Section id="contact">
         <ContactSection />

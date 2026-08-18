@@ -15,9 +15,7 @@ export default function CareersPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="careers" useHeaderImage>
-        <HeaderSection title={careersTranslation.title} />
-      </Section>
+      <HeaderSection title={careersTranslation.title} />
 
       <Section id="careers">
         <CareersSection />

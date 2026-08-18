@@ -15,9 +15,7 @@ export default function VideosPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="videos" useHeaderImage>
-        <HeaderSection title={videosTranslation.title} />
-      </Section>
+      <HeaderSection title={videosTranslation.title} />
 
       <Section id="videos">
         <VideoSection />

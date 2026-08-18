@@ -15,9 +15,7 @@ export default function GalleryPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="gallery" useHeaderImage>
-        <HeaderSection title={galleryTranslation.title} />
-      </Section>
+      <HeaderSection title={galleryTranslation.title} />
 
       <Section id="gallery">
         <GallerySection />

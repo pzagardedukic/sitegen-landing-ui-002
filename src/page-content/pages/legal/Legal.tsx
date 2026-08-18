@@ -15,9 +15,7 @@ export default function LegalPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Section id="legal" useHeaderImage>
-        <HeaderSection title={legalTranslation.title} />
-      </Section>
+      <HeaderSection title={legalTranslation.title} />
 
       <Section id="legal-documents">
         <LegalSection />
