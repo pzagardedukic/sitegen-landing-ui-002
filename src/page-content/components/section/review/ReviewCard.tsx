@@ -1,5 +1,7 @@
-import { Box, Typography, Avatar, Paper, Link } from "@mui/material";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+"use client";
+
+import { Avatar, Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 type Review = {
   text: string;
@@ -10,59 +12,65 @@ type Review = {
 
 type Props = {
   review: Review;
+  minHeight?: number;
 };
 
-export default function ReviewCard({ review }: Props) {
+/*
+ * A review card from the Figma frame (373 wide, 26 padding): the avatar and author on one
+ * row, the review below it, and the optional source link at the bottom.
+ *
+ * The frame also has a caption line under the author, but review items carry only a title,
+ * text, url and image — there is no role or company to put there.
+ */
+export default function ReviewCard({ review, minHeight }: Props) {
   const { text, author, image, url } = review;
+  const isLink = Boolean(url);
 
-  const CardContent = (
-    <Paper
-      elevation={3}
-      sx={{
-        p: 4,
-        borderRadius: 2,
-        maxWidth: 400,
+  return (
+    <Box
+      {...(isLink
+        ? { component: "a", href: url, target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
-        gap: 3,
-        transition: "scale 0.2s ease",
-        cursor: url ? "pointer" : "default",
-        transform: "scale(1)",
-        "&:hover": {
-          boxShadow: url ? 1 : 0,
-          transition: "box-shadow 0.1s ease",
-        },
-      }}
+        gap: 2,
+        p: "26px",
+        minHeight,
+        borderRadius: "25px",
+        border: `1px solid ${theme.palette.surfaces.border}`,
+        backgroundColor: theme.palette.surfaces.tint,
+        textDecoration: "none",
+        color: "inherit",
+        transition: theme.transitions.create(["border-color", "transform"]),
+        ...(isLink && {
+          "&:hover": {
+            borderColor: theme.palette.primary.main,
+            transform: "translateY(-2px)",
+          },
+        }),
+      })}
     >
-      {/* Quote + Review Text */}
-      <Box display="flex" flexDirection="column">
-        <FormatQuoteIcon sx={{ fontSize: 40, color: "grey.300", mb: 1 }} />
-        <Typography variant="body2" color="text.primary" textAlign="left">
-          {text}
-        </Typography>
-      </Box>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+        <Avatar src={image} alt="" sx={{ width: 44, height: 44 }} />
 
-      {/* Author */}
-      <Box display="flex" alignItems="center" gap={2}>
-        <Avatar src={image} alt={author} sx={{ width: 48, height: 48 }} />
-        <Typography variant="subtitle1" textAlign="left" fontWeight={600} color="text.primary">
+        <Typography variant="subtitle1" component="p">
           {author}
         </Typography>
       </Box>
-    </Paper>
-  );
 
-  return url ? (
-    <Link
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      underline="none"
-      sx={{ display: "inline-block", textDecoration: "none" }}
-    >
-      {CardContent}
-    </Link>
-  ) : (
-    CardContent
+      <Typography variant="body2" sx={{ opacity: 0.75, flex: 1 }}>
+        {text}
+      </Typography>
+
+      {isLink && (
+        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 0.75 }}>
+          <Typography variant="subtitle2" component="span" color="primary.main">
+            {new URL(url!).hostname.replace(/^www\./, "")}
+          </Typography>
+          <ArrowOutwardIcon sx={{ fontSize: 15, color: "primary.main" }} />
+        </Box>
+      )}
+    </Box>
   );
 }

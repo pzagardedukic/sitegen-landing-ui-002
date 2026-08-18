@@ -20,7 +20,7 @@ export default function ReviewSection() {
       title={reviewTranslation.title}
       description={reviewSection.text}
     >
-      <Reviews width="100%" fade speed={30} />
+      <Reviews />
     </SingleColumnSection>
   );
 }
