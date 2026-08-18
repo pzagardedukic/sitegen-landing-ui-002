@@ -21,7 +21,19 @@ export default function CustomMap({ fadeRight }: CustomMapProps) {
   }, [formattedUrl]);
 
   return (
-    <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
+    /* Full-bleed band 400 tall, as drawn — it breaks out of the content container the
+       same way the marquee bands do. */
+    <Box
+      sx={{
+        position: "relative",
+        width: "100vw",
+        left: "50%",
+        right: "50%",
+        marginLeft: "-50vw",
+        marginRight: "-50vw",
+        height: { xs: 280, md: 400 },
+      }}
+    >
       {/* Skeleton Loader */}
       <Fade in={loading} unmountOnExit>
         <Skeleton
@@ -42,7 +54,7 @@ export default function CustomMap({ fadeRight }: CustomMapProps) {
         src={`${formattedUrl}&hl=${lang}`}
         width="100%"
         height="100%"
-        style={{ border: 0, borderRadius: 8 }}
+        style={{ border: 0, display: "block" }}
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

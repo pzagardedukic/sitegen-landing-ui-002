@@ -157,6 +157,11 @@ export default function ContactForm({ subject }: ContactFormProps) {
 
   return (
     <>
+      {/*
+        The form is a card in the Figma frame: 560 wide with 40 of padding, fields 60 tall
+        and the send button on its own row. The tinted surface is what separates it from the
+        contact details beside it, since the section itself has no background.
+      */}
       <Box
         component="form"
         noValidate
@@ -165,6 +170,13 @@ export default function ContactForm({ subject }: ContactFormProps) {
           event.preventDefault();
           void handleSubmit();
         }}
+        sx={(theme) => ({
+          p: { xs: "24px", md: "40px" },
+          borderRadius: "25px",
+          border: `1px solid ${theme.palette.surfaces.border}`,
+          backgroundColor: theme.palette.surfaces.tint,
+          "& .MuiOutlinedInput-root": { borderRadius: "16px" },
+        })}
       >
         <Box display="flex" flexWrap="wrap" gap={2} mb={3}>
           <Box flex="1 1 260px" minWidth={0}>

@@ -1,48 +1,56 @@
 "use client";
 
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
-import WorkingHours from "./WorkingHours";
 import CustomMap from "./CustomMap";
-import { getMap, getWorkingHours } from "@/core/runtime";
+import { getMap } from "@/core/runtime";
+import { getContactTranslation } from "@/core/translations";
+import { useLanguage } from "@/core/runtime";
 import EstablishedAndClients from "../common/EstablishedAndClients";
 import { useSearchParams } from "next/navigation";
-import { useIsMobileDevice } from "@/hooks/useIsMobileDevice";
 
 export default function ContactSection() {
-  const mapOnBottom = useIsMobileDevice();
+  const { lang } = useLanguage();
+  const contactTranslation = getContactTranslation(lang);
 
   const searchParams = useSearchParams();
   const subject = searchParams.get("subject") ?? undefined;
 
-  const workingHours = getWorkingHours();
   const map = getMap();
 
   return (
-    <Box display="flex" flexDirection="column" gap={10} mb={10}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 6, md: 10 } }}>
       <Box
-        display="flex"
-        flexDirection={{ xs: "column-reverse", md: "row" }}
-        gap={4}
-        width="100%"
-        justifySelf="center"
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "560fr 80fr 560fr" },
+          gap: { xs: 5, md: 0 },
+          alignItems: "start",
+        }}
       >
-        {map.enabled && (
-          <Box display="flex" flexDirection="column" flex={0.6}>
-            <CustomMap fadeRight={!mapOnBottom} />
-          </Box>
-        )}
+        <Box
+          sx={{
+            gridColumn: { md: "1" },
+            display: "flex",
+            flexDirection: "column",
+            gap: { xs: 4, md: 6 },
+          }}
+        >
+          <Typography variant="h2" component="h2">
+            {contactTranslation.title}
+          </Typography>
 
-        <Box display="flex" flexDirection="column" gap={4} mt={4} flex={1}>
           <ContactInfo />
+        </Box>
 
+        <Box sx={{ gridColumn: { md: "3" } }}>
           <ContactForm subject={subject} />
-
-          {workingHours.enabled && <WorkingHours />}
         </Box>
       </Box>
+
+      {map.enabled && <CustomMap />}
 
       {/* Year + Happy Clients - full screen width */}
       <EstablishedAndClients />

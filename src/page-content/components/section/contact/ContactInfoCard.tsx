@@ -1,58 +1,33 @@
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 type ContactInfoCardProps = {
-  icon: React.ReactNode;
-  title: string;
-  detail: React.ReactNode;
-  actionLabel: string;
-  actionHref: string;
+  label: string;
+  children: React.ReactNode;
 };
 
+/*
+ * One labelled block of contact details: a small muted label with the value beneath it.
+ *
+ * ui-001 drew each of these as a card with a filled circular icon and its own link. The
+ * Figma has no icons and no per-item action here — the details are a plain list, and the
+ * icons were carrying the old theme's look into every page that shows contact information.
+ */
 export default function ContactInfoCard({
-  icon,
-  title,
-  detail,
-  actionLabel,
-  actionHref,
+  label,
+  children,
 }: ContactInfoCardProps) {
   return (
-    <Box display="flex" flexDirection="row" gap={2} alignItems="flex-start">
-      {/* Icon container */}
-      <Box
-        sx={{
-          width: 48,
-          height: 48,
-          minWidth: 48,
-          minHeight: 48,
-          borderRadius: "50%",
-          backgroundColor: "grey.800",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          flexShrink: 0,
-        }}
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+      <Typography
+        variant="caption"
+        component="h3"
+        sx={{ opacity: 0.6, letterSpacing: "0.4px" }}
       >
-        {icon}
-      </Box>
+        {label}
+      </Typography>
 
-      {/* Text Content */}
-      <Box display="flex" flexDirection="column" textAlign="left">
-        <Typography variant="subtitle1" fontWeight={600}>
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {detail}
-        </Typography>
-        <Link
-          href={actionHref}
-          underline="hover"
-          fontSize={12}
-          fontWeight={600}
-          sx={{ mt: 1 }}
-        >
-          {actionLabel}
-        </Link>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+        {children}
       </Box>
     </Box>
   );
