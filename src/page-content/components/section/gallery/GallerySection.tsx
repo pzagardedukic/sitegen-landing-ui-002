@@ -1,7 +1,7 @@
 "use client";
 
 import "photoswipe/style.css";
-import SingleColumnSection from "../common/SingleColumnSection";
+import { Box } from "@mui/material";
 import { CustomGallery } from "../common/CustomGallery";
 import { getGalleryItems } from "@/core/runtime";
 import PaginationControls from "@/components/button/PaginationControls";
@@ -15,16 +15,19 @@ export default function GallerySection() {
   );
 
   return (
-    <SingleColumnSection>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
       <CustomGallery items={galleryItems} currentPageItems={paginatedItems} />
 
       {pageCount > 1 && (
-        <PaginationControls
-          page={page}
-          pageCount={pageCount}
-          onChange={setPage}
-        />
+        /* Footer row: pagination sits on the right margin, as drawn. */
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <PaginationControls
+            page={page}
+            pageCount={pageCount}
+            onChange={setPage}
+          />
+        </Box>
       )}
-    </SingleColumnSection>
+    </Box>
   );
 }

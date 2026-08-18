@@ -1,3 +1,4 @@
+import { networkInterfaces } from "node:os";
 import path from "node:path";
 import type { NextConfig } from "next";
 
@@ -10,12 +11,23 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
  * the same network returns the HTML but no JS or CSS — a blank white page, with the reason
  * only visible in the terminal. Development only; the exported site is unaffected.
  *
- * Set DEV_ORIGINS to a comma-separated list when the machine's address changes.
+ * The addresses are read off the machine's own interfaces rather than written down: a
+ * DHCP lease change is enough to turn a hardcoded address into that same blank page.
+ * DEV_ORIGINS can add more (comma-separated) when the phone reaches the server by some
+ * other name.
  */
-const DEV_ORIGINS = (process.env.DEV_ORIGINS ?? "192.168.1.145")
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const localAddresses = Object.values(networkInterfaces())
+  .flat()
+  .filter((iface) => iface && iface.family === "IPv4" && !iface.internal)
+  .map((iface) => iface.address);
+
+const DEV_ORIGINS = [
+  ...localAddresses,
+  ...(process.env.DEV_ORIGINS ?? "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+];
 
 const nextConfig: NextConfig = {
   output: "export",

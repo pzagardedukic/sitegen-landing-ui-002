@@ -143,7 +143,7 @@ export default function PortfolioItemSection({ id }: { id: number }) {
         </Box>
       </Box>
 
-      <CustomGallery items={portfolioItem.images} align="left" />
+      <CustomGallery items={portfolioItem.images} variant="strip" />
 
       <Box
         sx={{

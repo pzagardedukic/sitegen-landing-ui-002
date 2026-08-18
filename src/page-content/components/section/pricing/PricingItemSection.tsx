@@ -73,12 +73,7 @@ export default function PricingItemSection({ id }: { id: number }) {
               objectFit: "cover",
             }}
           />
-          <CustomGallery
-            items={pricingItem.images}
-            align="left"
-            itemWidth="140px"
-            gap="10px"
-          />
+          <CustomGallery items={pricingItem.images} variant="strip" thumbSize={140} />
         </Box>
 
         <Box flex={1} gap={2} display="flex" flexDirection="column">
