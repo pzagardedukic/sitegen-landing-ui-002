@@ -2,16 +2,20 @@
 
 import { getBlogItems } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
-import { Box, Button, Divider, Typography } from "@mui/material";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import PersonIcon from "@mui/icons-material/Person";
+import { Box, Typography } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
 import SectionDescription from "../common/SectionDescription";
 import LatestPosts from "./LatestPosts";
-import { useRouter } from "next/navigation";
 import { getBlogTranslation } from "@/core/translations";
+import { useRouter } from "next/navigation";
 import { getPageSlugByKey } from "@/core/static";
 import ShareActions from "../common/ShareActions";
 
+/*
+ * Post detail from the Figma frame (1440x1819): a back button, then the article in a 760
+ * column — date and author, the headline, the picture at 760x420, the text — with the latest
+ * posts as a 320 sidebar beside it, and the share row on a rule at the bottom.
+ */
 export default function BlogPostSection({ id }: { id: number }) {
   const router = useRouter();
   const { lang } = useLanguage();
@@ -23,125 +27,89 @@ export default function BlogPostSection({ id }: { id: number }) {
     return null;
   }
 
-  const handleBackToBlogs = () => {
-    router.push(`/${getPageSlugByKey("blog")}`);
-  };
-
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}>
+      <Box
+        component="button"
+        type="button"
+        onClick={() => router.push(`/${getPageSlugByKey("blog")}`)}
+        sx={(theme) => ({
+          alignSelf: "flex-start",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 1,
+          px: 2.5,
+          py: 1.5,
+          borderRadius: 999,
+          border: `1px solid ${theme.palette.surfaces.border}`,
+          background: "none",
+          cursor: "pointer",
+          color: "inherit",
+          "&:hover": { borderColor: theme.palette.primary.main },
+        })}
+      >
+        <ArrowBackIcon sx={{ fontSize: 18 }} />
+        <Typography variant="button" component="span">
+          {blogTranslations.posts.backToBlogs}
+        </Typography>
+      </Box>
+
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 4, md: 10 },
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "760fr 120fr 320fr" },
+          gap: { xs: 6, md: 0 },
+          alignItems: "start",
         }}
       >
-        {/* Latest Blogs (desktop left) */}
         <Box
+          component="article"
           sx={{
-            display: { xs: "none", md: "block" },
-            flex: 0.3,
-          }}
-        >
-          <LatestPosts excludeId={id} count={5} />
-        </Box>
-
-        {/* Blog Content */}
-        <Box
-          sx={{
+            gridColumn: { md: "1" },
             display: "flex",
             flexDirection: "column",
-            gap: 4,
-            flex: 1,
-            minWidth: 0,
+            gap: { xs: 3, md: 4 },
           }}
         >
-          <Box
-            component="img"
-            src={blog.image}
-            alt={blog.title}
-            loading="lazy"
-            sx={{
-              width: "100%",
-              height: "auto",
-              objectFit: "scale-down",
-              borderRadius: 2,
-            }}
-          />
+          <Typography variant="caption" sx={{ opacity: 0.6 }}>
+            {blog.date} · {blog.author}
+          </Typography>
 
-          <Box maxWidth={{ xs: "100%", md: "80%" }}>
-            <SectionDescription
-              description={blog.description}
-              textAlign="left"
+          <Typography variant="h2" component="h1">
+            {blog.title}
+          </Typography>
+
+          <Box
+            sx={(theme) => ({
+              height: { xs: 240, sm: 340, md: 420 },
+              borderRadius: "25px",
+              overflow: "hidden",
+              backgroundColor: theme.palette.surfaces.placeholder,
+            })}
+          >
+            <Box
+              component="img"
+              src={blog.image}
+              alt=""
+              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </Box>
 
-          <Divider />
+          <SectionDescription description={blog.description} />
 
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems={{ xs: "flex-start", sm: "center" }}
-            flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 2, sm: 0 }}
-            px={{ xs: 0, sm: 3 }}
-            py={2}
-            mt={-4}
+            sx={(theme) => ({
+              pt: 3,
+              borderTop: `1px solid ${theme.palette.surfaces.border}`,
+            })}
           >
-            <Box display="flex" alignItems="center" gap={1}>
-              <PersonIcon sx={{ fontSize: 18, color: "text.secondary" }} />
-              <Typography variant="caption" color="text.secondary">
-                {blog.author}
-              </Typography>
-            </Box>
-
-            <Box display="flex" alignItems="center" gap={1}>
-              <CalendarMonthIcon
-                sx={{ fontSize: 18, color: "text.secondary" }}
-              />
-              <Typography variant="caption" color="text.secondary">
-                {blog.date}
-              </Typography>
-            </Box>
+            <ShareActions title={blog.title} />
           </Box>
         </Box>
-      </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
-          justifyContent: "space-between",
-          alignItems: { xs: "stretch", sm: "center" },
-          mb: 4,
-        }}
-      >
-        <Button
-          variant="outlined"
-          sx={{
-            fontSize: "14px",
-            width: { xs: "100%", sm: "auto" },
-          }}
-          onClick={handleBackToBlogs}
-        >
-          {blogTranslations.posts.backToBlogs}
-        </Button>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "flex-end" },
-            width: { xs: "100%", sm: "auto" },
-          }}
-        >
-          <ShareActions title={blog.title} />
+        <Box sx={{ gridColumn: { md: "3" } }}>
+          <LatestPosts excludeId={id} count={5} />
         </Box>
-      </Box>
-
-      {/* Latest Blogs (mobile bottom) */}
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
-        <LatestPosts excludeId={id} count={5} />
       </Box>
     </Box>
   );

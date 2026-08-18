@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { getPortfolioItems } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
-import { CustomGallery } from "../common/CustomGallery";
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
 import SectionDescription from "../common/SectionDescription";
 import { getPortfolioTranslation } from "@/core/translations";
 import { useRouter } from "next/navigation";
@@ -11,10 +12,19 @@ import RelatedProjects from "./RelatedProjects";
 import { getPageSlugByKey } from "@/core/static";
 import ShareActions from "../common/ShareActions";
 
+/*
+ * Project detail from the Figma frame (1440x1842): a back button, the main picture at
+ * 1200x540 with thumbnails beneath, the title on the left and the description on the right,
+ * a rule, then date / client / category as three labelled columns, and the related projects.
+ *
+ * The thumbnails swap the main picture rather than opening a lightbox — on a project page
+ * the pictures are one story, and a lightbox takes the reader out of it.
+ */
 export default function PortfolioItemSection({ id }: { id: number }) {
   const router = useRouter();
   const { lang } = useLanguage();
   const projectTranslations = getPortfolioTranslation(lang).project;
+  const [activeImage, setActiveImage] = useState(0);
 
   const portfolioItem = getPortfolioItems(lang).find((item) => item.id === id);
   if (!portfolioItem) {
@@ -29,168 +39,143 @@ export default function PortfolioItemSection({ id }: { id: number }) {
     )
     .map((item) => item.id);
 
-  const handleBackToPortfolio = () => {
-    router.push(`/${getPageSlugByKey("portfolio")}`);
-  };
+  const images = portfolioItem.images ?? [];
+
+  const details = [
+    { label: projectTranslations.details.date, value: portfolioItem.date },
+    { label: projectTranslations.details.client, value: portfolioItem.client },
+    { label: projectTranslations.details.category, value: portfolioItem.category },
+  ].filter((detail) => Boolean(detail.value));
 
   return (
-    <Box display="flex" flexDirection="column" gap={4} flex={1}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
       <Box
-        display="flex"
-        flexDirection={{ xs: "column", md: "row" }}
-        gap={4}
-        flex={1}
-        mb={4}
+        component="button"
+        type="button"
+        onClick={() => router.push(`/${getPageSlugByKey("portfolio")}`)}
+        sx={(theme) => ({
+          alignSelf: "flex-start",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 1,
+          px: 2.5,
+          py: 1.5,
+          borderRadius: 999,
+          border: `1px solid ${theme.palette.surfaces.border}`,
+          background: "none",
+          cursor: "pointer",
+          color: "inherit",
+          "&:hover": { borderColor: theme.palette.primary.main },
+        })}
       >
-        <Box
-          flex={1}
-          gap={2}
-          display="flex"
-          flexDirection="column"
-          minWidth={0}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              color: "text.primary",
-            }}
-          >
-            {projectTranslations.details.label}
-          </Typography>
+        <ArrowBackIcon sx={{ fontSize: 18 }} />
+        <Typography variant="button" component="span">
+          {projectTranslations.backToPortfolio}
+        </Typography>
+      </Box>
 
-          <Divider />
-
+      {images.length > 0 && (
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <Box
-            display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 0.5, sm: 0 }}
+            sx={(theme) => ({
+              height: { xs: 260, sm: 380, md: 540 },
+              borderRadius: "25px",
+              overflow: "hidden",
+              backgroundColor: theme.palette.surfaces.placeholder,
+            })}
           >
-            <Typography
-              flex={{ xs: 1, sm: 0.5 }}
-              variant="body1"
-              color="text.secondary"
-            >
-              {projectTranslations.details.date}
-            </Typography>
-
-            <Typography flex={1} variant="body1" color="text.secondary">
-              {portfolioItem.date}
-            </Typography>
+            <Box
+              component="img"
+              src={images[activeImage]}
+              alt=""
+              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </Box>
 
-          <Divider />
-
-          <Box
-            display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 0.5, sm: 0 }}
-          >
-            <Typography
-              flex={{ xs: 1, sm: 0.5 }}
-              variant="body1"
-              color="text.secondary"
+          {images.length > 1 && (
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${Math.min(images.length, 4)}, 1fr)`,
+                gap: "16px",
+              }}
             >
-              {projectTranslations.details.client}
-            </Typography>
-
-            <Typography flex={1} variant="body1" color="text.secondary">
-              {portfolioItem.client}
-            </Typography>
-          </Box>
-
-          <Divider />
-
-          <Box
-            display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 0.5, sm: 0 }}
-          >
-            <Typography
-              flex={{ xs: 1, sm: 0.5 }}
-              variant="body1"
-              color="text.secondary"
-            >
-              {projectTranslations.details.category}
-            </Typography>
-
-            <Typography flex={1} variant="body1" color="text.secondary">
-              {portfolioItem.category}
-            </Typography>
-          </Box>
-
-          <Divider />
+              {images.slice(0, 4).map((image, index) => (
+                <Box
+                  key={image}
+                  component="button"
+                  type="button"
+                  aria-label={`${index + 1}`}
+                  onClick={() => setActiveImage(index)}
+                  sx={(theme) => ({
+                    height: { xs: 64, md: 104 },
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    padding: 0,
+                    cursor: "pointer",
+                    border: `2px solid ${
+                      index === activeImage
+                        ? theme.palette.primary.main
+                        : "transparent"
+                    }`,
+                    backgroundColor: theme.palette.surfaces.placeholder,
+                  })}
+                >
+                  <Box
+                    component="img"
+                    src={image}
+                    alt=""
+                    loading="lazy"
+                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </Box>
+              ))}
+            </Box>
+          )}
         </Box>
+      )}
 
-        <Box
-          flex={1}
-          gap={2}
-          display="flex"
-          flexDirection="column"
-          minWidth={0}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              color: "text.primary",
-            }}
-          >
-            {projectTranslations.descriptionLabel}
-          </Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "620fr 80fr 500fr" },
+          gap: { xs: 3, md: 0 },
+          alignItems: "start",
+        }}
+      >
+        <Typography variant="h2" component="h1" sx={{ gridColumn: { md: "1" } }}>
+          {portfolioItem.title}
+        </Typography>
 
-          <Divider />
-
+        <Box sx={{ gridColumn: { md: "3" } }}>
           <SectionDescription description={portfolioItem.text} />
         </Box>
       </Box>
 
-      <CustomGallery items={portfolioItem.images} variant="strip" />
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
-          justifyContent: "space-between",
-          alignItems: { xs: "stretch", sm: "center" },
-          mb: 4,
-        }}
-      >
-        <Button
-          variant="outlined"
-          sx={{
-            fontSize: "14px",
-            width: { xs: "100%", sm: "auto" },
-          }}
-          onClick={handleBackToPortfolio}
-        >
-          {projectTranslations.backToPortfolio}
-        </Button>
-
+      {details.length > 0 && (
         <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "flex-end" },
-            width: { xs: "100%", sm: "auto" },
-          }}
+          sx={(theme) => ({
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: `repeat(${details.length}, 1fr)` },
+            gap: { xs: 3, sm: "40px" },
+            pt: { xs: 3, md: 4 },
+            borderTop: `1px solid ${theme.palette.surfaces.border}`,
+          })}
         >
-          <ShareActions title={portfolioItem.title} />
-        </Box>
-      </Box>
-
-      {relatedItemIds.length > 0 && (
-        <Box display="flex" flexDirection="column" gap={10} mb={4}>
-          <Divider
-            sx={{
-              position: "relative",
-              width: "100vw",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          />
-
-          <RelatedProjects projectIds={relatedItemIds} />
+          {details.map((detail) => (
+            <Box key={detail.label} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <Typography variant="caption" sx={{ opacity: 0.6 }}>
+                {detail.label}
+              </Typography>
+              <Typography variant="body1">{detail.value}</Typography>
+            </Box>
+          ))}
         </Box>
       )}
+
+      <ShareActions title={portfolioItem.title} />
+
+      {relatedItemIds.length > 0 && <RelatedProjects projectIds={relatedItemIds} />}
     </Box>
   );
 }
