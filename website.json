@@ -20,8 +20,8 @@
     },
     "images": {
       "banner": {
-        "id": "theme-banner",
-        "file": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&h=1250&q=85"
+        "id": "theme-banner-studio",
+        "file": "/images/banner-studio.webp"
       }
     }
   },

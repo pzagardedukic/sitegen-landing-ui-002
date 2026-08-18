@@ -43,3 +43,18 @@ Ena konkretna, ki jo je vrnilo iskanje in ustreza opisu za banner: [Serene Pilat
 ## Ko slike izbereš
 
 Pošlji povezave ali ID-je po vrsticah iz zgornje tabele. Vstavim jih v `website.json`, pregenerirama podatke in preverim vsak izrez pri 390, 768 in 1440 — pri pokončnih karticah se hitro zgodi, da glava ali oprema odpade iz kadra.
+
+## Priprava datotek
+
+Original iz Shutterstocka je lahko 8000 px in 20 MB. Stran je statični izvoz z
+`images.unoptimized`, zato se nič ne pomanjša samo od sebe — vsako sliko je treba pripraviti:
+
+```bash
+node scripts/prepareImage.mjs ~/Downloads/shutterstock_2673565743.jpg banner-studio 2800
+node scripts/prepareImage.mjs ~/Downloads/shutterstock_1234567890.jpg galerija-01
+```
+
+Privzeta širina je 1600 px, kar zadošča za vse razen za banner. Rezultat gre v
+`public/images/<ime>.webp`, v `website.json` pa se vpiše kot `/images/<ime>.webp`.
+
+Banner iz zgornje vrstice je že vstavljen: 8192×5464 in 19 MB je postalo 2800×1868 in 317 kB.
