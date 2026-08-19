@@ -4,6 +4,8 @@ import { Drawer, Box, IconButton, Stack, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from "next/navigation";
 import { isCurrentPath, isNavActive } from "@/core/static";
+import { getHome, useLanguage } from "@/core/runtime";
+import { withBasePath } from "@/core/static";
 
 type NavItem = {
   label: string;
@@ -26,6 +28,8 @@ export default function MobileNavDrawer({
   items,
 }: MobileNavDrawerProps) {
   const pathname = usePathname();
+  const { lang } = useLanguage();
+  const home = getHome(lang);
 
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -50,29 +54,65 @@ export default function MobileNavDrawer({
             // up under it.
             height: "100dvh",
             position: "relative",
-            backgroundColor: theme.palette.header.background,
+            /*
+             * Opaque, unlike the bar. header.background is 8 % transparent so the bar can
+             * sit over the hero photograph; at full screen that let the page underneath
+             * read straight through the menu — page headings crossed the menu labels and
+             * the logo in the bar showed through the panel.
+             */
+            backgroundColor: theme.palette.header.solid,
             backgroundImage: "none",
             color: theme.palette.header.text,
           }),
         },
       }}
     >
-      {/* Close button */}
-      <IconButton
-        onClick={onClose}
-        aria-label="Zapri meni"
+      {/*
+        The menu carries its own logo rather than letting the bar's show through: the panel
+        is opaque now, and at 28px the bar logo was a stamp in the corner of a full screen.
+        It sits on the same 36px margin as the entries below it, so the menu has one left
+        edge and not two.
+      */}
+      <Box
         sx={{
-          position: "absolute",
-          top: 16,
-          right: 16,
-          zIndex: 1,
-          color: "inherit",
+          px: "36px",
+          pt: 3,
+          pb: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 2,
         }}
       >
-        <CloseIcon />
-      </IconButton>
+        <Box
+          component="a"
+          href={withBasePath("/")}
+          sx={{ display: "flex", alignItems: "center", minWidth: 0 }}
+        >
+          {home.logo.image ? (
+            <Box
+              component="img"
+              src={home.logo.image}
+              alt={`${home.name} Logo`}
+              sx={{
+                height: 44,
+                maxWidth: 200,
+                width: "auto",
+                objectFit: "contain",
+                objectPosition: "left center",
+              }}
+            />
+          ) : (
+            <Typography variant="h4">{home.name}</Typography>
+          )}
+        </Box>
 
-      <Box sx={{ px: "36px", pt: 10, pb: 6 }}>
+        <IconButton onClick={onClose} aria-label="Zapri meni" sx={{ color: "inherit" }}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+
+      <Box sx={{ px: "36px", pt: 4, pb: 6 }}>
         <Stack spacing={4}>
           {items.map((item) => (
             <Box key={item.label}>

@@ -20,13 +20,17 @@ function LogoText({ name }: LogoTextProps) {
     >
       <Typography
         variant="h4"
-        sx={{
+        sx={(theme) => ({
           alignSelf: "center",
           py: 1.5,
           letterSpacing: "-0.2px",
-          transition: "opacity 0.2s ease",
+          // Same drop as the image logo, for sites that ship a name instead of artwork.
+          transform: "translateY(var(--logo-drop, 0px))",
+          transition: theme.transitions.create(["opacity", "transform"], {
+            duration: theme.transitions.duration.short,
+          }),
           "&:hover": { opacity: 0.8 },
-        }}
+        })}
       >
         {name}
       </Typography>

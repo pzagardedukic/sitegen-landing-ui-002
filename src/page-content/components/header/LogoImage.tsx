@@ -28,15 +28,19 @@ function LogoImage({ imageSrc, name }: LogoImageProps) {
         component="img"
         src={imageSrc}
         alt={`${name} Logo`}
-        sx={{
+        sx={(theme) => ({
           height: { xs: 28, md: 40 },
           maxWidth: { xs: 120, md: 220 },
           width: "auto",
           objectFit: "contain",
           objectPosition: "left center",
-          transition: "opacity 0.2s ease",
+          // Centres the logo on the white notch rather than on the bar — see HeaderLayout.
+          transform: "translateY(var(--logo-drop, 0px))",
+          transition: theme.transitions.create(["opacity", "transform"], {
+            duration: theme.transitions.duration.short,
+          }),
           "&:hover": { opacity: 0.8 },
-        }}
+        })}
       />
     </a>
   );

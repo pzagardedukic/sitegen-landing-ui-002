@@ -79,11 +79,15 @@ računalniku ni orodja za PDF. V nogi vsakega piše, da gre za predstavitveni do
 
 ## Logotipi
 
-**Glavni logotip** je `public/images/logo-reforma.png` (1440×400, prosojno ozadje), vpisan v
-`home.companyLogo.image`. Je značka z lastnim ozadjem — prelivanje znamke, bel znak in bela
-tipografija — ne črnilo na prosojnem. Razlog je glava: nad hero sliko je prosojna in izrez v
-banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra. Temna tipografija
-umre na drugem, bela na prvem; značka zdrži oboje.
+**Glavni logotip** je `public/images/logo-reforma.png` (1536×540, prosojno ozadje), vpisan v
+`home.companyLogo.image`. Znak so vzmeti reformerja — dva loka nad točko — napis pa nosi
+prelivanje znamke in ne enotne temne barve. Razlog je glava: nad hero sliko je prosojna in
+izrez v banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra. Temen napis
+umre na drugem, bel na prvem; prelivanje vijolična–modra drži oboje. Zaradi istega je
+podnapis srednje siv.
+
+Po višini je poravnan na sredino belega izreza in ne na sredino pasu; kolikor se to razlikuje
+in zakaj, je zapisano v `HeaderLayout.tsx`.
 
 Napis je Sora, izpečena v sliko. SVG, ki ga naloži `<img>`, je samostojen dokument in pisav
 strani ne vidi — živ SVG napis bi se pri obiskovalcu izrisal v tem, kar ima on.

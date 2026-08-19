@@ -64,6 +64,13 @@ export function headerPalette({ primary, secondary }: BrandColors) {
 
   return {
     background: alpha(base, 0.92),
+    /*
+     * The same colour with nothing let through. The bar is deliberately translucent over
+     * the hero, but the full-screen mobile menu used that value too and the page read
+     * straight through it — headings and body copy of the page behind crossed the menu
+     * labels.
+     */
+    solid: base,
     text: alpha("#ffffff", 0.82),
     hoverText: "#ffffff",
     selectedText: "#ffffff",

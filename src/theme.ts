@@ -7,6 +7,7 @@ declare module "@mui/material/styles" {
   interface Palette {
     header: {
       background: string;
+      solid: string;
       text: string;
       hoverText: string;
       selectedText: string;
@@ -32,6 +33,7 @@ declare module "@mui/material/styles" {
   interface PaletteOptions {
     header?: {
       background?: string;
+      solid?: string;
       text?: string;
       hoverText?: string;
       selectedText?: string;
