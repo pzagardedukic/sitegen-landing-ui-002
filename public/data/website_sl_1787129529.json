@@ -32,7 +32,7 @@
       "text": "REFORMA",
       "image": {
         "id": "company-logo",
-        "file": "https://placehold.co/720x240/8258C8/FFFFFF?text=REFORMA"
+        "file": "/images/logo-reforma.png"
       }
     }
   },
@@ -520,59 +520,59 @@
     "items": [
       {
         "image": {
-          "id": "client-mura",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=NLB"
+          "id": "client-medivita",
+          "file": "/images/clients/medivita.svg"
         },
-        "url": "https://example.com/partners/nlb"
+        "url": "https://example.com/partners/medivita"
       },
       {
         "image": {
-          "id": "client-kora",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=OUTFIT7"
+          "id": "client-ortoplan",
+          "file": "/images/clients/ortoplan.svg"
         },
-        "url": "https://example.com/partners/outfit7"
+        "url": "https://example.com/partners/ortoplan"
       },
       {
         "image": {
-          "id": "client-vektor",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=BOLNISNICA%20POSTOJNA"
+          "id": "client-vitalis",
+          "file": "/images/clients/vitalis.svg"
         },
-        "url": "https://example.com/partners/bolnisnica-postojna"
+        "url": "https://example.com/partners/vitalis-zavarovalnica"
       },
       {
         "image": {
-          "id": "client-lumen",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=FIZIO%20CENTER"
+          "id": "client-kinetik",
+          "file": "/images/clients/kinetik.svg"
         },
-        "url": "https://example.com/partners/fizio-center"
+        "url": "https://example.com/partners/kinetik-fizio"
       },
       {
         "image": {
-          "id": "client-orbit",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=SPAR%20SLOVENIJA"
+          "id": "client-sportna-hisa",
+          "file": "/images/clients/sportna-hisa.svg"
         },
-        "url": "https://example.com/partners/spar-slovenija"
+        "url": "https://example.com/partners/sportna-hisa"
       },
       {
         "image": {
-          "id": "client-riva",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=MEDIS"
+          "id": "client-nutrio",
+          "file": "/images/clients/nutrio.svg"
         },
-        "url": "https://example.com/partners/medis"
+        "url": "https://example.com/partners/nutrio"
       },
       {
         "image": {
-          "id": "client-grove",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=TELEKOM"
+          "id": "client-zeleni-krog",
+          "file": "/images/clients/zeleni-krog.svg"
         },
-        "url": "https://example.com/partners/telekom"
+        "url": "https://example.com/partners/zeleni-krog"
       },
       {
         "image": {
-          "id": "client-forma",
-          "file": "https://placehold.co/640x320/F4F1FA/111111?text=UNIVERZA%20V%20LJUBLJANI"
+          "id": "client-vrelec",
+          "file": "/images/clients/vrelec.svg"
         },
-        "url": "https://example.com/partners/univerza-v-ljubljani"
+        "url": "https://example.com/partners/terme-vrelec"
       }
     ]
   },

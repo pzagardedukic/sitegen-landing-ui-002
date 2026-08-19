@@ -76,3 +76,20 @@ zapisano kar v `website.json`:
 
 Narejeni so z izpisom pripravljene strani v PDF prek Edga (`--print-to-pdf`), ker na tem
 računalniku ni orodja za PDF. V nogi vsakega piše, da gre za predstavitveni dokument.
+
+## Logotipi
+
+**Glavni logotip** je `public/images/logo-reforma.png` (1440×400, prosojno ozadje), vpisan v
+`home.companyLogo.image`. Je značka z lastnim ozadjem — prelivanje znamke, bel znak in bela
+tipografija — ne črnilo na prosojnem. Razlog je glava: nad hero sliko je prosojna in izrez v
+banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra. Temna tipografija
+umre na drugem, bela na prvem; značka zdrži oboje.
+
+Napis je Sora, izpečena v sliko. SVG, ki ga naloži `<img>`, je samostojen dokument in pisav
+strani ne vidi — živ SVG napis bi se pri obiskovalcu izrisal v tem, kar ima on.
+
+**Logotipi partnerjev** so v `public/images/clients/*.svg` — osem izmišljenih znamk, vsaka
+barvna in vektorska. Pas jih izriše sivo pri 65 % in jih ob prehodu z miško obarva, zato
+mora znak delovati tudi brez barve. Prej so bili to zaslonski nadomestki z imeni NLB,
+Telekom, Spar in Univerze v Ljubljani — torej resnična podjetja, predstavljena kot stranke
+studia, ki ne obstaja.
