@@ -82,9 +82,10 @@ export default function Header() {
       width="100%"
       display="flex"
       alignItems="center"
-      justifyContent="space-between"
+      // The logo is positioned on the bar itself, so only the navigation is in this row.
+      justifyContent="flex-end"
     >
-      {/* Left: Logo */}
+      {/* Left: Logo, hung on the notch rather than on this row */}
       {home.logo.image ? (
         <LogoImage imageSrc={home.logo.image} name={home.name} />
       ) : (

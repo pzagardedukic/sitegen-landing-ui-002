@@ -1,32 +1,36 @@
 "use client";
 
 import { withBasePath } from "@/core/static";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { memo } from "react";
 
 interface LogoTextProps {
   name: string;
 }
 
+/* Hung on the notch exactly as the artwork is — see LogoImage. */
 function LogoText({ name }: LogoTextProps) {
   return (
-    <a
+    <Box
+      component="a"
       href={withBasePath("/")}
-      style={{
+      sx={(theme) => ({
+        position: "fixed",
+        left: "var(--logo-x, 28px)",
+        top: "var(--logo-y, 36px)",
+        transform: "translateY(-50%)",
         display: "flex",
         alignItems: "center",
-        height: "100%",
-      }}
+        transition: theme.transitions.create(["top"], {
+          duration: theme.transitions.duration.short,
+        }),
+      })}
     >
       <Typography
         variant="h4"
         sx={(theme) => ({
-          alignSelf: "center",
-          py: 1.5,
           letterSpacing: "-0.2px",
-          // Same drop as the image logo, for sites that ship a name instead of artwork.
-          transform: "translateY(var(--logo-drop, 0px))",
-          transition: theme.transitions.create(["opacity", "transform"], {
+          transition: theme.transitions.create(["opacity"], {
             duration: theme.transitions.duration.short,
           }),
           "&:hover": { opacity: 0.8 },
@@ -34,7 +38,7 @@ function LogoText({ name }: LogoTextProps) {
       >
         {name}
       </Typography>
-    </a>
+    </Box>
   );
 }
 

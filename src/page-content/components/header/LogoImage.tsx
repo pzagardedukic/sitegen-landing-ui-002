@@ -9,40 +9,55 @@ interface LogoImageProps {
   name: string;
 }
 
+/*
+ * The logo is hung on the AppBar rather than carried in the header row.
+ *
+ * In the row it inherited the content grid and started 144px in on a 1440 screen, which is
+ * near the middle of the 350-wide notch drawn for it — the notch itself begins 20px from
+ * the page edge. Position and size now come from the bar as --logo-x / --logo-y, so the
+ * artwork sits where the notch is instead of where the text column happens to start.
+ */
 function LogoImage({ imageSrc, name }: LogoImageProps) {
   return (
-    <a
+    <Box
+      component="a"
       href={withBasePath("/")}
-      style={{
+      sx={(theme) => ({
+        position: "fixed",
+        left: "var(--logo-x, 28px)",
+        top: "var(--logo-y, 36px)",
+        transform: "translateY(-50%)",
         display: "flex",
         alignItems: "center",
-      }}
+        transition: theme.transitions.create(["top"], {
+          duration: theme.transitions.duration.short,
+        }),
+      })}
     >
       {/*
         Sized in pixels, not as a percentage of the bar.
         A logo is customer-supplied artwork of unknown proportions — the demo data ships
-        a 720x240 image — so a percentage height only works while some ancestor happens to
-        have a resolved height. Capping both dimensions keeps any logo inside the bar.
+        a 1536x540 image — so a percentage height only works while some ancestor happens to
+        have a resolved height. Capping both dimensions keeps any logo inside the notch:
+        at md the notch is 350x102 and the artwork lands at 171x60.
       */}
       <Box
         component="img"
         src={imageSrc}
         alt={`${name} Logo`}
         sx={(theme) => ({
-          height: { xs: 28, md: 40 },
-          maxWidth: { xs: 120, md: 220 },
+          height: { xs: 36, sm: 44, md: 60 },
+          maxWidth: { xs: 140, sm: 200, md: 280 },
           width: "auto",
           objectFit: "contain",
           objectPosition: "left center",
-          // Centres the logo on the white notch rather than on the bar — see HeaderLayout.
-          transform: "translateY(var(--logo-drop, 0px))",
-          transition: theme.transitions.create(["opacity", "transform"], {
+          transition: theme.transitions.create(["opacity"], {
             duration: theme.transitions.duration.short,
           }),
           "&:hover": { opacity: 0.8 },
         })}
       />
-    </a>
+    </Box>
   );
 }
 

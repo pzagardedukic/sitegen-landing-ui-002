@@ -86,8 +86,10 @@ izrez v banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra
 umre na drugem, bel na prvem; prelivanje vijolična–modra drži oboje. Zaradi istega je
 podnapis srednje siv.
 
-Po višini je poravnan na sredino belega izreza in ne na sredino pasu; kolikor se to razlikuje
-in zakaj, je zapisano v `HeaderLayout.tsx`.
+Postavljen je na pas in ne v vrstico z navigacijo: v vrstici je podedoval mrežo vsebine in se
+pri 1440 začel 144 px od roba, kar je skoraj sredina 350 px širokega izreza, ki je narisan
+prav zanj. Zdaj visi na `--logo-x` / `--logo-y` iz `HeaderLayout.tsx` — 28/48/56 px od levega
+roba, po višini pa na sredini izreza (44/65/71) in ob drsenju na sredini pasu.
 
 Napis je Sora, izpečena v sliko. SVG, ki ga naloži `<img>`, je samostojen dokument in pisav
 strani ne vidi — živ SVG napis bi se pri obiskovalcu izrisal v tem, kar ima on.
