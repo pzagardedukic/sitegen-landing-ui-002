@@ -2,6 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/FileDownloadOutlined";
+import GradientButton from "@/components/button/GradientButton";
 import { getCatalogueSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import {
@@ -59,30 +60,16 @@ export default function CatalogueSection() {
               </Typography>
             </Box>
 
-            <Box
+            <GradientButton
               component="a"
               href={item.file}
               target="_blank"
               rel="noopener noreferrer"
-              sx={(theme) => ({
-                flexShrink: 0,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 1,
-                px: 3,
-                py: 1.5,
-                borderRadius: 999,
-                backgroundImage: theme.palette.brandGradient,
-                color: theme.palette.primary.contrastText,
-                textDecoration: "none",
-                "&:hover": { filter: "brightness(1.08)" },
-              })}
+              endIcon={<DownloadIcon sx={{ fontSize: 18 }} />}
+              sx={{ flexShrink: 0 }}
             >
-              <Typography variant="button" component="span">
-                {buttonTranslation.learnMore}
-              </Typography>
-              <DownloadIcon sx={{ fontSize: 18 }} />
-            </Box>
+              {buttonTranslation.learnMore}
+            </GradientButton>
           </Box>
         ))}
       </Box>

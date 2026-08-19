@@ -78,6 +78,9 @@ export default function HoverDropdown({
                 onMouseLeave={closeMenuDelayed}
                 sx={(theme) => ({
                   backgroundColor: theme.palette.header.background,
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  mt: 1,
                 })}
               >
                 <List dense>

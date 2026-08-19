@@ -41,7 +41,6 @@ export default function CustomMap({ fadeRight }: CustomMapProps) {
           animation="wave"
           sx={{
             position: "absolute",
-            borderRadius: 1,
             width: "100%",
             height: "100%",
           }}
