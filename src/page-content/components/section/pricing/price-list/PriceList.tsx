@@ -1,6 +1,6 @@
 import { getPricingItems, getPricingSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import CategorySelector from "../../common/CategorySelector";
 import { useMemo, useState } from "react";
 import PriceValue from "../common/PriceValue";
@@ -36,36 +36,33 @@ export default function PriceList() {
   }, [filteredItems]);  
 
   return (
-    <>
-      <Box display="flex" justifyContent="center" mb={4}>
-        <CategorySelector
-          categories={categories}
-          selectedIndex={selectedIndex}
-          onSelectIndex={setSelectedIndex}
-        />
-      </Box>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}>
+      {/* Filters on the left margin, as on every other list page. */}
+      <CategorySelector
+        categories={categories}
+        selectedIndex={selectedIndex}
+        onSelectIndex={setSelectedIndex}
+      />
 
       {Object.entries(groupedItems).map(([category, items]) => (
-        <Box key={category} mb={5}>
-          <Typography
-            variant="h3"
-            color="text.primary"
-            textAlign="center"
-            gutterBottom
-            mb={3}
-          >
+        <Box key={category}>
+          <Typography variant="h4" component="h3" color="text.primary" mb={1}>
             {category}
           </Typography>
 
           {items.map((item, i) => (
-            <Box key={i} mb={2} mt={2}>
-              <Divider sx={{ mb: 0.5 }} />
-
+            <Box
+              key={i}
+              sx={(theme) => ({
+                py: 2.5,
+                borderTop: `1px solid ${theme.palette.surfaces.border}`,
+              })}
+            >
               <Box
                 display="flex"
                 justifyContent="space-between"
                 alignItems="flex-start"
-                gap={2}
+                gap={{ xs: 2, md: 6 }}
               >
                 {/* Left side: title + description */}
                 <Box
@@ -76,7 +73,8 @@ export default function PriceList() {
                   }}
                 >
                   <Typography
-                    variant="body1"
+                    variant="h6"
+                    component="p"
                     color="text.primary"
                     sx={{
                       wordBreak: "break-word",
@@ -121,6 +119,6 @@ export default function PriceList() {
           ))}
         </Box>
       ))}
-    </>
+    </Box>
   );
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getPortfolioItems } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { Box, Typography } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
+import BackButton from "@/components/button/BackButton";
 import SectionDescription from "../common/SectionDescription";
 import { getPortfolioTranslation } from "@/core/translations";
 import { useRouter } from "next/navigation";
@@ -49,30 +49,10 @@ export default function PortfolioItemSection({ id }: { id: number }) {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
-      <Box
-        component="button"
-        type="button"
+      <BackButton
+        label={projectTranslations.backToPortfolio}
         onClick={() => router.push(`/${getPageSlugByKey("portfolio")}`)}
-        sx={(theme) => ({
-          alignSelf: "flex-start",
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 1,
-          px: 2.5,
-          py: 1.5,
-          borderRadius: 999,
-          border: `1px solid ${theme.palette.surfaces.border}`,
-          background: "none",
-          cursor: "pointer",
-          color: "inherit",
-          "&:hover": { borderColor: theme.palette.primary.main },
-        })}
-      >
-        <ArrowBackIcon sx={{ fontSize: 18 }} />
-        <Typography variant="button" component="span">
-          {projectTranslations.backToPortfolio}
-        </Typography>
-      </Box>
+      />
 
       {images.length > 0 && (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>

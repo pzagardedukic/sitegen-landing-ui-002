@@ -1,5 +1,5 @@
 import HoverZoomImage from "@/components/image/HoverZoomImage";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PriceValue from "../common/PriceValue";
 import DiscountBadge from "../common/DiscountBadge";
 import StatusBadge from "../common/StatusBadge";
@@ -18,6 +18,11 @@ type StoreItemCardProps = {
   status?: PricingItemStatus;
 };
 
+/*
+ * Store card: bordered rather than raised, and the text set left. The badges stay on the
+ * picture, which is the only place they do not push the title off its line when a customer
+ * has both a status and a discount on the same item.
+ */
 export default function StoreItemCard({
   image,
   title,
@@ -32,19 +37,22 @@ export default function StoreItemCard({
   const truncatedText = stripRichText(truncateWordSafe(description, 100));
 
   return (
-    <Paper
-      elevation={2}
+    <Box
       className="zoom-image-parent"
-      sx={{
+      sx={(theme) => ({
         position: "relative",
-        borderRadius: 2,
+        borderRadius: "25px",
+        border: `1px solid ${theme.palette.surfaces.border}`,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        textAlign: "center",
-        "&:hover": { cursor: "pointer" },
-      }}
+        transition: theme.transitions.create(["border-color"]),
+        "&:hover": {
+          cursor: "pointer",
+          borderColor: theme.palette.primary.main,
+        },
+      })}
     >
       {/* Status */}
       <Box
@@ -83,15 +91,22 @@ export default function StoreItemCard({
       />
 
       {/* Content */}
-      <Box px={2} py={2} flexGrow={1}>
+      <Box px={2.5} py={2.5} flexGrow={1}>
         <Typography variant="h6">{title}</Typography>
-        <Typography variant="body2" color="text.secondary" mt={0.5}>
+        <Typography variant="body2" color="text.secondary" mt={1}>
           {truncatedText}
         </Typography>
       </Box>
 
       {/* Price */}
-      <Box px={2} py={1} borderTop="1px solid #f0f0f0" mt="auto">
+      <Box
+        sx={(theme) => ({
+          px: 2.5,
+          py: 1.5,
+          mt: "auto",
+          borderTop: `1px solid ${theme.palette.surfaces.border}`,
+        })}
+      >
         <PriceValue
           value={price}
           currency={currency}
@@ -100,6 +115,6 @@ export default function StoreItemCard({
           discountedValue={discountedValue}
         />
       </Box>
-    </Paper>
+    </Box>
   );
 }

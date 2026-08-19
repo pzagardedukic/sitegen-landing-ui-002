@@ -3,7 +3,11 @@
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CategoryIcon from "@mui/icons-material/Category";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Box, Button, Chip, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import BackButton from "@/components/button/BackButton";
+import GradientButton from "@/components/button/GradientButton";
+import Tag from "@/components/common/Tag";
 import type { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { useBackToList } from "@/core/react";
@@ -67,11 +71,15 @@ export default function EventItemSection({ id }: { id: number }) {
   const eventsTranslation = getEventsTranslation(lang);
   const buttonTranslation = getButtonTranslation(lang);
 
+  /*
+   * Called before the missing-event guard: a hook behind an early return runs on some
+   * renders and not others, which is the same rules-of-hooks break reported as ui-001#1.
+   */
+  const handleBackToEvents = useBackToList(`/${getPageSlugByKey("events")}`);
+
   if (!event) {
     return null;
   }
-
-  const handleBackToEvents = useBackToList(`/${getPageSlugByKey("events")}`);
 
   const showApplyButton = Boolean(eventsSection?.showApplyButton);
 
@@ -96,6 +104,11 @@ export default function EventItemSection({ id }: { id: number }) {
 
   return (
     <Box display="flex" flexDirection="column" gap={5} flex={1}>
+      <BackButton
+        label={eventsTranslation.backToEvents}
+        onClick={handleBackToEvents}
+      />
+
       <Box
         display="flex"
         flexDirection={{ xs: "column", md: "row" }}
@@ -111,7 +124,7 @@ export default function EventItemSection({ id }: { id: number }) {
             width: { xs: "100%", md: "48%" },
             maxHeight: 620,
             objectFit: "cover",
-            borderRadius: 2,
+            borderRadius: "25px",
           }}
         />
 
@@ -125,18 +138,13 @@ export default function EventItemSection({ id }: { id: number }) {
           {(event.isCancelled || relativeDayLabel) && (
             <Box display="flex" flexWrap="wrap" gap={1} alignSelf="flex-start">
               {event.isCancelled && (
-                <Chip
-                  label={eventsTranslation.cancelled}
-                  color="error"
-                  sx={{ fontWeight: 600 }}
-                />
+                <Tag label={eventsTranslation.cancelled} tone="outline" />
               )}
 
               {relativeDayLabel && (
-                <Chip
+                <Tag
                   label={relativeDayLabel}
-                  color={relativeDay === "today" ? "primary" : "secondary"}
-                  sx={{ fontWeight: 600 }}
+                  tone={relativeDay === "today" ? "brand" : "neutral"}
                 />
               )}
             </Box>
@@ -166,58 +174,31 @@ export default function EventItemSection({ id }: { id: number }) {
         </Box>
       </Box>
 
+      <Divider />
+
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
+          gap: 3,
           justifyContent: "space-between",
           alignItems: { xs: "stretch", sm: "center" },
           mb: 4,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            gap: 2,
-          }}
-        >
-          <Button
-            variant="outlined"
-            sx={{
-              fontSize: "14px",
-              width: { xs: "100%", sm: "auto" },
-            }}
-            onClick={handleBackToEvents}
+        {showApplyButton && !event.isCancelled ? (
+          <GradientButton
+            onClick={handleApply}
+            endIcon={<ArrowOutwardIcon />}
+            sx={{ alignSelf: { xs: "stretch", sm: "flex-start" } }}
           >
-            {eventsTranslation.backToEvents}
-          </Button>
+            {buttonTranslation.applyNow}
+          </GradientButton>
+        ) : (
+          <Box />
+        )}
 
-          {showApplyButton && !event.isCancelled && (
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{
-                fontSize: "14px",
-                width: { xs: "100%", sm: "auto" },
-              }}
-              onClick={handleApply}
-            >
-              {buttonTranslation.applyNow}
-            </Button>
-          )}
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "flex-end" },
-            width: { xs: "100%", sm: "auto" },
-          }}
-        >
-          <ShareActions title={event.title} />
-        </Box>
+        <ShareActions title={event.title} />
       </Box>
     </Box>
   );

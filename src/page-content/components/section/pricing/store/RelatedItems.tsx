@@ -7,7 +7,14 @@ import HoverZoomImage from "@/components/image/HoverZoomImage";
 import { useRouter } from "next/navigation";
 import { getPageSlugByKey, getPricingSlugById } from "@/core/static";
 import { getPricingTranslation_priceListWithImages } from "@/core/translations";
+import SectionTitle from "../../common/SectionTitle";
+import { FALLBACK_IMAGE } from "@/core/static";
 
+/*
+ * Items from the same category under the detail. Four across on desktop and two on mobile,
+ * each with its title: ui-001 showed bare thumbnails, and a picture with no name is not a
+ * link a reader can decide to follow.
+ */
 export default function RelatedItems({ itemIds }: { itemIds: number[] }) {
   const router = useRouter();
   const { lang } = useLanguage();
@@ -15,7 +22,7 @@ export default function RelatedItems({ itemIds }: { itemIds: number[] }) {
 
   const relatedItems = getPricingItems(lang)
     .filter((item) => itemIds.includes(item.id))
-    .slice(0, 5);
+    .slice(0, 4);
 
   const handleItemClick = (id: number) => {
     router.push(`/${getPageSlugByKey("pricing")}/${getPricingSlugById(id)}`);
@@ -23,50 +30,44 @@ export default function RelatedItems({ itemIds }: { itemIds: number[] }) {
 
   return (
     <Box display="flex" flexDirection="column" gap={4}>
-      <Typography variant="h2" color="text.primary" alignSelf="center">
-        {t.relatedItemsTitle}
-      </Typography>
+      <SectionTitle title={t.relatedItemsTitle} justify="flex-start" />
 
       <Box
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 1,
-          justifyContent: { xs: "center", md: "flex-start" },
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "repeat(2, 1fr)",
+            md: "repeat(4, 1fr)",
+          },
+          gap: { xs: 2, md: 3 },
         }}
       >
         {relatedItems.map((item) => (
           <Box
             key={item.id}
+            className="zoom-image-parent"
             onClick={() => handleItemClick(item.id)}
             sx={{
-              flex: {
-                xs: "1 1 calc(50% - 4px)",
-                sm: "1 1 calc(33.333% - 6px)",
-                md: "1 1 180px",
-              },
-              maxWidth: {
-                xs: "calc(50% - 4px)",
-                sm: "calc(33.333% - 6px)",
-                md: "180px",
-              },
+              display: "flex",
+              flexDirection: "column",
+              gap: 1.5,
               minWidth: 0,
               cursor: "pointer",
             }}
           >
             <HoverZoomImage
-              src={item.images[0] ?? ""}
+              src={item.images[0] || FALLBACK_IMAGE}
               width="100%"
               sx={{
-                borderRadius: 2,
+                borderRadius: "25px",
                 width: "100%",
-                height: {
-                  xs: "160px",
-                  sm: "170px",
-                  md: "180px",
-                },
+                height: { xs: 160, sm: 200, md: 220 },
               }}
             />
+
+            <Typography variant="h6" color="text.primary">
+              {item.title}
+            </Typography>
           </Box>
         ))}
       </Box>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, IconButton, Tooltip } from "@mui/material";
+import type { SxProps, Theme } from "@mui/material/styles";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X"; // MUI X (Twitter)
@@ -74,15 +75,16 @@ export default function ShareActions({
   );
 }
 
-const circleStyle = {
+/* Same border token as the back button and the cards, so the detail footer reads as one row. */
+const circleStyle: SxProps<Theme> = (theme) => ({
   width: 40,
   height: 40,
   borderRadius: "50%",
-  border: "1px solid",
-  borderColor: "divider",
-  color: "text.secondary",
+  border: `1px solid ${theme.palette.surfaces.border}`,
+  color: theme.palette.text.secondary,
+  transition: theme.transitions.create(["border-color", "color"]),
   "&:hover": {
-    color: "primary.main",
-    borderColor: "primary.main",
+    color: theme.palette.primary.main,
+    borderColor: theme.palette.primary.main,
   },
-};
+});

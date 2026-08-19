@@ -26,18 +26,14 @@ export default function LatestPosts({ excludeId, count }: LatestPostsProps) {
     <Box
       sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 2 }}
     >
-      <Typography
-        variant="h3"
-        sx={{
-          color: "text.primary",
-        }}
-      >
+      {/* h5, not the section scale: this is a 320 sidebar and h3 shouted over the article. */}
+      <Typography variant="h5" component="h2" sx={{ color: "text.primary" }}>
         {blogTranslations.posts.latestPosts}
       </Typography>
 
       <Divider />
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 1.5 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
         {getBlogItems(lang)
           .filter((post) => post.id !== excludeId)
           .slice(0, count ?? 5)
@@ -52,7 +48,7 @@ export default function LatestPosts({ excludeId, count }: LatestPostsProps) {
                 alignItems: "center",
                 justifyContent: "flex-start",
                 cursor: "pointer",
-                "&:hover": { textDecoration: "underline" },
+                "&:hover .MuiTypography-root": { color: "primary.main" },
               }}
               onClick={() => {
                 handlePostClick(post.id);
@@ -65,16 +61,14 @@ export default function LatestPosts({ excludeId, count }: LatestPostsProps) {
                 loading="lazy"
                 zoomOnParentHover
                 width="90px"
-                sx={{ flexShrink: 0, height: "70px", borderRadius: 2 }}
+                sx={{ flexShrink: 0, height: "70px", borderRadius: "16px" }}
               />
               <Typography
                 key={post.id}
                 variant="body2"
                 sx={{
-                  fontSize: "12px",
-                  lineHeight: 1.4,
-                  color: "text.secondary",
-                  fontWeight: 600,
+                  color: "text.primary",
+                  transition: (theme) => theme.transitions.create(["color"]),
                 }}
               >
                 {post.title}

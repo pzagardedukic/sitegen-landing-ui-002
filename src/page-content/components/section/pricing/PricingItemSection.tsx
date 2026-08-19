@@ -1,7 +1,8 @@
 "use client";
 
 import { getPricingItems, getPricingSection } from "@/core/runtime";
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
+import BackButton from "@/components/button/BackButton";
 import SectionDescription from "../common/SectionDescription";
 import { CustomGallery } from "../common/CustomGallery";
 import { useLanguage } from "@/core/runtime";
@@ -15,15 +16,24 @@ import { getPricingTranslation_priceListWithImages } from "@/core/translations";
 import ShareActions from "../common/ShareActions";
 import { useBackToList } from "@/core/react";
 
+/*
+ * Price item detail. Pictures on the left at 440 with the thumbnail strip under them, the
+ * text on the right: badges, description, the feature pairs, then the price on its own rule
+ * — the one number a reader came for, so it sits last and alone rather than inside the text.
+ */
 export default function PricingItemSection({ id }: { id: number }) {
   const { lang } = useLanguage();
   const pricingSection = getPricingSection(lang);
 
+  /*
+   * Ahead of the guards below: a hook that runs only on some renders is the rules-of-hooks
+   * break reported as ui-001#1.
+   */
+  const handleBackToPricing = useBackToList(`/${getPageSlugByKey("pricing")}`);
+
   if (!pricingSection) {
     return null;
   }
-
-  const handleBackToPricing = useBackToList(`/${getPageSlugByKey("pricing")}`);
 
   // NOTE Currently, only one type of pricing section has more info.
   if (pricingSection.type !== "PRICING_STORE") {
@@ -47,16 +57,22 @@ export default function PricingItemSection({ id }: { id: number }) {
     .map((item) => item.id);
 
   return (
-    <Box display="flex" flexDirection="column" gap={4} flex={1}>
+    <Box display="flex" flexDirection="column" gap={5} flex={1}>
+      <BackButton
+        label={pricingItemTranslation.goBackButton}
+        onClick={handleBackToPricing}
+      />
+
       <Box
         display="flex"
         flexDirection={{ xs: "column", md: "row" }}
-        gap={4}
+        gap={{ xs: 4, md: 7 }}
+        alignItems="flex-start"
         flex={1}
-        mb={4}
       >
         <Box
           width={{ xs: "100%", md: "440px" }}
+          flexShrink={0}
           flexDirection="column"
           display="flex"
           gap={2}
@@ -69,29 +85,31 @@ export default function PricingItemSection({ id }: { id: number }) {
             sx={{
               width: "100%",
               height: "auto",
-              borderRadius: 2,
+              borderRadius: "25px",
               objectFit: "cover",
             }}
           />
-          <CustomGallery items={pricingItem.images} variant="strip" thumbSize={140} />
+
+          <CustomGallery
+            items={pricingItem.images}
+            variant="strip"
+            thumbSize={140}
+          />
         </Box>
 
-        <Box flex={1} gap={2} display="flex" flexDirection="column">
+        <Box flex={1} minWidth={0} gap={3} display="flex" flexDirection="column">
           <Box
             display="flex"
-            flexDirection="row"
+            flexDirection={{ xs: "column", sm: "row" }}
             justifyContent="space-between"
-            alignItems="center"
+            alignItems={{ xs: "flex-start", sm: "center" }}
             gap={2}
-            pr={2}
           >
             <Typography
-              variant="h2"
+              variant="h4"
+              component="h2"
               color="text.primary"
-              sx={{
-                flex: 1,
-                minWidth: 0,
-              }}
+              sx={{ flex: 1, minWidth: 0 }}
             >
               {pricingItemTranslation.description}
             </Typography>
@@ -106,51 +124,50 @@ export default function PricingItemSection({ id }: { id: number }) {
             </Box>
           </Box>
 
-          <Divider />
+          <SectionDescription description={pricingItem.text} textAlign="left" />
 
-          <SectionDescription description={pricingItem.text} />
-
-          <Box display="flex" flexDirection="column" gap={1} mb={2}>
-            {pricingItem.features.map((feature, index) => (
-              <Box
-                key={index}
-                display="flex"
-                flexDirection={{ xs: "column", sm: "row" }}
-                gap={{ xs: 0.5, sm: 1 }}
-              >
-                <Typography
-                  flex={{ xs: 1, sm: 0.15 }}
-                  variant="body2"
-                  color="text.secondary"
-                  fontStyle="italic"
+          {pricingItem.features.length > 0 && (
+            <Box display="flex" flexDirection="column">
+              {pricingItem.features.map((feature, index) => (
+                <Box
+                  key={index}
+                  sx={(theme) => ({
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    gap: { xs: 0.25, sm: 2 },
+                    py: 1.5,
+                    borderTop:
+                      index === 0
+                        ? "none"
+                        : `1px solid ${theme.palette.surfaces.border}`,
+                  })}
                 >
-                  {feature.label}:
-                </Typography>
-                <Typography
-                  flex={1}
-                  variant="body2"
-                  color="text.secondary"
-                  fontStyle="italic"
-                >
-                  {feature.value}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ width: { xs: "auto", sm: 180 }, flexShrink: 0 }}
+                  >
+                    {feature.label}
+                  </Typography>
+                  <Typography variant="body2" color="text.primary">
+                    {feature.value}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          )}
 
           <Divider />
 
           <Box
             display="flex"
             justifyContent="space-between"
-            alignItems={{ xs: "flex-start", sm: "center" }}
+            alignItems={{ xs: "flex-start", sm: "baseline" }}
             flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 1, sm: 0 }}
-            px={1}
-            mt={-1}
+            gap={{ xs: 1, sm: 2 }}
           >
-            <Typography variant="body2" color="text.primary">
-              {pricingItemTranslation.price}:
+            <Typography variant="body2" color="text.secondary">
+              {pricingItemTranslation.price}
             </Typography>
 
             <PriceValue
@@ -164,49 +181,20 @@ export default function PricingItemSection({ id }: { id: number }) {
         </Box>
       </Box>
 
+      <Divider />
+
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
-          justifyContent: "space-between",
-          alignItems: { xs: "stretch", sm: "center" },
+          justifyContent: { xs: "flex-start", sm: "flex-end" },
           mb: 4,
         }}
       >
-        <Button
-          variant="outlined"
-          sx={{
-            fontSize: "14px",
-            width: { xs: "100%", sm: "auto" },
-          }}
-          onClick={handleBackToPricing}
-        >
-          {pricingItemTranslation.goBackButton}
-        </Button>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "flex-end" },
-            width: { xs: "100%", sm: "auto" },
-          }}
-        >
-          <ShareActions title={pricingItem.title} />
-        </Box>
+        <ShareActions title={pricingItem.title} />
       </Box>
 
       {relatedItemIds.length > 0 && (
         <Box display="flex" flexDirection="column" gap={6} mb={4}>
-          <Divider
-            sx={{
-              position: "relative",
-              width: "100vw",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          />
-
           <RelatedItems itemIds={relatedItemIds} />
         </Box>
       )}

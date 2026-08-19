@@ -3,7 +3,7 @@
 import { getBlogItems } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { Box, Typography } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
+import BackButton from "@/components/button/BackButton";
 import SectionDescription from "../common/SectionDescription";
 import LatestPosts from "./LatestPosts";
 import { getBlogTranslation } from "@/core/translations";
@@ -29,30 +29,10 @@ export default function BlogPostSection({ id }: { id: number }) {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}>
-      <Box
-        component="button"
-        type="button"
+      <BackButton
+        label={blogTranslations.posts.backToBlogs}
         onClick={() => router.push(`/${getPageSlugByKey("blog")}`)}
-        sx={(theme) => ({
-          alignSelf: "flex-start",
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 1,
-          px: 2.5,
-          py: 1.5,
-          borderRadius: 999,
-          border: `1px solid ${theme.palette.surfaces.border}`,
-          background: "none",
-          cursor: "pointer",
-          color: "inherit",
-          "&:hover": { borderColor: theme.palette.primary.main },
-        })}
-      >
-        <ArrowBackIcon sx={{ fontSize: 18 }} />
-        <Typography variant="button" component="span">
-          {blogTranslations.posts.backToBlogs}
-        </Typography>
-      </Box>
+      />
 
       <Box
         sx={{

@@ -1,10 +1,15 @@
-import { Box } from "@mui/material";
+import Tag from "@/components/common/Tag";
 
 type DiscountBadgeProps = {
   price: string;
   discountedValue?: string;
 };
 
+/*
+ * The discount mark carries the brand gradient rather than the old red fill: red is the
+ * error color and reads as a warning, and a customer whose palette has no red got a badge
+ * that belonged to no part of their site.
+ */
 export default function DiscountBadge({
   price,
   discountedValue,
@@ -28,22 +33,5 @@ export default function DiscountBadge({
 
   if (discountPercent <= 0) return null;
 
-  return (
-    <Box
-      sx={{
-        backgroundColor: "error.main",
-        color: "common.white",
-        px: 1.2,
-        py: 1,
-        borderRadius: 1,
-        fontSize: 14,
-        fontWeight: 700,
-        lineHeight: 1,
-        whiteSpace: "nowrap",
-        alignSelf: "center",
-      }}
-    >
-      - {discountPercent} %
-    </Box>
-  );
+  return <Tag label={`- ${discountPercent} %`} tone="brand" />;
 }

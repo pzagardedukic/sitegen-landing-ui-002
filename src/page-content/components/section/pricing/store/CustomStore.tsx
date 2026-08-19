@@ -3,12 +3,12 @@
 import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
-  Divider,
   InputAdornment,
   MenuItem,
   TextField,
   Typography,
 } from "@mui/material";
+import FilterChips from "@/components/common/FilterChips";
 import { useRouter } from "next/navigation";
 import { Suspense, useMemo } from "react";
 
@@ -33,6 +33,11 @@ type StorePrice = {
 };
 
 const PER_PAGE = 9;
+
+/* Inputs carry the same pill radius as the filter chips and the buttons beside them. */
+const roundedFieldStyle = {
+  "& .MuiOutlinedInput-root": { borderRadius: 999 },
+};
 
 const parsePriceValue = (value: string): number | null => {
   let normalizedValue = value.trim().replace(/\s+/g, "");
@@ -178,9 +183,7 @@ function CustomStoreInner() {
   return (
     <Box
       component="section"
-      sx={{
-        px: { xs: 2, md: 6 },
-      }}
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}
     >
       <Box
         sx={{
@@ -195,7 +198,7 @@ function CustomStoreInner() {
           fullWidth
           size="small"
           type="search"
-          label={pricingStoreTranslation.search}
+          placeholder={pricingStoreTranslation.search}
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
           slotProps={{
@@ -207,27 +210,8 @@ function CustomStoreInner() {
               ),
             },
           }}
-          sx={{ flex: 1, minWidth: 0 }}
+          sx={{ flex: 1, minWidth: 0, ...roundedFieldStyle }}
         />
-
-        {categories.length > 0 && (
-          <TextField
-            select
-            fullWidth
-            size="small"
-            label={pricingStoreTranslation.category}
-            value={selectedCategoryId}
-            onChange={(event) => setSelectedCategoryId(event.target.value)}
-            sx={{ width: { xs: "100%", md: 240 }, flexShrink: 0 }}
-          >
-            <MenuItem value="">{buttonTranslation.all}</MenuItem>
-            {categories.map((category) => (
-              <MenuItem key={category.id} value={category.id}>
-                {category.name}
-              </MenuItem>
-            ))}
-          </TextField>
-        )}
 
         <TextField
           select
@@ -238,7 +222,11 @@ function CustomStoreInner() {
           onChange={(event) =>
             setSortOrder(event.target.value as "ascending" | "descending")
           }
-          sx={{ width: { xs: "100%", md: 260 }, flexShrink: 0 }}
+          sx={{
+            width: { xs: "100%", md: 260 },
+            flexShrink: 0,
+            ...roundedFieldStyle,
+          }}
         >
           <MenuItem value="ascending">
             {pricingStoreTranslation.priceAscending}
@@ -249,20 +237,37 @@ function CustomStoreInner() {
         </TextField>
       </Box>
 
-      <Divider sx={{ mt: 5, mb: 6 }} />
+      {/* Categories are pills like every other list page, not a third dropdown. */}
+      {categories.length > 0 && (
+        <FilterChips
+          ariaLabel={pricingStoreTranslation.category}
+          options={[
+            { value: "", label: buttonTranslation.all },
+            ...categories.map((category) => ({
+              value: category.id,
+              label: category.name,
+            })),
+          ]}
+          value={selectedCategoryId}
+          onChange={setSelectedCategoryId}
+        />
+      )}
 
-      <Box mb={6} mt={3}>
+      <Box mb={2}>
         {pageItems.length > 0 ? (
-          <Box display="flex" flexWrap="wrap" gap={4} mt={2}>
+          <Box
+            sx={{
+              display: "grid",
+              gap: "40px",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
+            }}
+          >
             {pageItems.map((item) => (
-              <Box
-                key={item.id}
-                onClick={() => handleItemClick(item.id)}
-                sx={{
-                  flex: "1 1 250px",
-                  maxWidth: "300px",
-                }}
-              >
+              <Box key={item.id} onClick={() => handleItemClick(item.id)}>
                 <StoreItemCard
                   image={item.images[0] ?? ""}
                   title={item.title}
@@ -278,7 +283,7 @@ function CustomStoreInner() {
             ))}
           </Box>
         ) : (
-          <Typography color="text.secondary" textAlign="center" py={8}>
+          <Typography color="text.secondary" py={8}>
             {pricingStoreTranslation.noResults}
           </Typography>
         )}

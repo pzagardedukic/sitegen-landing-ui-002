@@ -3,13 +3,11 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {
   Box,
-  Button,
   Divider,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Paper,
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -21,9 +19,20 @@ import {
   getButtonTranslation,
   getCareersTranslation,
 } from "@/core/translations";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import BackButton from "@/components/button/BackButton";
+import GradientButton from "@/components/button/GradientButton";
 import SectionDescription from "../common/SectionDescription";
 import ShareActions from "../common/ShareActions";
 
+/*
+ * Job detail. The title is already on the banner above, so the section opens with the back
+ * button and reads as one 760 column — same measure as the post detail, because both are
+ * long-form text and a wider column makes the requirement lines hard to track.
+ *
+ * Applying and sharing sit together on the closing rule: the two things a reader does once
+ * they have finished reading, not one at the top competing with the text.
+ */
 export default function CareerItemSection({ id }: { id: number }) {
   const router = useRouter();
   const { lang } = useLanguage();
@@ -49,61 +58,64 @@ export default function CareerItemSection({ id }: { id: number }) {
 
   return (
     <Box
-      width="100%"
-      maxWidth={960}
-      mx="auto"
-      display="flex"
-      flexDirection="column"
-      gap={4}
+      sx={{
+        width: "100%",
+        maxWidth: 760,
+        mx: "auto",
+        display: "flex",
+        flexDirection: "column",
+        gap: { xs: 4, md: 5 },
+      }}
     >
+      <BackButton
+        label={careersTranslation.backToCareers}
+        onClick={handleBackToCareers}
+      />
+
       <SectionDescription description={career.text} textAlign="left" />
 
       {career.requirements.length > 0 && (
-        <>
-          <Divider />
+        <Box>
+          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
+            {careersTranslation.requirementsTitle}
+          </Typography>
 
-          <Box>
-            <Typography variant="h5" fontWeight={700} mb={2}>
-              {careersTranslation.requirementsTitle}
-            </Typography>
-
-            <List disablePadding>
-              {career.requirements.map((requirement, index) => (
-                <ListItem
-                  key={index}
-                  disableGutters
-                  alignItems="flex-start"
-                  sx={{ py: 0.75 }}
-                >
-                  <ListItemIcon sx={{ minWidth: 36, mt: "2px" }}>
-                    <CheckCircleOutlineIcon color="primary" fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={requirement}
-                    primaryTypographyProps={{
-                      variant: "body1",
-                      color: "text.secondary",
-                    }}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </>
+          <List disablePadding>
+            {career.requirements.map((requirement, index) => (
+              <ListItem
+                key={index}
+                disableGutters
+                alignItems="flex-start"
+                sx={{ py: 0.75 }}
+              >
+                <ListItemIcon sx={{ minWidth: 36, mt: "2px" }}>
+                  <CheckCircleOutlineIcon color="primary" fontSize="small" />
+                </ListItemIcon>
+                <ListItemText
+                  primary={requirement}
+                  primaryTypographyProps={{
+                    variant: "body1",
+                    color: "text.secondary",
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       )}
 
       {career.note && (
-        <Paper
-          variant="outlined"
-          sx={{
-            borderRadius: 2,
+        <Box
+          sx={(theme) => ({
+            borderRadius: "25px",
+            border: `1px solid ${theme.palette.surfaces.border}`,
+            backgroundColor: theme.palette.surfaces.tint,
             px: { xs: 2.5, sm: 3 },
             py: 2.5,
-            fontStyle: "italic",
-          }}
+          })}
         >
           <SectionDescription description={career.note} textAlign="left" />
-        </Paper>
+        </Box>
       )}
 
       <Divider />
@@ -112,52 +124,21 @@ export default function CareerItemSection({ id }: { id: number }) {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
+          gap: 3,
           justifyContent: "space-between",
           alignItems: { xs: "stretch", sm: "center" },
           mb: 4,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            gap: 2,
-          }}
+        <GradientButton
+          onClick={handleApply}
+          endIcon={<ArrowOutwardIcon />}
+          sx={{ alignSelf: { xs: "stretch", sm: "flex-start" } }}
         >
-          <Button
-            variant="outlined"
-            sx={{
-              fontSize: "14px",
-              width: { xs: "100%", sm: "auto" },
-            }}
-            onClick={handleBackToCareers}
-          >
-            {careersTranslation.backToCareers}
-          </Button>
+          {buttonTranslation.applyNow}
+        </GradientButton>
 
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{
-              fontSize: "14px",
-              width: { xs: "100%", sm: "auto" },
-            }}
-            onClick={handleApply}
-          >
-            {buttonTranslation.applyNow}
-          </Button>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "flex-end" },
-            width: { xs: "100%", sm: "auto" },
-          }}
-        >
-          <ShareActions title={career.title} />
-        </Box>
+        <ShareActions title={career.title} />
       </Box>
     </Box>
   );

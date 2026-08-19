@@ -1,6 +1,7 @@
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Box, Chip, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import Tag from "@/components/common/Tag";
 
 import HoverZoomImage from "@/components/image/HoverZoomImage";
 import type { LanguageKey } from "@/core/types";
@@ -46,23 +47,20 @@ export default function EventPreviewCard({
         : "";
 
   return (
-    <Paper
+    <Box
       className="zoom-image-parent"
-      elevation={2}
-      sx={{
+      sx={(theme) => ({
         position: "relative",
-        borderRadius: 2,
+        borderRadius: "25px",
+        border: `1px solid ${theme.palette.surfaces.border}`,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         height: "100%",
         opacity: isCancelled ? 0.82 : 1,
-        transition: "box-shadow 0.2s ease, transform 0.2s ease",
-        "&:hover": {
-          boxShadow: 6,
-          transform: "translateY(-2px)",
-        },
-      }}
+        transition: theme.transitions.create(["border-color"]),
+        "&:hover": { borderColor: theme.palette.primary.main },
+      })}
     >
       {(isCancelled || relativeDayLabel) && (
         <Box
@@ -78,20 +76,13 @@ export default function EventPreviewCard({
           }}
         >
           {isCancelled && (
-            <Chip
-              label={cancelledLabel}
-              color="error"
-              size="small"
-              sx={{ fontWeight: 600 }}
-            />
+            <Tag label={cancelledLabel} tone="outline" />
           )}
 
           {relativeDayLabel && (
-            <Chip
+            <Tag
               label={relativeDayLabel}
-              color={relativeDay === "today" ? "primary" : "secondary"}
-              size="small"
-              sx={{ fontWeight: 600 }}
+              tone={relativeDay === "today" ? "brand" : "neutral"}
             />
           )}
         </Box>
@@ -159,6 +150,6 @@ export default function EventPreviewCard({
           </Box>
         )}
       </Box>
-    </Paper>
+    </Box>
   );
 }
