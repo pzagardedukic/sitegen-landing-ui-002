@@ -180,12 +180,24 @@
   },
   "legal": {
     "privacyPolicy": {
-      "SL": "<p>Reforma Pilates demo d.o.o. obdeluje osebne podatke, ki jih posredujete ob včlanitvi, rezervaciji termina ali prijavi na e-novice. Podatke uporabljamo za vodenje članstva, obveščanje o spremembah urnika in izdajo računov.</p><p>Zdravstveni vprašalnik, ki ga izpolnite pred prvim obiskom, hranimo ločeno in je dostopen samo inštruktorjem, ki vodijo vaše ure. Podatkov ne posredujemo tretjim osebam, razen izvajalcu računovodskih storitev in ponudniku rezervacijskega sistema.</p><p>Kadar koli lahko zahtevate izpis, popravek ali izbris svojih podatkov na naslovu, navedenem v nogi strani. To je vzorčna vsebina za predstavitev teme.</p>",
-      "EN": "<p>Reforma Pilates demo d.o.o. processes the personal data you provide when joining, booking a session, or subscribing to the newsletter. We use it to manage memberships, notify you of timetable changes, and issue invoices.</p><p>The health questionnaire completed before your first visit is stored separately and is accessible only to the instructors who lead your sessions. We do not pass data to third parties other than our accountant and the booking system provider.</p><p>You may request a copy, a correction, or deletion of your data at any time at the address in the footer. This is sample content for a theme demonstration.</p>"
+      "SL": {
+        "id": "privacy-sl",
+        "file": "/documents/zasebnost-sl.pdf"
+      },
+      "EN": {
+        "id": "privacy-en",
+        "file": "/documents/privacy-en.pdf"
+      }
     },
     "termsOfService": {
-      "SL": "<p>Rezervacija skupinske ure je obvezna in se odpre sedem dni vnaprej. Odpoved je brezplačna do dvanajst ur pred začetkom; pri kasnejši odpovedi se ura odšteje od članstva ali paketa.</p><p>Mesečna članstva se obnavljajo samodejno in jih lahko prekinete do zadnjega dne v mesecu. Paketi ur veljajo šest mesecev od nakupa in so prenosljivi na drugo osebo.</p><p>Pred prvim obiskom je treba izpolniti zdravstveni vprašalnik. Če ste v zdravniški ali fizioterapevtski obravnavi, se udeležba dogovori z vašim izvajalcem. To je vzorčna vsebina za predstavitev teme.</p>",
-      "EN": "<p>Booking is required for group sessions and opens seven days ahead. Cancellation is free up to twelve hours before the start; later cancellations are deducted from your membership or pack.</p><p>Monthly memberships renew automatically and can be stopped up to the last day of the month. Class packs are valid for six months from purchase and are transferable.</p><p>A health questionnaire must be completed before the first visit. If you are under medical or physiotherapy care, attendance is agreed with your practitioner. This is sample content for a theme demonstration.</p>"
+      "SL": {
+        "id": "terms-sl",
+        "file": "/documents/pogoji-sl.pdf"
+      },
+      "EN": {
+        "id": "terms-en",
+        "file": "/documents/terms-en.pdf"
+      }
     }
   },
   "team": {

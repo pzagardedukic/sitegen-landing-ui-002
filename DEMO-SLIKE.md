@@ -58,3 +58,21 @@ Privzeta širina je 1600 px, kar zadošča za vse razen za banner. Rezultat gre 
 `public/images/<ime>.webp`, v `website.json` pa se vpiše kot `/images/<ime>.webp`.
 
 Banner iz zgornje vrstice je že vstavljen: 8192×5464 in 19 MB je postalo 2800×1868 in 317 kB.
+
+## Pravni dokumenti
+
+`legal.privacyPolicy` in `legal.termsOfService` sta po pogodbi s core paketom **sklica na
+datoteko** — `{ id, file }` na jezik, ne besedilo. Core to bere z `getLocalizedFile()`, ki
+brez polja `file` vrne `undefined`; ker `getLegalSection()` v tem primeru vrne `undefined`,
+se stran `/pravno` izriše prazna, brez opozorila v konzoli.
+
+Demo dokumenti so v `public/documents/` in nastanejo iz istega besedila, ki je bilo prej
+zapisano kar v `website.json`:
+
+| jezik | pogoji | zasebnost |
+|---|---|---|
+| SL | `pogoji-sl.pdf` | `zasebnost-sl.pdf` |
+| EN | `terms-en.pdf` | `privacy-en.pdf` |
+
+Narejeni so z izpisom pripravljene strani v PDF prek Edga (`--print-to-pdf`), ker na tem
+računalniku ni orodja za PDF. V nogi vsakega piše, da gre za predstavitveni dokument.
