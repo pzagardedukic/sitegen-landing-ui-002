@@ -58,11 +58,17 @@ export default function PriceList() {
                 borderTop: `1px solid ${theme.palette.surfaces.border}`,
               })}
             >
+              {/*
+                * On a phone the price goes under the name instead of beside it. Held in one
+                * row, a 140 price column plus its struck-through original ate more than half
+                * of the 318 available and broke every title over three lines.
+                */}
               <Box
                 display="flex"
+                flexDirection={{ xs: "column", sm: "row" }}
                 justifyContent="space-between"
-                alignItems="flex-start"
-                gap={{ xs: 2, md: 6 }}
+                alignItems={{ xs: "flex-start", sm: "flex-start" }}
+                gap={{ xs: 1, sm: 3, md: 6 }}
               >
                 {/* Left side: title + description */}
                 <Box
@@ -101,8 +107,8 @@ export default function PriceList() {
                 <Box
                   sx={{
                     flexShrink: 0,
-                    minWidth: 140,
-                    textAlign: "right",
+                    minWidth: { xs: 0, sm: 140 },
+                    textAlign: { xs: "left", sm: "right" },
                     whiteSpace: "nowrap",
                   }}
                 >
