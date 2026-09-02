@@ -52,7 +52,7 @@
     },
     "map": {
       "enabled": true,
-      "url": "https://www.google.com/maps/search/?api=1&query=46.056946,14.505751",
+      "url": "https://www.google.com/maps/place/Poljanski+nasip+24,+1000+Ljubljana",
       "lat": "46.056946",
       "lng": "14.505751"
     },

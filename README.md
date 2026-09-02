@@ -73,3 +73,11 @@ Three defects in `ui-001` are fixed here, so the two UIs behave differently on t
 - the header and footer palettes follow the customer's colors instead of staying hardcoded — [ui-001#3](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/3);
 - theme-editor banner updates keep working after a preview reload — [ui-001#2](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/2);
 - `Section` calls `useBannerImage()` unconditionally — [ui-001#1](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/1).
+
+One more difference falls out of the redesign rather than from a fix. On every
+subpage `ui-001` wraps the title band in a `Section` whose id repeats the id of the
+content section below it, so the page renders the same id twice. Here the band draws
+its own card and the id appears once. Where the wrapper carried an id of its own —
+`#events`, `#event`, `#legal`, `#schedule`, `#career` — `HeaderSection` takes it as a
+prop, so those anchors still resolve. `VALIDATION.md` records the route-by-route
+comparison.
