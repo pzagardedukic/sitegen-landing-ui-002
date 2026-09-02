@@ -88,6 +88,8 @@ Kar med delom najdem v `ui-001` in bi bilo dobro popraviti, a ne sodi v `ui-002`
 | [#1](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/1) | `Section.tsx:23` kliče `useBannerImage()` pogojno — kršitev pravil hookov |
 | [#2](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/2) | žive posodobitve banner slike odpovejo po osvežitvi predogleda |
 | [#3](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/3) | `createPreviewTheme` ne preslika `header`/`footer` palet |
+| [#4](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/4) | svež klon se ne namesti ne zgradi — `pnpm-workspace.yaml` ni pod verzijo |
+| [#5](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/5) | vsaka podstran izriše isti id dvakrat — ovoj naslovnega pasu ponovi id vsebinske sekcije |
 
 `#1` popravim tudi v `ui-002` (klic hooka brezpogojno, pogoj na rezultatu) — je čista napaka brez vidne spremembe vedenja.
 
