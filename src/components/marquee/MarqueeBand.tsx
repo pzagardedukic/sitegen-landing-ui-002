@@ -48,7 +48,16 @@ export default function MarqueeBand({
         {items.map((item, index) => (
           <Box
             key={`${item}-${index}`}
-            sx={{ display: "flex", alignItems: "center", gap: 4, pr: 4 }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 4,
+              pr: 4,
+              /* autoFill counts copies from the measured group width; a group that can
+               * shrink asks for ever more copies. Same trap as ClientLogoSlider. */
+              flexShrink: 0,
+              whiteSpace: "nowrap",
+            }}
           >
             <Typography variant="h5" component="span">
               {item}

@@ -28,7 +28,7 @@ export default function ClientLogoSlider({
   if (clients.length === 0) return null;
 
   return (
-    <Box sx={{ position: "relative", py: { xs: 4, md: 6 } }}>
+    <Box sx={{ position: "relative", overflow: "hidden", py: { xs: 4, md: 6 } }}>
       <Marquee speed={speed} gradient={false} autoFill pauseOnHover>
         {clients.map((client, index) => (
           <Box
@@ -43,6 +43,13 @@ export default function ClientLogoSlider({
               : {})}
             sx={{
               width: 216,
+              /*
+               * Without this the logo shrinks to fit the flex row that Marquee builds.
+               * autoFill sizes the copies from the measured width of one group, so a
+               * shrinking group asks for more copies, which shrink further: the strip
+               * grew past 32000 <img> elements at 1440 and froze the page.
+               */
+              flexShrink: 0,
               mr: "24px",
               display: "grid",
               placeItems: "center",
