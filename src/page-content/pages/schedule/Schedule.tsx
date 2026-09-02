@@ -22,6 +22,7 @@ export default function SchedulePage() {
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
       <HeaderSection
+        id="schedule"
         title={scheduleSection.title.trim() || scheduleTranslation.title}
       />
 

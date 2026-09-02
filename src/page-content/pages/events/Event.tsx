@@ -21,7 +21,7 @@ export default function EventPage({ slug }: { slug: string }) {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <HeaderSection title={event.title} />
+      <HeaderSection id="event" title={event.title} />
 
       <Section id="event-details">
         <EventItemSection id={event.id} />

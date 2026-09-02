@@ -7,6 +7,13 @@ import HeroNotch from "../home/HeroNotch";
 
 export type HeaderSectionProps = {
   title: string;
+  /*
+   * Anchor for the band, set on the photograph card. ui-001 wrapped this component in a
+   * Section carrying the page anchor; here the band draws itself, so the pages that had an
+   * anchor of their own pass it through and their fragment links keep working. The outer
+   * element keeps `section-header`, which ui-001 also renders on every subpage.
+   */
+  id?: string;
 };
 
 /*
@@ -19,15 +26,17 @@ export type HeaderSectionProps = {
  * which is how ui-001 did it. That version ran the photograph edge to edge and butted it
  * against the section below with a hard horizontal seam.
  */
-export default function HeaderSection({ title }: HeaderSectionProps) {
+export default function HeaderSection({ title, id }: HeaderSectionProps) {
   const resolvedHeaderImage = useBannerImage();
 
   return (
     <Box
+      component="section"
       id="section-header"
       sx={{ p: { xs: "12px", sm: "24px", md: "20px" } }}
     >
       <Box
+        id={id}
         sx={(theme) => ({
           position: "relative",
           overflow: "hidden",

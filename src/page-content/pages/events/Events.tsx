@@ -21,7 +21,7 @@ export default function EventsPage() {
 
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <HeaderSection title={eventsTranslation.title} />
+      <HeaderSection id="events" title={eventsTranslation.title} />
 
       <Section id="events-list">
         <EventsSection />
