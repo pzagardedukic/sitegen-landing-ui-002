@@ -46,6 +46,20 @@ flex row `Marquee` builds and `autoFill` sizes its copies from the measured grou
 width. With `flexShrink: 0` restored the strip holds at 27 images, the same as
 `ui-001`, and no route grows after it settles.
 
+### Widths
+
+No route overflows horizontally at 600 or 899 — the two edges of MUI's `sm`, which
+is the band the 768 Figma frame has to survive. Checked as
+`document.documentElement.scrollWidth` against the viewport on all 46 routes, with
+the widest offending element reported when it happens; nothing did.
+
+### English
+
+All 46 routes were loaded again with the language runtime switched to `EN`
+(`localStorage.site_language`). Every page renders, `<html lang>` follows, and no
+route logs a console error or a failed request. Slugs stay Slovenian, which is core
+behaviour and matches `ui-001`.
+
 ### Theme editor
 
 Verified against a `NEXT_PUBLIC_THEME_EDITOR_ENABLED=true` export, driving the
