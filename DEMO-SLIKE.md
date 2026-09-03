@@ -79,17 +79,17 @@ računalniku ni orodja za PDF. V nogi vsakega piše, da gre za predstavitveni do
 
 ## Logotipi
 
-**Glavni logotip** je `public/images/logo-reforma.png` (1536×540, prosojno ozadje), vpisan v
-`home.companyLogo.image`. Znak so vzmeti reformerja — dva loka nad točko — napis pa nosi
-prelivanje znamke in ne enotne temne barve. Razlog je glava: nad hero sliko je prosojna in
-izrez v banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra. Temen napis
-umre na drugem, bel na prvem; prelivanje vijolična–modra drži oboje. Zaradi istega je
-podnapis srednje siv.
+**Glavni logotip** je `public/images/logo-reforma.png` (1382×201, prosojno ozadje), vpisan v
+`home.companyLogo.image`. Samo napis REFORMA v eni vrsti — brez znaka in brez podnapisa.
+Napis nosi prelivanje znamke in ne enotne temne barve. Razlog je glava: nad hero sliko je
+prosojna in izrez v banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra.
+Temen napis umre na drugem, bel na prvem; prelivanje vijolična–modra drži oboje.
 
 Postavljen je na pas in ne v vrstico z navigacijo: v vrstici je podedoval mrežo vsebine in se
 pri 1440 začel 144 px od roba, kar je skoraj sredina 350 px širokega izreza, ki je narisan
-prav zanj. Zdaj visi na `--logo-x` / `--logo-y` iz `HeaderLayout.tsx` — 28/48/56 px od levega
-roba, po višini pa na sredini izreza (44/65/71) in ob drsenju na sredini pasu.
+prav zanj. Zdaj visi na `--logo-x` / `--logo-y` iz `HeaderLayout.tsx` — 16/28/24 px od levega
+roba, kar je štiri piksle znotraj izreza, po višini pa na sredini izreza (44/65/71) in ob
+drsenju na sredini pasu.
 
 Napis je Sora, izpečena v sliko. SVG, ki ga naloži `<img>`, je samostojen dokument in pisav
 strani ne vidi — živ SVG napis bi se pri obiskovalcu izrisal v tem, kar ima on.
