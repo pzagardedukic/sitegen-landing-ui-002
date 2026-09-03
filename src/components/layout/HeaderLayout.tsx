@@ -47,24 +47,32 @@ export default function HeaderLayout({
              * the middle of the bar. `--logo-x` stays put through both, so nothing slides
              * sideways when the bar changes state.
              *
+             * `--logo-x` is the notch's own left edge plus 4. The notch sits at the top-left
+             * of the hero card, and the card is inset 12/24/20 from the page edge, so:
+             *
+             *   xs  12 + 4 = 16      sm  24 + 4 = 28      md  20 + 4 = 24
+             *
+             * Four is as tight as it goes: the notch corner is rounded 14/20/25, and any
+             * less puts the artwork on the curve instead of against the flat edge.
+             *
              * The bar height is written into these same breakpoint blocks on purpose. As a
              * responsive `minHeight: { xs, md }` beside an explicit `breakpoints.up("md")`
              * key, both produce a `@media (min-width:900px)` block and the later one wins
              * the whole block — the height silently reverted to the xs value on desktop.
              */
             "--logo-y": scrolled ? "36px" : "44px",
-            "--logo-x": "28px",
+            "--logo-x": "16px",
             [theme.breakpoints.up("sm")]: {
               // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
               // the tablet bar keeps the 72 the rest of the header is measured against.
               minHeight: 72,
               "--logo-y": scrolled ? "36px" : "65px",
-              "--logo-x": "48px",
+              "--logo-x": "28px",
             },
             [theme.breakpoints.up("md")]: {
               minHeight: scrolled ? 80 : 96,
               "--logo-y": scrolled ? "40px" : "71px",
-              "--logo-x": "56px",
+              "--logo-x": "24px",
             },
             transition: theme.transitions.create(["min-height"], {
               duration: theme.transitions.duration.short,

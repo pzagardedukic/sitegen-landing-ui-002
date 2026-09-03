@@ -24,7 +24,7 @@ function LogoImage({ imageSrc, name }: LogoImageProps) {
       href={withBasePath("/")}
       sx={(theme) => ({
         position: "fixed",
-        left: "var(--logo-x, 28px)",
+        left: "var(--logo-x, 16px)",
         top: "var(--logo-y, 36px)",
         transform: "translateY(-50%)",
         display: "flex",
