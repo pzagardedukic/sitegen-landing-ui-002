@@ -51,7 +51,13 @@ function LogoImage({ imageSrc, name }: LogoImageProps) {
           width: "auto",
           objectFit: "contain",
           objectPosition: "left center",
-          transition: theme.transitions.create(["opacity"], {
+          /*
+           * White once the bar is a dark slab behind it. The value comes from the bar as
+           * `--logo-filter`, because the artwork is a customer file of unknown colour and
+           * nothing here can know whether it would still be legible.
+           */
+          filter: "var(--logo-filter, none)",
+          transition: theme.transitions.create(["opacity", "filter"], {
             duration: theme.transitions.duration.short,
           }),
           "&:hover": { opacity: 0.8 },

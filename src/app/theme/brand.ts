@@ -53,14 +53,33 @@ export function brandGradient(primary: string, secondary: string, angle = "135de
   return `linear-gradient(${angle}, ${primary} 0%, ${end} 100%)`;
 }
 
+/** Pull a colour towards its own grey. 1 lands on the grey, 0 leaves the colour alone. */
+function desaturate(color: string, amount: number): string {
+  try {
+    const [red, green, blue] = decomposeColor(color).values;
+    const grey = 0.299 * red + 0.587 * green + 0.114 * blue;
+    const mix = (channel: number) => Math.round(channel + (grey - channel) * amount);
+
+    return `rgb(${mix(red)}, ${mix(green)}, ${mix(blue)})`;
+  } catch {
+    return color;
+  }
+}
+
 /**
  * Header chrome. `ui-001` hardcoded this to black and the theme editor could not reach
  * it (see ui-001#3); here it follows the customer. Secondary is used as the base because
  * that is the darker of the two brand colors in practice, and it is forced dark when it
  * is not, so header text stays legible whatever gets picked.
+ *
+ * Darkening alone kept the hue: a blue secondary gave a navy bar, which read as a second
+ * brand colour competing with the logo rather than as chrome. The base is pulled most of
+ * the way to its own grey, so the bar is near-neutral but still shifts with the customer's
+ * colours instead of being a hardcoded black.
  */
 export function headerPalette({ primary, secondary }: BrandColors) {
-  const base = getLuminance(secondary) > 0.16 ? darken(secondary, 0.74) : secondary;
+  const dark = getLuminance(secondary) > 0.16 ? darken(secondary, 0.74) : secondary;
+  const base = desaturate(dark, 0.85);
 
   return {
     background: alpha(base, 0.92),

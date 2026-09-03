@@ -30,7 +30,9 @@ function LogoText({ name }: LogoTextProps) {
         variant="h4"
         sx={(theme) => ({
           letterSpacing: "-0.2px",
-          transition: theme.transitions.create(["opacity"], {
+          /* Same treatment as the artwork: white once the bar is dark behind it. */
+          filter: "var(--logo-filter, none)",
+          transition: theme.transitions.create(["opacity", "filter"], {
             duration: theme.transitions.duration.short,
           }),
           "&:hover": { opacity: 0.8 },

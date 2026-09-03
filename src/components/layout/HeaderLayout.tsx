@@ -39,20 +39,20 @@ export default function HeaderLayout({
       <Toolbar
         disableGutters
         sx={(theme) => ({
-          minHeight: 72,
           /*
-           * The logo is placed against the hero's white notch, not against this bar, so it
-           * is taken out of the row and positioned on the AppBar itself.
+           * Nothing sits in this bar's row. The logo and the navigation are both hung on
+           * it, sharing `--logo-y` as their centre line, so the three variables below are
+           * the whole geometry of the header.
            *
-           * `--logo-y` is the centre it sits on. Unscrolled that is the middle of the
-           * notch, which is not the middle of the bar — the notch starts 12/24/20 below
-           * the top and is 64/82/102 tall, against a bar of 72/72/96:
+           * `--logo-y` is the middle of the hero's white notch: the notch starts 12/24/20
+           * below the top and is 64/82/102 tall.
            *
            *   xs  12 + 32 = 44     sm  24 + 41 = 65     md  20 + 51 = 71
            *
-           * Scrolled the notch is gone and the bar is a solid slab, so the logo returns to
-           * the middle of the bar. `--logo-x` stays put through both, so nothing slides
-           * sideways when the bar changes state.
+           * None of it changes when the page scrolls, and the bar is twice `--logo-y` tall
+           * so that centre is also the middle of the bar. That is the point: the slab
+           * appears behind the logo and the menu without either of them moving. An earlier
+           * version shrank the bar and lifted the logo on scroll, and everything jumped.
            *
            * `--logo-x` is the notch's own left edge plus 4. The notch sits at the top-left
            * of the hero card, and the card is inset 12/24/20 from the page edge, so:
@@ -62,25 +62,32 @@ export default function HeaderLayout({
            * Four is as tight as it goes: the notch corner is rounded 14/20/25, and any
            * less puts the artwork on the curve instead of against the flat edge.
            *
+           * `--logo-filter` turns the artwork white once the bar is a dark slab under it.
+           * A customer's logo is usually dark or coloured and would sink into the bar;
+           * `brightness(0) invert(1)` flattens whatever it is to white and keeps the
+           * shape, which is the one treatment that works without knowing the artwork.
+           *
            * The bar height is written into these same breakpoint blocks on purpose. As a
            * responsive `minHeight: { xs, md }` beside an explicit `breakpoints.up("md")`
            * key, both produce a `@media (min-width:900px)` block and the later one wins
            * the whole block — the height silently reverted to the xs value on desktop.
            */
-          "--logo-y": scrolled ? "36px" : "44px",
+          minHeight: 88,
+          "--logo-y": "44px",
           "--logo-x": "16px",
           "--nav-x": "24px",
+          "--logo-filter": scrolled ? "brightness(0) invert(1)" : "none",
           [theme.breakpoints.up("sm")]: {
             // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
-            // the tablet bar keeps the 72 the rest of the header is measured against.
-            minHeight: 72,
-            "--logo-y": scrolled ? "36px" : "65px",
+            // the tablet bar keeps the height the rest of the header is measured against.
+            minHeight: 130,
+            "--logo-y": "65px",
             "--logo-x": "28px",
             "--nav-x": "40px",
           },
           [theme.breakpoints.up("md")]: {
-            minHeight: scrolled ? 80 : 96,
-            "--logo-y": scrolled ? "40px" : "71px",
+            minHeight: 142,
+            "--logo-y": "71px",
             "--logo-x": "24px",
             "--nav-x": "48px",
           },
