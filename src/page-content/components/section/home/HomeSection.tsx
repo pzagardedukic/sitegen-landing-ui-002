@@ -28,8 +28,16 @@ export default function HomeSection() {
   const buttonTranslation = getButtonTranslation(lang);
   const home = getHome(lang);
 
-  // Distance from the card edge to the content: the page margin minus the card inset.
-  const innerInset = { xs: "24px", sm: "40px", md: "100px" };
+  /*
+   * The hero copy has to start on the same left edge as every section heading below it,
+   * and a section is a Container: capped at lg, centred, with a 36/64/64/24 gutter.
+   *
+   * So the hero content is the same construction, only inside a card that is already inset
+   * 12/24/20 from the page edge — the gutter here is that inset taken back off. Fixed
+   * padding could not track it: at 1440 the h1 started 24px left of every h2 under it, and
+   * the wider the screen the further apart they drifted.
+   */
+  const innerInset = { xs: "24px", sm: "40px", md: "44px", lg: "24px" };
 
   return (
     <Box
@@ -75,6 +83,9 @@ export default function HomeSection() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            maxWidth: "lg",
+            mx: "auto",
+            width: "100%",
             px: innerInset,
             color: "common.white",
           }}
