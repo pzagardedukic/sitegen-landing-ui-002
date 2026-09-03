@@ -30,9 +30,13 @@ function LogoText({ name }: LogoTextProps) {
         variant="h4"
         sx={(theme) => ({
           letterSpacing: "-0.2px",
-          /* Same treatment as the artwork: white once the bar is dark behind it. */
-          filter: "var(--logo-filter, none)",
-          transition: theme.transitions.create(["opacity", "filter"], {
+          /*
+           * Dark on the white notch, white once the bar is a dark slab. Colour rather than
+           * the artwork's filter: type can simply be given the right colour, and inheriting
+           * the bar's own white left the name invisible against the notch.
+           */
+          color: "var(--logo-color)",
+          transition: theme.transitions.create(["opacity", "color"], {
             duration: theme.transitions.duration.short,
           }),
           "&:hover": { opacity: 0.8 },

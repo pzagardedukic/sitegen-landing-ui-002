@@ -78,6 +78,15 @@ export default function HeaderLayout({
           "--logo-x": "16px",
           "--nav-x": "24px",
           "--logo-filter": scrolled ? "brightness(0) invert(1)" : "none",
+          /*
+           * For a customer who uploaded no logo, where the site name is set as type rather
+           * than artwork. It cannot take the bar's own colour: unscrolled the bar is
+           * transparent over the hero but the notch behind the name is white, so white on
+           * white left the name invisible on every page.
+           */
+          "--logo-color": scrolled
+            ? theme.palette.header.text
+            : theme.palette.text.primary,
           [theme.breakpoints.up("sm")]: {
             // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
             // the tablet bar keeps the height the rest of the header is measured against.
