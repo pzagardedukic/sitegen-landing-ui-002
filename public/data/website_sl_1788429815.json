@@ -27,7 +27,7 @@
   },
   "home": {
     "websiteName": "Reforma Pilates",
-    "slogan": "A reformer and mat Pilates studio in Ljubljana. Small groups, training shaped to your body, and instructors who correct every movement.",
+    "slogan": "Studio za reformer in matt pilates v Ljubljani. Majhne skupine, vadba po meri telesa in inštruktorji, ki popravljajo vsak gib.",
     "companyLogo": {
       "text": "REFORMA",
       "image": {
@@ -122,31 +122,31 @@
           "to": "12:00"
         }
       ],
-      "note": "The last session starts an hour before closing. On public holidays we run the Sunday timetable; changes are posted a week ahead."
+      "note": "Zadnji termin se začne uro pred zaprtjem. Ob praznikih vadimo po nedeljskem urniku, spremembe objavimo teden vnaprej."
     }
   },
   "about": {
     "aboutType": "ABOUT_COMPANY",
-    "sectionName": "About the studio",
-    "text": "Reforma is a Pilates studio with eight reformers and a dedicated mat space. We work in groups of up to eight, because that is the only way an instructor can see everyone and adjust an exercise as it happens. Every new member starts with a posture and movement assessment.",
+    "sectionName": "O studiu",
+    "text": "Reforma je pilates studio z osmimi reformerji in prostorom za matt vadbo. Delamo v skupinah do osem ljudi, ker le tako inštruktor vidi vsakega in lahko vajo sproti prilagodi. Vsak nov član začne z uvodno analizo drže in gibanja.",
     "establishedYear": 2017,
     "items": [
       {
-        "text": "Every member starts with an assessment: posture, hip and shoulder mobility, and breathing. That produces a plan we review and adjust after six weeks.",
+        "text": "Vsak član začne z uvodno analizo: pregledamo držo, gibljivost kolkov in ramen ter dihanje. Iz tega nastane načrt, ki ga po šestih tednih ponovno preverimo in prilagodimo.",
         "image": {
           "id": "about-materials",
           "file": "/images/onas-analiza.webp"
         }
       },
       {
-        "text": "Our equipment is Balanced Body and Merrithew, serviced twice a year. Springs are replaced by hours of use rather than by looks, because resistance fades well before it shows.",
+        "text": "Oprema je od Balanced Body in Merrithew, servisirana dvakrat letno. Vzmeti menjamo po urah uporabe in ne po videzu, ker se odpor izgublja precej prej, kot se to opazi.",
         "image": {
           "id": "about-systems",
           "file": "/images/onas-oprema.webp"
         }
       },
       {
-        "text": "Groups are small on purpose. Eight reformers means eight people, even when we could take more — in Pilates a correction matters more than a repetition.",
+        "text": "Skupine so majhne namenoma. Osem reformerjev pomeni osem ljudi, tudi kadar bi jih lahko sprejeli več — pri pilatesu je popravek pomembnejši od števila ponovitev.",
         "image": {
           "id": "about-service",
           "file": "/images/onas-skupina.webp"
@@ -156,20 +156,20 @@
   },
   "legal": {
     "privacyPolicy": {
-      "id": "privacy-en",
-      "file": "/documents/privacy-en.pdf"
+      "id": "privacy-sl",
+      "file": "/documents/zasebnost-sl.pdf"
     },
     "termsOfService": {
-      "id": "terms-en",
-      "file": "/documents/terms-en.pdf"
+      "id": "terms-sl",
+      "file": "/documents/pogoji-sl.pdf"
     }
   },
   "team": {
-    "text": "Every instructor holds an international certification and works under regular supervision. You do not train to a recording here — you train with someone watching you.",
+    "text": "Vsi inštruktorji imajo mednarodno certifikacijo in redno supervizijo. Pri nas ne vadite po posnetku, ampak z nekom, ki vas gleda.",
     "items": [
       {
         "name": "Ana Kovač",
-        "text": "Founder of the studio and head of training. BASI Pilates certified, with ten years of rehabilitation work following spinal injuries.",
+        "text": "Ustanoviteljica studia in vodja izobraževanj. Certifikat BASI Pilates, deset let dela z rehabilitacijskimi skupinami po poškodbah hrbtenice.",
         "contact": [
           {
             "type": "EMAIL",
@@ -191,7 +191,7 @@
       },
       {
         "name": "Luka Zupan",
-        "text": "Reformer and jumpboard. A former track coach, so much of his work is with athletes in pre-season and after knee surgery.",
+        "text": "Reformer in skakalna deska. Prej atletski trener, zato veliko dela s športniki v predsezonski pripravi in po operacijah kolena.",
         "contact": [
           {
             "type": "EMAIL",
@@ -209,7 +209,7 @@
       },
       {
         "name": "Maja Vidmar",
-        "text": "Prenatal and postnatal Pilates. She also runs the morning mat groups and one-to-one sessions for complete beginners.",
+        "text": "Prenatalni in poporodni pilates. Vodi tudi jutranje matt skupine in individualne ure za začetnice, ki se vadbe lotevajo prvič.",
         "contact": [
           {
             "type": "EMAIL",
@@ -227,7 +227,7 @@
       },
       {
         "name": "Nejc Potočnik",
-        "text": "One-to-one sessions and movement analysis. He runs the programme for desk-related neck and shoulder pain, and the corporate groups.",
+        "text": "Individualne ure in analiza gibanja. Skrbi za program za pisarniške bolečine v vratu in ramenih ter za korporativne skupine.",
         "contact": [
           {
             "type": "EMAIL",
@@ -246,7 +246,7 @@
     ]
   },
   "experience": {
-    "text": "In eight years we have grown from a single room into a studio with eight reformers and a timetable that runs seven days a week.",
+    "text": "V osmih letih smo iz ene dvorane zrasli v studio z osmimi reformerji in stalnim urnikom sedmih dni v tednu.",
     "clientCount": 640,
     "projectCount": 24,
     "items": [
@@ -274,11 +274,11 @@
     ]
   },
   "reviews": {
-    "text": "Members mention two things most often: that the instructor actually corrects them during the session, and that lower-back pain eases sooner than they expected.",
+    "text": "Člani najpogosteje omenjajo dvoje: da jih inštruktor med uro dejansko popravi in da bolečine v križu popustijo prej, kot so pričakovali.",
     "items": [
       {
-        "title": "My back no longer aches after a desk day",
-        "text": "After two months of twice-weekly sessions I sat through a full working day pain-free for the first time. The assessment showed the problem was tight hip flexors rather than my back — something nobody had told me before.",
+        "title": "Križ me ne boli več po pisarniškem dnevu",
+        "text": "Po dveh mesecih dvakrat tedensko sem prvič presedela cel delovni dan brez bolečine. Uvodna analiza je pokazala, da so težava zakrčeni upogibalci kolka in ne hrbet, česar mi prej ni povedal nihče.",
         "url": "https://example.com/reviews/1",
         "image": {
           "id": "review-1",
@@ -286,8 +286,8 @@
         }
       },
       {
-        "title": "Back after knee surgery without the fear",
-        "text": "My physiotherapist sent me here and it was the right continuation. Luka added resistance each week in agreement with the therapist, never in a hurry. Four months on, I am running again.",
+        "title": "Vrnitev po operaciji kolena brez strahu",
+        "text": "Fizioterapevt me je poslal sem in bilo je pravo nadaljevanje. Luka je vsak teden dodal odpor po dogovoru s terapevtom, nikoli na hitro. Po štirih mesecih spet tečem.",
         "url": "https://example.com/reviews/2",
         "image": {
           "id": "review-2",
@@ -295,8 +295,8 @@
         }
       },
       {
-        "title": "A prenatal group where you feel safe",
-        "text": "I trained until week 38. Maja adapted every exercise to the trimester and could explain why we avoided certain things. After the birth I came back to the postnatal group.",
+        "title": "Prenatalna skupina, kjer se počutiš varno",
+        "text": "Vadila sem do 38. tedna. Maja je vsako vajo prilagodila trimesečju in znala razložiti, zakaj nekaterih stvari ne delamo. Po porodu sem se vrnila v poporodno skupino.",
         "url": "https://example.com/reviews/3",
         "image": {
           "id": "review-3",
@@ -304,8 +304,8 @@
         }
       },
       {
-        "title": "Small groups are the difference that shows",
-        "text": "I used to attend a studio with fifteen people where nobody noticed I was doing the exercise wrong. Here I am corrected within the first minute. The hourly price is higher and the progress is faster.",
+        "title": "Majhne skupine so razlika, ki se pozna",
+        "text": "Prej sem hodila v studio s petnajstimi ljudmi in nihče ni opazil, da vajo delam narobe. Tu me popravijo v prvi minuti. Cena na uro je višja, napredek pa hitrejši.",
         "url": "https://example.com/reviews/4",
         "image": {
           "id": "review-4",
@@ -315,8 +315,8 @@
     ]
   },
   "portfolio": {
-    "sectionName": "Programmes",
-    "text": "Each programme has its own purpose, length, and group. Below are the ones that run all year, with who they are for and what they involve.",
+    "sectionName": "Programi",
+    "text": "Vsak program ima svoj namen, svoje trajanje in svojo skupino. Spodaj je pregled tistih, ki tečejo celo leto, s tem, komu so namenjeni in kaj se v njih dela.",
     "categories": [
       {
         "id": "programme-reformer",
@@ -324,22 +324,22 @@
       },
       {
         "id": "programme-mat",
-        "name": "Mat"
+        "name": "Matt"
       },
       {
         "id": "programme-rehab",
-        "name": "Rehabilitation"
+        "name": "Rehabilitacija"
       },
       {
         "id": "programme-prenatal",
-        "name": "Pregnancy"
+        "name": "Nosečnost"
       }
     ],
     "items": [
       {
-        "title": "Reformer for beginners",
-        "text": "Eight weeks in a closed group, learning breathing, neutral pelvis, and spring work from the first session. The group stays the same throughout, so the instructor knows exactly where each person is.",
-        "client": "Closed group, 8 places",
+        "title": "Reformer za začetnike",
+        "text": "Osem tednov v zaprti skupini, kjer se od prve ure naprej učimo dihanja, nevtralne medenice in dela z vzmetmi. Skupina ostane ista do konca, zato inštruktor natančno ve, kje je kdo.",
+        "client": "Zaprta skupina, 8 mest",
         "date": "2026-04-18",
         "categoryId": "programme-reformer",
         "images": [
@@ -358,9 +358,9 @@
         ]
       },
       {
-        "title": "Reformer intermediate",
-        "text": "For those who have the basics and want greater range, jumpboard work, and harder transitions. The pace is quicker and the corrections finer.",
-        "client": "Open group, 8 places",
+        "title": "Reformer nadaljevalni",
+        "text": "Za tiste, ki obvladajo osnove in želijo večji obseg gibanja, delo s skakalno desko ter zahtevnejše prehode. Tempo je hitrejši, popravki pa bolj podrobni.",
+        "client": "Odprta skupina, 8 mest",
         "date": "2025-11-07",
         "categoryId": "programme-reformer",
         "images": [
@@ -379,9 +379,9 @@
         ]
       },
       {
-        "title": "Morning mat Pilates",
-        "text": "Forty-five minutes at seven in the morning, no machines, small props only. The programme is built so every exercise can be repeated at home without equipment.",
-        "client": "Open group, 12 places",
+        "title": "Jutranji matt pilates",
+        "text": "Petinštirideset minut ob sedmih zjutraj, brez naprav, z malimi rekviziti. Program je zasnovan tako, da se lahko vsaka vaja ponovi doma brez opreme.",
+        "client": "Odprta skupina, 12 mest",
         "date": "2025-05-23",
         "categoryId": "programme-mat",
         "images": [
@@ -400,9 +400,9 @@
         ]
       },
       {
-        "title": "Pilates for the desk-bound",
-        "text": "A programme for the neck, shoulders, and upper back, aimed at people who sit most of the day. Every session ends with two exercises that can be done at a desk.",
-        "client": "Open group, 10 places",
+        "title": "Pilates za pisarniško telo",
+        "text": "Program za vrat, ramena in zgornji del hrbta, namenjen tistim, ki presedijo večino dneva. Vsaka ura se konča z dvema vajama, ki ju je mogoče narediti med delom.",
+        "client": "Odprta skupina, 10 mest",
         "date": "2024-10-12",
         "categoryId": "programme-mat",
         "images": [
@@ -421,9 +421,9 @@
         ]
       },
       {
-        "title": "Pilates after injury",
-        "text": "One-to-one or in pairs, always in agreement with a physiotherapist or doctor. Load increases along an agreed plan, and progress is recorded at every visit.",
-        "client": "One-to-one or in pairs",
+        "title": "Pilates po poškodbi",
+        "text": "Individualne ure ali pari, vedno v dogovoru s fizioterapevtom ali zdravnikom. Obremenitev raste po vnaprej dogovorjenem načrtu, napredek pa se beleži ob vsakem obisku.",
+        "client": "Individualno ali v paru",
         "date": "2026-02-14",
         "categoryId": "programme-rehab",
         "images": [
@@ -442,9 +442,9 @@
         ]
       },
       {
-        "title": "Prenatal and postnatal Pilates",
-        "text": "Separate groups for pregnancy and the period after birth. During pregnancy the programme follows the trimester; afterwards it starts with the abdominal wall and pelvic floor.",
-        "client": "Closed group, 6 places",
+        "title": "Nosečniški in poporodni pilates",
+        "text": "Ločeni skupini za nosečnost in obdobje po porodu. V nosečnosti se program prilagaja trimesečju, po porodu pa se začne s trebušno steno in medeničnim dnom.",
+        "client": "Zaprta skupina, 6 mest",
         "date": "2024-06-28",
         "categoryId": "programme-prenatal",
         "images": [
@@ -577,16 +577,16 @@
     ]
   },
   "services": {
-    "text": "Four kinds of visit, from a single one-to-one session to a year-round corporate programme. Scope, length, and price are agreed up front.",
+    "text": "Tri vrste obiska, od uvodne analize gibanja do individualne ure po meri. Obseg, trajanje in ceno povemo vnaprej.",
     "items": [
       {
-        "title": "Movement assessment",
-        "text": "A sixty-minute review of posture, mobility, and breathing that produces a written training plan.",
+        "title": "Uvodna analiza gibanja",
+        "text": "Šestdesetminutni pregled drže, gibljivosti in dihanja, iz katerega nastane pisni načrt vadbe.",
         "features": [
-          "Posture and mobility review",
-          "Breathing pattern test",
-          "Written plan for the first six weeks",
-          "Group or one-to-one recommendation"
+          "Pregled drže in gibljivosti",
+          "Test dihalnega vzorca",
+          "Pisni načrt za prvih šest tednov",
+          "Priporočilo skupine ali individualnih ur"
         ],
         "image": {
           "id": "service-interior",
@@ -594,13 +594,13 @@
         }
       },
       {
-        "title": "Group reformer sessions",
-        "text": "Fifty-five minutes in a group of up to eight, at three levels of difficulty, seven days a week.",
+        "title": "Skupinske ure na reformerju",
+        "text": "Petinpetdeset minut v skupini do osmih ljudi, na treh ravneh zahtevnosti, sedem dni v tednu.",
         "features": [
-          "Eight people per session at most",
-          "Three difficulty levels",
-          "Booking up to two hours before",
-          "Free cancellation 12 hours ahead"
+          "Največ osem ljudi na uro",
+          "Tri ravni zahtevnosti",
+          "Rezervacija do dve uri prej",
+          "Brezplačna odpoved 12 ur prej"
         ],
         "image": {
           "id": "service-custom",
@@ -608,41 +608,27 @@
         }
       },
       {
-        "title": "One-to-one sessions",
-        "text": "A session built around one body — for rehabilitation, pre-season preparation, or starting without a group.",
+        "title": "Individualne ure",
+        "text": "Ura, prilagojena enemu telesu — za rehabilitacijo, pripravo na sezono ali začetek brez skupine.",
         "features": [
-          "A programme made to measure",
-          "Coordination with your physiotherapist",
-          "Progress recorded at every visit",
-          "Option to train in pairs"
+          "Program po meri",
+          "Sodelovanje s fizioterapevtom",
+          "Beleženje napredka ob vsakem obisku",
+          "Možnost vadbe v paru"
         ],
         "image": {
           "id": "service-lighting",
           "file": "/images/storitev-individualno.webp"
         }
-      },
-      {
-        "title": "Corporate Pilates",
-        "text": "Regular sessions for employees, at the studio or on your premises, with a monthly attendance report.",
-        "features": [
-          "Sessions here or at your offices",
-          "A talk on workplace ergonomics",
-          "Monthly attendance report",
-          "Invoiced to the company"
-        ],
-        "image": {
-          "id": "service-installation",
-          "file": "/images/storitev-podjetja.webp"
-        }
       }
     ]
   },
   "blog": {
-    "text": "Short pieces on what actually happens during training — without promises of quick results and without words nobody understands.",
+    "text": "Kratki zapisi o tem, kaj se pri vadbi dejansko dogaja — brez obljub o hitrih rezultatih in brez izrazov, ki jih nihče ne razume.",
     "items": [
       {
-        "title": "Why you ache in unexpected places after the first session",
-        "description": "Pilates recruits muscles that everyday movement works around. Which ones they are, why they speak up the next day, and when the ache stops being normal.",
+        "title": "Zakaj vas po prvi uri boli tam, kjer niste pričakovali",
+        "description": "Pilates aktivira mišice, ki jih v vsakdanjem gibanju zaobidemo. Razlaga, katere so te, zakaj se oglasijo šele naslednji dan in kdaj bolečina ni več normalna.",
         "author": "Ana Kovač",
         "date": "2026-07-22",
         "image": {
@@ -651,8 +637,8 @@
         }
       },
       {
-        "title": "Neutral pelvis: the most repeated cue in the room",
-        "description": "What a neutral pelvis actually means, how to find it yourself, and why nearly every exercise starts there.",
+        "title": "Nevtralna medenica: najbolj ponavljano navodilo v dvorani",
+        "description": "Kaj pomeni nevtralen položaj medenice, kako ga najdete sami in zakaj se skoraj vsaka vaja začne prav pri njem.",
         "author": "Maja Vidmar",
         "date": "2026-06-11",
         "image": {
@@ -661,8 +647,8 @@
         }
       },
       {
-        "title": "How many springs is right, and why more is not harder",
-        "description": "On a reformer, resistance and difficulty are not the same thing. On some exercises more springs make it easier, on others the opposite.",
+        "title": "Koliko vzmeti je prav in zakaj več ni težje",
+        "description": "Na reformerju odpor ni vedno sorazmeren s težavnostjo. Pri nekaterih vajah več vzmeti pomeni lažje, pri drugih ravno obratno.",
         "author": "Luka Zupan",
         "date": "2026-04-30",
         "image": {
@@ -671,8 +657,8 @@
         }
       },
       {
-        "title": "Twice a week is the line below which nothing shows",
-        "description": "What we see in members who come once, twice, or three times a week, and how long it takes before a change in posture is visible at all.",
+        "title": "Dvakrat tedensko je meja, pod katero se ne pozna",
+        "description": "Kaj kažejo izkušnje s članov, ki hodijo enkrat, dvakrat ali trikrat tedensko, in kako dolgo traja, da se sprememba drže sploh vidi.",
         "author": "Ana Kovač",
         "date": "2026-03-19",
         "image": {
@@ -681,8 +667,8 @@
         }
       },
       {
-        "title": "Returning to training after birth: the first six weeks",
-        "description": "Why a postnatal programme does not start with sit-ups, how to check for diastasis, and when it makes sense to wait another week or two.",
+        "title": "Vrnitev k vadbi po porodu: prvih šest tednov",
+        "description": "Zakaj se poporodni program ne začne s trebušnjaki, kako preveriti diastazo in kdaj je smiselno počakati še teden ali dva.",
         "author": "Maja Vidmar",
         "date": "2026-02-05",
         "image": {
@@ -729,30 +715,30 @@
   },
   "pricing": {
     "type": "PRICING_PACKAGES",
-    "sectionName": "Memberships and packs",
-    "text": "Monthly memberships renew automatically and can be stopped at any time until the end of the month. Class packs are valid for six months and are not tied to one person.",
+    "sectionName": "Članstva in paketi",
+    "text": "Mesečna članstva se obnavljajo samodejno in jih lahko kadar koli prekinete do konca meseca. Paketi ur veljajo šest mesecev in niso vezani na osebo.",
     "categories": [
       {
         "id": "price-membership",
-        "name": "Monthly memberships"
+        "name": "Mesečna članstva"
       },
       {
         "id": "price-packs",
-        "name": "Class packs"
+        "name": "Paketi ur"
       },
       {
         "id": "price-private",
-        "name": "One-to-one"
+        "name": "Individualno"
       },
       {
         "id": "price-corporate",
-        "name": "Companies"
+        "name": "Podjetja"
       }
     ],
     "items": [
       {
-        "title": "Membership, 4 a month",
-        "text": "One session a week in any group.",
+        "title": "Članstvo 4× mesečno",
+        "text": "Ena vadba tedensko v kateri koli skupini.",
         "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
@@ -773,24 +759,24 @@
         ],
         "features": [
           {
-            "label": "Group sessions",
-            "value": "4 a month"
+            "label": "Skupinske ure",
+            "value": "4 na mesec"
           },
           {
-            "label": "Booking",
-            "value": "14 days ahead"
+            "label": "Rezervacija",
+            "value": "14 dni vnaprej"
           },
           {
-            "label": "Carry-over",
-            "value": "2 sessions"
+            "label": "Prenos ur",
+            "value": "2 uri"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Membership, 8 a month",
-        "text": "Twice a week — the most common choice.",
+        "title": "Članstvo 8× mesečno",
+        "text": "Dvakrat tedensko — najpogostejša izbira.",
         "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
@@ -812,24 +798,24 @@
         ],
         "features": [
           {
-            "label": "Group sessions",
-            "value": "8 a month"
+            "label": "Skupinske ure",
+            "value": "8 na mesec"
           },
           {
-            "label": "Booking",
-            "value": "21 days ahead"
+            "label": "Rezervacija",
+            "value": "21 dni vnaprej"
           },
           {
-            "label": "Private session",
-            "value": "1 a month"
+            "label": "Individualna ura",
+            "value": "1 na mesec"
           }
         ],
         "recommended": true,
         "status": "AVAILABLE"
       },
       {
-        "title": "Unlimited membership",
-        "text": "Every group, with no cap on visits.",
+        "title": "Neomejeno članstvo",
+        "text": "Vse skupine, brez omejitve števila obiskov.",
         "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
@@ -850,24 +836,24 @@
         ],
         "features": [
           {
-            "label": "Group sessions",
-            "value": "Unlimited"
+            "label": "Skupinske ure",
+            "value": "Neomejeno"
           },
           {
-            "label": "Booking",
-            "value": "Priority"
+            "label": "Rezervacija",
+            "value": "Prednostna"
           },
           {
-            "label": "Private sessions",
-            "value": "2 a month"
+            "label": "Individualne ure",
+            "value": "2 na mesec"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Morning membership",
-        "text": "Sessions before ten in the morning, any day.",
+        "title": "Jutranje članstvo",
+        "text": "Termini do desetih dopoldne, vse dni v tednu.",
         "categoryId": "price-membership",
         "price": {
           "onAgreement": false,
@@ -888,24 +874,24 @@
         ],
         "features": [
           {
-            "label": "Slots",
-            "value": "Before 10:00"
+            "label": "Termini",
+            "value": "Do 10:00"
           },
           {
-            "label": "Days",
-            "value": "All, weekends too"
+            "label": "Dnevi",
+            "value": "Vsi, tudi vikend"
           },
           {
-            "label": "Upgrade",
-            "value": "Any time"
+            "label": "Prehod",
+            "value": "Kadar koli"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Pack of 10",
-        "text": "Ten group sessions, valid for six months.",
+        "title": "Paket 10 ur",
+        "text": "Deset skupinskih ur z veljavnostjo šest mesecev.",
         "categoryId": "price-packs",
         "price": {
           "onAgreement": false,
@@ -926,24 +912,24 @@
         ],
         "features": [
           {
-            "label": "Sessions",
+            "label": "Število ur",
             "value": "10"
           },
           {
-            "label": "Valid for",
-            "value": "6 months"
+            "label": "Veljavnost",
+            "value": "6 mesecev"
           },
           {
-            "label": "Transferable",
-            "value": "Yes"
+            "label": "Prenosljivost",
+            "value": "Da"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Pack of 20",
-        "text": "Twenty group sessions at a lower price per session.",
+        "title": "Paket 20 ur",
+        "text": "Dvajset skupinskih ur po ugodnejši ceni na uro.",
         "categoryId": "price-packs",
         "price": {
           "onAgreement": false,
@@ -965,24 +951,24 @@
         ],
         "features": [
           {
-            "label": "Sessions",
+            "label": "Število ur",
             "value": "20"
           },
           {
-            "label": "Valid for",
-            "value": "6 months"
+            "label": "Veljavnost",
+            "value": "6 mesecev"
           },
           {
-            "label": "Included",
-            "value": "1 private session"
+            "label": "Vključeno",
+            "value": "1 individualna ura"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Single session",
-        "text": "A single group visit without a membership.",
+        "title": "Posamezna ura",
+        "text": "Enkraten obisk skupinske vadbe brez članstva.",
         "categoryId": "price-packs",
         "price": {
           "onAgreement": false,
@@ -1003,24 +989,24 @@
         ],
         "features": [
           {
-            "label": "Length",
-            "value": "55 minutes"
+            "label": "Trajanje",
+            "value": "55 minut"
           },
           {
-            "label": "Booking",
-            "value": "2 hours before"
+            "label": "Rezervacija",
+            "value": "2 uri prej"
           },
           {
-            "label": "Commitment",
-            "value": "None"
+            "label": "Obveznost",
+            "value": "Brez"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Private session",
-        "text": "Sixty minutes for you alone, with the instructor you choose.",
+        "title": "Individualna ura",
+        "text": "Šestdeset minut samo za vas, z izbranim inštruktorjem.",
         "categoryId": "price-private",
         "price": {
           "onAgreement": false,
@@ -1041,24 +1027,24 @@
         ],
         "features": [
           {
-            "label": "Length",
-            "value": "60 minutes"
+            "label": "Trajanje",
+            "value": "60 minut"
           },
           {
-            "label": "Programme",
-            "value": "Made to measure"
+            "label": "Program",
+            "value": "Po meri"
           },
           {
-            "label": "Slot",
-            "value": "Outside the timetable too"
+            "label": "Termin",
+            "value": "Tudi izven urnika"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Private, in a pair",
-        "text": "The same session for two, priced per person.",
+        "title": "Individualno v paru",
+        "text": "Ista ura za dva, cena na osebo.",
         "categoryId": "price-private",
         "price": {
           "onAgreement": false,
@@ -1079,24 +1065,24 @@
         ],
         "features": [
           {
-            "label": "Participants",
+            "label": "Udeleženca",
             "value": "2"
           },
           {
-            "label": "Price",
-            "value": "Per person"
+            "label": "Cena",
+            "value": "Na osebo"
           },
           {
-            "label": "Programme",
-            "value": "Same as one-to-one"
+            "label": "Program",
+            "value": "Enak kot individualno"
           }
         ],
         "recommended": false,
         "status": "AVAILABLE"
       },
       {
-        "title": "Corporate programme",
-        "text": "A regular weekly slot for a group of employees.",
+        "title": "Program za podjetja",
+        "text": "Redni tedenski termini za skupino zaposlenih.",
         "categoryId": "price-corporate",
         "price": {
           "onAgreement": true,
@@ -1117,16 +1103,16 @@
         ],
         "features": [
           {
-            "label": "Location",
-            "value": "Here or at your offices"
+            "label": "Lokacija",
+            "value": "Pri nas ali pri vas"
           },
           {
-            "label": "Reporting",
-            "value": "Monthly"
+            "label": "Poročilo",
+            "value": "Mesečno"
           },
           {
-            "label": "Invoice",
-            "value": "To the company"
+            "label": "Račun",
+            "value": "Na podjetje"
           }
         ],
         "recommended": false,
@@ -1134,82 +1120,82 @@
       }
     ],
     "showTax": true,
-    "note": "Prices include VAT. The first visit includes the movement assessment, which is required before joining a group."
+    "note": "Cene vključujejo DDV. Prvi obisk vključuje uvodno analizo gibanja, ki je pogoj za vstop v skupine."
   },
   "careers": {
-    "text": "We are looking for instructors who can read the body in front of them and adapt an exercise, rather than run a programme off a schedule.",
+    "text": "Iščemo inštruktorje, ki znajo pogledati telo pred sabo in vajo prilagoditi, ne pa odvrteti program po urniku.",
     "items": [
       {
-        "title": "Reformer Pilates instructor",
-        "text": "Leading group reformer sessions and one-to-one work. You would join a team that plans programmes together and reviews corrections at monthly supervisions.",
+        "title": "Inštruktor oziroma inštruktorica reformer pilatesa",
+        "text": "Vodenje skupinskih ur na reformerju in individualnih ur. Delo v ekipi, kjer se program pripravlja skupaj, popravki pa se preverjajo na mesečnih supervizijah.",
         "requirements": [
-          "An international certification (BASI, Polestar, Merrithew, or equivalent)",
-          "At least two years of leading groups",
-          "Slovenian and English",
-          "Willingness to work morning and evening slots"
+          "Mednarodni certifikat (BASI, Polestar, Merrithew ali enakovreden)",
+          "Najmanj dve leti vodenja skupin",
+          "Slovenščina in angleščina",
+          "Pripravljenost na jutranje in večerne termine"
         ],
-        "note": "Full or part time, by agreement."
+        "note": "Polni ali polovični delovni čas, po dogovoru."
       },
       {
-        "title": "Rehabilitation programme instructor",
-        "text": "Working with members after injury and surgery, in close cooperation with physiotherapists. Mostly one-to-one and pairs.",
+        "title": "Inštruktor za rehabilitacijski program",
+        "text": "Delo s člani po poškodbah in operacijah, v tesnem sodelovanju s fizioterapevti. Večinoma individualne ure in pari.",
         "requirements": [
-          "A degree in kinesiology or physiotherapy",
-          "A rehabilitation Pilates certification",
-          "Experience after knee and spinal surgery",
-          "Careful record-keeping of progress"
+          "Izobrazba s področja kineziologije ali fizioterapije",
+          "Certifikat rehabilitacijskega pilatesa",
+          "Izkušnje z delom po operacijah kolena in hrbtenice",
+          "Natančno vodenje zapisov o napredku"
         ],
-        "note": "Part time, with room to grow."
+        "note": "Polovični delovni čas z možnostjo razširitve."
       },
       {
-        "title": "Front desk and membership lead",
-        "text": "The first point of contact for members, handling bookings and memberships, and keeping the timetable accurate.",
+        "title": "Vodja recepcije in članstev",
+        "text": "Prvi stik s člani, urejanje rezervacij in članstev ter skrb za to, da je urnik ves čas točen.",
         "requirements": [
-          "Experience working with customers",
-          "Care when working with data",
-          "Slovenian and English",
-          "Shift work, including Saturdays"
+          "Izkušnje z delom s strankami",
+          "Urejenost pri delu s podatki",
+          "Slovenščina in angleščina",
+          "Delo v izmenah, vključno s soboto"
         ],
-        "note": "Full time."
+        "note": "Polni delovni čas."
       }
     ]
   },
   "faq": {
-    "text": "The questions we hear most before a first visit. If yours is not here, write to us — we answer the same day.",
+    "text": "Najpogostejša vprašanja pred prvim obiskom. Če vašega ni med njimi, nam pišite — odgovorimo isti dan.",
     "items": [
       {
-        "question": "Do I need previous Pilates experience?",
-        "answer": "No. Every new member starts with a movement assessment, and we place you in the right group based on it. Beginner groups are closed and run for eight weeks."
+        "question": "Ali moram imeti izkušnje s pilatesom?",
+        "answer": "Ne. Vsak nov član začne z uvodno analizo gibanja, na podlagi katere ga usmerimo v ustrezno skupino. Začetniške skupine so zaprte in tečejo osem tednov."
       },
       {
-        "question": "How often should I train?",
-        "answer": "Twice a week is the line below which a change in posture rarely shows. Once a week maintains, three times speeds things up, and more than that adds little for most people."
+        "question": "Kako pogosto naj vadim?",
+        "answer": "Dvakrat tedensko je meja, pod katero se sprememba drže težko pokaže. Enkrat tedensko vzdržuje, trikrat pospeši, več od tega pa pri večini ne prinese dosti."
       },
       {
-        "question": "What do I need for my first visit?",
-        "answer": "Comfortable clothes and grip socks, which you can also buy here. Everything else is in the studio. Come ten minutes early to fill in the health questionnaire."
+        "question": "Kaj potrebujem za prvi obisk?",
+        "answer": "Udobna oblačila in nogavice z oprijemom, ki jih lahko kupite tudi pri nas. Vse drugo je v studiu. Pridite deset minut prej, da izpolnite zdravstveni vprašalnik."
       },
       {
-        "question": "Can I train during pregnancy?",
-        "answer": "Yes, in the dedicated prenatal group and after speaking with your gynaecologist. The programme follows the trimester; we do not usually enrol complete beginners in the first trimester."
+        "question": "Ali lahko vadim v nosečnosti?",
+        "answer": "Da, v namenski nosečniški skupini in po posvetu z ginekologom. Program se prilagaja trimesečju; v prvem trimesečju začetnic praviloma ne vpisujemo."
       },
       {
-        "question": "How do I cancel a booked session?",
-        "answer": "Through the online calendar up to twelve hours before the start, at no cost. Cancel later and the session is deducted from your membership or pack."
+        "question": "Kako odpovem rezervirano uro?",
+        "answer": "Prek spletnega koledarja do dvanajst ur pred začetkom, brez stroška. Pri kasnejši odpovedi se ura odšteje od članstva ali paketa."
       },
       {
-        "question": "Can I freeze my membership?",
-        "answer": "Once a year, for up to two months, in case of illness or a longer absence. Tell us before the end of the month, otherwise the membership renews."
+        "question": "Ali članstvo lahko zamrznem?",
+        "answer": "Enkrat letno za največ dva meseca, ob bolezni ali daljši odsotnosti. Zamrznitev sporočite pred koncem meseca, ker se članstvo sicer obnovi."
       },
       {
-        "question": "Do you work with physiotherapists?",
-        "answer": "Yes. If you are under treatment we agree the load with your therapist and send progress notes when needed. We do not start a post-operative programme without their view."
+        "question": "Ali sodelujete s fizioterapevti?",
+        "answer": "Da. Če ste v obravnavi, se z vašim terapevtom dogovorimo o obremenitvi in mu po potrebi pošljemo zapis o napredku. Brez njegovega mnenja programa po operaciji ne začnemo."
       }
     ]
   },
   "schedule": {
-    "title": "Timetable",
-    "text": "A fixed weekly timetable. Booking is required for every group session and opens seven days ahead.",
+    "title": "Urnik",
+    "text": "Stalni tedenski urnik. Rezervacija je obvezna za vse skupinske ure in se odpre sedem dni vnaprej.",
     "categories": [
       {
         "id": "schedule-reformer",
@@ -1217,127 +1203,127 @@
       },
       {
         "id": "schedule-mat",
-        "name": "Mat and prenatal"
+        "name": "Matt in nosečniški"
       },
       {
         "id": "schedule-private",
-        "name": "One-to-one"
+        "name": "Individualno"
       }
     ],
     "items": [
       {
-        "title": "Reformer groups",
-        "text": "Eight places per session across three levels. Beginner groups run in closed eight-week cycles; intermediate groups are open all year.",
+        "title": "Reformer skupine",
+        "text": "Osem mest na uro, tri ravni zahtevnosti. Začetniške skupine tečejo v zaprtih osemtedenskih ciklih, nadaljevalne pa so odprte skozi vse leto.",
         "categoryId": "schedule-reformer",
         "rows": [
           {
             "cells": [
-              "Day",
-              "Time",
-              "Level",
-              "Instructor"
+              "Dan",
+              "Termin",
+              "Raven",
+              "Inštruktor"
             ]
           },
           {
             "cells": [
-              "Monday",
+              "Ponedeljek",
               "07:00 / 18:00 / 19:15",
-              "Beginner and intermediate",
+              "Začetna in nadaljevalna",
               "Ana, Luka"
             ]
           },
           {
             "cells": [
-              "Wednesday",
+              "Sreda",
               "07:00 / 17:00 / 18:15",
-              "Intermediate",
+              "Nadaljevalna",
               "Luka"
             ]
           },
           {
             "cells": [
-              "Friday",
+              "Petek",
               "08:00 / 17:00",
-              "All levels",
+              "Vse ravni",
               "Ana, Nejc"
             ]
           }
         ]
       },
       {
-        "title": "Mat and prenatal groups",
-        "text": "Training without machines, using small props, with up to twelve places. The prenatal group is separate and closed, with six places.",
+        "title": "Matt in nosečniške skupine",
+        "text": "Vadba brez naprav z malimi rekviziti, do dvanajst mest. Nosečniška skupina je ločena in zaprta, s šestimi mesti.",
         "categoryId": "schedule-mat",
         "rows": [
           {
             "cells": [
-              "Day",
-              "Time",
-              "Group",
-              "Places"
+              "Dan",
+              "Termin",
+              "Skupina",
+              "Mesta"
             ]
           },
           {
             "cells": [
-              "Tuesday",
+              "Torek",
               "07:00 / 19:00",
-              "Morning mat",
+              "Jutranji matt",
               "12"
             ]
           },
           {
             "cells": [
-              "Thursday",
+              "Četrtek",
               "10:00",
-              "Prenatal Pilates",
+              "Nosečniški pilates",
               "6"
             ]
           },
           {
             "cells": [
-              "Saturday",
+              "Sobota",
               "09:00 / 10:15",
-              "Mat, all levels",
+              "Matt, vse ravni",
               "12"
             ]
           }
         ]
       },
       {
-        "title": "One-to-one slots",
-        "text": "Private sessions and pairs are arranged directly with the instructor. Below are the windows that are usually free.",
+        "title": "Individualni termini",
+        "text": "Individualne ure in pari se dogovorijo neposredno z inštruktorjem. Spodaj so okna, ki so praviloma prosta.",
         "categoryId": "schedule-private",
         "rows": [
           {
             "cells": [
-              "Day",
-              "Window",
-              "Instructor",
-              "Focus"
+              "Dan",
+              "Okno",
+              "Inštruktor",
+              "Namen"
             ]
           },
           {
             "cells": [
-              "Monday – Friday",
+              "Ponedeljek – petek",
               "09:00 – 15:00",
-              "By arrangement",
-              "Rehabilitation and assessment"
+              "Po dogovoru",
+              "Rehabilitacija in analiza"
             ]
           },
           {
             "cells": [
-              "Tuesday and Thursday",
+              "Torek in četrtek",
               "20:00 – 21:00",
               "Luka",
-              "Athletic preparation"
+              "Športna priprava"
             ]
           },
           {
             "cells": [
-              "Sunday",
+              "Nedelja",
               "09:00 – 12:00",
               "Nejc",
-              "First visit and assessment"
+              "Prvi obisk in analiza"
             ]
           }
         ]
@@ -1345,26 +1331,26 @@
     ]
   },
   "events": {
-    "text": "Weekend workshops and talks. They are open to members and to people who have never trained here.",
+    "text": "Delavnice in predavanja ob koncih tedna. Namenjene so tako članom kot tistim, ki pri nas še niso vadili.",
     "categories": [
       {
         "id": "events-workshop",
-        "name": "Workshop"
+        "name": "Delavnica"
       },
       {
         "id": "events-talk",
-        "name": "Talk"
+        "name": "Predavanje"
       },
       {
         "id": "events-open",
-        "name": "Open day"
+        "name": "Odprti dan"
       }
     ],
     "showApplyButton": true,
     "items": [
       {
-        "title": "Breathing and the deep abdominals",
-        "text": "<p>Three practical parts in which we separate rib breathing from belly breathing and learn to recognise when the transverse abdominis genuinely engages.</p><p>Suitable for beginners and for anyone who cannot feel their centre during training. Everyone leaves with a written set of exercises for home.</p>",
+        "title": "Dihanje in globoke trebušne mišice",
+        "text": "<p>Trije praktični deli, v katerih se naučimo ločiti rebrno dihanje od trebušnega in prepoznati, kdaj se prečna trebušna mišica dejansko vključi.</p><p>Delavnica je primerna za začetnike in za tiste, ki pri vadbi ne čutijo sredine telesa. Vsak udeleženec dobi zapis vaj za doma.</p>",
         "date": "2026-09-12T10:30:00+02:00",
         "location": "Reforma Pilates, Ljubljana",
         "categoryId": "events-workshop",
@@ -1375,8 +1361,8 @@
         }
       },
       {
-        "title": "Pilates for runners: hips and feet",
-        "text": "<p>A workshop for runners whose Achilles or outer knee complains after heavier weeks. We look at hip mobility, foot stability, and the transition between strides.</p><p>Bring the running shoes you currently use — we will look at the wear on the sole together.</p>",
+        "title": "Pilates za tekače: kolki in stopala",
+        "text": "<p>Delavnica za tekače, ki jih po daljših tednih zaboli ahilova tetiva ali zunanja stran kolena. Pregledamo gibljivost kolkov, stabilnost stopala in prehod med koraki.</p><p>Prinesite tekaške copate, ki jih trenutno uporabljate — obrabo podplata bomo pogledali skupaj.</p>",
         "date": "2026-10-08T18:00:00+02:00",
         "location": "Reforma Pilates, Ljubljana",
         "categoryId": "events-workshop",
@@ -1387,8 +1373,8 @@
         }
       },
       {
-        "title": "What happens to the body after birth",
-        "text": "<p>A talk on the abdominal wall, the pelvic floor, and what makes sense in the first months versus what can wait.</p><p>Given by Maja Vidmar, followed by half an hour of questions. Babies welcome.</p>",
+        "title": "Kaj se zgodi s telesom po porodu",
+        "text": "<p>Predavanje o trebušni steni, medeničnem dnu in tem, kaj je v prvih mesecih smiselno in kaj lahko počaka.</p><p>Predava Maja Vidmar, sledi pol ure vprašanj. Dojenčki so dobrodošli.</p>",
         "date": "2026-11-19T18:30:00+01:00",
         "location": "Reforma Pilates, Ljubljana",
         "categoryId": "events-talk",
@@ -1399,8 +1385,8 @@
         }
       },
       {
-        "title": "Open day: reformer without booking",
-        "text": "<p>A full open day with fifteen-minute reformer introductions, no booking and no charge.</p><p>For anyone who wants to see the machine up close before committing to the eight-week beginner cycle.</p>",
+        "title": "Odprti dan: reformer brez rezervacije",
+        "text": "<p>Cel dan odprtih vrat s petnajstminutnimi predstavitvami na reformerju, brez prijave in brez plačila.</p><p>Namenjeno vsem, ki bi radi napravo enkrat videli od blizu, preden se odločijo za osemtedenski začetniški cikel.</p>",
         "date": "2026-09-26T10:00:00+02:00",
         "location": "Reforma Pilates, Ljubljana",
         "categoryId": "events-open",
@@ -1411,8 +1397,8 @@
         }
       },
       {
-        "title": "Desk ergonomics and exercises at work",
-        "text": "<p>A talk for companies and individuals on desk, screen, and chair setup, and on which three exercises actually help if you sit for eight hours.</p><p>Bring a photograph of your workstation; we will review some of them together.</p>",
+        "title": "Ergonomija pisarne in vaje med delom",
+        "text": "<p>Predavanje za podjetja in posameznike o postavitvi mize, zaslona in stola ter o tem, katere tri vaje res pomagajo, če presedite osem ur.</p><p>Prinesite fotografijo svojega delovnega mesta; nekaj jih bomo pregledali skupaj.</p>",
         "date": "2027-01-23T11:00:00+01:00",
         "location": "Reforma Pilates, Ljubljana",
         "categoryId": "events-talk",

@@ -743,8 +743,8 @@
   },
   "services": {
     "text": {
-      "SL": "Štiri vrste obiska, od enkratne individualne ure do celoletnega programa za podjetja. Obseg, trajanje in ceno povemo vnaprej.",
-      "EN": "Four kinds of visit, from a single one-to-one session to a year-round corporate programme. Scope, length, and price are agreed up front."
+      "SL": "Tri vrste obiska, od uvodne analize gibanja do individualne ure po meri. Obseg, trajanje in ceno povemo vnaprej.",
+      "EN": "Three kinds of visit, from an opening movement assessment to a one-to-one session built around you. Scope, length, and price are agreed up front."
     },
     "items": [
       {
@@ -841,38 +841,6 @@
         "image": {
           "id": "service-lighting",
           "file": "/images/storitev-individualno.webp"
-        }
-      },
-      {
-        "title": {
-          "SL": "Pilates za podjetja",
-          "EN": "Corporate Pilates"
-        },
-        "text": {
-          "SL": "Redni termini za zaposlene, pri nas ali na lokaciji podjetja, z mesečnim poročilom o udeležbi.",
-          "EN": "Regular sessions for employees, at the studio or on your premises, with a monthly attendance report."
-        },
-        "features": [
-          {
-            "SL": "Termini pri nas ali pri vas",
-            "EN": "Sessions here or at your offices"
-          },
-          {
-            "SL": "Predavanje o ergonomiji delovnega mesta",
-            "EN": "A talk on workplace ergonomics"
-          },
-          {
-            "SL": "Mesečno poročilo o udeležbi",
-            "EN": "Monthly attendance report"
-          },
-          {
-            "SL": "Račun na podjetje",
-            "EN": "Invoiced to the company"
-          }
-        ],
-        "image": {
-          "id": "service-installation",
-          "file": "/images/storitev-podjetja.webp"
         }
       }
     ]
