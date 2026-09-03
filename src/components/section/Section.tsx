@@ -2,6 +2,7 @@
 
 import { Box, Container } from "@mui/material";
 import { useBannerImage } from "@/app/theme/utils/UseBannerImage";
+import { ANCHOR_OFFSET } from "@/app/theme/headerMetrics";
 
 type SectionProps = {
   id?: string;
@@ -39,7 +40,12 @@ export default function Section({
       component="section"
       className={className}
       sx={(theme) => ({
-        scrollMarginTop: "96px",
+        // The bar is fixed and taller than it looks; a smaller margin hides the section top.
+        scrollMarginTop: {
+          xs: ANCHOR_OFFSET.xs,
+          sm: ANCHOR_OFFSET.sm,
+          md: ANCHOR_OFFSET.md,
+        },
         py: { xs: 8, sm: 11, md: 15 },
         backgroundColor: resolvedHeaderImage
           ? "transparent"

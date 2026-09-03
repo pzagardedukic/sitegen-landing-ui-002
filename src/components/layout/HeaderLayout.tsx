@@ -1,4 +1,5 @@
 import { AppBar, Toolbar } from "@mui/material";
+import { HEADER_CENTRE, HEADER_HEIGHT } from "@/app/theme/headerMetrics";
 
 type HeaderLayoutProps = {
   children: React.ReactNode;
@@ -72,22 +73,22 @@ export default function HeaderLayout({
            * key, both produce a `@media (min-width:900px)` block and the later one wins
            * the whole block — the height silently reverted to the xs value on desktop.
            */
-          minHeight: 88,
-          "--logo-y": "44px",
+          minHeight: HEADER_HEIGHT.xs,
+          "--logo-y": `${HEADER_CENTRE.xs}px`,
           "--logo-x": "16px",
           "--nav-x": "24px",
           "--logo-filter": scrolled ? "brightness(0) invert(1)" : "none",
           [theme.breakpoints.up("sm")]: {
             // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
             // the tablet bar keeps the height the rest of the header is measured against.
-            minHeight: 130,
-            "--logo-y": "65px",
+            minHeight: HEADER_HEIGHT.sm,
+            "--logo-y": `${HEADER_CENTRE.sm}px`,
             "--logo-x": "28px",
             "--nav-x": "40px",
           },
           [theme.breakpoints.up("md")]: {
-            minHeight: 142,
-            "--logo-y": "71px",
+            minHeight: HEADER_HEIGHT.md,
+            "--logo-y": `${HEADER_CENTRE.md}px`,
             "--logo-x": "24px",
             "--nav-x": "48px",
           },
