@@ -90,6 +90,7 @@ Kar med delom najdem v `ui-001` in bi bilo dobro popraviti, a ne sodi v `ui-002`
 | [#3](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/3) | `createPreviewTheme` ne preslika `header`/`footer` palet |
 | [#4](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/4) | svež klon se ne namesti ne zgradi — `pnpm-workspace.yaml` ni pod verzijo |
 | [#5](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/5) | vsaka podstran izriše isti id dvakrat — ovoj naslovnega pasu ponovi id vsebinske sekcije |
+| [#6](https://github.com/ptlabTadej/sitegen-landing-ui-001/issues/6) | današnji dan v delovnem času se ne obarva — oblikovano ime dneva proti velikim tiskanim oznakam |
 
 `#1` popravim tudi v `ui-002` (klic hooka brezpogojno, pogoj na rezultatu) — je čista napaka brez vidne spremembe vedenja.
 
