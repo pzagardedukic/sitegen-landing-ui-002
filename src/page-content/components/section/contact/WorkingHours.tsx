@@ -7,6 +7,17 @@ import { useLanguage } from "@/core/runtime";
 import { getWorkingHours } from "@/core/runtime";
 import { Days, getContactTranslation } from "@/core/translations";
 
+/* Indexed by `Date.getDay()`, so Sunday first. These are the tags the data uses. */
+const DAY_TAGS = [
+  "SUNDAY",
+  "MONDAY",
+  "TUESDAY",
+  "WEDNESDAY",
+  "THURSDAY",
+  "FRIDAY",
+  "SATURDAY",
+];
+
 /*
  * Day and time rows as drawn: the day on the left, the time on the right, no dividers and
  * no chips. Today's row is marked with the brand colour. The heading comes from the block
@@ -24,9 +35,13 @@ export default function WorkingHours() {
     [workingHours.items],
   );
 
-  const currentDay = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-  });
+  /*
+   * The tag straight off the Date, not a formatted name.
+   * `toLocaleDateString("en-US", { weekday: "long" })` returns "Wednesday" and the groups
+   * carry "WEDNESDAY", so the comparison never matched and today was never marked — the
+   * row simply rendered like every other one. Inherited from ui-001, see ui-001#6.
+   */
+  const currentDay = DAY_TAGS[new Date().getDay()];
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
