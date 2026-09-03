@@ -79,10 +79,11 @@ računalniku ni orodja za PDF. V nogi vsakega piše, da gre za predstavitveni do
 
 ## Logotipi
 
-**Glavni logotip** je `public/images/logo-reforma.png` (1382×201, prosojno ozadje), vpisan v
-`home.companyLogo.image`. Samo napis REFORMA v eni vrsti — brez znaka in brez podnapisa.
-Napis nosi prelivanje znamke in ne enotne temne barve. Razlog je glava: nad hero sliko je
-prosojna in izrez v banneru pusti logotip na belem, ob drsenju pa postane skoraj črno modra.
+**Glavni logotip** je `public/images/logo-reforma.png` (1387×200, prosojno ozadje), vpisan v
+`home.companyLogo.image`. Samo napis REFORMA v eni vrsti — brez znaka in brez podnapisa,
+`RE` v Sori 700 in `FORMA` v 300. Napis nosi prelivanje znamke in ne enotne temne
+barve. Razlog je glava: nad hero sliko je prosojna in izrez v banneru pusti logotip na
+belem, ob drsenju pa postane skoraj črno modra.
 Temen napis umre na drugem, bel na prvem; prelivanje vijolična–modra drži oboje.
 
 Postavljen je na pas in ne v vrstico z navigacijo: v vrstici je podedoval mrežo vsebine in se
