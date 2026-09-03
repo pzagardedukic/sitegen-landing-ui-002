@@ -71,7 +71,28 @@ if (dirty) {
   process.exit(1);
 }
 
+/*
+ * A copy on disk, written before anything is swapped.
+ *
+ * The handlers below cover every signal that can be caught, and twice that was not enough:
+ * the run was killed outright and left the repository holding a variant's data, which then
+ * looks like an edit nobody made. A file survives a kill, so the next run puts it back.
+ */
+const JOURNAL = join(FIXTURES, ".website-json-backup");
+
+if (existsSync(JOURNAL)) {
+  writeFileSync(WEBSITE, readFileSync(JOURNAL, "utf8"));
+  rmSync(JOURNAL, { force: true });
+  try {
+    execFileSync("git", ["checkout", "--", "src/data"], { stdio: "pipe" });
+  } catch {
+    /* nothing to put back */
+  }
+  console.log("Recovered website.json from an earlier run that was killed.\n");
+}
+
 const original = readFileSync(WEBSITE, "utf8");
+writeFileSync(JOURNAL, original);
 let restored = false;
 
 /*
@@ -89,6 +110,7 @@ const restore = () => {
   } catch {
     /* nothing generated yet */
   }
+  rmSync(JOURNAL, { force: true });
 };
 
 /*
