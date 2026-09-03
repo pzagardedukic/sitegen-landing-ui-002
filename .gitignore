@@ -5,3 +5,6 @@ out/
 .env*.local
 .DS_Store
 tsconfig.tsbuildinfo
+fixtures/out/
+fixtures/shots/
+fixtures/report.json

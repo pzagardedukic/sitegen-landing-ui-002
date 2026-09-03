@@ -13,7 +13,8 @@
     "update:website-data": "tsx scripts/updateWebsiteData.ts",
     "check:boundary": "node scripts/checkCoreBoundary.mjs",
     "typecheck": "tsc --noEmit",
-    "verify": "pnpm run check:boundary && pnpm run typecheck"
+    "verify": "pnpm run check:boundary && pnpm run typecheck",
+    "test:variants": "node scripts/testVariants.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
