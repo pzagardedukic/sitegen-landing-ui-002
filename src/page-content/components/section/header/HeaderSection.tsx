@@ -33,7 +33,7 @@ export default function HeaderSection({ title, id }: HeaderSectionProps) {
     <Box
       component="section"
       id="section-header"
-      sx={{ p: { xs: "12px", sm: "24px", md: "20px" } }}
+      sx={{ position: "relative", p: { xs: "12px", sm: "24px", md: "20px" } }}
     >
       <Box
         id={id}
@@ -61,8 +61,6 @@ export default function HeaderSection({ title, id }: HeaderSectionProps) {
           })}
         />
 
-        <HeroNotch />
-
         <Box
           sx={{
             position: "relative",
@@ -77,6 +75,8 @@ export default function HeaderSection({ title, id }: HeaderSectionProps) {
           </Typography>
         </Box>
       </Box>
+
+      <HeroNotch />
     </Box>
   );
 }

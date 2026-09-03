@@ -35,6 +35,7 @@ export default function HomeSection() {
     <Box
       id="home"
       sx={{
+        position: "relative",
         p: { xs: "12px", sm: "24px", md: "20px" },
         height: "100dvh",
         minHeight: { xs: 560, md: 700 },
@@ -65,8 +66,6 @@ export default function HomeSection() {
             zIndex: 1,
           })}
         />
-
-        <HeroNotch />
 
         <Box
           sx={{
@@ -122,6 +121,8 @@ export default function HomeSection() {
           />
         </Box>
       </Box>
+
+      <HeroNotch />
     </Box>
   );
 }
