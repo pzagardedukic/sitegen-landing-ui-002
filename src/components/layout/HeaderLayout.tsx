@@ -8,10 +8,14 @@ type HeaderLayoutProps = {
 /*
  * Transparent over the hero, solid once the page moves.
  *
- * The bar carries no content container. The logo hangs off its left edge and the navigation
- * off its right, mirroring each other at the same inset — a Container would have held the
- * navigation on the 36 / 64 / 120 content grid, which at 1440 leaves it 144 from the edge
- * against the logo's 24 and reads lopsided.
+ * The bar carries no content container and nothing sits in its row: the logo hangs off the
+ * left edge and the navigation off the right, both positioned against the bar itself. A
+ * Container would have held the navigation on the 36 / 64 / 120 content grid, which at 1440
+ * leaves it 144 from the edge against the logo's 24 and reads lopsided.
+ *
+ * Both are hung on the same `--logo-y`, so they share a centre line — the middle of the
+ * white notch, which is lower than the middle of the bar. In the row the navigation
+ * centred on the bar instead and sat visibly higher than the logo beside it.
  */
 export default function HeaderLayout({
   children,
@@ -65,28 +69,24 @@ export default function HeaderLayout({
            */
           "--logo-y": scrolled ? "36px" : "44px",
           "--logo-x": "16px",
+          "--nav-x": "24px",
           [theme.breakpoints.up("sm")]: {
             // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
             // the tablet bar keeps the 72 the rest of the header is measured against.
             minHeight: 72,
             "--logo-y": scrolled ? "36px" : "65px",
             "--logo-x": "28px",
+            "--nav-x": "40px",
           },
           [theme.breakpoints.up("md")]: {
             minHeight: scrolled ? 80 : 96,
             "--logo-y": scrolled ? "40px" : "71px",
             "--logo-x": "24px",
+            "--nav-x": "48px",
           },
           transition: theme.transitions.create(["min-height"], {
             duration: theme.transitions.duration.short,
           }),
-          /*
-           * The navigation ends the same distance from the right edge as the logo starts
-           * from the left, so the one variable drives both sides and they cannot drift
-           * apart. `--logo-x` is declared on this element, which is also the element that
-           * reads it here.
-           */
-          px: "var(--logo-x)",
           width: "100%",
           display: "flex",
           justifyContent: "space-between",

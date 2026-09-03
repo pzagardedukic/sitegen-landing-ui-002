@@ -20,7 +20,10 @@ export default function Header() {
 
   const navItems = [
     { label: navTranslation.home, href: withBasePath("/") },
-    { label: navTranslation.about, href: getPageSlugByKeyWithBasePath("about") },
+    {
+      label: navTranslation.about,
+      href: getPageSlugByKeyWithBasePath("about"),
+    },
     {
       label: navTranslation.more,
       subItems: [
@@ -92,40 +95,52 @@ export default function Header() {
         <LogoText name={home.name} />
       )}
 
-      {/* Right: Navigation and Language Selector */}
-      {languageList.length > 1 ? (
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: isMobile ? "row-reverse" : "row",
-            alignItems: "center",
-            // 36px margins leave ~318px on a 390 screen; a 32px gap plus a divider
-            // pushed the menu button off the edge there.
-            gap: { xs: 1, md: 3 },
-            flexShrink: 0,
-          }}
-        >
-          <HeaderNavigation items={navItems} />
-
-          <Divider
-            orientation="vertical"
-            flexItem
-            sx={{
-              display: { xs: "none", md: "block" },
-              borderColor: "currentColor",
-              opacity: 0.4,
-            }}
-          />
-
-          <LanguageSelector
-            supportedLanguages={languageList}
-            defaultLanguage={lang as string}
-            onChange={(code) => setLang(code as SupportedLang)}
-          />
-        </Box>
-      ) : (
+      {/* Right: Navigation and, when the site has more than one, the language selector */}
+      <Box
+        sx={(theme) => ({
+          /*
+           * Hung on the bar like the logo, not carried in the row. In the row it centred
+           * on the bar, which is not the middle of the white notch, so it sat higher than
+           * the logo across from it. Same `--logo-y`, same centre line.
+           */
+          position: "fixed",
+          top: "var(--logo-y)",
+          right: "var(--nav-x)",
+          transform: "translateY(-50%)",
+          transition: theme.transitions.create(["top"], {
+            duration: theme.transitions.duration.short,
+          }),
+          display: "flex",
+          flexDirection: isMobile ? "row-reverse" : "row",
+          alignItems: "center",
+          // 36px margins leave ~318px on a 390 screen; a 32px gap plus a divider
+          // pushed the menu button off the edge there.
+          gap: { xs: 1, md: 3 },
+          flexShrink: 0,
+        })}
+      >
         <HeaderNavigation items={navItems} />
-      )}
+
+        {languageList.length > 1 && (
+          <>
+            <Divider
+              orientation="vertical"
+              flexItem
+              sx={{
+                display: { xs: "none", md: "block" },
+                borderColor: "currentColor",
+                opacity: 0.4,
+              }}
+            />
+
+            <LanguageSelector
+              supportedLanguages={languageList}
+              defaultLanguage={lang as string}
+              onChange={(code) => setLang(code as SupportedLang)}
+            />
+          </>
+        )}
+      </Box>
     </Box>
   );
 }
