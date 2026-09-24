@@ -123,7 +123,11 @@ export default function PortfolioItemSection({ id }: { id: number }) {
           alignItems: "start",
         }}
       >
-        <Typography variant="h2" component="h1" sx={{ gridColumn: { md: "1" } }}>
+        {/*
+          The title band above is this page's h1 and carries the same words. This repeat is a
+          visual echo, not a second page title, so it stays a level below.
+        */}
+        <Typography variant="h2" component="h2" sx={{ gridColumn: { md: "1" } }}>
           {portfolioItem.title}
         </Typography>
 
