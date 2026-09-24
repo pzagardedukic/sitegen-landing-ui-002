@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "basePath": "",
-  "siteOrigin": "",
+  "basePath": "/sitegen-landing-ui-002",
+  "siteOrigin": "https://pzagardedukic.github.io",
   "primaryLanguage": "SL",
   "supportedLanguages": [
     "SL",
