@@ -1,3 +1,3 @@
 :HL["/sitegen-landing-ui-002/_next/static/chunks/0twa_7q1m0guu.css","style"]
 :HL["/sitegen-landing-ui-002/_next/static/chunks/01sji8sep8i0t.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"_IqC8kQNxcrB2cioPUaF3"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Es5V9rnWiKdFS1-19VT4O"}
