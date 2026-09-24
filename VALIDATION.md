@@ -51,9 +51,10 @@ things are missing from the snapshot, all of them inherited rather than caused b
 - **a price item detail page is empty below the band.** That is not the snapshot: the section
   renders only for `PRICING_STORE`, and the demo data is a subscription list, so the live app
   shows the same empty page.
-- **detail pages carry two `<h1>`** — the title band and the item title both claim one. It was
-  invisible while the export was a shell. `ui-004` fixed this during its QA (the title stays in
-  the band); `ui-002` and `ui-003` have not.
+- **detail pages carried two `<h1>`** — the title band and the item title both claimed one,
+  which was invisible while the export was a shell. Fixed the same day (#13): the band keeps
+  the `h1` and the repeat drops a level, the same shape `ui-004` settled on. Counted across
+  the whole export afterwards: all 47 pages have exactly one `<h1>`.
 
 ### Variants
 
