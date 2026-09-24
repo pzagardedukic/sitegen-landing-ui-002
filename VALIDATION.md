@@ -1,5 +1,73 @@
 # Validation record
 
+## Core 1.1.0 and SEO snapshots, 23 September 2026
+
+Checks run after the core upgrade and the primary-language snapshot port, with `7b92b27`
+(the last commit before the upgrade) as the reference. The export was served locally and
+driven through headless Edge over the DevTools protocol.
+
+### Build
+
+- `pnpm verify` clean; `pnpm build` exports 47 HTML files and the snapshot step refreshes
+  all of them.
+- `pnpm test:export` verifies 45 primary-language snapshots: each island carries a `<main>`,
+  the document opens `lang="sl"` with the language bootstrap in place, the embedded seed
+  equals a freshly computed one, and the title comes from that seed.
+- A theme-editor export (`NEXT_PUBLIC_THEME_EDITOR_ENABLED=true`) builds too. That is the
+  point of putting the island in both layouts: the snapshot step refuses an export without
+  it, and in `ui-004` this failed while the default build still succeeded.
+
+### What the HTML now carries
+
+| | before (`7b92b27`) | after |
+|---|---|---|
+| `out/index.html` | 12 083 B | 195 253 B |
+| `<main>` in the home page | 0 | 1 |
+| distinct `<title>` values | 1 for all 46 routes | one per route |
+| canonical links | one, inherited from the root | one per route |
+
+`/pravno/` and the 404 page have no menu entry, so they used to fall back to the site name
+twice; they are now named the way their own `h1` names them.
+
+### Snapshot island
+
+- With JavaScript the island is gone after hydration on every sampled route: one `main`,
+  one `h1`, no console error and no exception.
+- A visitor with a saved `EN` preference never gets a painted snapshot frame — 21 samples
+  per route on three routes, none with the island visible, and the page ends up in English.
+- The preference key is now scoped to the base path (`site_language:/`), which is the key
+  the head bootstrap reads. Before this the app only ever wrote the legacy global key.
+
+### Without JavaScript
+
+All 46 routes were loaded at 1440 with script execution disabled — the reader this feature
+exists for. Every route renders one `<main>`, real text and no horizontal overflow. Three
+things are missing from the snapshot, all of them inherited rather than caused by the port;
+`ui-004` renders the same pages the same way:
+
+- **the gallery and the video thumbnails have no images.** The video thumbnail is fetched in
+  an effect, so it cannot exist before the app runs; the gallery is the issue already tracked
+  as `ui-001#17`.
+- **a price item detail page is empty below the band.** That is not the snapshot: the section
+  renders only for `PRICING_STORE`, and the demo data is a subscription list, so the live app
+  shows the same empty page.
+- **detail pages carry two `<h1>`** — the title band and the item title both claim one. It was
+  invisible while the export was a shell. `ui-004` fixed this during its QA (the title stays in
+  the band); `ui-002` and `ui-003` have not.
+
+### Variants
+
+`pnpm test:variants`: all 10 fixtures build and render at 390 / 768 / 1440. The only
+complaints are 16 aborted requests on `/kontakt/`, spread across nine fixtures — the Google
+Maps embed, as in `ui-004`. No overflow, no clipped text, no broken image, no runaway DOM and
+no invisible text: the two checks that were written for a page starting empty survive a page
+that starts full. The request collector now records the address, ported from `ui-004`, so a
+future failure names itself instead of appearing as a bare `net::ERR_ABORTED`.
+
+### Before/after equivalence
+
+Route list unchanged: the same 47 exported HTML files as at `7b92b27`.
+
 ## Redesign, 2 September 2026
 
 Checks run against this repository after the visual layer was finished, with
@@ -18,6 +86,10 @@ and built with the same core package. Both exports were then served and read bac
 through headless Edge, because the exported HTML is only a shell — every page is a
 client component, so the section markup exists after hydration and cannot be
 grepped out of `out/**/index.html`.
+
+> That last sentence held until 23 September 2026. Since the snapshot port the primary
+> language **is** in `out/**/index.html`; the rest of this section is unchanged and still
+> describes the redesign as it was checked then.
 
 - **Routes** — identical: the same 46 `out/**/index.html` paths, byte for byte in
   the sorted listing.

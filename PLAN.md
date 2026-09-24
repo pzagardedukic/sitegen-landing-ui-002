@@ -28,6 +28,10 @@ Te datoteke gredo v `ui-002` nespremenjene in se jih med redizajnom ne ureja:
 - Vrstni red sekcij in pogoji prikaza v `src/page-content/pages/*` — vključno s podrobnostmi kot `enabled: !isSectionEnabled("reviews") && isSectionEnabled("blog")` na domači strani
 - `src/app/layout.tsx`, `AppProviders.tsx` in `.editor` različice — mehanizem urejevalnika teme
 
+> Seznam velja za redizajn. Posnetki za SEO (23. 9. 2026, zadnji razdelek) so `src/core/*`
+> razširili na 12 adapterjev, `scripts/*` na enajst datotek plus mapo `scripts/snapshot/`,
+> spremenili pa so tudi oba sloja in pet predlog s podrobnostmi.
+
 ## Kaj se zamenja (vizual)
 
 `src/theme.ts`, `src/app/theme/{colors,fonts}.ts`, `src/app/globals.css`, `src/components/**` (20 dat.), `src/page-content/components/**` (90 dat.), `public/images/*`. Skupaj ~10.500 vrstic, od tega 8.000 v `page-content`.
@@ -193,3 +197,45 @@ Dvoje, kar zna ponagajati pri telefonu, in kako rešim:
 - **Prelivanje iz barv stranke.** Če sta primary in secondary preblizu, prelivanje izgine. Potrebuje varovalko (npr. minimalna razlika svetlosti, sicer prelivanje v odtenkih primary).
 - **Dark pride kasneje.** V tej fazi ni v obsegu. Da bo dodajanje pozneje poceni, v komponentah ne sme biti trdo zapisanih barv — vse gre prek `theme.palette`. To je pravilo, ki ga bom upošteval od prve komponente naprej. Odprto ostaja, ali je dark ločena tema stranke ali stikalo — vprašam, ko pridemo do tja.
 - **Tablet pri 768 pade v `sm`.** Figma tablet je 768 px, MUI `sm` pa pokriva 600–899. Postavitev, narisana za 768, mora zdržati tudi pri 600 in pri 899. Kjer ne bo, gre vrstica v mobilno postavitev pri tisti širini — ne stiskam robov, da bi se izšlo.
+
+---
+
+## Jedro 1.1.0 in posnetki za SEO (23. 9. 2026)
+
+Redizajn je podedoval lastnost, ki je bila takrat pri vseh temah enaka in zato ni izstopala:
+izvožen HTML je bil lupina. `grep '<main' out/index.html` je vrnil nič, domača stran je
+merila 12 KB, vseh 46 poti je imelo naslov „Reforma Pilates", kanonična povezava s korenskega
+sloja pa je 16 podstranem pripisala, da so kopija domače. Iskalnik je dobil prazno stran.
+
+Prenesena je ista mehanika, kot jo imata `ui-001` in `ui-004`. Gradnja ima štiri stopnje:
+priprava (podatki, poti, manifest, seme za SEO) → `next build` (izvoz s **praznim** otokom) →
+esbuild zloži samostojni izrisovalnik v `.sitegen-meta/refresh.cjs` → izrisovalnik izriše
+prave komponente strani in jih vpiše med komentarja `sitegen-primary-html`, zamenja upravljano
+glavo, prepiše `sitemap.xml`, `robots.txt` in `data/meta.json`. `prebuild` je odstranjen, ker
+bi se priprava sicer pognala dvakrat.
+
+**Jedro 1.1.0 samo po sebi ne izriše nobenega HTML.** Doda dvoje: izvozno pot `./language`
+(zagon jezika pred prvim izrisom in dogodek `sitegen:content-ready`) ter sinhrono seme
+`initialWebsiteJson`, brez katerega samostojni izrisovalnik ne more izrisati. Mehanika
+posnetkov živi v temi.
+
+Tematsko odvisen je bil en sam del: `scripts/snapshot/fonts.ts` nadomešča `next/font/google`
+in mora izvažati **naši** pisavi (Sora, Manrope). Preslikava strani se je ujela do zadnjega
+imena in je prešla dobesedno.
+
+Štiri stvari, vredne zapisa:
+
+- **`markContentReady()` v `PageLayout` je edina vez, ki umakne otok.** Brez tega klica bi
+  vsaka stran vsebino pokazala dvakrat — posnetek spodaj, aplikacija čezenj. V statičnem HTML
+  se to ne vidi, ker je posnetek tam pričakovan; ujameš ga samo z vprašanjem brskalniku.
+- **Otok mora biti v obeh slojih.** Korak s posnetki zavrne izvoz brez otoka, zato bi gradnja
+  urejevalnika teme padla, privzeta pa bi uspela — napaka, ki se pokaže šele pri urejevalniku.
+- **Metapodatki imajo en sam vir.** `generateMetadata` na petih podstraneh in `metadata` na
+  korenskem sloju so odstranjeni; dokler tečeta oba mehanizma, podstran dobi drugi `og:image`
+  z naslovom na `localhost`. `robots.ts` in `sitemap.ts` bereta isto seme.
+- **Jezikovna nastavitev je vezana na osnovno pot** (`site_language:/…`), kot v `ui-001`.
+  Zagonski script v glavi bere ta ključ; če ga aplikacija ne zapiše, izbira preživi samo prek
+  starega globalnega ključa.
+
+Izid: `out/index.html` 12 KB → 195 KB, vsaka pot svoj naslov — tudi `/pravno/` in 404, ki
+menijskega vnosa nimata. Podrobnosti preverjanja so v `VALIDATION.md`.
