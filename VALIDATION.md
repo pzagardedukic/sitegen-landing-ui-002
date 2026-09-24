@@ -45,9 +45,12 @@ exists for. Every route renders one `<main>`, real text and no horizontal overfl
 things are missing from the snapshot, all of them inherited rather than caused by the port;
 `ui-004` renders the same pages the same way:
 
-- **the gallery and the video thumbnails have no images.** The video thumbnail is fetched in
-  an effect, so it cannot exist before the app runs; the gallery is the issue already tracked
-  as `ui-001#17`.
+- **the gallery has no images** — the picture is drawn only after the browser measures it,
+  which the snapshot renderer never does. Tracked as #12, and upstream as `ui-001#17`.
+- **the video thumbnails had none either**, for a different reason: the address came from an
+  effect. Fixed the same day (#11) — a YouTube still is a pure function of the video id, so
+  it is now known during the first render. `/videi/` carries three stills instead of none,
+  and the browser loads all three with no hydration warning.
 - **a price item detail page is empty below the band.** That is not the snapshot: the section
   renders only for `PRICING_STORE`, and the demo data is a subscription list, so the live app
   shows the same empty page.
